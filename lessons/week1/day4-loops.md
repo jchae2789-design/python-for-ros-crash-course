@@ -193,6 +193,8 @@ All four functions are in `exercises/week1/w1d4_loops.py`. Open it in VS Code no
 
 ### Exercise 1 of 4: `countdown(n)`
 
+> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson and follow it while you do this exercise, especially [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
+
 **Your task:** return a text that counts down from `n` to 1, then `GO!`, separated by spaces.
 
 ```python
@@ -204,18 +206,21 @@ All four functions are in `exercises/week1/w1d4_loops.py`. Open it in VS Code no
 
 **Steps:**
 
-1. Replace `pass`. Use the "building text" pattern from section 2: start with `text = ""`, add to it in a `for` loop with a counting-down `range` (section 1), and add `"GO!"` at the end. Use `str(i)` to turn a number into text.
-2. Save and try it with `python3 -i`. You should get the results above.
-3. Test it:
+1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d4_loops.py`. (Or press **Ctrl + P**, type `w1d4_loops.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
+2. Replace `pass`. Use the "building text" pattern from section 2: start with `text = ""`, add to it in a `for` loop with a counting-down `range` (section 1), and add `"GO!"` at the end. Use `str(i)` to turn a number into text.
+3. Save and try it with `python3 -i`. You should get the results above.
+4. Test it:
    ```bash
    pytest exercises/week1/tests/test_w1d4.py -k countdown
    ```
    ✔ You should see `4 passed, 12 deselected`.
-4. Check the box for `countdown`.
+5. Check the box for `countdown`.
 
 > `deselected` means: the tests of the **other** exercises in this file were not run. That is what `-k` does, and it is fine.
 
 ### Exercise 2 of 4: `sum_to(n)`
+
+> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson and follow it while you do this exercise, especially [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
 **Your task:** return 1 + 2 + … + n, using a loop.
 
@@ -228,16 +233,19 @@ All four functions are in `exercises/week1/w1d4_loops.py`. Open it in VS Code no
 
 **Steps:**
 
-1. Replace `pass`. This is exactly the accumulator pattern in section 2. Remember: to include `n`, use `range(1, n + 1)`.
-2. Save and try it with `python3 -i`.
-3. Test it:
+1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d4_loops.py`. (Or press **Ctrl + P**, type `w1d4_loops.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
+2. Replace `pass`. This is exactly the accumulator pattern in section 2. Remember: to include `n`, use `range(1, n + 1)`.
+3. Save and try it with `python3 -i`.
+4. Test it:
    ```bash
    pytest exercises/week1/tests/test_w1d4.py -k sum_to
    ```
    ✔ You should see `4 passed, 12 deselected`.
-4. Check the box for `sum_to`.
+5. Check the box for `sum_to`.
 
 ### Exercise 3 of 4: `steps_until_low(battery, drain_per_step, low_level)`
+
+> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson and follow it while you do this exercise, especially [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
 **Your task:** each step, the robot loses `drain_per_step` battery. Return how many steps it takes until the battery is at `low_level` or below.
 
@@ -250,17 +258,20 @@ All four functions are in `exercises/week1/w1d4_loops.py`. Open it in VS Code no
 
 **Steps:**
 
-1. **First, on paper:** draw a table like in section 2 for `steps_until_low(100, 10, 50)`, with columns *step* and *battery*. Count until the battery is 50 or below. You should get 5.
-2. Replace `pass`. Use a `while` loop (section 3): keep going **while** the battery is above `low_level`. Inside, subtract the drain and add 1 to a step counter.
-3. Save and try it with `python3 -i`. If it never finishes, press **Ctrl + C**: your battery is not going down.
-4. Test it:
+1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d4_loops.py`. (Or press **Ctrl + P**, type `w1d4_loops.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
+2. **First, on paper:** draw a table like in section 2 for `steps_until_low(100, 10, 50)`, with columns *step* and *battery*. Count until the battery is 50 or below. You should get 5.
+3. Replace `pass`. Use a `while` loop (section 3): keep going **while** the battery is above `low_level`. Inside, subtract the drain and add 1 to a step counter.
+4. Save and try it with `python3 -i`. If it never finishes, press **Ctrl + C**: your battery is not going down.
+5. Test it:
    ```bash
    pytest exercises/week1/tests/test_w1d4.py -k steps_until_low
    ```
    ✔ You should see `4 passed, 12 deselected`.
-5. Check the box for `steps_until_low`.
+6. Check the box for `steps_until_low`.
 
 ### Exercise 4 of 4: `count_multiples(limit, k)`
+
+> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson and follow it while you do this exercise, especially [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
 **Your task:** count the numbers from 1 to `limit` (including `limit`) that `k` divides evenly.
 
@@ -273,14 +284,15 @@ All four functions are in `exercises/week1/w1d4_loops.py`. Open it in VS Code no
 
 **Steps:**
 
-1. Replace `pass`. Loop over 1 to `limit` and count the numbers where `x % k == 0`. This is the counting example in section 2.
-2. Save and try it with `python3 -i`.
-3. Test it:
+1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d4_loops.py`. (Or press **Ctrl + P**, type `w1d4_loops.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
+2. Replace `pass`. Loop over 1 to `limit` and count the numbers where `x % k == 0`. This is the counting example in section 2.
+3. Save and try it with `python3 -i`.
+4. Test it:
    ```bash
    pytest exercises/week1/tests/test_w1d4.py -k count_multiples
    ```
    ✔ You should see `4 passed, 12 deselected`.
-4. Check the box for `count_multiples`.
+5. Check the box for `count_multiples`.
 
 ### Finally: all of today's tests
 

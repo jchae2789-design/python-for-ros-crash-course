@@ -212,6 +212,8 @@ Today's exercises check your output **exactly**: every capital letter, space and
 
 ### Exercise 1 of 2: Hello, ROS!
 
+> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson and follow it while you do this exercise, especially [Part 3: a script exercise](../../docs/02-how-exercises-work.md#part-3-worked-example-a-script-exercise-days-12) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
+
 **Your task:** write a program that prints one line: `Hello, ROS!`
 
 **What it should look like:**
@@ -223,15 +225,16 @@ Hello, ROS!
 
 **Steps:**
 
-1. In VS Code, open `exercises/week1/w1d1_hello.py` (in the file list on the left: `exercises` → `week1`).
+1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d1_hello.py`. (Or press **Ctrl + P**, type `w1d1_hello.py` and press Enter.) The file opens in the editor.
 2. Read the instructions at the top of the file.
 3. Write your code on the empty line below `# TODO: write your code below this line`. You need one `print()`.
-4. Save the file: **Ctrl + S**.
+4. Save the file: **Ctrl + S**. The **●** on the file's tab disappears when it is saved.
 5. Run it in the terminal:
    ```bash
    python3 exercises/week1/w1d1_hello.py
    ```
    ✔ You should see `Hello, ROS!`
+   ✘ If **nothing appears at all**, your file has no code yet or is not saved. Go back to step 3.
 6. Test it:
    ```bash
    pytest exercises/week1/tests/test_w1d1.py -k hello
@@ -243,6 +246,8 @@ Hello, ROS!
 
 ### Exercise 2 of 2: Robot info card
 
+> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson and follow it while you do this exercise, especially [Part 3: a script exercise](../../docs/02-how-exercises-work.md#part-3-worked-example-a-script-exercise-days-12) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
+
 **Your task:** write a program that prints exactly these 3 lines:
 
 ```
@@ -253,15 +258,16 @@ Status: READY
 
 **Steps:**
 
-1. Open `exercises/week1/w1d1_robot_card.py`.
+1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d1_robot_card.py`. (Or press **Ctrl + P**, type `w1d1_robot_card.py` and press Enter.) The file opens in the editor.
 2. Read the instructions at the top of the file.
 3. Write your code below `TODO`. Use one `print()` for each line.
-4. Save: **Ctrl + S**.
+4. Save: **Ctrl + S**. The **●** on the file's tab disappears when it is saved.
 5. Run it:
    ```bash
    python3 exercises/week1/w1d1_robot_card.py
    ```
    ✔ You should see the 3 lines above. Compare them letter by letter.
+   ✘ If **nothing appears at all**, your file has no code yet or is not saved. Go back to step 3.
 6. Test it:
    ```bash
    pytest exercises/week1/tests/test_w1d1.py -k robot_card

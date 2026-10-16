@@ -43,7 +43,7 @@ You are finished with an exercise when **all of its tests pass**.
 Do these steps for **every** exercise, in this order.
 
 **Step 1: Open the exercise file in VS Code.**
-Click it in the file list on the left (for example `exercises` → `week1` → `w1d1_hello.py`).
+In the file list on the left, click `exercises` → `week1` → the file (for example `w1d1_hello.py`). Or press **Ctrl + P**, type the file name and press Enter. You cannot write your code until the file is open in the editor.
 
 **Step 2: Read all the instructions at the top.**
 The lines starting with `#` (or the text inside `"""` in a function) tell you:
@@ -308,6 +308,7 @@ E       assert 'FULL' == 'OK'
 |---|---|---|
 | `assert None == ...` | No `return`, or `print` instead of `return` | Add `return` |
 | `Your program printed: ''` | Script prints nothing | Did you save? Is your code below `TODO`? |
+| You run your script and **nothing appears at all** | The file has no code yet (only comments), or your code is not saved | Open the file, write code below `TODO`, press **Ctrl + S** and check that the **●** on the tab is gone |
 | `Your script crashed` | Your script has an error | Read the **last line** of the error message |
 | `Your script did not finish within 10 seconds` | A loop that never ends, or an extra `input()` | Check that your `while` condition becomes `False`, and count your `input()` calls |
 | `ImportError: cannot import name ...` | You renamed or deleted the function | Use the exact name from the starter file |

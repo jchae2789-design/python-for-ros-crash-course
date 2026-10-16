@@ -221,6 +221,8 @@ Speed (m/s): 2.5
 
 ### Exercise 1 of 2: Battery runtime
 
+> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson and follow it while you do this exercise, especially [Part 3: a script exercise](../../docs/02-how-exercises-work.md#part-3-worked-example-a-script-exercise-days-12) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
+
 **Your task:** ask for a battery's capacity (mAh) and the current the robot uses (mA). Print how many hours the battery lasts: capacity ÷ current, with 2 decimals.
 
 **What it should look like** (you type `5000` and `2000`):
@@ -234,18 +236,19 @@ Runtime: 2.50 hours
 
 **Steps:**
 
-1. Open `exercises/week1/w1d2_battery_runtime.py`.
+1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d2_battery_runtime.py`. (Or press **Ctrl + P**, type `w1d2_battery_runtime.py` and press Enter.) The file opens in the editor.
 2. Read the instructions at the top of the file.
 3. Write your code below `TODO`. You need:
    - two `input()` calls, each wrapped in `int()` (section 5 of this lesson),
    - one division,
    - one `print()` with an f-string and `:.2f` (section 6).
-4. Save: **Ctrl + S**.
+4. Save: **Ctrl + S**. The **●** on the file's tab disappears when it is saved.
 5. Run it and type `5000`, Enter, `2000`, Enter:
    ```bash
    python3 exercises/week1/w1d2_battery_runtime.py
    ```
    ✔ The last line should be `Runtime: 2.50 hours`. Also try `1000` and `3000`. That should give `Runtime: 0.33 hours`.
+   ✘ If **nothing appears at all**, your file has no code yet or is not saved. Go back to step 3.
 6. Test it:
    ```bash
    pytest exercises/week1/tests/test_w1d2.py -k battery
@@ -256,6 +259,8 @@ Runtime: 2.50 hours
 > `deselected` means: the tests of the **other** exercises in this file were not run. That is what `-k` does, and it is fine.
 
 ### Exercise 2 of 2: Mission timer
+
+> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson and follow it while you do this exercise, especially [Part 3: a script exercise](../../docs/02-how-exercises-work.md#part-3-worked-example-a-script-exercise-days-12) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
 **Your task:** ask for a number of seconds. Print it as hours, minutes and seconds.
 
@@ -269,16 +274,17 @@ Seconds: 3725
 
 **Steps:**
 
-1. Open `exercises/week1/w1d2_time_format.py`.
+1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d2_time_format.py`. (Or press **Ctrl + P**, type `w1d2_time_format.py` and press Enter.) The file opens in the editor.
 2. Read the instructions at the top of the file.
 3. Write your code below `TODO`. Use `//` and `%` (section 3 of this lesson, "`//` and `%` together"). There are 3600 seconds in an hour and 60 in a minute.
    Tip: first work it out on paper for 3725: how many full hours? How many seconds are left? How many full minutes in those?
-4. Save: **Ctrl + S**.
+4. Save: **Ctrl + S**. The **●** on the file's tab disappears when it is saved.
 5. Run it and type `3725`:
    ```bash
    python3 exercises/week1/w1d2_time_format.py
    ```
    ✔ You should see `1 h 2 m 5 s`. Also try `59` (→ `0 h 0 m 59 s`) and `7200` (→ `2 h 0 m 0 s`).
+   ✘ If **nothing appears at all**, your file has no code yet or is not saved. Go back to step 3.
 6. Test it:
    ```bash
    pytest exercises/week1/tests/test_w1d2.py -k time_format

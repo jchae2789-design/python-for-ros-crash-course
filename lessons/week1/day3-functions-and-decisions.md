@@ -232,6 +232,8 @@ All three functions are in `exercises/week1/w1d3_conditions.py`. Open it in VS C
 
 ### Exercise 1 of 3: `battery_status(percent)`
 
+> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson and follow it while you do this exercise, especially [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
+
 **Your task:** return a status word for a battery level:
 
 | `percent` | return |
@@ -244,10 +246,11 @@ All three functions are in `exercises/week1/w1d3_conditions.py`. Open it in VS C
 
 **Steps:**
 
-1. In `w1d3_conditions.py`, find `def battery_status(percent):`.
-2. Replace `pass` with an `if` / `elif` / `else` that returns the right word. Think about the **order** of your checks (section 3, "`elif`: more choices").
-3. Save: **Ctrl + S**.
-4. Try it yourself:
+1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d3_conditions.py`. (Or press **Ctrl + P**, type `w1d3_conditions.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
+2. In `w1d3_conditions.py`, find `def battery_status(percent):`.
+3. Replace `pass` with an `if` / `elif` / `else` that returns the right word. Think about the **order** of your checks (section 3, "`elif`: more choices").
+4. Save: **Ctrl + S**.
+5. Try it yourself:
    ```bash
    python3 -i exercises/week1/w1d3_conditions.py
    ```
@@ -261,48 +264,54 @@ All three functions are in `exercises/week1/w1d3_conditions.py`. Open it in VS C
    >>> exit()
    ```
    ✔ You should get the answers shown. If you changed your code, `exit()` and start `python3 -i` again.
-5. Test it:
+6. Test it:
    ```bash
    pytest exercises/week1/tests/test_w1d3.py -k battery_status
    ```
    ✔ You should see `10 passed, 11 deselected`.
-6. Check the box for `battery_status` in [progress/week1.md](../../progress/week1.md).
+7. Check the box for `battery_status` in [progress/week1.md](../../progress/week1.md).
 
 > `deselected` means: the tests of the **other** exercises in this file were not run. That is what `-k` does, and it is fine.
 
 ### Exercise 2 of 3: `can_launch(battery_percent, wind_speed, gps_ok)`
 
+> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson and follow it while you do this exercise, especially [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
+
 **Your task:** return `True` if a drone may take off, otherwise `False`. **All three** must be true: battery is 30 or more, wind is 8.0 or less, and `gps_ok` is `True`.
 
 **Steps:**
 
-1. Find `def can_launch(...)` in the same file.
-2. Replace `pass`. You can do it in one line with `and` (section 4: "you can return it directly").
-3. Save: **Ctrl + S**.
-4. Try it with `python3 -i exercises/week1/w1d3_conditions.py`:
+1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d3_conditions.py`. (Or press **Ctrl + P**, type `w1d3_conditions.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
+2. Find `def can_launch(...)` in the same file.
+3. Replace `pass`. You can do it in one line with `and` (section 4: "you can return it directly").
+4. Save: **Ctrl + S**.
+5. Try it with `python3 -i exercises/week1/w1d3_conditions.py`:
    ```python
    >>> can_launch(80, 3.5, True)
    True
    >>> can_launch(80, 3.5, False)
    False
    ```
-5. Test it:
+6. Test it:
    ```bash
    pytest exercises/week1/tests/test_w1d3.py -k can_launch
    ```
    ✔ You should see `5 passed, 16 deselected`.
-6. Check the box for `can_launch` in your checklist.
+7. Check the box for `can_launch` in your checklist.
 
 ### Exercise 3 of 3: `classify_distance(distance_m)`
+
+> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson and follow it while you do this exercise, especially [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
 **Your task:** a robot's LiDAR sees an obstacle. Return `"STOP"` if it is closer than 0.5 m, `"SLOW"` if it is closer than 2.0 m, otherwise `"GO"`.
 
 **Steps:**
 
-1. Find `def classify_distance(distance_m):`.
-2. Replace `pass` with an `if` / `elif` / `else`.
-3. Save: **Ctrl + S**.
-4. Try it with `python3 -i`:
+1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d3_conditions.py`. (Or press **Ctrl + P**, type `w1d3_conditions.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
+2. Find `def classify_distance(distance_m):`.
+3. Replace `pass` with an `if` / `elif` / `else`.
+4. Save: **Ctrl + S**.
+5. Try it with `python3 -i`:
    ```python
    >>> classify_distance(1.2)
    'SLOW'
@@ -310,12 +319,12 @@ All three functions are in `exercises/week1/w1d3_conditions.py`. Open it in VS C
    'SLOW'
    ```
    Exactly 0.5 is **not** closer than 0.5, so it is `'SLOW'`, not `'STOP'`.
-5. Test it:
+6. Test it:
    ```bash
    pytest exercises/week1/tests/test_w1d3.py -k classify_distance
    ```
    ✔ You should see `6 passed, 15 deselected`.
-6. Check the box for `classify_distance` in your checklist.
+7. Check the box for `classify_distance` in your checklist.
 
 ### Finally: all of today's tests
 

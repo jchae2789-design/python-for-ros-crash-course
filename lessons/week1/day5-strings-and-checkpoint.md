@@ -144,6 +144,8 @@ All four functions are in `exercises/week1/w1d5_strings.py`. Open it in VS Code 
 
 ### Exercise 1 of 4: `clean_command(text)`
 
+> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson and follow it while you do this exercise, especially [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
+
 **Your task:** remove spaces and newlines at both ends, and make the text lowercase.
 
 ```python
@@ -153,18 +155,21 @@ All four functions are in `exercises/week1/w1d5_strings.py`. Open it in VS Code 
 
 **Steps:**
 
-1. Replace `pass`. You need two methods from section 3, chained together.
-2. Save and try it with `python3 -i`.
-3. Test it:
+1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d5_strings.py`. (Or press **Ctrl + P**, type `w1d5_strings.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
+2. Replace `pass`. You need two methods from section 3, chained together.
+3. Save and try it with `python3 -i`.
+4. Test it:
    ```bash
    pytest exercises/week1/tests/test_w1d5.py -k clean_command
    ```
    ✔ You should see `3 passed, 16 deselected`.
-4. Check the box for `clean_command`.
+5. Check the box for `clean_command`.
 
 > `deselected` means: the tests of the **other** exercises in this file were not run. That is what `-k` does, and it is fine.
 
 ### Exercise 2 of 4: `make_topic_name(robot_name, sensor)`
+
+> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson and follow it while you do this exercise, especially [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
 **Your task:** build a ROS topic name: lowercase everything, replace spaces with `_`, and join as `/<robot>/<sensor>`.
 
@@ -175,16 +180,19 @@ All four functions are in `exercises/week1/w1d5_strings.py`. Open it in VS Code 
 
 **Steps:**
 
-1. Replace `pass`. Clean each part with `.lower()` and `.replace(" ", "_")`, then join them with `"/"` (section 3, "Joining strings").
-2. Save and try it with `python3 -i`.
-3. Test it:
+1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d5_strings.py`. (Or press **Ctrl + P**, type `w1d5_strings.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
+2. Replace `pass`. Clean each part with `.lower()` and `.replace(" ", "_")`, then join them with `"/"` (section 3, "Joining strings").
+3. Save and try it with `python3 -i`.
+4. Test it:
    ```bash
    pytest exercises/week1/tests/test_w1d5.py -k make_topic_name
    ```
    ✔ You should see `3 passed, 16 deselected`.
-4. Check the box for `make_topic_name`.
+5. Check the box for `make_topic_name`.
 
 ### Exercise 3 of 4: `is_valid_robot_id(robot_id)`
+
+> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson and follow it while you do this exercise, especially [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
 **Your task:** return `True` if the text looks like `RR-0042`: exactly 7 characters, 2 uppercase letters, then `-`, then 4 digits. Otherwise return `False`.
 
@@ -199,20 +207,23 @@ False
 
 **Steps:**
 
-1. Replace `pass`. Check the parts **in this order**:
+1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d5_strings.py`. (Or press **Ctrl + P**, type `w1d5_strings.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
+2. Replace `pass`. Check the parts **in this order**:
    1. Is `len(robot_id)` exactly 7? If not, `return False` immediately. Otherwise `robot_id[2]` could crash on a short text.
    2. Are the first 2 characters (`robot_id[0:2]`) letters **and** uppercase?
    3. Is character 2 (`robot_id[2]`) a `"-"`?
    4. Are the last 4 characters (`robot_id[3:]`) digits?
-2. Save and try it with `python3 -i`. Also try `""` (empty text). It must return `False`, not crash.
-3. Test it:
+3. Save and try it with `python3 -i`. Also try `""` (empty text). It must return `False`, not crash.
+4. Test it:
    ```bash
    pytest exercises/week1/tests/test_w1d5.py -k is_valid_robot_id
    ```
    ✔ You should see `9 passed, 10 deselected`.
-4. Check the box for `is_valid_robot_id`.
+5. Check the box for `is_valid_robot_id`.
 
 ### Exercise 4 of 4: `count_char(text, ch)`
+
+> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson and follow it while you do this exercise, especially [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
 **Your task:** count how many times the character `ch` appears in `text`. Use a `for` loop, not `.count()`.
 
@@ -223,14 +234,15 @@ False
 
 **Steps:**
 
-1. Replace `pass`. Loop over the text (section 5) and count with the accumulator pattern.
-2. Save and try it with `python3 -i`.
-3. Test it:
+1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d5_strings.py`. (Or press **Ctrl + P**, type `w1d5_strings.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
+2. Replace `pass`. Loop over the text (section 5) and count with the accumulator pattern.
+3. Save and try it with `python3 -i`.
+4. Test it:
    ```bash
    pytest exercises/week1/tests/test_w1d5.py -k count_char
    ```
    ✔ You should see `4 passed, 15 deselected`.
-4. Check the box for `count_char`.
+5. Check the box for `count_char`.
 
 ### Finally: all of today's tests, and the whole week
 

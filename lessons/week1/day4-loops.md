@@ -187,13 +187,108 @@ print(count_even(10))        # 5
 
 ## 8. Exercises
 
-Open `exercises/week1/w1d4_loops.py`. There are four functions.
+**How to do the exercises:** do them **in order**, one at a time. Each exercise below has numbered steps. Follow them from 1 to the end, then go to the next exercise. If a step does not work, look at [How exercises work, Part 5](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
-Tip for `steps_until_low`: draw a table like in section 2 with pen and paper for the example `steps_until_low(100, 10, 50)` before you write code.
+All four functions are in `exercises/week1/w1d4_loops.py`. Open it in VS Code now. For each one: replace `pass`, save, try it with `python3 -i exercises/week1/w1d4_loops.py`, run its tests, then check its box in [progress/week1.md](../../progress/week1.md).
+
+### Exercise 1 of 4: `countdown(n)`
+
+**Your task:** return a text that counts down from `n` to 1, then `GO!`, separated by spaces.
+
+```python
+>>> countdown(3)
+'3 2 1 GO!'
+>>> countdown(0)
+'GO!'
+```
+
+**Steps:**
+
+1. Replace `pass`. Use the "building text" pattern from section 2: start with `text = ""`, add to it in a `for` loop with a counting-down `range` (section 1), and add `"GO!"` at the end. Use `str(i)` to turn a number into text.
+2. Save and try it with `python3 -i`. You should get the results above.
+3. Test it:
+   ```bash
+   pytest exercises/week1/tests/test_w1d4.py -k countdown
+   ```
+   ✔ You should see `4 passed, 12 deselected`.
+4. Check the box for `countdown`.
+
+> `deselected` means: the tests of the **other** exercises in this file were not run. That is what `-k` does, and it is fine.
+
+### Exercise 2 of 4: `sum_to(n)`
+
+**Your task:** return 1 + 2 + … + n, using a loop.
+
+```python
+>>> sum_to(4)
+10
+>>> sum_to(0)
+0
+```
+
+**Steps:**
+
+1. Replace `pass`. This is exactly the accumulator pattern in section 2. Remember: to include `n`, use `range(1, n + 1)`.
+2. Save and try it with `python3 -i`.
+3. Test it:
+   ```bash
+   pytest exercises/week1/tests/test_w1d4.py -k sum_to
+   ```
+   ✔ You should see `4 passed, 12 deselected`.
+4. Check the box for `sum_to`.
+
+### Exercise 3 of 4: `steps_until_low(battery, drain_per_step, low_level)`
+
+**Your task:** each step, the robot loses `drain_per_step` battery. Return how many steps it takes until the battery is at `low_level` or below.
+
+```python
+>>> steps_until_low(100, 10, 50)
+5
+>>> steps_until_low(10, 5, 20)
+0
+```
+
+**Steps:**
+
+1. **First, on paper:** draw a table like in section 2 for `steps_until_low(100, 10, 50)`, with columns *step* and *battery*. Count until the battery is 50 or below. You should get 5.
+2. Replace `pass`. Use a `while` loop (section 3): keep going **while** the battery is above `low_level`. Inside, subtract the drain and add 1 to a step counter.
+3. Save and try it with `python3 -i`. If it never finishes, press **Ctrl + C**: your battery is not going down.
+4. Test it:
+   ```bash
+   pytest exercises/week1/tests/test_w1d4.py -k steps_until_low
+   ```
+   ✔ You should see `4 passed, 12 deselected`.
+5. Check the box for `steps_until_low`.
+
+### Exercise 4 of 4: `count_multiples(limit, k)`
+
+**Your task:** count the numbers from 1 to `limit` (including `limit`) that `k` divides evenly.
+
+```python
+>>> count_multiples(10, 3)
+3
+```
+
+(3, 6 and 9.)
+
+**Steps:**
+
+1. Replace `pass`. Loop over 1 to `limit` and count the numbers where `x % k == 0`. This is the counting example in section 2.
+2. Save and try it with `python3 -i`.
+3. Test it:
+   ```bash
+   pytest exercises/week1/tests/test_w1d4.py -k count_multiples
+   ```
+   ✔ You should see `4 passed, 12 deselected`.
+4. Check the box for `count_multiples`.
+
+### Finally: all of today's tests
 
 ```bash
 pytest exercises/week1/tests/test_w1d4.py
 ```
+
+✔ You should see **`16 passed`**. Check the "Tests pass" box in your checklist.
 
 ---
 

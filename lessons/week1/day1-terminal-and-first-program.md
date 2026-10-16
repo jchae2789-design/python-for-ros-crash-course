@@ -204,26 +204,78 @@ Python does not know `prnt`. It even tells you what you probably meant!
 
 > First time? Read [How exercises work](../../docs/02-how-exercises-work.md), Parts 1–3, before you start.
 
-Delete `playground.py` when you are done playing (`rm playground.py`).
+Before you start: delete your practice file with `rm playground.py`.
 
-Open the exercise files in VS Code:
+**How to do the exercises:** do them **in order**, one at a time. Each exercise below has numbered steps. Follow them from 1 to the end, then go to the next exercise. If a step does not work, look at [How exercises work, Part 5](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
-1. `exercises/week1/w1d1_hello.py`
-2. `exercises/week1/w1d1_robot_card.py`
+Today's exercises check your output **exactly**: every capital letter, space and punctuation mark counts. `Hello, ROS!` is not the same as `Hello ROS!` or `hello, ros!`.
 
-Read the instructions at the top of each file, write your code under `TODO`, and run it:
+### Exercise 1 of 2: Hello, ROS!
 
-```bash
-python3 exercises/week1/w1d1_hello.py
+**Your task:** write a program that prints one line: `Hello, ROS!`
+
+**What it should look like:**
+
+```
+$ python3 exercises/week1/w1d1_hello.py
+Hello, ROS!
 ```
 
-When it looks right, run the tests:
+**Steps:**
+
+1. In VS Code, open `exercises/week1/w1d1_hello.py` (in the file list on the left: `exercises` → `week1`).
+2. Read the instructions at the top of the file.
+3. Write your code on the empty line below `# TODO: write your code below this line`. You need one `print()`.
+4. Save the file: **Ctrl + S**.
+5. Run it in the terminal:
+   ```bash
+   python3 exercises/week1/w1d1_hello.py
+   ```
+   ✔ You should see `Hello, ROS!`
+6. Test it:
+   ```bash
+   pytest exercises/week1/tests/test_w1d1.py -k hello
+   ```
+   ✔ You should see `1 passed, 1 deselected`. If not, read the message, fix your code and go back to step 4.
+7. Check the box for this exercise in [progress/week1.md](../../progress/week1.md).
+
+> `deselected` means: the tests of the **other** exercises in this file were not run. That is what `-k` does, and it is fine.
+
+### Exercise 2 of 2: Robot info card
+
+**Your task:** write a program that prints exactly these 3 lines:
+
+```
+Robot: RR-01
+Type: Rail robot
+Status: READY
+```
+
+**Steps:**
+
+1. Open `exercises/week1/w1d1_robot_card.py`.
+2. Read the instructions at the top of the file.
+3. Write your code below `TODO`. Use one `print()` for each line.
+4. Save: **Ctrl + S**.
+5. Run it:
+   ```bash
+   python3 exercises/week1/w1d1_robot_card.py
+   ```
+   ✔ You should see the 3 lines above. Compare them letter by letter.
+6. Test it:
+   ```bash
+   pytest exercises/week1/tests/test_w1d1.py -k robot_card
+   ```
+   ✔ You should see `1 passed, 1 deselected`.
+7. Check the box for this exercise in your checklist.
+
+### Finally: all of today's tests
 
 ```bash
 pytest exercises/week1/tests/test_w1d1.py
 ```
 
-The tests check the output **exactly**: every capital letter, space and punctuation mark counts. `Hello, ROS!` is not the same as `Hello ROS!` or `hello, ros!`.
+✔ You should see **`2 passed`**. Check the "Tests pass" box in your checklist.
 
 ---
 

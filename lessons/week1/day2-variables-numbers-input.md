@@ -217,20 +217,82 @@ Speed (m/s): 2.5
 
 ## 8. Exercises
 
-1. `exercises/week1/w1d2_battery_runtime.py`
-2. `exercises/week1/w1d2_time_format.py`
+**How to do the exercises:** do them **in order**, one at a time. Each exercise below has numbered steps. Follow them from 1 to the end, then go to the next exercise. If a step does not work, look at [How exercises work, Part 5](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
-Run your program and type the example values yourself:
+### Exercise 1 of 2: Battery runtime
 
-```bash
-python3 exercises/week1/w1d2_battery_runtime.py
+**Your task:** ask for a battery's capacity (mAh) and the current the robot uses (mA). Print how many hours the battery lasts: capacity ÷ current, with 2 decimals.
+
+**What it should look like** (you type `5000` and `2000`):
+
+```
+$ python3 exercises/week1/w1d2_battery_runtime.py
+Capacity (mAh): 5000
+Current (mA): 2000
+Runtime: 2.50 hours
 ```
 
-Then test:
+**Steps:**
+
+1. Open `exercises/week1/w1d2_battery_runtime.py`.
+2. Read the instructions at the top of the file.
+3. Write your code below `TODO`. You need:
+   - two `input()` calls, each wrapped in `int()` (section 5 of this lesson),
+   - one division,
+   - one `print()` with an f-string and `:.2f` (section 6).
+4. Save: **Ctrl + S**.
+5. Run it and type `5000`, Enter, `2000`, Enter:
+   ```bash
+   python3 exercises/week1/w1d2_battery_runtime.py
+   ```
+   ✔ The last line should be `Runtime: 2.50 hours`. Also try `1000` and `3000`. That should give `Runtime: 0.33 hours`.
+6. Test it:
+   ```bash
+   pytest exercises/week1/tests/test_w1d2.py -k battery
+   ```
+   ✔ You should see `3 passed, 3 deselected`. The test runs your program 3 times with different numbers.
+7. Check the box for this exercise in [progress/week1.md](../../progress/week1.md).
+
+> `deselected` means: the tests of the **other** exercises in this file were not run. That is what `-k` does, and it is fine.
+
+### Exercise 2 of 2: Mission timer
+
+**Your task:** ask for a number of seconds. Print it as hours, minutes and seconds.
+
+**What it should look like** (you type `3725`):
+
+```
+$ python3 exercises/week1/w1d2_time_format.py
+Seconds: 3725
+1 h 2 m 5 s
+```
+
+**Steps:**
+
+1. Open `exercises/week1/w1d2_time_format.py`.
+2. Read the instructions at the top of the file.
+3. Write your code below `TODO`. Use `//` and `%` (section 3 of this lesson, "`//` and `%` together"). There are 3600 seconds in an hour and 60 in a minute.
+   Tip: first work it out on paper for 3725: how many full hours? How many seconds are left? How many full minutes in those?
+4. Save: **Ctrl + S**.
+5. Run it and type `3725`:
+   ```bash
+   python3 exercises/week1/w1d2_time_format.py
+   ```
+   ✔ You should see `1 h 2 m 5 s`. Also try `59` (→ `0 h 0 m 59 s`) and `7200` (→ `2 h 0 m 0 s`).
+6. Test it:
+   ```bash
+   pytest exercises/week1/tests/test_w1d2.py -k time_format
+   ```
+   ✔ You should see `3 passed, 3 deselected`.
+7. Check the box for this exercise in your checklist.
+
+### Finally: all of today's tests
 
 ```bash
 pytest exercises/week1/tests/test_w1d2.py
 ```
+
+✔ You should see **`6 passed`**. Check the "Tests pass" box in your checklist.
 
 ---
 

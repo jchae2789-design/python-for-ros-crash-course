@@ -221,27 +221,111 @@ Wrong indentation gives `IndentationError`, or worse: no error, but the wrong be
 
 > From today, exercises are **functions**. Read [How exercises work, Part 4](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) first.
 
-Open `exercises/week1/w1d3_conditions.py`. It has three functions. Replace `pass` with your code.
+All of today's functions are in **one file**. You write them one at a time. For each function, you:
+- replace `pass` with your code (keep the `def ...` line exactly as it is),
+- use `return` to give back the answer (not `print`),
+- try it yourself with `python3 -i`, then run only **its** tests with `-k`.
 
-To check your work by hand, load your file in interactive mode and call your functions:
+**How to do the exercises:** do them **in order**, one at a time. Each exercise below has numbered steps. Follow them from 1 to the end, then go to the next exercise. If a step does not work, look at [How exercises work, Part 5](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
-```bash
-python3 -i exercises/week1/w1d3_conditions.py
-```
+All three functions are in `exercises/week1/w1d3_conditions.py`. Open it in VS Code now.
 
-```python
->>> battery_status(55)
-'OK'
->>> exit()
-```
+### Exercise 1 of 3: `battery_status(percent)`
 
-Then run the tests:
+**Your task:** return a status word for a battery level:
+
+| `percent` | return |
+|---|---|
+| below 0 or above 100 | `"INVALID"` |
+| 90 or more | `"FULL"` |
+| 40 or more | `"OK"` |
+| 15 or more | `"LOW"` |
+| anything lower | `"CRITICAL"` |
+
+**Steps:**
+
+1. In `w1d3_conditions.py`, find `def battery_status(percent):`.
+2. Replace `pass` with an `if` / `elif` / `else` that returns the right word. Think about the **order** of your checks (section 3, "`elif`: more choices").
+3. Save: **Ctrl + S**.
+4. Try it yourself:
+   ```bash
+   python3 -i exercises/week1/w1d3_conditions.py
+   ```
+   ```python
+   >>> battery_status(55)
+   'OK'
+   >>> battery_status(90)
+   'FULL'
+   >>> battery_status(101)
+   'INVALID'
+   >>> exit()
+   ```
+   ✔ You should get the answers shown. If you changed your code, `exit()` and start `python3 -i` again.
+5. Test it:
+   ```bash
+   pytest exercises/week1/tests/test_w1d3.py -k battery_status
+   ```
+   ✔ You should see `10 passed, 11 deselected`.
+6. Check the box for `battery_status` in [progress/week1.md](../../progress/week1.md).
+
+> `deselected` means: the tests of the **other** exercises in this file were not run. That is what `-k` does, and it is fine.
+
+### Exercise 2 of 3: `can_launch(battery_percent, wind_speed, gps_ok)`
+
+**Your task:** return `True` if a drone may take off, otherwise `False`. **All three** must be true: battery is 30 or more, wind is 8.0 or less, and `gps_ok` is `True`.
+
+**Steps:**
+
+1. Find `def can_launch(...)` in the same file.
+2. Replace `pass`. You can do it in one line with `and` (section 4: "you can return it directly").
+3. Save: **Ctrl + S**.
+4. Try it with `python3 -i exercises/week1/w1d3_conditions.py`:
+   ```python
+   >>> can_launch(80, 3.5, True)
+   True
+   >>> can_launch(80, 3.5, False)
+   False
+   ```
+5. Test it:
+   ```bash
+   pytest exercises/week1/tests/test_w1d3.py -k can_launch
+   ```
+   ✔ You should see `5 passed, 16 deselected`.
+6. Check the box for `can_launch` in your checklist.
+
+### Exercise 3 of 3: `classify_distance(distance_m)`
+
+**Your task:** a robot's LiDAR sees an obstacle. Return `"STOP"` if it is closer than 0.5 m, `"SLOW"` if it is closer than 2.0 m, otherwise `"GO"`.
+
+**Steps:**
+
+1. Find `def classify_distance(distance_m):`.
+2. Replace `pass` with an `if` / `elif` / `else`.
+3. Save: **Ctrl + S**.
+4. Try it with `python3 -i`:
+   ```python
+   >>> classify_distance(1.2)
+   'SLOW'
+   >>> classify_distance(0.5)
+   'SLOW'
+   ```
+   Exactly 0.5 is **not** closer than 0.5, so it is `'SLOW'`, not `'STOP'`.
+5. Test it:
+   ```bash
+   pytest exercises/week1/tests/test_w1d3.py -k classify_distance
+   ```
+   ✔ You should see `6 passed, 15 deselected`.
+6. Check the box for `classify_distance` in your checklist.
+
+### Finally: all of today's tests
 
 ```bash
 pytest exercises/week1/tests/test_w1d3.py
 ```
 
-Look closely at the edge values in the tests: `90`, `40`, `15`, `0.5`, `2.0`, `8.0`. They check whether you used `<` or `<=` correctly.
+✔ You should see **`21 passed`**. Check the "Tests pass" box in your checklist.
+
+The tests use edge values like exactly `90`, `40`, `15`, `0.5`, `2.0` and `8.0`. If only one or two tests fail, check `<` vs `<=` and `>` vs `>=`.
 
 ---
 

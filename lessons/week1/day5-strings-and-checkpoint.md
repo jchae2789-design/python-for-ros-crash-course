@@ -138,19 +138,113 @@ print(digits)       # 4
 
 ## 7. Exercises (morning)
 
-Open `exercises/week1/w1d5_strings.py`. There are four functions.
+**How to do the exercises:** do them **in order**, one at a time. Each exercise below has numbered steps. Follow them from 1 to the end, then go to the next exercise. If a step does not work, look at [How exercises work, Part 5](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
-For `is_valid_robot_id`, check the length **first**. If the text is too short, `robot_id[2]` would crash.
+All four functions are in `exercises/week1/w1d5_strings.py`. Open it in VS Code now. For each one: replace `pass`, save, try it with `python3 -i exercises/week1/w1d5_strings.py`, run its tests, then check its box in [progress/week1.md](../../progress/week1.md).
+
+### Exercise 1 of 4: `clean_command(text)`
+
+**Your task:** remove spaces and newlines at both ends, and make the text lowercase.
+
+```python
+>>> clean_command("  FORWARD \n")
+'forward'
+```
+
+**Steps:**
+
+1. Replace `pass`. You need two methods from section 3, chained together.
+2. Save and try it with `python3 -i`.
+3. Test it:
+   ```bash
+   pytest exercises/week1/tests/test_w1d5.py -k clean_command
+   ```
+   ✔ You should see `3 passed, 16 deselected`.
+4. Check the box for `clean_command`.
+
+> `deselected` means: the tests of the **other** exercises in this file were not run. That is what `-k` does, and it is fine.
+
+### Exercise 2 of 4: `make_topic_name(robot_name, sensor)`
+
+**Your task:** build a ROS topic name: lowercase everything, replace spaces with `_`, and join as `/<robot>/<sensor>`.
+
+```python
+>>> make_topic_name("Rail Robot 1", "LiDAR")
+'/rail_robot_1/lidar'
+```
+
+**Steps:**
+
+1. Replace `pass`. Clean each part with `.lower()` and `.replace(" ", "_")`, then join them with `"/"` (section 3, "Joining strings").
+2. Save and try it with `python3 -i`.
+3. Test it:
+   ```bash
+   pytest exercises/week1/tests/test_w1d5.py -k make_topic_name
+   ```
+   ✔ You should see `3 passed, 16 deselected`.
+4. Check the box for `make_topic_name`.
+
+### Exercise 3 of 4: `is_valid_robot_id(robot_id)`
+
+**Your task:** return `True` if the text looks like `RR-0042`: exactly 7 characters, 2 uppercase letters, then `-`, then 4 digits. Otherwise return `False`.
+
+```python
+>>> is_valid_robot_id("RR-0042")
+True
+>>> is_valid_robot_id("rr-0042")
+False
+>>> is_valid_robot_id("RR0042")
+False
+```
+
+**Steps:**
+
+1. Replace `pass`. Check the parts **in this order**:
+   1. Is `len(robot_id)` exactly 7? If not, `return False` immediately. Otherwise `robot_id[2]` could crash on a short text.
+   2. Are the first 2 characters (`robot_id[0:2]`) letters **and** uppercase?
+   3. Is character 2 (`robot_id[2]`) a `"-"`?
+   4. Are the last 4 characters (`robot_id[3:]`) digits?
+2. Save and try it with `python3 -i`. Also try `""` (empty text). It must return `False`, not crash.
+3. Test it:
+   ```bash
+   pytest exercises/week1/tests/test_w1d5.py -k is_valid_robot_id
+   ```
+   ✔ You should see `9 passed, 10 deselected`.
+4. Check the box for `is_valid_robot_id`.
+
+### Exercise 4 of 4: `count_char(text, ch)`
+
+**Your task:** count how many times the character `ch` appears in `text`. Use a `for` loop, not `.count()`.
+
+```python
+>>> count_char("rail robot", "o")
+2
+```
+
+**Steps:**
+
+1. Replace `pass`. Loop over the text (section 5) and count with the accumulator pattern.
+2. Save and try it with `python3 -i`.
+3. Test it:
+   ```bash
+   pytest exercises/week1/tests/test_w1d5.py -k count_char
+   ```
+   ✔ You should see `4 passed, 15 deselected`.
+4. Check the box for `count_char`.
+
+### Finally: all of today's tests, and the whole week
 
 ```bash
 pytest exercises/week1/tests/test_w1d5.py
 ```
 
-Then check the **whole week**:
+✔ You should see **`19 passed`**. Check the "Tests pass" box.
 
 ```bash
 pytest exercises/week1
 ```
+
+✔ You should see **`64 passed`**: all exercises of Days 1–5. Check "The whole week passes" box. If something from an earlier day fails now, fix it before the checkpoint.
 
 ---
 

@@ -253,8 +253,7 @@ $ python3 -i playground.py
    pytest exercises/week1/tests/test_w1d4.py -k countdown
    ```
    ✔ `4 passed, 8 deselected`가 나와야 합니다.
-5. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
-   `countdown` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
+5. VS Code 터미널에서 `python3 next.py`를 실행하세요. 테스트가 통과했으면 다음 단계가 나타납니다.
 
 > `deselected`는 이 파일에 있는 **다른** 연습 문제의 테스트는 실행하지 않았다는 뜻입니다. `-k`를 사용하면 이렇게 되니 괜찮습니다.
 
@@ -317,8 +316,7 @@ $ python3 -i playground.py
    pytest exercises/week1/tests/test_w1d4.py -k sum_to
    ```
    ✔ `4 passed, 8 deselected`가 나와야 합니다.
-5. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
-   `sum_to` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
+5. VS Code 터미널에서 `python3 next.py`를 실행하세요. 테스트가 통과했으면 다음 단계가 나타납니다.
 
 ### 연습 문제 3/3: `steps_until_low(battery, drain_per_step, low_level)`
 
@@ -381,12 +379,11 @@ $ python3 -i playground.py
    pytest exercises/week1/tests/test_w1d4.py -k steps_until_low
    ```
    ✔ `4 passed, 8 deselected`가 나와야 합니다.
-6. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
-   `steps_until_low` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
+6. VS Code 터미널에서 `python3 next.py`를 실행하세요. 테스트가 통과했으면 다음 단계가 나타납니다.
 
 ### 추가 도전(선택): `count_multiples(limit, k)`
 
-시간이 남을 때만 하세요. 테스트하지 않으며 체크리스트에도 없습니다.
+시간이 남을 때만 하세요. 테스트하지 않으며 `python3 next.py`의 단계에도 없습니다.
 
 `playground.py`의 내용을 지우고, 1부터 `limit`까지(`limit` 포함) 중에서 `k`로 나누어떨어지는 숫자의 개수를 반환하는 `count_multiples(limit, k)` 함수를 작성하세요. `x % k == 0`이면 `x`가 `k`로 나누어떨어집니다. 2절의 개수 세기 예제와 같은 방법입니다.
 
@@ -400,18 +397,19 @@ VS Code 터미널에서 [`test_w1d4.py`](../../exercises/week1/tests/test_w1d4.p
 pytest exercises/week1/tests/test_w1d4.py
 ```
 
-✔ **`12 passed`**가 나와야 합니다. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)의 4일차 "테스트 통과" 항목을 체크하세요. **Ctrl + S**로 저장하세요.
+✔ **`12 passed`**가 나와야 합니다. VS Code 터미널에서 `python3 next.py`를 실행하세요.
 
 ---
 
 ## 9. 오늘 마치기 전에
 
-VS Code 편집기에서 [progress/week1.md](../../progress/week1.md)를 여세요. 완료한 4일차 항목마다 `[x]`로 체크하세요.
-**Ctrl + S**로 저장하세요. 4일차 항목을 모두 체크한 뒤에만 5일차를 시작하세요.
+VS Code 터미널에서 `python3 next.py`를 실행하세요. 오늘 남은 단계를 하나씩 안내합니다.
 
-- [ ] `pytest exercises/week1/tests/test_w1d4.py` 실행 결과: **12 passed**
-- [ ] `range(2, 8, 2)`를 실행하지 않고 어떤 숫자가 나오는지 말할 수 있습니다
-- [ ] 끝나지 않는 프로그램을 멈추는 방법을 압니다
-- [ ] 실습 일지 작성, 커밋, 푸시 완료
+- 수업 내용을 설명할 수 있는지 묻는 질문에 답하세요.
+- 실습 일지를 쓰세요. `python3 next.py`가 오늘 날짜의 일지가 있는지 자동으로 확인합니다.
+- 커밋하고 푸시하세요. 푸시했는지도 자동으로 확인합니다.
+- 마지막으로 멘토와 점검하세요.
+
+`python3 next.py`가 **5일차**를 지금 할 일로 보여 줄 때 다음 수업을 시작하세요.
 
 **다음:** [5일차: 문자열 다루기 + 주간 과제](day5-strings-and-checkpoint.md)

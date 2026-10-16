@@ -1,0 +1,695 @@
+{
+  "week": 1,
+  "title": "1주차",
+  "sections": [
+    {
+      "key": "start",
+      "title": "시작 준비"
+    },
+    {
+      "key": "d1",
+      "title": "1일차: 터미널과 첫 프로그램"
+    },
+    {
+      "key": "d2",
+      "title": "2일차: 변수, 숫자, 입력"
+    },
+    {
+      "key": "d3",
+      "title": "3일차: 조건에 따라 판단하기, 함수와 if 문"
+    },
+    {
+      "key": "d4",
+      "title": "4일차: 반복하기, for 문과 while 문"
+    },
+    {
+      "key": "d5",
+      "title": "5일차: 문자열 다루기"
+    },
+    {
+      "key": "cp",
+      "title": "5일차 오후: 주간 과제"
+    }
+  ],
+  "steps": [
+    {
+      "id": "setup",
+      "section": "start",
+      "kind": "setup",
+      "label": "컴퓨터 설치 및 준비",
+      "open": [
+        "docs/00-setup.md"
+      ]
+    },
+    {
+      "id": "read_study",
+      "section": "start",
+      "kind": "manual",
+      "label": "이 과정의 공부 방법 읽기",
+      "ask": "\"이 과정의 공부 방법\"을 끝까지 읽었습니까?",
+      "open": [
+        "docs/01-how-to-study.md"
+      ]
+    },
+    {
+      "id": "read_ex13",
+      "section": "start",
+      "kind": "manual",
+      "label": "연습 문제 진행 방법 1–3부 읽기",
+      "ask": "\"연습 문제 진행 방법\"의 1–3부를 읽었습니까?",
+      "open": [
+        "docs/02-how-exercises-work.md"
+      ]
+    },
+    {
+      "id": "d1_read",
+      "section": "d1",
+      "kind": "manual",
+      "label": "수업 읽기(연습 문제 절 앞까지), 모든 예제 직접 입력",
+      "ask": "수업을 연습 문제 절 앞까지 읽고 모든 예제를 직접 입력해서 실행했습니까?",
+      "open": [
+        "lessons/week1/day1-terminal-and-first-program.md"
+      ]
+    },
+    {
+      "id": "d1_try",
+      "section": "d1",
+      "kind": "manual",
+      "label": "직접 해 보기: 폴더 이동, 출력",
+      "ask": "수업의 \"직접 해 보기\"를 모두 마쳤습니까?",
+      "open": [
+        "lessons/week1/day1-terminal-and-first-program.md"
+      ]
+    },
+    {
+      "id": "d1_hello",
+      "section": "d1",
+      "kind": "test",
+      "label": "연습 문제 w1d1_hello.py",
+      "paths": [
+        "exercises/week1/tests/test_w1d1.py"
+      ],
+      "k": "hello",
+      "cmd": "pytest exercises/week1/tests/test_w1d1.py -k hello",
+      "open": [
+        "lessons/week1/day1-terminal-and-first-program.md (연습 문제 1/2)",
+        "exercises/week1/w1d1_hello.py"
+      ]
+    },
+    {
+      "id": "d1_card",
+      "section": "d1",
+      "kind": "test",
+      "label": "연습 문제 w1d1_robot_card.py",
+      "paths": [
+        "exercises/week1/tests/test_w1d1.py"
+      ],
+      "k": "robot_card",
+      "cmd": "pytest exercises/week1/tests/test_w1d1.py -k robot_card",
+      "open": [
+        "lessons/week1/day1-terminal-and-first-program.md (연습 문제 2/2)",
+        "exercises/week1/w1d1_robot_card.py"
+      ]
+    },
+    {
+      "id": "d1_all",
+      "section": "d1",
+      "kind": "test",
+      "label": "1일차 테스트 전체 통과(2 passed)",
+      "paths": [
+        "exercises/week1/tests/test_w1d1.py"
+      ],
+      "k": "",
+      "cmd": "pytest exercises/week1/tests/test_w1d1.py",
+      "open": [
+        "lessons/week1/day1-terminal-and-first-program.md (마지막으로)"
+      ]
+    },
+    {
+      "id": "d1_explain",
+      "section": "d1",
+      "kind": "manual",
+      "label": "pwd, ls, cd, mkdir을 찾아보지 않고 사용할 수 있음",
+      "ask": "pwd, ls, cd, mkdir을 찾아보지 않고 사용할 수 있습니까?"
+    },
+    {
+      "id": "d1_log",
+      "section": "d1",
+      "kind": "log",
+      "label": "오늘 실습 일지 작성",
+      "open": [
+        "logs/TEMPLATE.md"
+      ]
+    },
+    {
+      "id": "d1_push",
+      "section": "d1",
+      "kind": "git",
+      "label": "커밋과 푸시",
+      "note": "git add .  →  git commit -m \"Week 1 Day 1\"  →  git push"
+    },
+    {
+      "id": "d1_mentor",
+      "section": "d1",
+      "kind": "manual",
+      "label": "멘토 점검",
+      "ask": "오늘 멘토 점검을 마쳤습니까?"
+    },
+    {
+      "id": "d2_read",
+      "section": "d2",
+      "kind": "manual",
+      "label": "수업 읽기(연습 문제 절 앞까지), 모든 예제 직접 입력",
+      "ask": "수업을 연습 문제 절 앞까지 읽고 모든 예제를 직접 입력해서 실행했습니까?",
+      "open": [
+        "lessons/week1/day2-variables-numbers-input.md"
+      ]
+    },
+    {
+      "id": "d2_try",
+      "section": "d2",
+      "kind": "manual",
+      "label": "직접 해 보기: 계산, 속도 변환",
+      "ask": "수업의 \"직접 해 보기\"를 모두 마쳤습니까?",
+      "open": [
+        "lessons/week1/day2-variables-numbers-input.md"
+      ]
+    },
+    {
+      "id": "d2_battery",
+      "section": "d2",
+      "kind": "test",
+      "label": "연습 문제 w1d2_battery_runtime.py",
+      "paths": [
+        "exercises/week1/tests/test_w1d2.py"
+      ],
+      "k": "battery",
+      "cmd": "pytest exercises/week1/tests/test_w1d2.py -k battery",
+      "open": [
+        "lessons/week1/day2-variables-numbers-input.md (연습 문제 1/2)",
+        "exercises/week1/w1d2_battery_runtime.py"
+      ]
+    },
+    {
+      "id": "d2_time",
+      "section": "d2",
+      "kind": "test",
+      "label": "연습 문제 w1d2_time_format.py",
+      "paths": [
+        "exercises/week1/tests/test_w1d2.py"
+      ],
+      "k": "time_format",
+      "cmd": "pytest exercises/week1/tests/test_w1d2.py -k time_format",
+      "open": [
+        "lessons/week1/day2-variables-numbers-input.md (연습 문제 2/2)",
+        "exercises/week1/w1d2_time_format.py"
+      ]
+    },
+    {
+      "id": "d2_all",
+      "section": "d2",
+      "kind": "test",
+      "label": "2일차 테스트 전체 통과(6 passed)",
+      "paths": [
+        "exercises/week1/tests/test_w1d2.py"
+      ],
+      "k": "",
+      "cmd": "pytest exercises/week1/tests/test_w1d2.py",
+      "open": [
+        "lessons/week1/day2-variables-numbers-input.md (마지막으로)"
+      ]
+    },
+    {
+      "id": "d2_explain",
+      "section": "d2",
+      "kind": "manual",
+      "label": "7, 7.0, \"7\"의 차이와 //, %를 설명할 수 있음",
+      "ask": "7, 7.0, \"7\"의 차이와 //, %가 하는 일을 수업을 보지 않고 소리 내어 설명할 수 있습니까?"
+    },
+    {
+      "id": "d2_log",
+      "section": "d2",
+      "kind": "log",
+      "label": "오늘 실습 일지 작성",
+      "open": [
+        "logs/TEMPLATE.md"
+      ]
+    },
+    {
+      "id": "d2_push",
+      "section": "d2",
+      "kind": "git",
+      "label": "커밋과 푸시",
+      "note": "git add .  →  git commit -m \"Week 1 Day 2\"  →  git push"
+    },
+    {
+      "id": "d2_mentor",
+      "section": "d2",
+      "kind": "manual",
+      "label": "멘토 점검",
+      "ask": "오늘 멘토 점검을 마쳤습니까?"
+    },
+    {
+      "id": "d3_read",
+      "section": "d3",
+      "kind": "manual",
+      "label": "수업 읽기(연습 문제 절 앞까지), 모든 예제 직접 입력",
+      "ask": "수업을 연습 문제 절 앞까지 읽고 모든 예제를 직접 입력해서 실행했습니까?",
+      "open": [
+        "lessons/week1/day3-functions-and-decisions.md"
+      ]
+    },
+    {
+      "id": "d3_try",
+      "section": "d3",
+      "kind": "manual",
+      "label": "직접 해 보기: needs_charging",
+      "ask": "수업의 \"직접 해 보기\"를 모두 마쳤습니까?",
+      "open": [
+        "lessons/week1/day3-functions-and-decisions.md"
+      ]
+    },
+    {
+      "id": "d3_part4",
+      "section": "d3",
+      "kind": "manual",
+      "label": "연습 문제 진행 방법 4부 읽기",
+      "ask": "\"연습 문제 진행 방법\"의 4부(함수 연습 문제)를 읽었습니까?",
+      "open": [
+        "docs/02-how-exercises-work.md"
+      ]
+    },
+    {
+      "id": "d3_battery",
+      "section": "d3",
+      "kind": "test",
+      "label": "함수 battery_status",
+      "paths": [
+        "exercises/week1/tests/test_w1d3.py"
+      ],
+      "k": "battery_status",
+      "cmd": "pytest exercises/week1/tests/test_w1d3.py -k battery_status",
+      "open": [
+        "lessons/week1/day3-functions-and-decisions.md (연습 문제 1/3)",
+        "exercises/week1/w1d3_conditions.py"
+      ]
+    },
+    {
+      "id": "d3_launch",
+      "section": "d3",
+      "kind": "test",
+      "label": "함수 can_launch",
+      "paths": [
+        "exercises/week1/tests/test_w1d3.py"
+      ],
+      "k": "can_launch",
+      "cmd": "pytest exercises/week1/tests/test_w1d3.py -k can_launch",
+      "open": [
+        "lessons/week1/day3-functions-and-decisions.md (연습 문제 2/3)",
+        "exercises/week1/w1d3_conditions.py"
+      ]
+    },
+    {
+      "id": "d3_distance",
+      "section": "d3",
+      "kind": "test",
+      "label": "함수 classify_distance",
+      "paths": [
+        "exercises/week1/tests/test_w1d3.py"
+      ],
+      "k": "classify_distance",
+      "cmd": "pytest exercises/week1/tests/test_w1d3.py -k classify_distance",
+      "open": [
+        "lessons/week1/day3-functions-and-decisions.md (연습 문제 3/3)",
+        "exercises/week1/w1d3_conditions.py"
+      ]
+    },
+    {
+      "id": "d3_all",
+      "section": "d3",
+      "kind": "test",
+      "label": "3일차 테스트 전체 통과(21 passed)",
+      "paths": [
+        "exercises/week1/tests/test_w1d3.py"
+      ],
+      "k": "",
+      "cmd": "pytest exercises/week1/tests/test_w1d3.py",
+      "open": [
+        "lessons/week1/day3-functions-and-decisions.md (마지막으로)"
+      ]
+    },
+    {
+      "id": "d3_explain",
+      "section": "d3",
+      "kind": "manual",
+      "label": "return과 print, =와 ==의 차이를 설명할 수 있음",
+      "ask": "return과 print의 차이, =와 ==의 차이를 수업을 보지 않고 소리 내어 설명할 수 있습니까?"
+    },
+    {
+      "id": "d3_log",
+      "section": "d3",
+      "kind": "log",
+      "label": "오늘 실습 일지 작성",
+      "open": [
+        "logs/TEMPLATE.md"
+      ]
+    },
+    {
+      "id": "d3_push",
+      "section": "d3",
+      "kind": "git",
+      "label": "커밋과 푸시",
+      "note": "git add .  →  git commit -m \"Week 1 Day 3\"  →  git push"
+    },
+    {
+      "id": "d3_mentor",
+      "section": "d3",
+      "kind": "manual",
+      "label": "멘토 점검",
+      "ask": "오늘 멘토 점검을 마쳤습니까?"
+    },
+    {
+      "id": "d4_read",
+      "section": "d4",
+      "kind": "manual",
+      "label": "수업 읽기(연습 문제 절 앞까지), 모든 예제 직접 입력",
+      "ask": "수업을 연습 문제 절 앞까지 읽고 모든 예제를 직접 입력해서 실행했습니까?",
+      "open": [
+        "lessons/week1/day4-loops.md"
+      ]
+    },
+    {
+      "id": "d4_try",
+      "section": "d4",
+      "kind": "manual",
+      "label": "직접 해 보기: 10부터 0까지 2씩 줄이기",
+      "ask": "수업의 \"직접 해 보기\"를 모두 마쳤습니까?",
+      "open": [
+        "lessons/week1/day4-loops.md"
+      ]
+    },
+    {
+      "id": "d4_countdown",
+      "section": "d4",
+      "kind": "test",
+      "label": "함수 countdown",
+      "paths": [
+        "exercises/week1/tests/test_w1d4.py"
+      ],
+      "k": "countdown",
+      "cmd": "pytest exercises/week1/tests/test_w1d4.py -k countdown",
+      "open": [
+        "lessons/week1/day4-loops.md (연습 문제 1/3)",
+        "exercises/week1/w1d4_loops.py"
+      ]
+    },
+    {
+      "id": "d4_sum",
+      "section": "d4",
+      "kind": "test",
+      "label": "함수 sum_to",
+      "paths": [
+        "exercises/week1/tests/test_w1d4.py"
+      ],
+      "k": "sum_to",
+      "cmd": "pytest exercises/week1/tests/test_w1d4.py -k sum_to",
+      "open": [
+        "lessons/week1/day4-loops.md (연습 문제 2/3)",
+        "exercises/week1/w1d4_loops.py"
+      ]
+    },
+    {
+      "id": "d4_steps",
+      "section": "d4",
+      "kind": "test",
+      "label": "함수 steps_until_low(먼저 종이에 표를 그리세요)",
+      "paths": [
+        "exercises/week1/tests/test_w1d4.py"
+      ],
+      "k": "steps_until_low",
+      "cmd": "pytest exercises/week1/tests/test_w1d4.py -k steps_until_low",
+      "open": [
+        "lessons/week1/day4-loops.md (연습 문제 3/3)",
+        "exercises/week1/w1d4_loops.py"
+      ]
+    },
+    {
+      "id": "d4_all",
+      "section": "d4",
+      "kind": "test",
+      "label": "4일차 테스트 전체 통과(12 passed)",
+      "paths": [
+        "exercises/week1/tests/test_w1d4.py"
+      ],
+      "k": "",
+      "cmd": "pytest exercises/week1/tests/test_w1d4.py",
+      "open": [
+        "lessons/week1/day4-loops.md (마지막으로)"
+      ]
+    },
+    {
+      "id": "d4_explain",
+      "section": "d4",
+      "kind": "manual",
+      "label": "range(2, 8, 2)의 결과를 말할 수 있고, 끝나지 않는 프로그램을 멈출 수 있음",
+      "ask": "range(2, 8, 2)가 어떤 숫자를 내놓는지 실행하지 않고 말할 수 있고, 끝나지 않는 프로그램을 멈추는 방법을 압니까?"
+    },
+    {
+      "id": "d4_log",
+      "section": "d4",
+      "kind": "log",
+      "label": "오늘 실습 일지 작성",
+      "open": [
+        "logs/TEMPLATE.md"
+      ]
+    },
+    {
+      "id": "d4_push",
+      "section": "d4",
+      "kind": "git",
+      "label": "커밋과 푸시",
+      "note": "git add .  →  git commit -m \"Week 1 Day 4\"  →  git push"
+    },
+    {
+      "id": "d4_mentor",
+      "section": "d4",
+      "kind": "manual",
+      "label": "멘토 점검",
+      "ask": "오늘 멘토 점검을 마쳤습니까?"
+    },
+    {
+      "id": "d5_read",
+      "section": "d5",
+      "kind": "manual",
+      "label": "수업 읽기(연습 문제 절 앞까지), 모든 예제 직접 입력",
+      "ask": "수업을 연습 문제 절 앞까지 읽고 모든 예제를 직접 입력해서 실행했습니까?",
+      "open": [
+        "lessons/week1/day5-strings-and-checkpoint.md"
+      ]
+    },
+    {
+      "id": "d5_try",
+      "section": "d5",
+      "kind": "manual",
+      "label": "직접 해 보기: 슬라이싱",
+      "ask": "수업의 \"직접 해 보기\"를 모두 마쳤습니까?",
+      "open": [
+        "lessons/week1/day5-strings-and-checkpoint.md"
+      ]
+    },
+    {
+      "id": "d5_clean",
+      "section": "d5",
+      "kind": "test",
+      "label": "함수 clean_command",
+      "paths": [
+        "exercises/week1/tests/test_w1d5.py"
+      ],
+      "k": "clean_command",
+      "cmd": "pytest exercises/week1/tests/test_w1d5.py -k clean_command",
+      "open": [
+        "lessons/week1/day5-strings-and-checkpoint.md (연습 문제 1/3)",
+        "exercises/week1/w1d5_strings.py"
+      ]
+    },
+    {
+      "id": "d5_topic",
+      "section": "d5",
+      "kind": "test",
+      "label": "함수 make_topic_name",
+      "paths": [
+        "exercises/week1/tests/test_w1d5.py"
+      ],
+      "k": "make_topic_name",
+      "cmd": "pytest exercises/week1/tests/test_w1d5.py -k make_topic_name",
+      "open": [
+        "lessons/week1/day5-strings-and-checkpoint.md (연습 문제 2/3)",
+        "exercises/week1/w1d5_strings.py"
+      ]
+    },
+    {
+      "id": "d5_id",
+      "section": "d5",
+      "kind": "test",
+      "label": "함수 is_valid_robot_id",
+      "paths": [
+        "exercises/week1/tests/test_w1d5.py"
+      ],
+      "k": "is_valid_robot_id",
+      "cmd": "pytest exercises/week1/tests/test_w1d5.py -k is_valid_robot_id",
+      "open": [
+        "lessons/week1/day5-strings-and-checkpoint.md (연습 문제 3/3)",
+        "exercises/week1/w1d5_strings.py"
+      ]
+    },
+    {
+      "id": "d5_all",
+      "section": "d5",
+      "kind": "test",
+      "label": "5일차 테스트 전체 통과(15 passed)",
+      "paths": [
+        "exercises/week1/tests/test_w1d5.py"
+      ],
+      "k": "",
+      "cmd": "pytest exercises/week1/tests/test_w1d5.py",
+      "open": [
+        "lessons/week1/day5-strings-and-checkpoint.md (마지막으로)"
+      ]
+    },
+    {
+      "id": "week_all",
+      "section": "d5",
+      "kind": "test",
+      "label": "이번 주 연습 문제 전체 통과(56 passed)",
+      "paths": [
+        "exercises/week1"
+      ],
+      "k": "",
+      "cmd": "pytest exercises/week1",
+      "open": [
+        "lessons/week1/day5-strings-and-checkpoint.md (마지막으로)"
+      ]
+    },
+    {
+      "id": "cp_read",
+      "section": "cp",
+      "kind": "manual",
+      "label": "주간 과제 안내 전체 읽기",
+      "ask": "주간 과제 안내를 끝까지 읽었습니까?",
+      "open": [
+        "checkpoints/week1/README.md"
+      ]
+    },
+    {
+      "id": "cp_conv",
+      "section": "cp",
+      "kind": "test",
+      "label": "converter.py: 변환 함수 네 개",
+      "paths": [
+        "checkpoints/week1"
+      ],
+      "k": "to_",
+      "cmd": "pytest checkpoints/week1 -k to_",
+      "open": [
+        "checkpoints/week1/README.md (1부 1단계)",
+        "checkpoints/week1/converter.py"
+      ]
+    },
+    {
+      "id": "cp_menu",
+      "section": "cp",
+      "kind": "test",
+      "label": "converter.py: main()의 메뉴",
+      "paths": [
+        "checkpoints/week1"
+      ],
+      "k": "converter",
+      "cmd": "pytest checkpoints/week1 -k converter",
+      "open": [
+        "checkpoints/week1/README.md (1부 2단계)",
+        "checkpoints/week1/converter.py"
+      ]
+    },
+    {
+      "id": "cp_check",
+      "section": "cp",
+      "kind": "test",
+      "label": "guess.py: check_guess",
+      "paths": [
+        "checkpoints/week1"
+      ],
+      "k": "check_guess",
+      "cmd": "pytest checkpoints/week1 -k check_guess",
+      "open": [
+        "checkpoints/week1/README.md (2부 1단계)",
+        "checkpoints/week1/guess.py"
+      ]
+    },
+    {
+      "id": "cp_game",
+      "section": "cp",
+      "kind": "test",
+      "label": "guess.py: main()의 게임",
+      "paths": [
+        "checkpoints/week1"
+      ],
+      "k": "guess_game",
+      "cmd": "pytest checkpoints/week1 -k guess_game",
+      "open": [
+        "checkpoints/week1/README.md (2부 2단계)",
+        "checkpoints/week1/guess.py"
+      ]
+    },
+    {
+      "id": "cp_all",
+      "section": "cp",
+      "kind": "test",
+      "label": "주간 과제 테스트 전체 통과(11 passed)",
+      "paths": [
+        "checkpoints/week1"
+      ],
+      "k": "",
+      "cmd": "pytest checkpoints/week1",
+      "open": [
+        "checkpoints/week1/README.md"
+      ]
+    },
+    {
+      "id": "cp_run",
+      "section": "cp",
+      "kind": "manual",
+      "label": "두 프로그램을 VS Code 터미널에서 직접 실행",
+      "ask": "converter.py와 guess.py를 VS Code 터미널에서 직접 실행해 보았습니까?"
+    },
+    {
+      "id": "cp_log",
+      "section": "cp",
+      "kind": "log",
+      "label": "오늘 실습 일지 작성",
+      "open": [
+        "logs/TEMPLATE.md"
+      ]
+    },
+    {
+      "id": "cp_push",
+      "section": "cp",
+      "kind": "git",
+      "label": "커밋과 푸시",
+      "note": "git add .  →  git commit -m \"Week 1 checkpoint\"  →  git push"
+    },
+    {
+      "id": "cp_green",
+      "section": "cp",
+      "kind": "manual",
+      "label": "GitHub 최신 커밋에 ✅",
+      "ask": "브라우저에서 GitHub 포크를 열었을 때 최신 커밋 옆에 ✅가 보입니까?"
+    },
+    {
+      "id": "cp_mentor",
+      "section": "cp",
+      "kind": "manual",
+      "label": "멘토에게 두 프로그램을 보여 주고 코드 설명",
+      "ask": "멘토에게 두 프로그램이 동작하는 모습을 보여 주고 코드를 설명했습니까?"
+    }
+  ]
+}

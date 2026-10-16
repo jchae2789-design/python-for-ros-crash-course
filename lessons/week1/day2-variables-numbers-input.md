@@ -288,8 +288,7 @@ Travel time: 2.50 minutes
    pytest exercises/week1/tests/test_w1d2.py -k battery
    ```
    ✔ `3 passed, 3 deselected`가 나와야 합니다. 테스트는 서로 다른 숫자로 프로그램을 세 번 실행합니다.
-7. VS Code 편집기에서 [progress/week1.md](../../progress/week1.md)를 여세요.
-   `exercises/week1/w1d2_battery_runtime.py` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
+7. VS Code 터미널에서 `python3 next.py`를 실행하세요. 테스트가 통과했으면 다음 단계가 나타납니다.
 
 > `deselected`는 이 파일에 있는 **다른** 연습 문제의 테스트는 실행하지 않았다는 뜻입니다. `-k`를 사용하면 이렇게 되니 괜찮습니다.
 
@@ -352,8 +351,7 @@ Length (cm): 275
    pytest exercises/week1/tests/test_w1d2.py -k time_format
    ```
    ✔ `3 passed, 3 deselected`가 나와야 합니다.
-7. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
-   `w1d2_time_format.py` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
+7. VS Code 터미널에서 `python3 next.py`를 실행하세요. 테스트가 통과했으면 다음 단계가 나타납니다.
 
 ### 마지막으로: 오늘의 테스트 전체
 
@@ -363,18 +361,19 @@ VS Code 터미널에서 [`test_w1d2.py`](../../exercises/week1/tests/test_w1d2.p
 pytest exercises/week1/tests/test_w1d2.py
 ```
 
-✔ **`6 passed`**가 나와야 합니다. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)의 2일차 "테스트 통과" 항목을 체크하세요. **Ctrl + S**로 저장하세요.
+✔ **`6 passed`**가 나와야 합니다. VS Code 터미널에서 `python3 next.py`를 실행하세요.
 
 ---
 
 ## 9. 오늘 마치기 전에
 
-VS Code 편집기에서 [progress/week1.md](../../progress/week1.md)를 여세요. 완료한 2일차 항목마다 `[x]`로 체크하세요.
-**Ctrl + S**로 저장하세요. 2일차 항목을 모두 체크한 뒤에만 3일차를 시작하세요.
+VS Code 터미널에서 `python3 next.py`를 실행하세요. 오늘 남은 단계를 하나씩 안내합니다.
 
-- [ ] `pytest exercises/week1/tests/test_w1d2.py` 실행 결과: **6 passed**
-- [ ] `7`, `7.0`, `"7"`의 차이를 설명할 수 있습니다
-- [ ] `//`와 `%`가 하는 일을 설명할 수 있습니다
-- [ ] 실습 일지 작성, 커밋, 푸시 완료
+- 수업 내용을 설명할 수 있는지 묻는 질문에 답하세요.
+- 실습 일지를 쓰세요. `python3 next.py`가 오늘 날짜의 일지가 있는지 자동으로 확인합니다.
+- 커밋하고 푸시하세요. 푸시했는지도 자동으로 확인합니다.
+- 마지막으로 멘토와 점검하세요.
+
+`python3 next.py`가 **3일차**를 지금 할 일로 보여 줄 때 다음 수업을 시작하세요.
 
 **다음:** [3일차: 조건에 따라 판단하기, 함수와 if 문](day3-functions-and-decisions.md)

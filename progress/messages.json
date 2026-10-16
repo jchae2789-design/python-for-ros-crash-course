@@ -1,0 +1,18 @@
+{
+  "yes_no": "(y/n)",
+  "progress": "{done} / {total} 완료",
+  "now": "지금 할 일",
+  "open": "열 파일",
+  "test": "테스트",
+  "saved": "✔ 저장했습니다.",
+  "come_back": "이 단계를 마친 뒤 VS Code 터미널에서 python3 next.py를 다시 실행하세요.",
+  "after_test": "수업의 진행 순서대로 문제를 풀고 Ctrl + S로 저장하세요. 위의 테스트가 통과하면 python3 next.py를 다시 실행하세요. 다음 단계로 자동으로 넘어갑니다.",
+  "after_log": "VS Code 터미널에 cp -n logs/TEMPLATE.md logs/$(date +%F).md를 입력해서 오늘 일지를 만드세요. VS Code 편집기에서 빈칸을 채우고 Ctrl + S로 저장한 뒤 python3 next.py를 다시 실행하세요.",
+  "after_git": "VS Code 터미널에 위의 명령을 순서대로 입력하세요. 푸시가 끝나면 python3 next.py를 다시 실행하세요.",
+  "after_setup": "설치 안내 docs/00-setup.md를 끝까지 따라 하세요.",
+  "all_done": "🎉 지금 받은 주차를 모두 마쳤습니다! 멘토가 다음 주차를 올리면 \"새 수업 받기\"(docs/01-how-to-study.md)를 따라 하세요.",
+  "no_pytest": "⚠ pytest를 실행할 수 없습니다. 프롬프트 앞에 (.venv)가 있는지 확인하세요. 없으면 source .venv/bin/activate를 입력한 뒤 다시 실행하세요.",
+  "timeout": "⚠ 테스트가 60초 안에 끝나지 않았습니다. 끝나지 않는 반복문(while)이 있는지 확인하세요. 지금 푸는 문제의 테스트 명령을 직접 실행하면 어느 함수인지 알 수 있습니다.",
+  "report_title": "내 진도",
+  "report_note": "이 파일은 python3 next.py가 자동으로 만듭니다. 직접 수정하지 마세요."
+}

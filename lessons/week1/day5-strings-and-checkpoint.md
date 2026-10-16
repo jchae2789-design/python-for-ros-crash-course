@@ -198,8 +198,7 @@ $ python3 -i playground.py
    pytest exercises/week1/tests/test_w1d5.py -k clean_command
    ```
    ✔ `3 passed, 12 deselected`가 나와야 합니다.
-5. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
-   `clean_command` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
+5. VS Code 터미널에서 `python3 next.py`를 실행하세요. 테스트가 통과했으면 다음 단계가 나타납니다.
 
 > `deselected`는 이 파일에 있는 **다른** 연습 문제의 테스트는 실행하지 않았다는 뜻입니다. `-k`를 사용하면 이렇게 되니 괜찮습니다.
 
@@ -256,8 +255,7 @@ $ python3 -i playground.py
    pytest exercises/week1/tests/test_w1d5.py -k make_topic_name
    ```
    ✔ `3 passed, 12 deselected`가 나와야 합니다.
-5. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
-   `make_topic_name` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
+5. VS Code 터미널에서 `python3 next.py`를 실행하세요. 테스트가 통과했으면 다음 단계가 나타납니다.
 
 ### 연습 문제 3/3: `is_valid_robot_id(robot_id)`
 
@@ -333,12 +331,11 @@ False
    pytest exercises/week1/tests/test_w1d5.py -k is_valid_robot_id
    ```
    ✔ `9 passed, 6 deselected`가 나와야 합니다.
-5. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
-   `is_valid_robot_id` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
+5. VS Code 터미널에서 `python3 next.py`를 실행하세요. 테스트가 통과했으면 다음 단계가 나타납니다.
 
 ### 추가 도전(선택): `count_char(text, ch)`
 
-시간이 남을 때만 하세요. 테스트하지 않으며 체크리스트에도 없습니다.
+시간이 남을 때만 하세요. 테스트하지 않으며 `python3 next.py`의 단계에도 없습니다.
 
 `playground.py`의 내용을 지우고, `text` 안에 글자 `ch`가 몇 번 나오는지 세는 `count_char(text, ch)` 함수를 작성하세요. `.count()` 대신 `for` 문(5절)과 누적 방법을 사용하세요.
 
@@ -354,7 +351,7 @@ VS Code 터미널에서 [`test_w1d5.py`](../../exercises/week1/tests/test_w1d5.p
 pytest exercises/week1/tests/test_w1d5.py
 ```
 
-✔ **`15 passed`**가 나와야 합니다. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)의 5일차 "테스트 통과" 항목을 체크하세요. **Ctrl + S**로 저장하세요.
+✔ **`15 passed`**가 나와야 합니다. VS Code 터미널에서 `python3 next.py`를 실행하세요.
 
 그런 다음 VS Code 터미널에서 [`exercises/week1/`](../../exercises/week1/)의 모든 테스트를 실행하세요.
 
@@ -363,7 +360,7 @@ pytest exercises/week1
 ```
 
 ✔ **`56 passed`**가 나와야 합니다. 1–5일차의 모든 연습 문제입니다.
-VS Code 편집기에서 `progress/week1.md`의 "이번 주 전체 테스트 통과"를 체크하고 **Ctrl + S**로 저장하세요.
+VS Code 터미널에서 `python3 next.py`를 실행하세요.
 
 이전 연습 문제가 실패하면 VS Code 터미널 오류 메시지에 나온 파일을 고치고 **Ctrl + S**로 저장하세요.
 주간 과제를 시작하기 전에 VS Code 터미널에서 `pytest exercises/week1`을 다시 실행하세요.
@@ -397,13 +394,6 @@ pytest checkpoints/week1
 
 ## 9. 1주차 완료
 
-VS Code 편집기에서 [progress/week1.md](../../progress/week1.md)를 여세요. 완료한 **5일차**와 **1주차 완료** 항목을 `[x]`로 체크하세요.
-**Ctrl + S**로 저장하세요.
-
-- [ ] `pytest exercises/week1`의 테스트가 모두 통과합니다
-- [ ] `pytest checkpoints/week1`의 테스트가 모두 통과합니다
-- [ ] GitHub에서 최신 커밋에 ✅가 보입니다
-- [ ] 멘토에게 주간 과제가 동작하는 모습을 보여 주었습니다
-- [ ] 실습 일지 작성, 커밋, 푸시 완료
+VS Code 터미널에서 `python3 next.py`를 실행하세요. 남은 단계(직접 실행, 실습 일지, 커밋과 푸시, GitHub의 ✅, 멘토에게 보여 주기)를 하나씩 안내합니다. 모든 단계를 마치면 `python3 next.py`에 🎉가 나타납니다.
 
 수고하셨습니다! 다음 주에는 리스트, 딕셔너리, 함수의 더 자세한 내용, 파일에서 실제 센서 데이터를 읽는 방법을 배웁니다.

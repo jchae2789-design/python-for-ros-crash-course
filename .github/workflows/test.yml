@@ -25,6 +25,21 @@ jobs:
       - name: Run week ${{ matrix.week }} tests
         run: pytest -rA exercises/week${{ matrix.week }} checkpoints/week${{ matrix.week }}
 
+  # Student forks: write the progress table (python next.py --report)
+  # on the run's summary page, so the mentor sees every step.
+  progress:
+    if: github.event.repository.fork
+    runs-on: ubuntu-24.04
+    name: progress
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Progress table
+        run: python next.py --report >> "$GITHUB_STEP_SUMMARY"
+
   # Course repository: the starter files are meant to fail, so only check
   # that every test file loads without errors.
   course-check:

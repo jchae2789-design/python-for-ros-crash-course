@@ -319,8 +319,7 @@ $ python3 -i playground.py
    pytest exercises/week1/tests/test_w1d3.py -k battery_status
    ```
    ✔ `10 passed, 11 deselected`가 나와야 합니다.
-7. VS Code 편집기에서 [progress/week1.md](../../progress/week1.md)를 여세요.
-   `battery_status` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
+7. VS Code 터미널에서 `python3 next.py`를 실행하세요. 테스트가 통과했으면 다음 단계가 나타납니다.
 
 > `deselected`는 이 파일에 있는 **다른** 연습 문제의 테스트는 실행하지 않았다는 뜻입니다. `-k`를 사용하면 이렇게 되니 괜찮습니다.
 
@@ -380,8 +379,7 @@ False
    pytest exercises/week1/tests/test_w1d3.py -k can_launch
    ```
    ✔ `5 passed, 16 deselected`가 나와야 합니다.
-7. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
-   `can_launch` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
+7. VS Code 터미널에서 `python3 next.py`를 실행하세요. 테스트가 통과했으면 다음 단계가 나타납니다.
 
 ### 연습 문제 3/3: `classify_distance(distance_m)`
 
@@ -443,8 +441,7 @@ $ python3 -i playground.py
    pytest exercises/week1/tests/test_w1d3.py -k classify_distance
    ```
    ✔ `6 passed, 15 deselected`가 나와야 합니다.
-7. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
-   `classify_distance` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
+7. VS Code 터미널에서 `python3 next.py`를 실행하세요. 테스트가 통과했으면 다음 단계가 나타납니다.
 
 ### 마지막으로: 오늘의 테스트 전체
 
@@ -454,7 +451,7 @@ VS Code 터미널에서 [`test_w1d3.py`](../../exercises/week1/tests/test_w1d3.p
 pytest exercises/week1/tests/test_w1d3.py
 ```
 
-✔ **`21 passed`**가 나와야 합니다. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)의 3일차 "테스트 통과" 항목을 체크하세요. **Ctrl + S**로 저장하세요.
+✔ **`21 passed`**가 나와야 합니다. VS Code 터미널에서 `python3 next.py`를 실행하세요.
 
 테스트는 정확히 `90`, `40`, `15`, `0.5`, `2.0`, `8.0` 같은 경계값을 사용합니다. 한두 개만 실패한다면 `<`와 `<=`, `>`와 `>=`를 확인하세요.
 
@@ -462,12 +459,13 @@ pytest exercises/week1/tests/test_w1d3.py
 
 ## 8. 오늘 마치기 전에
 
-VS Code 편집기에서 [progress/week1.md](../../progress/week1.md)를 여세요. 완료한 3일차 항목마다 `[x]`로 체크하세요.
-**Ctrl + S**로 저장하세요. 3일차 항목을 모두 체크한 뒤에만 4일차를 시작하세요.
+VS Code 터미널에서 `python3 next.py`를 실행하세요. 오늘 남은 단계를 하나씩 안내합니다.
 
-- [ ] `pytest exercises/week1/tests/test_w1d3.py` 실행 결과: **21 passed**
-- [ ] `return`과 `print`의 차이를 설명할 수 있습니다
-- [ ] `=`와 `==`의 차이를 설명할 수 있습니다
-- [ ] 실습 일지 작성, 커밋, 푸시 완료
+- 수업 내용을 설명할 수 있는지 묻는 질문에 답하세요.
+- 실습 일지를 쓰세요. `python3 next.py`가 오늘 날짜의 일지가 있는지 자동으로 확인합니다.
+- 커밋하고 푸시하세요. 푸시했는지도 자동으로 확인합니다.
+- 마지막으로 멘토와 점검하세요.
+
+`python3 next.py`가 **4일차**를 지금 할 일로 보여 줄 때 다음 수업을 시작하세요.
 
 **다음:** [4일차: 반복하기, for 문과 while 문](day4-loops.md)

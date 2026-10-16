@@ -272,8 +272,7 @@ Good morning, robot team!
    pytest exercises/week1/tests/test_w1d1.py -k hello
    ```
    ✔ `1 passed, 1 deselected`가 나와야 합니다. 테스트가 실패하면 VS Code 터미널의 오류 메시지를 읽고 VS Code에서 `exercises/week1/w1d1_hello.py`를 고친 뒤 4단계로 돌아가세요.
-7. VS Code 편집기에서 [progress/week1.md](../../progress/week1.md)를 여세요.
-   `exercises/week1/w1d1_hello.py` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
+7. VS Code 터미널에서 `python3 next.py`를 실행하세요. 테스트가 통과했으면 다음 단계가 나타납니다.
 
 > `deselected`는 이 파일에 있는 **다른** 연습 문제의 테스트는 실행하지 않았다는 뜻입니다. `-k`를 사용하면 이렇게 되니 괜찮습니다.
 
@@ -331,8 +330,7 @@ Status: CHARGING
    pytest exercises/week1/tests/test_w1d1.py -k robot_card
    ```
    ✔ `1 passed, 1 deselected`가 나와야 합니다.
-7. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
-   `w1d1_robot_card.py` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
+7. VS Code 터미널에서 `python3 next.py`를 실행하세요. 테스트가 통과했으면 다음 단계가 나타납니다.
 
 ### 마지막으로: 오늘의 테스트 전체
 
@@ -342,23 +340,19 @@ VS Code 터미널에서 [`test_w1d1.py`](../../exercises/week1/tests/test_w1d1.p
 pytest exercises/week1/tests/test_w1d1.py
 ```
 
-✔ **`2 passed`**가 나와야 합니다. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)의 1일차 "테스트 통과" 항목을 체크하세요. **Ctrl + S**로 저장하세요.
+✔ **`2 passed`**가 나와야 합니다. VS Code 터미널에서 `python3 next.py`를 실행하세요.
 
 ---
 
 ## 6. 오늘 마치기 전에
 
-VS Code 편집기에서 [progress/week1.md](../../progress/week1.md)를 여세요. 완료한 1일차 항목마다 `[x]`로 체크하세요.
-**Ctrl + S**로 저장하세요. 1일차 항목을 모두 체크한 뒤에만 2일차를 시작하세요.
+VS Code 터미널에서 `python3 next.py`를 실행하세요. 오늘 남은 단계를 하나씩 안내합니다.
 
-- [ ] `pytest exercises/week1/tests/test_w1d1.py` 실행 결과: **2 passed**
-- [ ] `pwd`, `ls`, `cd`, `mkdir`을 찾아보지 않고 사용할 수 있습니다
-- [ ] [`logs/`](../../logs/)에 실습 일지를 작성했습니다
-- [ ] 커밋하고 푸시했습니다(VS Code 터미널에 다음 명령을 순서대로 입력하세요).
-  ```bash
-  git add .
-  git commit -m "Week 1 Day 1: first programs"
-  git push
-  ```
+- 수업 내용을 설명할 수 있는지 묻는 질문에 답하세요.
+- 실습 일지를 쓰세요. `python3 next.py`가 오늘 날짜의 일지가 있는지 자동으로 확인합니다.
+- 커밋하고 푸시하세요. 푸시했는지도 자동으로 확인합니다.
+- 마지막으로 멘토와 점검하세요.
+
+`python3 next.py`가 **2일차**를 지금 할 일로 보여 줄 때 다음 수업을 시작하세요.
 
 **다음:** [2일차: 변수, 숫자, 입력](day2-variables-numbers-input.md)

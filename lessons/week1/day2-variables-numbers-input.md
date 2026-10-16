@@ -234,6 +234,28 @@ Current (mA): 2000
 Runtime: 2.50 hours
 ```
 
+**Example to follow:** a similar problem (not the answer to this exercise).
+
+This program asks for a distance and a speed, and prints how long the trip takes. It uses the same three parts as your exercise: two `input()` calls with `int()`, one division, and one f-string with `:.2f`.
+
+```python
+distance = int(input("Distance (m): "))
+speed = int(input("Speed (m/min): "))
+travel_time = distance / speed
+print(f"Travel time: {travel_time:.2f} minutes")
+```
+
+Type this example into `playground.py` in the course folder (open it with `code playground.py`), save it, and run it. When it asks, type `100`, press Enter, type `40`, press Enter:
+
+```
+$ python3 playground.py
+Distance (m): 100
+Speed (m/min): 40
+Travel time: 2.50 minutes
+```
+
+When you understand how the example works, do the steps below. Write your own code for the exercise. Do not copy the example: the task is different.
+
 **Steps:**
 
 1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d2_battery_runtime.py`. (Or press **Ctrl + P**, type `w1d2_battery_runtime.py` and press Enter.) The file opens in the editor.
@@ -271,6 +293,27 @@ $ python3 exercises/week1/w1d2_time_format.py
 Seconds: 3725
 1 h 2 m 5 s
 ```
+
+**Example to follow:** a similar problem (not the answer to this exercise).
+
+This program splits a length in centimeters into meters and centimeters, with `//` and `%`. Your exercise has **three** units (hours, minutes, seconds), so you need one more step.
+
+```python
+total_cm = int(input("Length (cm): "))
+meters = total_cm // 100
+cm = total_cm % 100
+print(f"{meters} m {cm} cm")
+```
+
+Type this example into `playground.py` in the course folder (open it with `code playground.py`), save it, and run it. When it asks, type `275` and press Enter:
+
+```
+$ python3 playground.py
+Length (cm): 275
+2 m 75 cm
+```
+
+When you understand how the example works, do the steps below. Write your own code for the exercise. Do not copy the example: the task is different.
 
 **Steps:**
 

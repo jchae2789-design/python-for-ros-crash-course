@@ -1,6 +1,9 @@
 # Mentor-only reference solutions (never publish)
 /solutions/
 
+# Practice file used in the lessons
+/playground.py
+
 # Python
 __pycache__/
 *.pyc

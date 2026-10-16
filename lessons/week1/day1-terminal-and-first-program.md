@@ -204,7 +204,7 @@ Python does not know `prnt`. It even tells you what you probably meant!
 
 > First time? Read [How exercises work](../../docs/02-how-exercises-work.md), Parts 1–3, before you start.
 
-Before you start: delete your practice file with `rm playground.py`.
+You can keep `playground.py`. You will use it for the examples below. Git ignores it, so it is never committed.
 
 **How to do the exercises:** do them **in order**, one at a time. Each exercise below has numbered steps. Follow them from 1 to the end, then go to the next exercise. If a step does not work, look at [How exercises work, Part 5](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
@@ -222,6 +222,23 @@ Today's exercises check your output **exactly**: every capital letter, space and
 $ python3 exercises/week1/w1d1_hello.py
 Hello, ROS!
 ```
+
+**Example to follow:** a similar problem (not the answer to this exercise).
+
+This program greets the robot team:
+
+```python
+print("Good morning, robot team!")
+```
+
+Type this example into `playground.py` in the course folder (open it with `code playground.py`), save it, and run it:
+
+```
+$ python3 playground.py
+Good morning, robot team!
+```
+
+When you understand how the example works, do the steps below. Write your own code for the exercise. Do not copy the example: the task is different.
 
 **Steps:**
 
@@ -255,6 +272,27 @@ Robot: RR-01
 Type: Rail robot
 Status: READY
 ```
+
+**Example to follow:** a similar problem (not the answer to this exercise).
+
+This program prints a card for a drone, using one `print()` per line:
+
+```python
+print("Drone: DR-07")
+print("Type: Quadcopter")
+print("Status: CHARGING")
+```
+
+Type this example into `playground.py` in the course folder (open it with `code playground.py`), save it, and run it:
+
+```
+$ python3 playground.py
+Drone: DR-07
+Type: Quadcopter
+Status: CHARGING
+```
+
+When you understand how the example works, do the steps below. Write your own code for the exercise. Do not copy the example: the task is different.
 
 **Steps:**
 

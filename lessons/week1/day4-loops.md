@@ -204,6 +204,31 @@ All four functions are in `exercises/week1/w1d4_loops.py`. Open it in VS Code no
 'GO!'
 ```
 
+**Example to follow:** a similar problem (not the answer to this exercise).
+
+This function counts **up** instead of down and ends with `DONE`. For your exercise, think about which `range(...)` counts **down** (section 1).
+
+```python
+def count_up(n):
+    text = ""
+    for i in range(1, n + 1):
+        text = text + str(i) + " "
+    return text + "DONE"
+```
+
+Type this example into `playground.py` in the course folder (open it with `code playground.py`), save it, and try it:
+
+```python
+$ python3 -i playground.py
+>>> count_up(3)
+'1 2 3 DONE'
+>>> count_up(0)
+'DONE'
+>>> exit()
+```
+
+When you understand how the example works, do the steps below. Write your own code for the exercise. Do not copy the example: the task is different.
+
 **Steps:**
 
 1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d4_loops.py`. (Or press **Ctrl + P**, type `w1d4_loops.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
@@ -231,6 +256,31 @@ All four functions are in `exercises/week1/w1d4_loops.py`. Open it in VS Code no
 0
 ```
 
+**Example to follow:** a similar problem (not the answer to this exercise).
+
+This function **multiplies** 1 × 2 × … × n. Notice it starts at `1`, not `0`. Anything times 0 is 0! For a sum, think about which start value is right.
+
+```python
+def product_to(n):
+    result = 1
+    for i in range(1, n + 1):
+        result = result * i
+    return result
+```
+
+Type this example into `playground.py` in the course folder (open it with `code playground.py`), save it, and try it:
+
+```python
+$ python3 -i playground.py
+>>> product_to(4)
+24
+>>> product_to(0)
+1
+>>> exit()
+```
+
+When you understand how the example works, do the steps below. Write your own code for the exercise. Do not copy the example: the task is different.
+
 **Steps:**
 
 1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d4_loops.py`. (Or press **Ctrl + P**, type `w1d4_loops.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
@@ -255,6 +305,32 @@ All four functions are in `exercises/week1/w1d4_loops.py`. Open it in VS Code no
 >>> steps_until_low(10, 5, 20)
 0
 ```
+
+**Example to follow:** a similar problem (not the answer to this exercise).
+
+This function is the opposite of your exercise: it **charges** a battery until it is full, and counts the steps with a `while` loop.
+
+```python
+def steps_until_full(battery, charge_per_step, full_level):
+    steps = 0
+    while battery < full_level:
+        battery = battery + charge_per_step
+        steps = steps + 1
+    return steps
+```
+
+Type this example into `playground.py` in the course folder (open it with `code playground.py`), save it, and try it:
+
+```python
+$ python3 -i playground.py
+>>> steps_until_full(50, 10, 100)
+5
+>>> steps_until_full(100, 10, 100)
+0
+>>> exit()
+```
+
+When you understand how the example works, do the steps below. Write your own code for the exercise. Do not copy the example: the task is different.
 
 **Steps:**
 
@@ -281,6 +357,32 @@ All four functions are in `exercises/week1/w1d4_loops.py`. Open it in VS Code no
 ```
 
 (3, 6 and 9.)
+
+**Example to follow:** a similar problem (not the answer to this exercise).
+
+This function counts the **odd** numbers from 1 to `limit`. An odd number has remainder 1 when divided by 2.
+
+```python
+def count_odd(limit):
+    count = 0
+    for x in range(1, limit + 1):
+        if x % 2 == 1:
+            count = count + 1
+    return count
+```
+
+Type this example into `playground.py` in the course folder (open it with `code playground.py`), save it, and try it:
+
+```python
+$ python3 -i playground.py
+>>> count_odd(10)
+5
+>>> count_odd(1)
+1
+>>> exit()
+```
+
+When you understand how the example works, do the steps below. Write your own code for the exercise. Do not copy the example: the task is different.
 
 **Steps:**
 

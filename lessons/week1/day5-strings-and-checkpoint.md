@@ -153,6 +153,26 @@ All four functions are in `exercises/week1/w1d5_strings.py`. Open it in VS Code 
 'forward'
 ```
 
+**Example to follow:** a similar problem (not the answer to this exercise).
+
+This function cleans up a label and makes it **UPPERCASE**. Two methods, chained from left to right:
+
+```python
+def make_label(text):
+    return text.strip().upper()
+```
+
+Type this example into `playground.py` in the course folder (open it with `code playground.py`), save it, and try it:
+
+```python
+$ python3 -i playground.py
+>>> make_label('  rail robot \n')
+'RAIL ROBOT'
+>>> exit()
+```
+
+When you understand how the example works, do the steps below. Write your own code for the exercise. Do not copy the example: the task is different.
+
 **Steps:**
 
 1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d5_strings.py`. (Or press **Ctrl + P**, type `w1d5_strings.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
@@ -177,6 +197,27 @@ All four functions are in `exercises/week1/w1d5_strings.py`. Open it in VS Code 
 >>> make_topic_name("Rail Robot 1", "LiDAR")
 '/rail_robot_1/lidar'
 ```
+
+**Example to follow:** a similar problem (not the answer to this exercise).
+
+This function builds a log file name: lowercase, spaces become `-`, then the parts are joined with `_` and `.csv` is added at the end.
+
+```python
+def make_file_name(robot_name, date):
+    robot = robot_name.lower().replace(" ", "-")
+    return robot + "_" + date + ".csv"
+```
+
+Type this example into `playground.py` in the course folder (open it with `code playground.py`), save it, and try it:
+
+```python
+$ python3 -i playground.py
+>>> make_file_name('Rail Robot 1', '2026-10-19')
+'rail-robot-1_2026-10-19.csv'
+>>> exit()
+```
+
+When you understand how the example works, do the steps below. Write your own code for the exercise. Do not copy the example: the task is different.
 
 **Steps:**
 
@@ -205,6 +246,38 @@ False
 False
 ```
 
+**Example to follow:** a similar problem (not the answer to this exercise).
+
+This function checks if a text looks like a time `HH:MM`, for example `09:30`. It checks the length first, then each part with slicing.
+
+```python
+def is_valid_time(text):
+    if len(text) != 5:
+        return False
+    if not text[0:2].isdigit():
+        return False
+    if text[2] != ":":
+        return False
+    return text[3:].isdigit()
+```
+
+Type this example into `playground.py` in the course folder (open it with `code playground.py`), save it, and try it:
+
+```python
+$ python3 -i playground.py
+>>> is_valid_time('09:30')
+True
+>>> is_valid_time('9:30')
+False
+>>> is_valid_time('09-30')
+False
+>>> is_valid_time('')
+False
+>>> exit()
+```
+
+When you understand how the example works, do the steps below. Write your own code for the exercise. Do not copy the example: the task is different.
+
 **Steps:**
 
 1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d5_strings.py`. (Or press **Ctrl + P**, type `w1d5_strings.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
@@ -231,6 +304,32 @@ False
 >>> count_char("rail robot", "o")
 2
 ```
+
+**Example to follow:** a similar problem (not the answer to this exercise).
+
+This function counts the spaces in a text with a `for` loop over its characters:
+
+```python
+def count_spaces(text):
+    count = 0
+    for ch in text:
+        if ch == " ":
+            count = count + 1
+    return count
+```
+
+Type this example into `playground.py` in the course folder (open it with `code playground.py`), save it, and try it:
+
+```python
+$ python3 -i playground.py
+>>> count_spaces('rail robot one')
+2
+>>> count_spaces('ROS')
+0
+>>> exit()
+```
+
+When you understand how the example works, do the steps below. Write your own code for the exercise. Do not copy the example: the task is different.
 
 **Steps:**
 

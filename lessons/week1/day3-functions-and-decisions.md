@@ -244,6 +244,39 @@ All three functions are in `exercises/week1/w1d3_conditions.py`. Open it in VS C
 | 15 or more | `"LOW"` |
 | anything lower | `"CRITICAL"` |
 
+**Example to follow:** a similar problem (not the answer to this exercise).
+
+This function turns a Wi-Fi signal strength (in dBm, always 0 or below) into a word. Notice: the invalid check comes **first**, then the strictest level, then weaker ones.
+
+```python
+def signal_quality(rssi):
+    if rssi > 0:
+        return "INVALID"
+    elif rssi >= -50:
+        return "EXCELLENT"
+    elif rssi >= -70:
+        return "GOOD"
+    else:
+        return "WEAK"
+```
+
+Type this example into `playground.py` in the course folder (open it with `code playground.py`), save it, and try it:
+
+```python
+$ python3 -i playground.py
+>>> signal_quality(-45)
+'EXCELLENT'
+>>> signal_quality(-50)
+'EXCELLENT'
+>>> signal_quality(-80)
+'WEAK'
+>>> signal_quality(5)
+'INVALID'
+>>> exit()
+```
+
+When you understand how the example works, do the steps below. Write your own code for the exercise. Do not copy the example: the task is different.
+
 **Steps:**
 
 1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d3_conditions.py`. (Or press **Ctrl + P**, type `w1d3_conditions.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
@@ -279,6 +312,32 @@ All three functions are in `exercises/week1/w1d3_conditions.py`. Open it in VS C
 
 **Your task:** return `True` if a drone may take off, otherwise `False`. **All three** must be true: battery is 30 or more, wind is 8.0 or less, and `gps_ok` is `True`.
 
+**Example to follow:** a similar problem (not the answer to this exercise).
+
+This function decides if a robot may drive. Both conditions must be true, so they are joined with `and`, and the result (`True` or `False`) is returned directly:
+
+```python
+def can_drive(speed, max_speed, emergency_stop):
+    return speed <= max_speed and not emergency_stop
+```
+
+Type this example into `playground.py` in the course folder (open it with `code playground.py`), save it, and try it:
+
+```python
+$ python3 -i playground.py
+>>> can_drive(1.0, 1.5, False)
+True
+>>> can_drive(1.5, 1.5, False)
+True
+>>> can_drive(2.0, 1.5, False)
+False
+>>> can_drive(1.0, 1.5, True)
+False
+>>> exit()
+```
+
+When you understand how the example works, do the steps below. Write your own code for the exercise. Do not copy the example: the task is different.
+
 **Steps:**
 
 1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d3_conditions.py`. (Or press **Ctrl + P**, type `w1d3_conditions.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
@@ -304,6 +363,35 @@ All three functions are in `exercises/week1/w1d3_conditions.py`. Open it in VS C
 > 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson and follow it while you do this exercise, especially [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
 **Your task:** a robot's LiDAR sees an obstacle. Return `"STOP"` if it is closer than 0.5 m, `"SLOW"` if it is closer than 2.0 m, otherwise `"GO"`.
+
+**Example to follow:** a similar problem (not the answer to this exercise).
+
+This function sorts a temperature into three groups, using `<` like your exercise:
+
+```python
+def classify_temperature(temp_c):
+    if temp_c < 0:
+        return "FREEZING"
+    elif temp_c < 30:
+        return "NORMAL"
+    else:
+        return "HOT"
+```
+
+Type this example into `playground.py` in the course folder (open it with `code playground.py`), save it, and try it:
+
+```python
+$ python3 -i playground.py
+>>> classify_temperature(-5)
+'FREEZING'
+>>> classify_temperature(0)
+'NORMAL'
+>>> classify_temperature(30)
+'HOT'
+>>> exit()
+```
+
+When you understand how the example works, do the steps below. Write your own code for the exercise. Do not copy the example: the task is different.
 
 **Steps:**
 

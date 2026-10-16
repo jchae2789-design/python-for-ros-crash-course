@@ -6,7 +6,9 @@ on:
   workflow_dispatch:
 
 jobs:
+  # Student forks: run the exercise tests for each week.
   test:
+    if: github.event.repository.fork
     runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
@@ -22,3 +24,17 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Run week ${{ matrix.week }} tests
         run: pytest -rA exercises/week${{ matrix.week }} checkpoints/week${{ matrix.week }}
+
+  # Course repository: the starter files are meant to fail, so only check
+  # that every test file loads without errors.
+  course-check:
+    if: ${{ !github.event.repository.fork }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Collect all tests
+        run: pytest --collect-only

@@ -59,13 +59,15 @@ In the VS Code window, open the integrated terminal with **Ctrl + `** (the key l
 
 ---
 
-## 4. Create a GitHub account
+## 4. Check your GitHub account
 
-GitHub is a website that stores code. You will save your work there every day, so your mentor can see it.
+You created your GitHub account on Day 0, with the printed **Day 0: Before you start** sheet from your mentor. Your username is written on that sheet.
 
-1. In your browser, go to <https://github.com> and click **Sign up**.
-2. On the GitHub sign-up page in your browser, choose a username and finish the account form. Use something professional, for example `kim-minjun-robot`.
-3. Send your username to your mentor.
+1. In your browser, go to <https://github.com>.
+2. Check the top right of the GitHub page in your browser.
+   ✔ You see your profile picture (a small round icon). You are signed in.
+   ✘ You see **Sign in**: click it and sign in with the email and password from Day 0.
+3. If you do **not** have a GitHub account yet, stop here and ask your mentor for the Day 0 sheet. You need the account for section 6.
 
 ---
 

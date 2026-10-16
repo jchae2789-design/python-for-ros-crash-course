@@ -74,11 +74,13 @@ def test_passed(step, results):
 
 
 def log_written():
+    """오늘 날짜의 실습 일지가 있고, 빈칸(- 줄) 중 하나 이상에 내용을 적었으면 True입니다."""
     today = ROOT / "logs" / f"{datetime.date.today():%Y-%m-%d}.md"
-    template = ROOT / "logs" / "TEMPLATE.md"
     if not today.exists():
         return False
-    return today.read_text(encoding="utf-8") != template.read_text(encoding="utf-8")
+    filled = [line for line in today.read_text(encoding="utf-8").splitlines()
+              if line.startswith("- ") and line[2:].strip()]
+    return len(filled) > 0
 
 
 def git(*args):
@@ -93,6 +95,17 @@ def pushed():
         return False
     ahead = git("rev-list", "--count", "@{u}..HEAD")
     return ahead.returncode == 0 and ahead.stdout.strip() == "0"
+
+
+def sync_progress():
+    """진도 파일만 커밋하고 푸시합니다. 멘토 점검 답이 GitHub에도 바로 보이게 합니다."""
+    files = ["progress/state.json", "PROGRESS.md"]
+    git("add", *files)
+    commit = git("commit", "-m", MSG["sync_commit"], "--", *files)
+    if commit.returncode != 0:
+        return
+    push = git("push")
+    print(MSG["synced"] if push.returncode == 0 else MSG["sync_failed"])
 
 
 def is_done(step, state, results):
@@ -219,6 +232,8 @@ def main():
                 state["done"].append(step["id"])
                 save(state, weeks, results)
                 print(MSG["saved"])
+                if step.get("sync"):
+                    sync_progress()
                 continue
             print(f"\n{MSG['come_back']}")
             break

@@ -84,7 +84,7 @@ python3 next.py
 
 `열 파일`에 나온 경로는 VS Code 터미널에서 **Ctrl**을 누른 채 클릭하면 편집기에서 열립니다.
 
-진도는 `progress/state.json`과 `PROGRESS.md`에 자동으로 저장됩니다. 이 두 파일은 직접 수정하지 마세요. 커밋하고 푸시하면 멘토가 GitHub에서 `PROGRESS.md`로 진도를 확인합니다.
+진도는 `progress/state.json`과 `PROGRESS.md`에 자동으로 저장됩니다. 이 두 파일은 직접 수정하지 마세요. 커밋하고 푸시하면 멘토가 GitHub에서 `PROGRESS.md`로 진도를 확인합니다. 멘토 점검 질문에 `y`로 답하면 `python3 next.py`가 이 두 파일만 자동으로 커밋하고 푸시합니다.
 
 ### 매일 마칠 때
 

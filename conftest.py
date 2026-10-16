@@ -6,6 +6,11 @@ from pathlib import Path
 
 import pytest
 
+# 모든 주차의 연습 문제와 주간 과제 폴더에서 파일을 불러올 수 있게 합니다.
+_ROOT = Path(__file__).resolve().parent
+for _folder in sorted(_ROOT.glob("exercises/week*")) + sorted(_ROOT.glob("checkpoints/week*")):
+    sys.path.insert(0, str(_folder))
+
 
 @pytest.fixture
 def run_script():

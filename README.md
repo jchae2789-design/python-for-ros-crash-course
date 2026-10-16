@@ -44,16 +44,89 @@ Weeks 2–4 will appear in this repository when you are ready for them. See [Get
 
 ---
 
-## Your daily routine
+## How to progress through the class
+
+The class is **one path**. You always do the next step, never skip ahead:
+
+```
+Setup → Day 1 → Day 2 → Day 3 → Day 4 → Day 5 + checkpoint → Week 2 → ... → Week 4 → ROS 2
+```
+
+Your checklist in `progress/` tells you exactly where you are on this path.
+
+### Step 1: Find where you are
+
+Open your checklist for the current week, for example [progress/week1.md](progress/week1.md). **Your next step is the first box that is not checked.**
+
+```markdown
+- [x] Read the lesson and typed every example myself
+- [x] Did the "Try it" tasks in the lesson
+- [ ] Exercise `exercises/week1/w1d1_hello.py`      ← you are here
+- [ ] Exercise `exercises/week1/w1d1_robot_card.py`
+```
+
+### Step 2: Do that step
+
+Follow the link or instructions in the box. For exercises, see [How exercises work](docs/02-how-exercises-work.md).
+
+### Step 3: Check that it is really done
+
+- **Reading a lesson:** you typed and ran every example.
+- **An exercise:** you tried it yourself, and it does what the instructions say.
+- **A "Tests pass" box:** run the command in the box. The result must match **exactly**, for example `21 passed`.
+- **An "I can explain…" box:** say it out loud without looking. If you can't, read that part of the lesson again.
+
+### Step 4: Check the box
+
+In VS Code, change `[ ]` to `[x]` (lowercase x, no spaces) and save with **Ctrl + S**:
+
+```markdown
+- [ ] Exercise `exercises/week1/w1d1_hello.py`      ← before
+- [x] Exercise `exercises/week1/w1d1_hello.py`      ← after
+```
+
+After you push, GitHub shows the boxes in your checklist as real checkboxes.
+
+Then go back to **Step 1**.
+
+### End of every day
+
+The last boxes of each day are: write your daily log, commit and push, and check in with your mentor. Commit your checklist together with your code:
+
+```bash
+git add .
+git commit -m "Week 1 Day 1: finished exercises"
+git push
+```
+
+Your mentor opens your fork on GitHub and sees your checklist, your code, your log, and whether your tests pass (✅ or ❌).
+
+### Moving to the next day
+
+Start **Day N + 1** only when **every box of Day N** is checked. If you finish early, use the time to try the "Bonus" ideas or to re-read the hard parts. Don't start the next day early.
+
+### Moving to the next week
+
+A week is finished when:
+
+1. every box in the week's checklist is checked, including **"Week N done"**,
+2. the week's checkpoint passes its tests,
+3. you showed the checkpoint to your mentor.
+
+Then get the next week:
+
+1. On GitHub, open your fork and click **Sync fork** → **Update branch**.
+2. In the terminal, run `git pull`.
+3. Open the new checklist (for example `progress/week2.md`) and start at the first box.
+
+### A normal day
 
 ```
 Morning     Read today's lesson. Type every example yourself (do not copy-paste).
 Afternoon   Solve the exercises. Run the tests until they pass.
 Check-in    15 minutes with your mentor. Show your work, ask your questions.
-End of day  Write your daily log, then commit and push.
+End of day  Write your daily log, check your boxes, commit and push.
 ```
-
-Friday: the week's **checkpoint** must pass its tests before you start the next week.
 
 ---
 

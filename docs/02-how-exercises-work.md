@@ -43,10 +43,10 @@ You are finished with an exercise when **all of its tests pass**.
 
 Do these steps for **every** exercise, in this order.
 
-**Step 1: Open the exercise file in VS Code.**
+**Step 1: Open the exercise file in the VS Code editor.**
 In the file list on the left, click [`exercises`](../exercises/) → [`week1`](../exercises/week1/) → the file (for example [`w1d1_hello.py`](../exercises/week1/w1d1_hello.py)). Or press **Ctrl + P**, type the file name and press Enter. You cannot write your code until the file is open in the editor.
 
-**Step 2: Read all the instructions at the top of the file.**
+**Step 2: In the VS Code editor, read all the instructions at the top of your exercise file (for example `w1d1_hello.py`).**
 The lines starting with `#` (or the text inside `"""` in a function) tell you:
 - what the program must do,
 - the **exact** text to print or return,
@@ -55,20 +55,20 @@ The lines starting with `#` (or the text inside `"""` in a function) tell you:
 
 Read the file's instructions twice. Most mistakes come from reading too fast.
 
-**Step 3: Write your code at `TODO` in the file.**
+**Step 3: In the VS Code editor, write your code at `TODO` in your exercise file (for example `w1d1_hello.py`).**
 - In **script** exercises (Days 1–2): write below `# TODO: write your code below this line`.
 - In **function** exercises (Days 3–5): replace `pass` with your code. Keep the `def ...` line **exactly** as it is.
 
-**Step 4: Save with Ctrl + S.** A white dot ● on the file's tab means it is **not saved**. Tests always check the **saved** file.
+**Step 4: In the VS Code editor, save your exercise file (for example `w1d1_hello.py`) with Ctrl + S.** A white dot ● on the file's tab means it is **not saved**. Tests always check the **saved** file.
 
-**Step 5: Run the saved file.** Use the command in the lesson's numbered steps.
+**Step 5: In the VS Code terminal, run the saved exercise file (for example `w1d1_hello.py`).** Use the command in the lesson's numbered steps.
 For scripts, run the `python3` command. Enter the example input at the program's prompts.
-For functions, run the `python3 -i` command. Type the function calls at `>>>`.
+For functions, run the `python3 -i` command. Type the function calls for the loaded exercise file at Python's **`>>>` prompt** in the same VS Code terminal.
 
 Compare the results with the lesson. Type `exit()` at `>>>` before typing terminal commands.
 Parts 3 and 4 show examples.
 
-**Step 6: Run the exercise tests.** Type the lesson's `pytest` command.
+**Step 6: In the VS Code terminal, run the tests for your exercise file (for example `w1d1_hello.py`).** Type the lesson's `pytest` command.
 For example, this command tests both Day 1 exercises in [`exercises/week1/tests/test_w1d1.py`](../exercises/week1/tests/test_w1d1.py).
 After solving both exercises, expect `2 passed`:
 
@@ -76,11 +76,11 @@ After solving both exercises, expect `2 passed`:
 pytest exercises/week1/tests/test_w1d1.py
 ```
 
-**Step 7: If a test fails, read the terminal error message.**
-Correct the named exercise file in VS Code. Return to Step 4.
+**Step 7: If a test fails, read the error message for your exercise file (for example `w1d1_hello.py`) in the VS Code terminal.**
+Correct the named exercise file in the VS Code editor. Return to Step 4.
 Part 5 explains the messages. Repeat until all tests pass.
 
-**Step 8: Save your work to GitHub.** Type these commands in order.
+**Step 8: In the VS Code terminal, save your exercise file (for example `w1d1_hello.py`) to GitHub.** Type these commands in order.
 After `git push`, open your fork's **Code** tab in your browser. Your saved changes should appear:
 
 ```bash
@@ -157,7 +157,7 @@ Done. ✅
 
 ### Trying a script yourself (Step 5)
 
-This illustrates running `w1d0_ready.py` in the terminal. Do not type the command; this file does not exist.
+This illustrates running `w1d0_ready.py` in the VS Code terminal. Do not type the command; this file does not exist.
 The user types `RR-01` at `Robot name:`. The program prints `RR-01 is ready`:
 
 ```bash
@@ -213,7 +213,7 @@ How to read this:
 - `assert None == 'STOPPED'`: it expected `'STOPPED'` but got `None`.
 - `None` means "nothing". Your function did not **return** anything. With only `pass`, that is expected.
 
-> **If the terminal shows `None`, inspect the named function in VS Code. Check for missing `return` or incorrect `print`.**
+> **If the VS Code terminal shows `None`, inspect the named function in the VS Code editor. Check for missing `return` or incorrect `print`.**
 
 ### Attempt 1: almost correct
 
@@ -273,7 +273,7 @@ python3 -i exercises/week1/w1d3_conditions.py
 >>> exit()
 ```
 
-After changing the file, save with **Ctrl + S**. If Python is still open, type `exit()` at `>>>`. Then type `python3 -i exercises/week1/w1d3_conditions.py` in the terminal to load the saved changes.
+After changing the file, save with **Ctrl + S**. If Python is still open, type `exit()` at `>>>`. Then type `python3 -i exercises/week1/w1d3_conditions.py` in the VS Code terminal to load the saved changes.
 
 ### Rules for function exercises
 
@@ -322,19 +322,19 @@ E       assert 'FULL' == 'OK'
 
 | Message | Cause | Fix |
 |---|---|---|
-| `assert None == ...` | No `return`, or `print` instead of `return` | In VS Code, add `return` inside the function named in the terminal error message |
+| `assert None == ...` | No `return`, or `print` instead of `return` | In the VS Code editor, add `return` inside the function named in the VS Code terminal error message |
 | `Your program printed: ''` | Script prints nothing | Did you save? Is your code below `TODO`? |
-| You run your script and **nothing appears at all** | The file has no code yet (only comments), or your code is not saved | Open the named exercise file in VS Code. Write code below `TODO`. Press **Ctrl + S**; the **●** on the tab disappears |
-| `Your script crashed` | Your script has an error | Read the **last line** of the error message in the terminal |
-| `Your script did not finish within 10 seconds` | A loop that never ends, or an extra `input()` | In VS Code, open the named exercise file. Check its `while` condition and count its `input()` calls |
-| `ImportError: cannot import name ...` | You renamed or deleted the function | In VS Code, restore the original function name in the exercise file named in the terminal error message |
-| `SyntaxError` / `IndentationError` | Missing `:` `)` `"` or wrong spaces | In VS Code, open the exercise file named in the terminal error message and go to the line number shown |
+| You run your script and **nothing appears at all** | The file has no code yet (only comments), or your code is not saved | Open the named exercise file in the VS Code editor. Write code below `TODO`. Press **Ctrl + S**; the **●** on the tab disappears |
+| `Your script crashed` | Your script has an error | Read the **last line** of the error message in the VS Code terminal |
+| `Your script did not finish within 10 seconds` | A loop that never ends, or an extra `input()` | In the VS Code editor, open the named exercise file. Check its `while` condition and count its `input()` calls |
+| `ImportError: cannot import name ...` | You renamed or deleted the function | In the VS Code editor, restore the original function name in the exercise file named in the VS Code terminal error message |
+| `SyntaxError` / `IndentationError` | Missing `:` `)` `"` or wrong spaces | In the VS Code editor, open the exercise file named in the VS Code terminal error message and go to the line number shown |
 | `OSError: pytest: reading from stdin...` | `input()` left in a function file | Remove the extra `input()` from the named exercise file. Save with **Ctrl + S**. Follow the lesson's `python3 -i` steps |
-| `asked for more input than expected` | (checkpoint) your loop does not stop | In VS Code, inspect `break` in `main()` in the checkpoint file named in the terminal error message |
+| `asked for more input than expected` | (checkpoint) your loop does not stop | In the VS Code editor, inspect `break` in `main()` in the checkpoint file named in the VS Code terminal error message |
 
 ### Useful options
 
-These commands run [`Day 3 tests`](../exercises/week1/tests/test_w1d3.py) or all [`Week 1 exercises`](../exercises/week1/).
+In the VS Code terminal, these commands run [`Day 3 tests`](../exercises/week1/tests/test_w1d3.py) or all [`Week 1 exercises`](../exercises/week1/).
 The comments describe which results each command shows:
 
 ```bash
@@ -345,7 +345,7 @@ pytest exercises/week1                                # all exercises of the wee
 ```
 
 Start with `pytest exercises/week1/tests/test_w1d3.py -x` to see the first failing Day 3 test.
-Correct the named exercise function in VS Code. Save with **Ctrl + S**.
+Correct the named exercise function in the VS Code editor. Save with **Ctrl + S**.
 Repeat the test command until the tests pass.
 
 ---
@@ -361,8 +361,8 @@ This means:
 - Ask for input **in the same order** as described.
 - If your loop asks for more input than the test has, you get: `Your program asked for more input than expected (is your loop stopping?)`.
 
-Save the checkpoint files in VS Code. Run [`checkpoints/week1/converter.py`](../checkpoints/week1/converter.py) with `python3 checkpoints/week1/converter.py`.
-Enter the example inputs from [`checkpoints/week1/README.md`](../checkpoints/week1/README.md). End with `q` at `Choose:` to return to the terminal.
+Save the checkpoint files in the VS Code editor. Run [`checkpoints/week1/converter.py`](../checkpoints/week1/converter.py) with `python3 checkpoints/week1/converter.py`.
+Enter the example inputs from [`checkpoints/week1/README.md`](../checkpoints/week1/README.md). End with `q` at `Choose:` to return to the VS Code terminal.
 
 Then run [`checkpoints/week1/guess.py`](../checkpoints/week1/guess.py) with `python3 checkpoints/week1/guess.py`.
 Play the game and compare its output with the checkpoint README.

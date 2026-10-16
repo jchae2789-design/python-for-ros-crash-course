@@ -1,14 +1,14 @@
 # Week 1 · Day 1: The terminal and your first program
 
-**You will learn:** how to move around in the terminal, how to run Python, how to print text, and how to read an error message.
+**You will learn:** how to move around in the VS Code terminal, how to run Python, how to print text, and how to read an error message.
 
-**Why this matters for robots:** with ROS 2 you start robots, watch sensor data and fix problems almost only from the terminal. A robot engineer who is comfortable in the terminal is much faster.
+**Why this matters for robots:** with ROS 2 you start robots, watch sensor data and fix problems almost only from the VS Code terminal. A robot engineer who is comfortable in the VS Code terminal is much faster.
 
 ---
 
 ## 1. The terminal
 
-Open a terminal (**Ctrl + Alt + T**). The text before the cursor is the **prompt**. It shows your user name and the folder you are in, for example:
+Open the **VS Code terminal** with **Ctrl + `** (or **Terminal → New Terminal**). It starts in the course folder, with the venv on; see [Where to type things](../../docs/01-how-to-study.md#where-to-type-things). In the VS Code terminal, type `pwd`: it shows `/home/<name>/code/python-for-ros-crash-course`, where `<name>` is your Ubuntu user name. The text before the cursor is the **prompt**. It shows your user name and the folder you are in. For example, after moving to your home folder, the prompt can look like this:
 
 ```
 minjun@robot-pc:~$
@@ -31,7 +31,7 @@ minjun@robot-pc:~$
 
 ### Try it
 
-In the terminal, type each line below in order and press Enter after each line:
+In the VS Code terminal, type each line below in order and press Enter after each line:
 
 ```bash
 cd ~
@@ -46,19 +46,32 @@ ls
 
 You should see your new `playground` folder in the last `ls`.
 
+Now go back to the course folder. In the VS Code terminal, type:
+
+```bash
+cd ~/code/python-for-ros-crash-course
+pwd
+```
+
+✔ `pwd` shows `/home/<name>/code/python-for-ros-crash-course` again. Stay in this folder for the rest of the course.
+
+In the VS Code terminal, copy with **Ctrl + Shift + C** and paste with **Ctrl + Shift + V**.
+
 ### Three shortcuts that save hours
 
-- **Tab**: completes names for you. In the terminal, type `cd pla` and press Tab. It becomes `cd playground/`.
+- **Tab**: completes names for you. In the VS Code terminal, type `cd pla` and press Tab. It becomes `cd playground/`.
 - **↑ (up arrow)**: shows your last command again. Press it more to go further back.
 - **Ctrl + C**: stops a program that is running (for example, one that never ends).
 
-In ROS you type long names like `/rail_robot/lidar/scan`. In the terminal, press Tab to complete long command names.
+In ROS you type long names like `/rail_robot/lidar/scan`. In the VS Code terminal, press Tab to complete long command names.
+
+After this navigation practice, return to the course folder in the VS Code terminal using the `cd` fallback in [Where to type things](../../docs/01-how-to-study.md#where-to-type-things). This finishes the sequence that started with `cd ~`; the next commands run in the course folder.
 
 ---
 
 ## 2. Talking to Python
 
-Python has an **interactive mode**: you type one line, Python answers immediately. In the terminal, type `python3` and press Enter:
+Python has an **interactive mode**: you type one line, Python answers immediately. In the VS Code terminal, type `python3` and press Enter:
 
 ```bash
 python3
@@ -75,7 +88,7 @@ You see `>>>`. At this Python prompt, type each expression after `>>>` below and
 'robot'
 ```
 
-At Python's `>>>` prompt, type `exit()` and press Enter to return to the terminal:
+At Python's `>>>` prompt, type `exit()` and press Enter to return to the VS Code terminal:
 
 ```python
 >>> exit()
@@ -89,21 +102,20 @@ Use interactive mode to test small ideas quickly. For real programs, we write **
 
 A Python program is a text file that ends in `.py`. Python reads it **from top to bottom** and runs each line.
 
-In the terminal, type these commands in order to open `playground.py` in VS Code from the course folder:
+In the VS Code terminal, type this command to open `playground.py` in the same VS Code window:
 
 ```bash
-cd ~/code/python-for-ros-crash-course
 code playground.py
 ```
 
-In VS Code, type the following code into `playground.py` and save with **Ctrl + S**:
+In the VS Code editor, type the following code into `playground.py` and save with **Ctrl + S**:
 
 ```python
 print("Hello!")
 print("I am a robot.")
 ```
 
-In the terminal type `python3 playground.py`:
+In the VS Code terminal type `python3 playground.py`:
 
 ```bash
 python3 playground.py
@@ -139,7 +151,7 @@ print("Battery OK")  # comments can also go at the end of a line
 
 ### Try it
 
-In VS Code, replace the contents of `playground.py` with a program that prints the text below. Save with **Ctrl + S**. Then type `python3 playground.py` in the terminal and compare the output:
+In the VS Code editor, replace the contents of `playground.py` with a program that prints the text below. Save with **Ctrl + S**. Then type `python3 playground.py` in the VS Code terminal and compare the output:
 
 ```
 === Robot RR-01 ===
@@ -156,13 +168,13 @@ Ready to start.
 
 Everyone makes errors, also professional engineers, every day. The important skill is **reading** them.
 
-In VS Code, replace the contents of `playground.py` with this code (the closing quote is missing), then save with **Ctrl + S**:
+In the VS Code editor, replace the contents of `playground.py` with this code (the closing quote is missing), then save with **Ctrl + S**:
 
 ```python
 print("Hello!)
 ```
 
-In the terminal type `python3 playground.py`. You should see this error:
+In the VS Code terminal type `python3 playground.py`. You should see this error:
 
 ```
   File "/home/minjun/code/python-for-ros-crash-course/playground.py", line 1
@@ -177,7 +189,7 @@ How to read it:
 2. **Line number:** `line 1`. The error is on line 1.
 3. **The `^`** points to where the problem starts.
 
-For another common error, replace the contents of `playground.py` in VS Code with the code below. Save with **Ctrl + S**. Then type `python3 playground.py` in the terminal to see the `NameError` below:
+For another common error, replace the contents of `playground.py` in VS Code with the code below. Save with **Ctrl + S**. Then type `python3 playground.py` in the VS Code terminal to see the `NameError` below:
 
 ```python
 prnt("Hello!")
@@ -196,7 +208,7 @@ Python does not know `prnt`. It even tells you what you probably meant!
 | `SyntaxError` | missing quote `"` or bracket `)` |
 | `NameError` | typo in a name, or text without quotes: `print(Hello)` |
 | `IndentationError` | spaces at the start of a line where there should be none |
-| `python3: can't open file` | you are in the wrong folder, or the file name has a typo. In the terminal, type `pwd` to see your current folder and `ls` to see its files. |
+| `python3: can't open file` | you are in the wrong folder, or the file name has a typo. In the VS Code terminal, type `pwd` to see your current folder and `ls` to see its files. |
 
 ---
 
@@ -232,9 +244,9 @@ This program greets the robot team:
 print("Good morning, robot team!")
 ```
 
-Try the example: open `playground.py` with `code playground.py`.
-Type the example in VS Code. Save with **Ctrl + S**.
-Run `python3 playground.py` in the terminal.:
+Try the example: in the VS Code terminal, type `code playground.py` to open `playground.py` in the same VS Code window.
+In the VS Code editor, type the example into `playground.py`. Save `playground.py` with **Ctrl + S**.
+Run `python3 playground.py` in the VS Code terminal.:
 
 ```
 $ python3 playground.py
@@ -245,23 +257,23 @@ When you understand how the example works, do the steps below. Write your own co
 
 **Steps:**
 
-1. **Open the file.** In VS Code, press **Ctrl + P**.
-   Type [`exercises/week1/w1d1_hello.py`](../../exercises/week1/w1d1_hello.py) and press Enter. The file opens in the editor.
-2. Read the instructions at the top of the file.
-3. Write your code on the empty line below `# TODO: write your code below this line`. You need one `print()`.
-4. Save with **Ctrl + S**. The **●** on the file's tab disappears when it is saved.
-5. In the terminal, run the file:
+1. **Open the file.** In the VS Code editor, press **Ctrl + P**.
+   Type [`exercises/week1/w1d1_hello.py`](../../exercises/week1/w1d1_hello.py) and press Enter. The file opens in the editor. Or click [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d1_hello.py`](../../exercises/week1/w1d1_hello.py) in the file list on the left (Explorer) in the VS Code editor.
+2. In the VS Code editor, in `w1d1_hello.py`, read the instructions at the top of the file.
+3. In the VS Code editor, in `w1d1_hello.py`, write your code on the empty line below `# TODO: write your code below this line`. You need one `print()`.
+4. In the VS Code editor, save `w1d1_hello.py` with **Ctrl + S**. The **●** on the file's tab disappears when it is saved.
+5. In the VS Code terminal, run `w1d1_hello.py`:
    ```bash
    python3 exercises/week1/w1d1_hello.py
    ```
    ✔ You should see `Hello, ROS!`
    ✘ If **nothing appears at all**, your file has no code yet or is not saved. Go back to step 3.
-6. Test `w1d1_hello.py` with [`test_w1d1.py`](../../exercises/week1/tests/test_w1d1.py):
+6. In the VS Code terminal, test `w1d1_hello.py` with [`test_w1d1.py`](../../exercises/week1/tests/test_w1d1.py):
    ```bash
    pytest exercises/week1/tests/test_w1d1.py -k hello
    ```
-   ✔ You should see `1 passed, 1 deselected`. If the test fails, read the terminal error message, correct `exercises/week1/w1d1_hello.py` in VS Code, and return to step 4.
-7. In VS Code, open [progress/week1.md](../../progress/week1.md).
+   ✔ You should see `1 passed, 1 deselected`. If the test fails, read the VS Code terminal error message, correct `exercises/week1/w1d1_hello.py` in VS Code, and return to step 4.
+7. In the VS Code editor, open [progress/week1.md](../../progress/week1.md).
    Change `[ ]` to `[x]` beside `exercises/week1/w1d1_hello.py`. Save with **Ctrl + S**.
 
 > `deselected` means: the tests of the **other** exercises in this file were not run. That is what `-k` does, and it is fine.
@@ -289,9 +301,9 @@ print("Type: Quadcopter")
 print("Status: CHARGING")
 ```
 
-Try the example: open `playground.py` with `code playground.py`.
-Type the example in VS Code. Save with **Ctrl + S**.
-Run `python3 playground.py` in the terminal.:
+Try the example: in the VS Code terminal, type `code playground.py` to open `playground.py` in the same VS Code window.
+In the VS Code editor, type the example into `playground.py`. Save `playground.py` with **Ctrl + S**.
+Run `python3 playground.py` in the VS Code terminal.:
 
 ```
 $ python3 playground.py
@@ -304,46 +316,46 @@ When you understand how the example works, do the steps below. Write your own co
 
 **Steps:**
 
-1. **Open the file.** In VS Code, press **Ctrl + P**.
-   Type [`exercises/week1/w1d1_robot_card.py`](../../exercises/week1/w1d1_robot_card.py) and press Enter. The file opens in the editor.
-2. Read the instructions at the top of the file.
-3. Write your code below `TODO`. Use one `print()` for each line.
-4. Save with **Ctrl + S**. The **●** on the file's tab disappears when it is saved.
-5. In the terminal, run the file:
+1. **Open the file.** In the VS Code editor, press **Ctrl + P**.
+   Type [`exercises/week1/w1d1_robot_card.py`](../../exercises/week1/w1d1_robot_card.py) and press Enter. The file opens in the editor. Or click [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d1_robot_card.py`](../../exercises/week1/w1d1_robot_card.py) in the file list on the left (Explorer) in the VS Code editor.
+2. In the VS Code editor, in `w1d1_robot_card.py`, read the instructions at the top of the file.
+3. In the VS Code editor, in `w1d1_robot_card.py`, write your code below `TODO`. Use one `print()` for each line.
+4. In the VS Code editor, save `w1d1_robot_card.py` with **Ctrl + S**. The **●** on the file's tab disappears when it is saved.
+5. In the VS Code terminal, run `w1d1_robot_card.py`:
    ```bash
    python3 exercises/week1/w1d1_robot_card.py
    ```
-   ✔ You should see the 3 lines above. Compare the terminal output with the three lines under **Your task**, letter by letter.
+   ✔ You should see the 3 lines above. Compare the VS Code terminal output with the three lines under **Your task**, letter by letter.
    ✘ If **nothing appears at all**, your file has no code yet or is not saved. Go back to step 3.
-6. Test `w1d1_robot_card.py` with [`test_w1d1.py`](../../exercises/week1/tests/test_w1d1.py):
+6. In the VS Code terminal, test `w1d1_robot_card.py` with [`test_w1d1.py`](../../exercises/week1/tests/test_w1d1.py):
    ```bash
    pytest exercises/week1/tests/test_w1d1.py -k robot_card
    ```
    ✔ You should see `1 passed, 1 deselected`.
-7. In VS Code, open [`progress/week1.md`](../../progress/week1.md).
+7. In the VS Code editor, open [`progress/week1.md`](../../progress/week1.md).
    Change `[ ]` to `[x]` beside `w1d1_robot_card.py`. Save with **Ctrl + S**.
 
 ### Finally: all of today's tests
 
-Run today's tests in [`test_w1d1.py`](../../exercises/week1/tests/test_w1d1.py):
+In the VS Code terminal, run today's tests in [`test_w1d1.py`](../../exercises/week1/tests/test_w1d1.py):
 
 ```bash
 pytest exercises/week1/tests/test_w1d1.py
 ```
 
-✔ You should see **`2 passed`**. In VS Code, check the Day 1 "Tests pass" box in [`progress/week1.md`](../../progress/week1.md). Save with **Ctrl + S**.
+✔ You should see **`2 passed`**. In the VS Code editor, check the Day 1 "Tests pass" box in [`progress/week1.md`](../../progress/week1.md). Save with **Ctrl + S**.
 
 ---
 
 ## 6. Before you finish today
 
-In VS Code, open [progress/week1.md](../../progress/week1.md). Mark each completed Day 1 box `[x]`.
+In the VS Code editor, open [progress/week1.md](../../progress/week1.md). Mark each completed Day 1 box `[x]`.
 Save with **Ctrl + S**. Only start Day 2 when every Day 1 box is checked.
 
 - [ ] `pytest exercises/week1/tests/test_w1d1.py` shows **2 passed**
 - [ ] I can use `pwd`, `ls`, `cd`, `mkdir` without looking
 - [ ] I wrote my daily log in [`logs/`](../../logs/)
-- [ ] I committed and pushed (type these commands in the terminal in order):
+- [ ] I committed and pushed (type these commands in the VS Code terminal in order):
   ```bash
   git add .
   git commit -m "Week 1 Day 1: first programs"

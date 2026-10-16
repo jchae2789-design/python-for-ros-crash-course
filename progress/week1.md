@@ -2,12 +2,12 @@
 
 This is **your** checklist. It is the path through the course: follow it **from top to bottom**.
 
-Type test commands in the terminal. See [Where to type things](../docs/01-how-to-study.md#where-to-type-things).
+Type test commands in the VS Code terminal. See [Where to type things](../docs/01-how-to-study.md#where-to-type-things).
 
 **Rules:**
 1. Do the steps **in order**. Only start a step when **every box above it** is checked.
 2. Check a box only when the step is **really done**. For test steps, the tests must pass.
-3. To check a box, change `[ ]` to `[x]` in this file in VS Code. Save with **Ctrl + S**. Check off a box as soon as you finish the step.
+3. To check a box, change `[ ]` to `[x]` in this file in the VS Code editor. Save with **Ctrl + S**. Check off a box as soon as you finish the step.
 4. Commit and push this file with the rest of your work. Your mentor follows your progress on GitHub.
 
 ---
@@ -90,9 +90,9 @@ Afternoon: checkpoint ([instructions](../checkpoints/week1/README.md)):
 
 - [ ] Read the whole checkpoint README
 - [ ] [`converter.py`](../checkpoints/week1/converter.py): the four conversion functions
-- [ ] `converter.py`: the menu in `main()`, and I tried it myself in the terminal
+- [ ] `converter.py`: the menu in `main()`, and I tried it myself in the VS Code terminal
 - [ ] [`guess.py`](../checkpoints/week1/guess.py): `check_guess`
-- [ ] `guess.py`: the game in `main()`, and I played it myself in the terminal
+- [ ] `guess.py`: the game in `main()`, and I played it myself in the VS Code terminal
 - [ ] Tests pass ([`checkpoints/week1/`](../checkpoints/week1/)): `pytest checkpoints/week1` → **11 passed**
 - [ ] Wrote my daily log
 - [ ] Committed and pushed. My latest commit on GitHub shows ✅

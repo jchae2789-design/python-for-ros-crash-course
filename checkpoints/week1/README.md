@@ -7,16 +7,16 @@ You build two small programs:
 1. [`converter.py`](converter.py): a unit converter with a menu
 2. [`guess.py`](guess.py): a number-guessing game
 
-After completing both programs, type this test command: You are done when the result is `11 passed`:
+After completing both programs, in the VS Code terminal, type this test command: You are done when the result is `11 passed`:
 
 ```bash
 pytest checkpoints/week1
 ```
 
-Then run `python3 checkpoints/week1/converter.py`. Enter the converter's example inputs below.
-Type `q` at `Choose:` to return to the terminal.
+Then, in the VS Code terminal, run `python3 checkpoints/week1/converter.py`. Enter the converter's example inputs below.
+Type `q` at `Choose:` to return to the VS Code terminal.
 
-Next, run `python3 checkpoints/week1/guess.py`. Play the game and show both programs to your mentor.
+Next, in the VS Code terminal, run `python3 checkpoints/week1/guess.py`. Play the game and show both programs to your mentor.
 The secret is random, so your guesses can differ from the example.
 
 ---
@@ -27,11 +27,11 @@ Robots use many units. Sensor data often comes in one unit and ROS needs another
 
 ### Step 1: the four conversion functions
 
-First, open [`converter.py`](converter.py) in VS Code. Press **Ctrl + P**.
-Type `checkpoints/week1/converter.py` and press Enter. The starter file opens in the editor.
+First, open [`converter.py`](converter.py) in the VS Code editor. Press **Ctrl + P**.
+Type `checkpoints/week1/converter.py` and press Enter. The starter file opens in the editor. Or click [`checkpoints`](../) → [`week1`](./) → [`converter.py`](converter.py) in the file list on the left (Explorer) in the VS Code editor.
 
-Read the comments. Replace `pass` in each conversion function with code that returns the value described below.
-Keep the function names and parameters. Save with **Ctrl + S**.
+In the VS Code editor, read the comments in `converter.py`. Replace `pass` in each conversion function with code that returns the value described below.
+Keep the function names and parameters. Save `converter.py` in the VS Code editor with **Ctrl + S**.
 The **●** on the file tab disappears.
 
 | Function | Formula | Example |
@@ -45,8 +45,8 @@ The **●** on the file tab disappears.
 
 ### Step 2: the menu in `main()`
 
-Replace `pass` inside `main()` in the file. Write a loop that performs the actions below in order until `q`.
-Save with **Ctrl + S** before running the program.
+In the VS Code editor, replace `pass` inside `main()` in `converter.py`. Write a loop that performs the actions below in order until `q`.
+Save `converter.py` in the VS Code editor with **Ctrl + S** before running the program.
 These are your program's actions, not terminal commands:
 
 1. Print the menu:
@@ -91,11 +91,11 @@ Hints:
 
 ### Step 1: `check_guess(secret, guess)`
 
-First, open [`guess.py`](guess.py) in VS Code. Press **Ctrl + P**.
-Type `checkpoints/week1/guess.py` and press Enter. The starter file opens in the editor.
+First, open [`guess.py`](guess.py) in the VS Code editor. Press **Ctrl + P**.
+Type `checkpoints/week1/guess.py` and press Enter. The starter file opens in the editor. Or click [`checkpoints`](../) → [`week1`](./) → [`guess.py`](guess.py) in the file list on the left (Explorer) in the VS Code editor.
 
-Read the comments. Replace `pass` inside `check_guess(secret, guess)` with code that returns the values below.
-Keep the function name and parameters. Save with **Ctrl + S**.
+In the VS Code editor, read the comments in `guess.py`. Replace `pass` inside `check_guess(secret, guess)` with code that returns the values below.
+Keep the function name and parameters. Save `guess.py` in the VS Code editor with **Ctrl + S**.
 The **●** on the file tab disappears.
 
 Return:
@@ -105,8 +105,8 @@ Return:
 
 ### Step 2: the game in `main()`
 
-Replace `pass` inside `main()` in the file. Write code that performs the actions below in order.
-Save with **Ctrl + S** before running the program.
+In the VS Code editor, replace `pass` inside `main()` in `guess.py`. Write code that performs the actions below in order.
+Save `guess.py` in the VS Code editor with **Ctrl + S** before running the program.
 These are your program's actions, not terminal commands.
 
 1. Pick a secret number: `secret = random.randint(1, 100)`

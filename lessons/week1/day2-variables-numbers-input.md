@@ -107,7 +107,7 @@ ROS measures angles in **radians**, not degrees, so you will see `math.pi` a lot
 
 ### Try it
 
-In the terminal, type `python3`. At Python's `>>>` prompt, calculate the following values; then type `exit()` to return to the terminal:
+In the VS Code terminal, type `python3`. At Python's `>>>` prompt, calculate the following values; then type `exit()` to return to the VS Code terminal:
 1. How many full minutes are in 500 seconds, and how many seconds are left?
 2. A robot drives at 0.4 m/s for 90 seconds. How far does it go?
 3. The square root of 2 (first type `import math` at `>>>`).
@@ -117,7 +117,7 @@ In the terminal, type `python3`. At Python's `>>>` prompt, calculate the followi
 ## 4. Converting types
 
 Sometimes you need to change a value from one type to another. Run `python3`.
-At `>>>`, type each call below. The comments show the results.
+At Python's **`>>>` prompt**, type each call below. The comments show the results.
 
 Type `exit()` at `>>>` when finished:
 
@@ -160,7 +160,7 @@ distance = input("Distance (m): ")    # user types 10
 print(distance * 2)                   # 1010  ← text repeated twice!
 ```
 
-In `playground.py`, replace the distance example with the version below. It converts the input to `float`. Save with **Ctrl + S**. Run `python3 playground.py` in the terminal. At `Distance (m):`, type `10` and press Enter:
+In `playground.py`, replace the distance example with the version below. It converts the input to `float`. Save with **Ctrl + S**. Run `python3 playground.py` in the VS Code terminal. At `Distance (m):`, type `10` and press Enter:
 
 ```python
 distance = float(input("Distance (m): "))
@@ -198,7 +198,7 @@ You will use f-strings in almost every program, including ROS log messages.
 
 ### Try it
 
-In `playground.py`, write a program that asks for speed in m/s. Print the speed in km/h with 1 decimal. Save with **Ctrl + S**. Run `python3 playground.py` in the terminal.
+In `playground.py`, write a program that asks for speed in m/s. Print the speed in km/h with 1 decimal. Save with **Ctrl + S**. Run `python3 playground.py` in the VS Code terminal.
 
 At `Speed (m/s):`, type `2.5` and press Enter. Expect the result below. (1 m/s = 3.6 km/h.)
 
@@ -251,9 +251,9 @@ travel_time = distance / speed
 print(f"Travel time: {travel_time:.2f} minutes")
 ```
 
-Try the example: open `playground.py` with `code playground.py`.
-Type the example in VS Code. Save with **Ctrl + S**.
-Run `python3 playground.py` in the terminal.
+Try the example: in the VS Code terminal, type `code playground.py` to open `playground.py` in the same VS Code window.
+In the VS Code editor, type the example into `playground.py`. Save `playground.py` with **Ctrl + S**.
+Run `python3 playground.py` in the VS Code terminal.
 
 When it asks, type `100`, press Enter, type `40`, press Enter:
 
@@ -268,27 +268,27 @@ When you understand how the example works, do the steps below. Write your own co
 
 **Steps:**
 
-1. **Open the file.** In VS Code, press **Ctrl + P**.
-   Type [`exercises/week1/w1d2_battery_runtime.py`](../../exercises/week1/w1d2_battery_runtime.py) and press Enter. The file opens in the editor.
-2. Read the instructions at the top of the file.
-3. Write your code below `TODO`. You need:
+1. **Open the file.** In the VS Code editor, press **Ctrl + P**.
+   Type [`exercises/week1/w1d2_battery_runtime.py`](../../exercises/week1/w1d2_battery_runtime.py) and press Enter. The file opens in the editor. Or click [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d2_battery_runtime.py`](../../exercises/week1/w1d2_battery_runtime.py) in the file list on the left (Explorer) in the VS Code editor.
+2. In the VS Code editor, in `w1d2_battery_runtime.py`, read the instructions at the top of the file.
+3. In the VS Code editor, in `w1d2_battery_runtime.py`, write your code below `TODO`. You need:
    - two `input()` calls, each wrapped in `int()` (section 5 of this lesson),
    - one division,
    - one `print()` with an f-string and `:.2f` (section 6).
-4. Save with **Ctrl + S**. The **●** on the file's tab disappears when it is saved.
-5. In the terminal, run the file. At `Capacity (mAh):`, type `5000` and press Enter. Then at `Current (mA):`, type `2000` and press Enter:
+4. In the VS Code editor, save `w1d2_battery_runtime.py` with **Ctrl + S**. The **●** on the file's tab disappears when it is saved.
+5. In the VS Code terminal, run `w1d2_battery_runtime.py`. At `Capacity (mAh):`, type `5000` and press Enter. Then at `Current (mA):`, type `2000` and press Enter:
    ```bash
    python3 exercises/week1/w1d2_battery_runtime.py
    ```
    ✔ The last line should be `Runtime: 2.50 hours`. Run `python3 exercises/week1/w1d2_battery_runtime.py` again. Enter `1000` at `Capacity (mAh):`.
    Enter `3000` at `Current (mA):`. Press Enter after each value. That should give `Runtime: 0.33 hours`.
    ✘ If **nothing appears at all**, your file has no code yet or is not saved. Go back to step 3.
-6. Test `w1d2_battery_runtime.py` with [`test_w1d2.py`](../../exercises/week1/tests/test_w1d2.py):
+6. In the VS Code terminal, test `w1d2_battery_runtime.py` with [`test_w1d2.py`](../../exercises/week1/tests/test_w1d2.py):
    ```bash
    pytest exercises/week1/tests/test_w1d2.py -k battery
    ```
    ✔ You should see `3 passed, 3 deselected`. The test runs your program 3 times with different numbers.
-7. In VS Code, open [progress/week1.md](../../progress/week1.md).
+7. In the VS Code editor, open [progress/week1.md](../../progress/week1.md).
    Change `[ ]` to `[x]` beside `exercises/week1/w1d2_battery_runtime.py`. Save with **Ctrl + S**.
 
 > `deselected` means: the tests of the **other** exercises in this file were not run. That is what `-k` does, and it is fine.
@@ -319,9 +319,9 @@ cm = total_cm % 100
 print(f"{meters} m {cm} cm")
 ```
 
-Try the example: open `playground.py` with `code playground.py`.
-Type the example in VS Code. Save with **Ctrl + S**.
-Run `python3 playground.py` in the terminal.
+Try the example: in the VS Code terminal, type `code playground.py` to open `playground.py` in the same VS Code window.
+In the VS Code editor, type the example into `playground.py`. Save `playground.py` with **Ctrl + S**.
+Run `python3 playground.py` in the VS Code terminal.
 
 When it asks, type `275` and press Enter:
 
@@ -335,41 +335,41 @@ When you understand how the example works, do the steps below. Write your own co
 
 **Steps:**
 
-1. **Open the file.** In VS Code, press **Ctrl + P**.
-   Type [`exercises/week1/w1d2_time_format.py`](../../exercises/week1/w1d2_time_format.py) and press Enter. The file opens in the editor.
-2. Read the instructions at the top of the file.
-3. Write your code below `TODO`. Use `//` and `%` (section 3 of this lesson, "`//` and `%` together"). There are 3600 seconds in an hour and 60 in a minute.
+1. **Open the file.** In the VS Code editor, press **Ctrl + P**.
+   Type [`exercises/week1/w1d2_time_format.py`](../../exercises/week1/w1d2_time_format.py) and press Enter. The file opens in the editor. Or click [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d2_time_format.py`](../../exercises/week1/w1d2_time_format.py) in the file list on the left (Explorer) in the VS Code editor.
+2. In the VS Code editor, in `w1d2_time_format.py`, read the instructions at the top of the file.
+3. In the VS Code editor, in `w1d2_time_format.py`, write your code below `TODO`. Use `//` and `%` (section 3 of this lesson, "`//` and `%` together"). There are 3600 seconds in an hour and 60 in a minute.
    Tip: first work it out on paper for 3725: how many full hours? How many seconds are left? How many full minutes in those?
-4. Save with **Ctrl + S**. The **●** on the file's tab disappears when it is saved.
-5. In the terminal, run the file. At `Seconds:`, type `3725` and press Enter:
+4. In the VS Code editor, save `w1d2_time_format.py` with **Ctrl + S**. The **●** on the file's tab disappears when it is saved.
+5. In the VS Code terminal, run `w1d2_time_format.py`. At `Seconds:`, type `3725` and press Enter:
    ```bash
    python3 exercises/week1/w1d2_time_format.py
    ```
    ✔ You should see `1 h 2 m 5 s`. Run `python3 exercises/week1/w1d2_time_format.py` again. Enter `59` at `Seconds:` (→ `0 h 0 m 59 s`). Then run the same command again. Enter `7200` at `Seconds:` (→ `2 h 0 m 0 s`), pressing Enter after each value.
    ✘ If **nothing appears at all**, your file has no code yet or is not saved. Go back to step 3.
-6. Test `w1d2_time_format.py` with [`test_w1d2.py`](../../exercises/week1/tests/test_w1d2.py):
+6. In the VS Code terminal, test `w1d2_time_format.py` with [`test_w1d2.py`](../../exercises/week1/tests/test_w1d2.py):
    ```bash
    pytest exercises/week1/tests/test_w1d2.py -k time_format
    ```
    ✔ You should see `3 passed, 3 deselected`.
-7. In VS Code, open [`progress/week1.md`](../../progress/week1.md).
+7. In the VS Code editor, open [`progress/week1.md`](../../progress/week1.md).
    Change `[ ]` to `[x]` beside `w1d2_time_format.py`. Save with **Ctrl + S**.
 
 ### Finally: all of today's tests
 
-Run today's tests in [`test_w1d2.py`](../../exercises/week1/tests/test_w1d2.py):
+In the VS Code terminal, run today's tests in [`test_w1d2.py`](../../exercises/week1/tests/test_w1d2.py):
 
 ```bash
 pytest exercises/week1/tests/test_w1d2.py
 ```
 
-✔ You should see **`6 passed`**. In VS Code, check the Day 2 "Tests pass" box in [`progress/week1.md`](../../progress/week1.md). Save with **Ctrl + S**.
+✔ You should see **`6 passed`**. In the VS Code editor, check the Day 2 "Tests pass" box in [`progress/week1.md`](../../progress/week1.md). Save with **Ctrl + S**.
 
 ---
 
 ## 9. Before you finish today
 
-In VS Code, open [progress/week1.md](../../progress/week1.md). Mark each completed Day 2 box `[x]`.
+In the VS Code editor, open [progress/week1.md](../../progress/week1.md). Mark each completed Day 2 box `[x]`.
 Save with **Ctrl + S**. Only start Day 3 when every Day 2 box is checked.
 
 - [ ] `pytest exercises/week1/tests/test_w1d2.py` shows **6 passed**

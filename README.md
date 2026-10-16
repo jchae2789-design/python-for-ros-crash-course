@@ -10,17 +10,17 @@ You study **on your own**, at your own pace. Your mentor checks in with you ever
 
 👉 **Open [progress/week1.md](progress/week1.md) and follow it from top to bottom.**
 
-After setup, you tick the boxes in VS Code.
+After setup, you tick the boxes in the VS Code editor.
 See [Where to type things](docs/01-how-to-study.md#where-to-type-things).
 
 It is your checklist for the whole week: setup, reading, every lesson and exercise, in the right order. Check off each step yourself when it is done, and only move on when everything above is checked.
 
 The first steps on the checklist are:
 
-1. **Set up your computer:** [docs/00-setup.md](docs/00-setup.md) (about 1–2 hours)
-2. **Learn how to study in this course:** [docs/01-how-to-study.md](docs/01-how-to-study.md) (10 minutes)
-3. **Learn how exercises and tests work:** [docs/02-how-exercises-work.md](docs/02-how-exercises-work.md) (20 minutes)
-4. **Week 1, Day 1:** [lessons/week1/day1-terminal-and-first-program.md](lessons/week1/day1-terminal-and-first-program.md)
+1. In your browser, open **Set up your computer:** [docs/00-setup.md](docs/00-setup.md) (about 1–2 hours)
+2. In your browser or the VS Code editor, open **Learn how to study in this course:** [docs/01-how-to-study.md](docs/01-how-to-study.md) (10 minutes)
+3. In your browser or the VS Code editor, open **Learn how exercises and tests work:** [docs/02-how-exercises-work.md](docs/02-how-exercises-work.md) (20 minutes)
+4. In your browser or the VS Code editor, open **Week 1, Day 1:** [lessons/week1/day1-terminal-and-first-program.md](lessons/week1/day1-terminal-and-first-program.md)
 
 ---
 
@@ -28,7 +28,7 @@ The first steps on the checklist are:
 
 | Week | Dates (2026) | Topic | Why it matters for ROS | Checkpoint |
 |---|---|---|---|---|
-| **1** | Oct 19 – Oct 23 | Terminal and Python basics | You control ROS from the terminal | Robot console tools (unit converter + guessing game) |
+| **1** | Oct 19 – Oct 23 | Terminal and Python basics | You control ROS from the VS Code terminal | Robot console tools (unit converter + guessing game) |
 | **2** | Oct 26 – Oct 30 | Data and functions | ROS messages are structured data | Sensor data analyzer |
 | **3** | Nov 2 – Nov 6 | Organizing code: classes, modules, errors | Every ROS node is a class | Robot class family |
 | **4** | Nov 9 – Nov 13 | ROS-style patterns: callbacks, timers, publish/subscribe | Same ideas as real ROS 2 | **mini-ROS**: build your own tiny ROS |
@@ -59,7 +59,7 @@ Your checklist in [`progress/`](progress/) tells you exactly where you are on th
 
 ### Step 1: Find where you are
 
-In VS Code, open your checklist for the current week, for example [progress/week1.md](progress/week1.md). **Your next step is the first box that is not checked.**
+In the VS Code editor, open your checklist for the current week, for example [progress/week1.md](progress/week1.md). **Your next step is the first box that is not checked.**
 
 ```markdown
 - [x] Read the lesson and typed every example myself
@@ -76,12 +76,12 @@ In [`progress/week1.md`](progress/week1.md), read the instructions beside the fi
 
 - **Reading a lesson:** you typed and ran every example.
 - **An exercise:** you tried it yourself, and it does what the instructions say.
-- **A "Tests pass" box:** type the `pytest` command beside that box. The result must match **exactly**, for example `21 passed`.
+- **A "Tests pass" box:** in the VS Code terminal, type the `pytest` command beside that box. The result must match **exactly**, for example `21 passed`.
 - **An "I can explain…" box:** say the concept named beside that box out loud to yourself without looking at the lesson. If you can't, read that part of the lesson again.
 
 ### Step 4: Check the box
 
-In VS Code, open [`progress/week1.md`](progress/week1.md). Change `[ ]` to `[x]` beside the completed step (lowercase x, no spaces).
+In the VS Code editor, open [`progress/week1.md`](progress/week1.md). Change `[ ]` to `[x]` beside the completed step (lowercase x, no spaces).
 Save with **Ctrl + S**:
 
 ```markdown
@@ -95,7 +95,7 @@ Then go back to **Step 1**.
 
 ### End of every day
 
-The last boxes of each day are: write your daily log, commit and push, and check in with your mentor. Save your code, daily log, and [`progress/week1.md`](progress/week1.md). Then type these commands in order:
+The last boxes of each day are: write your daily log, commit and push, and check in with your mentor. Save your code, daily log, and [`progress/week1.md`](progress/week1.md). Then, in the VS Code terminal, type these commands in order:
 
 ```bash
 git add .
@@ -120,8 +120,8 @@ A week is finished when:
 Then get the next week:
 
 1. In your browser, open your fork on GitHub and click **Sync fork** → **Update branch**.
-2. In the terminal type `git pull`. The new week's files should appear in VS Code.
-3. In VS Code, open the new checklist (for example `progress/week2.md`) and follow the first unchecked step.
+2. In the VS Code terminal type `git pull`. The new week's files should appear in the VS Code editor.
+3. In the VS Code editor, open the new checklist (for example `progress/week2.md`) and follow the first unchecked step.
 
 ### A normal day
 
@@ -159,7 +159,7 @@ progress/           your checklists: one per week, follow them in order
 
 ## Useful commands
 
-These commands run [`Day 3 tests`](exercises/week1/tests/test_w1d3.py), [`Week 1 exercises`](exercises/week1/), or [`checkpoint tests`](checkpoints/week1/).
+In the VS Code terminal, these commands run [`Day 3 tests`](exercises/week1/tests/test_w1d3.py), [`Week 1 exercises`](exercises/week1/), or [`checkpoint tests`](checkpoints/week1/).
 The comments name the tests each command runs. After completing Week 1, expect `21 passed`, `64 passed`, `11 passed`, or `75 passed`, respectively.
 
 ```bash

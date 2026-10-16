@@ -39,7 +39,7 @@ The stop value is **never** included. To go up to `n`, write `range(1, n + 1)`.
 ### Try it
 
 In `playground.py`, write a loop that prints numbers from 10 down to 0 in steps of 2.
-Save with **Ctrl + S**. Run `python3 playground.py` in the terminal. Expected numbers: `10 8 6 4 2 0` (one per line is fine).
+Save with **Ctrl + S**. Run `python3 playground.py` in the VS Code terminal. Expected numbers: `10 8 6 4 2 0` (one per line is fine).
 
 ---
 
@@ -117,7 +117,7 @@ while battery > 20:
     print("Working...")      # battery never changes → never ends!
 ```
 
-If the `while battery > 20` loop prints `Working...` forever, press **Ctrl + C** in the terminal to stop the program.
+If the `while battery > 20` loop prints `Working...` forever, press **Ctrl + C** in the VS Code terminal to stop the program.
 
 ---
 
@@ -180,9 +180,9 @@ print(count_even(10))        # 5
 | Mistake | Fix |
 |---|---|
 | Loop runs one time too few | `range` stops **before** the end value: use `range(1, n + 1)` |
-| Program never ends | `while` condition never becomes False. Press **Ctrl + C** in the terminal, then edit the loop in `playground.py` in VS Code so the condition variable changes |
-| Result is always 0 or wrong | The start value (`total = 0`) is inside the loop, so it is reset every round. In VS Code, move `total = 0` **before** the loop in `playground.py` |
-| Function returns after the first round | `return` is indented inside the loop. In VS Code, move `return` outside the loop in the function you are editing |
+| Program never ends | `while` condition never becomes False. Press **Ctrl + C** in the VS Code terminal, then edit the loop in `playground.py` in VS Code so the condition variable changes |
+| Result is always 0 or wrong | The start value (`total = 0`) is inside the loop, so it is reset every round. In the VS Code editor, move `total = 0` **before** the loop in `playground.py` |
+| Function returns after the first round | `return` is indented inside the loop. In the VS Code editor, move `return` outside the loop in the function you are editing |
 
 ---
 
@@ -218,11 +218,11 @@ def count_up(n):
     return text + "DONE"
 ```
 
-Try the example: open `playground.py` with `code playground.py`.
-Type the example in VS Code. Save with **Ctrl + S**.
-Run `python3 -i playground.py` in the terminal.
+Try the example: in the VS Code terminal, type `code playground.py` to open `playground.py` in the same VS Code window.
+In the VS Code editor, type the example into `playground.py`. Save `playground.py` with **Ctrl + S**.
+Run `python3 -i playground.py` in the VS Code terminal.
 
-At `>>>`, type the calls below. The lines without `>>>` are the results you should see:
+At Python's **`>>>` prompt**, type the calls below. The lines without `>>>` are the results you should see:
 
 ```python
 $ python3 -i playground.py
@@ -237,23 +237,23 @@ When you understand how the example works, do the steps below. Write your own co
 
 **Steps:**
 
-1. **Open the file.** In VS Code, press **Ctrl + P**.
-   Type [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py) and press Enter. The file opens in the editor.
-2. Replace `pass` inside `countdown` with your code. Use the "building text" pattern from section 2. Start with `text = ""`.
+1. **Open the file.** In the VS Code editor, press **Ctrl + P**.
+   Type [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py) and press Enter. The file opens in the editor. Or click [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d4_loops.py`](../../exercises/week1/w1d4_loops.py) in the file list on the left (Explorer) in the VS Code editor.
+2. In the VS Code editor, in `w1d4_loops.py`, replace `pass` inside `countdown` with your code. Use the "building text" pattern from section 2. Start with `text = ""`.
    Add numbers inside a `for` loop with a counting-down `range` (section 1).
    Add `"GO!"` at the end. Use `str(i)` to turn a number into text.
-3. Save with **Ctrl + S**. The **●** on the file tab disappears.
+3. In the VS Code editor, save `w1d4_loops.py` with **Ctrl + S**. The **●** on the file tab disappears.
 
-   In the terminal, run `python3 -i exercises/week1/w1d4_loops.py`.
-   At `>>>`, type the `countdown(...)` calls under **Your task** above. Compare the results.
+   In the VS Code terminal, run `python3 -i exercises/week1/w1d4_loops.py`.
+   At Python's **`>>>` prompt**, type the `countdown(...)` calls under **Your task** above. Compare the results.
 
-   Type `exit()` at `>>>` to return to the terminal.
-4. Test `countdown` with [`test_w1d4.py`](../../exercises/week1/tests/test_w1d4.py):
+   Type `exit()` at `>>>` to return to the VS Code terminal.
+4. In the VS Code terminal, test `countdown` with [`test_w1d4.py`](../../exercises/week1/tests/test_w1d4.py):
    ```bash
    pytest exercises/week1/tests/test_w1d4.py -k countdown
    ```
    ✔ You should see `4 passed, 12 deselected`.
-5. In VS Code, open [`progress/week1.md`](../../progress/week1.md).
+5. In the VS Code editor, open [`progress/week1.md`](../../progress/week1.md).
    Change `[ ]` to `[x]` beside `countdown`. Save with **Ctrl + S**.
 
 > `deselected` means: the tests of the **other** exercises in this file were not run. That is what `-k` does, and it is fine.
@@ -284,11 +284,11 @@ def product_to(n):
     return result
 ```
 
-Try the example: open `playground.py` with `code playground.py`.
-Type the example in VS Code. Save with **Ctrl + S**.
-Run `python3 -i playground.py` in the terminal.
+Try the example: in the VS Code terminal, type `code playground.py` to open `playground.py` in the same VS Code window.
+In the VS Code editor, type the example into `playground.py`. Save `playground.py` with **Ctrl + S**.
+Run `python3 -i playground.py` in the VS Code terminal.
 
-At `>>>`, type the calls below. The lines without `>>>` are the results you should see:
+At Python's **`>>>` prompt**, type the calls below. The lines without `>>>` are the results you should see:
 
 ```python
 $ python3 -i playground.py
@@ -303,21 +303,21 @@ When you understand how the example works, do the steps below. Write your own co
 
 **Steps:**
 
-1. **Open the file.** In VS Code, press **Ctrl + P**.
-   Type [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py) and press Enter. The file opens in the editor.
-2. Replace `pass` inside `sum_to` with your code. This is exactly the accumulator pattern in section 2. Remember: to include `n`, use `range(1, n + 1)`.
-3. Save with **Ctrl + S**. The **●** on the file tab disappears.
+1. **Open the file.** In the VS Code editor, press **Ctrl + P**.
+   Type [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py) and press Enter. The file opens in the editor. Or click [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d4_loops.py`](../../exercises/week1/w1d4_loops.py) in the file list on the left (Explorer) in the VS Code editor.
+2. In the VS Code editor, in `w1d4_loops.py`, replace `pass` inside `sum_to` with your code. This is exactly the accumulator pattern in section 2. Remember: to include `n`, use `range(1, n + 1)`.
+3. In the VS Code editor, save `w1d4_loops.py` with **Ctrl + S**. The **●** on the file tab disappears.
 
-   In the terminal, run `python3 -i exercises/week1/w1d4_loops.py`.
-   At `>>>`, type the `sum_to(...)` calls under **Your task** above. Compare the results.
+   In the VS Code terminal, run `python3 -i exercises/week1/w1d4_loops.py`.
+   At Python's **`>>>` prompt**, type the `sum_to(...)` calls under **Your task** above. Compare the results.
 
-   Type `exit()` at `>>>` to return to the terminal.
-4. Test `sum_to` with [`test_w1d4.py`](../../exercises/week1/tests/test_w1d4.py):
+   Type `exit()` at `>>>` to return to the VS Code terminal.
+4. In the VS Code terminal, test `sum_to` with [`test_w1d4.py`](../../exercises/week1/tests/test_w1d4.py):
    ```bash
    pytest exercises/week1/tests/test_w1d4.py -k sum_to
    ```
    ✔ You should see `4 passed, 12 deselected`.
-5. In VS Code, open [`progress/week1.md`](../../progress/week1.md).
+5. In the VS Code editor, open [`progress/week1.md`](../../progress/week1.md).
    Change `[ ]` to `[x]` beside `sum_to`. Save with **Ctrl + S**.
 
 ### Exercise 3 of 4: `steps_until_low(battery, drain_per_step, low_level)`
@@ -347,11 +347,11 @@ def steps_until_full(battery, charge_per_step, full_level):
     return steps
 ```
 
-Try the example: open `playground.py` with `code playground.py`.
-Type the example in VS Code. Save with **Ctrl + S**.
-Run `python3 -i playground.py` in the terminal.
+Try the example: in the VS Code terminal, type `code playground.py` to open `playground.py` in the same VS Code window.
+In the VS Code editor, type the example into `playground.py`. Save `playground.py` with **Ctrl + S**.
+Run `python3 -i playground.py` in the VS Code terminal.
 
-At `>>>`, type the calls below. The lines without `>>>` are the results you should see:
+At Python's **`>>>` prompt**, type the calls below. The lines without `>>>` are the results you should see:
 
 ```python
 $ python3 -i playground.py
@@ -366,22 +366,22 @@ When you understand how the example works, do the steps below. Write your own co
 
 **Steps:**
 
-1. **Open the file.** In VS Code, press **Ctrl + P**.
-   Type [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py) and press Enter. The file opens in the editor.
-2. **First, on paper:** draw a table like in section 2 for `steps_until_low(100, 10, 50)`, with columns *step* and *battery*. Count until the battery is 50 or below. You should get 5.
-3. Replace `pass` inside `steps_until_low` with your code. Use a `while` loop (section 3): keep going **while** the battery is above `low_level`. Inside, subtract the drain and add 1 to a step counter.
-4. Save with **Ctrl + S**. The **●** on the file tab disappears.
+1. **Open the file.** In the VS Code editor, press **Ctrl + P**.
+   Type [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py) and press Enter. The file opens in the editor. Or click [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d4_loops.py`](../../exercises/week1/w1d4_loops.py) in the file list on the left (Explorer) in the VS Code editor.
+2. In the VS Code editor, read `steps_until_low` in `w1d4_loops.py`. **First, on paper:** draw a table like in section 2 for `steps_until_low(100, 10, 50)`, with columns *step* and *battery*. Count until the battery is 50 or below. You should get 5.
+3. In the VS Code editor, in `w1d4_loops.py`, replace `pass` inside `steps_until_low` with your code. Use a `while` loop (section 3): keep going **while** the battery is above `low_level`. Inside, subtract the drain and add 1 to a step counter.
+4. In the VS Code editor, save `w1d4_loops.py` with **Ctrl + S**. The **●** on the file tab disappears.
 
-   In the terminal, run `python3 -i exercises/week1/w1d4_loops.py`.
-   At `>>>`, type the `steps_until_low(...)` calls under **Your task** above. Compare the results.
+   In the VS Code terminal, run `python3 -i exercises/week1/w1d4_loops.py`.
+   At Python's **`>>>` prompt**, type the `steps_until_low(...)` calls under **Your task** above. Compare the results.
 
-   Type `exit()` at `>>>` to return to the terminal. If the `steps_until_low(...)` call never finishes, press **Ctrl + C** in the terminal: your battery is not going down.
-5. Test `steps_until_low` with [`test_w1d4.py`](../../exercises/week1/tests/test_w1d4.py):
+   Type `exit()` at `>>>` to return to the VS Code terminal. If the `steps_until_low(...)` call never finishes, press **Ctrl + C** in the VS Code terminal: your battery is not going down.
+5. In the VS Code terminal, test `steps_until_low` with [`test_w1d4.py`](../../exercises/week1/tests/test_w1d4.py):
    ```bash
    pytest exercises/week1/tests/test_w1d4.py -k steps_until_low
    ```
    ✔ You should see `4 passed, 12 deselected`.
-6. In VS Code, open [`progress/week1.md`](../../progress/week1.md).
+6. In the VS Code editor, open [`progress/week1.md`](../../progress/week1.md).
    Change `[ ]` to `[x]` beside `steps_until_low`. Save with **Ctrl + S**.
 
 ### Exercise 4 of 4: `count_multiples(limit, k)`
@@ -411,11 +411,11 @@ def count_odd(limit):
     return count
 ```
 
-Try the example: open `playground.py` with `code playground.py`.
-Type the example in VS Code. Save with **Ctrl + S**.
-Run `python3 -i playground.py` in the terminal.
+Try the example: in the VS Code terminal, type `code playground.py` to open `playground.py` in the same VS Code window.
+In the VS Code editor, type the example into `playground.py`. Save `playground.py` with **Ctrl + S**.
+Run `python3 -i playground.py` in the VS Code terminal.
 
-At `>>>`, type the calls below. The lines without `>>>` are the results you should see:
+At Python's **`>>>` prompt**, type the calls below. The lines without `>>>` are the results you should see:
 
 ```python
 $ python3 -i playground.py
@@ -430,38 +430,38 @@ When you understand how the example works, do the steps below. Write your own co
 
 **Steps:**
 
-1. **Open the file.** In VS Code, press **Ctrl + P**.
-   Type [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py) and press Enter. The file opens in the editor.
-2. Replace `pass` inside `count_multiples` with your code. Loop over 1 to `limit` and count the numbers where `x % k == 0`. This is the counting example in section 2.
-3. Save with **Ctrl + S**. The **●** on the file tab disappears.
+1. **Open the file.** In the VS Code editor, press **Ctrl + P**.
+   Type [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py) and press Enter. The file opens in the editor. Or click [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d4_loops.py`](../../exercises/week1/w1d4_loops.py) in the file list on the left (Explorer) in the VS Code editor.
+2. In the VS Code editor, in `w1d4_loops.py`, replace `pass` inside `count_multiples` with your code. Loop over 1 to `limit` and count the numbers where `x % k == 0`. This is the counting example in section 2.
+3. In the VS Code editor, save `w1d4_loops.py` with **Ctrl + S**. The **●** on the file tab disappears.
 
-   In the terminal, run `python3 -i exercises/week1/w1d4_loops.py`.
-   At `>>>`, type the `count_multiples(...)` calls under **Your task** above. Compare the results.
+   In the VS Code terminal, run `python3 -i exercises/week1/w1d4_loops.py`.
+   At Python's **`>>>` prompt**, type the `count_multiples(...)` calls under **Your task** above. Compare the results.
 
-   Type `exit()` at `>>>` to return to the terminal.
-4. Test `count_multiples` with [`test_w1d4.py`](../../exercises/week1/tests/test_w1d4.py):
+   Type `exit()` at `>>>` to return to the VS Code terminal.
+4. In the VS Code terminal, test `count_multiples` with [`test_w1d4.py`](../../exercises/week1/tests/test_w1d4.py):
    ```bash
    pytest exercises/week1/tests/test_w1d4.py -k count_multiples
    ```
    ✔ You should see `4 passed, 12 deselected`.
-5. In VS Code, open [`progress/week1.md`](../../progress/week1.md).
+5. In the VS Code editor, open [`progress/week1.md`](../../progress/week1.md).
    Change `[ ]` to `[x]` beside `count_multiples`. Save with **Ctrl + S**.
 
 ### Finally: all of today's tests
 
-Run today's tests in [`test_w1d4.py`](../../exercises/week1/tests/test_w1d4.py):
+In the VS Code terminal, run today's tests in [`test_w1d4.py`](../../exercises/week1/tests/test_w1d4.py):
 
 ```bash
 pytest exercises/week1/tests/test_w1d4.py
 ```
 
-✔ You should see **`16 passed`**. In VS Code, check the Day 4 "Tests pass" box in [`progress/week1.md`](../../progress/week1.md). Save with **Ctrl + S**.
+✔ You should see **`16 passed`**. In the VS Code editor, check the Day 4 "Tests pass" box in [`progress/week1.md`](../../progress/week1.md). Save with **Ctrl + S**.
 
 ---
 
 ## 9. Before you finish today
 
-In VS Code, open [progress/week1.md](../../progress/week1.md). Mark each completed Day 4 box `[x]`.
+In the VS Code editor, open [progress/week1.md](../../progress/week1.md). Mark each completed Day 4 box `[x]`.
 Save with **Ctrl + S**. Only start Day 5 when every Day 4 box is checked.
 
 - [ ] `pytest exercises/week1/tests/test_w1d4.py` shows **16 passed**

@@ -2,7 +2,7 @@
 #
 # Replace `pass` with your code in each function.
 #
-# Test (in the terminal): `pytest exercises/week1/tests/test_w1d5.py`
+# Test (in the VS Code terminal): `pytest exercises/week1/tests/test_w1d5.py`
 
 
 def clean_command(text):

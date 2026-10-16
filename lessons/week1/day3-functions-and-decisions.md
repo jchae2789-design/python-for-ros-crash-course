@@ -192,7 +192,7 @@ In `playground.py`, write a function `needs_charging(battery, distance_to_dock)`
 Also return `True` if the battery is below 40 **and** the dock is more than 100 m away.
 
 Below `needs_charging` in `playground.py`, add `print(needs_charging(20, 50))` (expected: `True`).
-Then add `print(needs_charging(50, 200))` (expected: `False`). Save with **Ctrl + S**. Run `python3 playground.py` in the terminal.
+Then add `print(needs_charging(50, 200))` (expected: `False`). Save with **Ctrl + S**. Run `python3 playground.py` in the VS Code terminal.
 
 ---
 
@@ -269,11 +269,11 @@ def signal_quality(rssi):
         return "WEAK"
 ```
 
-Try the example: open `playground.py` with `code playground.py`.
-Type the example in VS Code. Save with **Ctrl + S**.
-Run `python3 -i playground.py` in the terminal.
+Try the example: in the VS Code terminal, type `code playground.py` to open `playground.py` in the same VS Code window.
+In the VS Code editor, type the example into `playground.py`. Save `playground.py` with **Ctrl + S**.
+Run `python3 -i playground.py` in the VS Code terminal.
 
-At `>>>`, type the calls below. The lines without `>>>` are the results you should see:
+At Python's **`>>>` prompt**, type the calls below. The lines without `>>>` are the results you should see:
 
 ```python
 $ python3 -i playground.py
@@ -292,12 +292,12 @@ When you understand how the example works, do the steps below. Write your own co
 
 **Steps:**
 
-1. **Open the file.** In VS Code, press **Ctrl + P**.
-   Type [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py) and press Enter. The file opens in the editor.
-2. Find `def battery_status(percent):`.
-3. Replace `pass` inside `battery_status` with an `if` / `elif` / `else` that returns the right word. Think about the **order** of your checks (section 3, "`elif`: more choices").
-4. Save with **Ctrl + S**. The **●** on the file tab disappears.
-5. In the terminal, type the command below. At `>>>`, type the function calls below. The lines without `>>>` show the expected results:
+1. **Open the file.** In the VS Code editor, press **Ctrl + P**.
+   Type [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py) and press Enter. The file opens in the editor. Or click [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py) in the file list on the left (Explorer) in the VS Code editor.
+2. In the VS Code editor, in `w1d3_conditions.py`, find `def battery_status(percent):`.
+3. In the VS Code editor, in `w1d3_conditions.py`, replace `pass` inside `battery_status` with an `if` / `elif` / `else` that returns the right word. Think about the **order** of your checks (section 3, "`elif`: more choices").
+4. In the VS Code editor, save `w1d3_conditions.py` with **Ctrl + S**. The **●** on the file tab disappears.
+5. In the VS Code terminal, for `w1d3_conditions.py`, type the command below. At Python's **`>>>` prompt**, type the function calls below. The lines without `>>>` show the expected results:
    ```bash
    python3 -i exercises/week1/w1d3_conditions.py
    ```
@@ -313,12 +313,12 @@ When you understand how the example works, do the steps below. Write your own co
    ✔ You should get the answers shown. After changing the file, save with **Ctrl + S**.
    If Python is still open, type `exit()` at `>>>`.
    Repeat the load command above to use the saved code.
-6. Test `battery_status` with [`test_w1d3.py`](../../exercises/week1/tests/test_w1d3.py):
+6. In the VS Code terminal, test `battery_status` with [`test_w1d3.py`](../../exercises/week1/tests/test_w1d3.py):
    ```bash
    pytest exercises/week1/tests/test_w1d3.py -k battery_status
    ```
    ✔ You should see `10 passed, 11 deselected`.
-7. In VS Code, open [progress/week1.md](../../progress/week1.md).
+7. In the VS Code editor, open [progress/week1.md](../../progress/week1.md).
    Change `[ ]` to `[x]` beside `battery_status`. Save with **Ctrl + S**.
 
 > `deselected` means: the tests of the **other** exercises in this file were not run. That is what `-k` does, and it is fine.
@@ -339,11 +339,11 @@ def can_drive(speed, max_speed, emergency_stop):
     return speed <= max_speed and not emergency_stop
 ```
 
-Try the example: open `playground.py` with `code playground.py`.
-Type the example in VS Code. Save with **Ctrl + S**.
-Run `python3 -i playground.py` in the terminal.
+Try the example: in the VS Code terminal, type `code playground.py` to open `playground.py` in the same VS Code window.
+In the VS Code editor, type the example into `playground.py`. Save `playground.py` with **Ctrl + S**.
+Run `python3 -i playground.py` in the VS Code terminal.
 
-At `>>>`, type the calls below. The lines without `>>>` are the results you should see:
+At Python's **`>>>` prompt**, type the calls below. The lines without `>>>` are the results you should see:
 
 ```python
 $ python3 -i playground.py
@@ -362,24 +362,24 @@ When you understand how the example works, do the steps below. Write your own co
 
 **Steps:**
 
-1. **Open the file.** In VS Code, press **Ctrl + P**.
-   Type [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py) and press Enter. The file opens in the editor.
-2. Find `def can_launch(...)` in the file.
-3. Replace `pass` inside `can_launch` with your code. You can do it in one line with `and` (section 4: "you can return it directly").
-4. Save with **Ctrl + S**. The **●** on the file tab disappears.
-5. In the terminal, type `python3 -i exercises/week1/w1d3_conditions.py`. At `>>>`, type the calls below. The other lines show the expected results. Then type `exit()` at `>>>` to return to the terminal:
+1. **Open the file.** In the VS Code editor, press **Ctrl + P**.
+   Type [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py) and press Enter. The file opens in the editor. Or click [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py) in the file list on the left (Explorer) in the VS Code editor.
+2. In the VS Code editor, in `w1d3_conditions.py`, find `def can_launch(...)` in the file.
+3. In the VS Code editor, in `w1d3_conditions.py`, replace `pass` inside `can_launch` with your code. You can do it in one line with `and` (section 4: "you can return it directly").
+4. In the VS Code editor, save `w1d3_conditions.py` with **Ctrl + S**. The **●** on the file tab disappears.
+5. In the VS Code terminal, type `python3 -i exercises/week1/w1d3_conditions.py`. At Python's **`>>>` prompt**, type the calls below. The other lines show the expected results. Then type `exit()` at `>>>` to return to the VS Code terminal:
    ```python
    >>> can_launch(80, 3.5, True)
    True
    >>> can_launch(80, 3.5, False)
    False
    ```
-6. Test `can_launch` with [`test_w1d3.py`](../../exercises/week1/tests/test_w1d3.py):
+6. In the VS Code terminal, test `can_launch` with [`test_w1d3.py`](../../exercises/week1/tests/test_w1d3.py):
    ```bash
    pytest exercises/week1/tests/test_w1d3.py -k can_launch
    ```
    ✔ You should see `5 passed, 16 deselected`.
-7. In VS Code, open [`progress/week1.md`](../../progress/week1.md).
+7. In the VS Code editor, open [`progress/week1.md`](../../progress/week1.md).
    Change `[ ]` to `[x]` beside `can_launch`. Save with **Ctrl + S**.
 
 ### Exercise 3 of 3: `classify_distance(distance_m)`
@@ -403,11 +403,11 @@ def classify_temperature(temp_c):
         return "HOT"
 ```
 
-Try the example: open `playground.py` with `code playground.py`.
-Type the example in VS Code. Save with **Ctrl + S**.
-Run `python3 -i playground.py` in the terminal.
+Try the example: in the VS Code terminal, type `code playground.py` to open `playground.py` in the same VS Code window.
+In the VS Code editor, type the example into `playground.py`. Save `playground.py` with **Ctrl + S**.
+Run `python3 -i playground.py` in the VS Code terminal.
 
-At `>>>`, type the calls below. The lines without `>>>` are the results you should see:
+At Python's **`>>>` prompt**, type the calls below. The lines without `>>>` are the results you should see:
 
 ```python
 $ python3 -i playground.py
@@ -424,12 +424,12 @@ When you understand how the example works, do the steps below. Write your own co
 
 **Steps:**
 
-1. **Open the file.** In VS Code, press **Ctrl + P**.
-   Type [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py) and press Enter. The file opens in the editor.
-2. Find `def classify_distance(distance_m):` in the file.
-3. Replace `pass` inside `classify_distance` with an `if` / `elif` / `else`.
-4. Save with **Ctrl + S**. The **●** on the file tab disappears.
-5. In the terminal, type `python3 -i exercises/week1/w1d3_conditions.py`. At `>>>`, type the calls below. The other lines show the expected results. Then type `exit()` at `>>>` to return to the terminal:
+1. **Open the file.** In the VS Code editor, press **Ctrl + P**.
+   Type [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py) and press Enter. The file opens in the editor. Or click [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py) in the file list on the left (Explorer) in the VS Code editor.
+2. In the VS Code editor, in `w1d3_conditions.py`, find `def classify_distance(distance_m):` in the file.
+3. In the VS Code editor, in `w1d3_conditions.py`, replace `pass` inside `classify_distance` with an `if` / `elif` / `else`.
+4. In the VS Code editor, save `w1d3_conditions.py` with **Ctrl + S**. The **●** on the file tab disappears.
+5. In the VS Code terminal, type `python3 -i exercises/week1/w1d3_conditions.py`. At Python's **`>>>` prompt**, type the calls below. The other lines show the expected results. Then type `exit()` at `>>>` to return to the VS Code terminal:
    ```python
    >>> classify_distance(1.2)
    'SLOW'
@@ -437,23 +437,23 @@ When you understand how the example works, do the steps below. Write your own co
    'SLOW'
    ```
    Exactly 0.5 is **not** closer than 0.5, so it is `'SLOW'`, not `'STOP'`.
-6. Test `classify_distance` with [`test_w1d3.py`](../../exercises/week1/tests/test_w1d3.py):
+6. In the VS Code terminal, test `classify_distance` with [`test_w1d3.py`](../../exercises/week1/tests/test_w1d3.py):
    ```bash
    pytest exercises/week1/tests/test_w1d3.py -k classify_distance
    ```
    ✔ You should see `6 passed, 15 deselected`.
-7. In VS Code, open [`progress/week1.md`](../../progress/week1.md).
+7. In the VS Code editor, open [`progress/week1.md`](../../progress/week1.md).
    Change `[ ]` to `[x]` beside `classify_distance`. Save with **Ctrl + S**.
 
 ### Finally: all of today's tests
 
-Run today's tests in [`test_w1d3.py`](../../exercises/week1/tests/test_w1d3.py):
+In the VS Code terminal, run today's tests in [`test_w1d3.py`](../../exercises/week1/tests/test_w1d3.py):
 
 ```bash
 pytest exercises/week1/tests/test_w1d3.py
 ```
 
-✔ You should see **`21 passed`**. In VS Code, check the Day 3 "Tests pass" box in [`progress/week1.md`](../../progress/week1.md). Save with **Ctrl + S**.
+✔ You should see **`21 passed`**. In the VS Code editor, check the Day 3 "Tests pass" box in [`progress/week1.md`](../../progress/week1.md). Save with **Ctrl + S**.
 
 The tests use edge values like exactly `90`, `40`, `15`, `0.5`, `2.0` and `8.0`. If only one or two tests fail, check `<` vs `<=` and `>` vs `>=`.
 
@@ -461,7 +461,7 @@ The tests use edge values like exactly `90`, `40`, `15`, `0.5`, `2.0` and `8.0`.
 
 ## 8. Before you finish today
 
-In VS Code, open [progress/week1.md](../../progress/week1.md). Mark each completed Day 3 box `[x]`.
+In the VS Code editor, open [progress/week1.md](../../progress/week1.md). Mark each completed Day 3 box `[x]`.
 Save with **Ctrl + S**. Only start Day 4 when every Day 3 box is checked.
 
 - [ ] `pytest exercises/week1/tests/test_w1d3.py` shows **21 passed**

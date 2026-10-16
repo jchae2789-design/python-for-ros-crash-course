@@ -1,8 +1,8 @@
 # Week 1 checkpoint, Part 1: Unit converter
 # Read checkpoints/week1/README.md first.
 #
-# Run (in the terminal): `python3 checkpoints/week1/converter.py`
-# Test (in the terminal): `pytest checkpoints/week1`
+# Run (in the VS Code terminal): `python3 checkpoints/week1/converter.py`
+# Test (in the VS Code terminal): `pytest checkpoints/week1`
 
 import math
 

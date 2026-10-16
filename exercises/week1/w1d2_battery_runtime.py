@@ -14,8 +14,8 @@
 # Hints: input() always gives you text. Use int() to turn it into a number.
 #        f"{value:.2f}" shows a number with 2 decimals.
 #
-# Run (in the terminal): `python3 exercises/week1/w1d2_battery_runtime.py`
-# Test (in the terminal): `pytest exercises/week1/tests/test_w1d2.py`
+# Run (in the VS Code terminal): `python3 exercises/week1/w1d2_battery_runtime.py`
+# Test (in the VS Code terminal): `pytest exercises/week1/tests/test_w1d2.py`
 
 # TODO: write your code below this line
 

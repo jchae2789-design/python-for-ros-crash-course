@@ -1,8 +1,8 @@
 # Week 1 checkpoint, Part 2: Number-guessing game
 # Read checkpoints/week1/README.md first.
 #
-# Run (in the terminal): `python3 checkpoints/week1/guess.py`
-# Test (in the terminal): `pytest checkpoints/week1`
+# Run (in the VS Code terminal): `python3 checkpoints/week1/guess.py`
+# Test (in the VS Code terminal): `pytest checkpoints/week1`
 
 import random
 

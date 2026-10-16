@@ -219,19 +219,23 @@ Wrong indentation gives `IndentationError`, or worse: no error, but the wrong be
 
 ## 7. Exercises
 
+> From today, exercises are **functions**. Read [How exercises work, Part 4](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) first.
+
 Open `exercises/week1/w1d3_conditions.py`. It has three functions. Replace `pass` with your code.
 
-To check your work by hand, temporarily add lines at the bottom of the file:
-
-```python
-print(battery_status(55))      # should print OK
-```
+To check your work by hand, load your file in interactive mode and call your functions:
 
 ```bash
-python3 exercises/week1/w1d3_conditions.py
+python3 -i exercises/week1/w1d3_conditions.py
 ```
 
-Then remove those lines and test:
+```python
+>>> battery_status(55)
+'OK'
+>>> exit()
+```
+
+Then run the tests:
 
 ```bash
 pytest exercises/week1/tests/test_w1d3.py

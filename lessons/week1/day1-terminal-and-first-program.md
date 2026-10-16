@@ -202,6 +202,8 @@ Python does not know `prnt`. It even tells you what you probably meant!
 
 ## 5. Exercises
 
+> First time? Read [How exercises work](../../docs/02-how-exercises-work.md), Parts 1–3, before you start.
+
 Delete `playground.py` when you are done playing (`rm playground.py`).
 
 Open the exercise files in VS Code:

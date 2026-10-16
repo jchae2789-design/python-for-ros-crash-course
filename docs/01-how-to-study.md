@@ -19,7 +19,7 @@
 
 ## Running tests
 
-The tests check your code automatically.
+The tests check your code automatically. For the full step-by-step process with examples, read [How exercises work](02-how-exercises-work.md).
 
 ```bash
 pytest exercises/week1/tests/test_w1d3.py
@@ -61,15 +61,17 @@ pytest exercises/week1 --tb=line                      # short error messages
 
 Tests tell you **if** your code is right. To find out **why** it is wrong, run your code yourself and use `print()`.
 
-For exercises with a function, add a few lines at the bottom of the file, run it, and **delete them again** before you commit:
-
-```python
-print(battery_status(89))   # what do I get?
-```
+For exercises with a function, load the file in interactive mode and call the function:
 
 ```bash
-python3 exercises/week1/w1d3_conditions.py
+python3 -i exercises/week1/w1d3_conditions.py
 ```
+
+```python
+>>> battery_status(89)      # what do I get?
+```
+
+Inside your function you can also add `print(...)` lines to see the values of variables. Remove them when you are done.
 
 ---
 

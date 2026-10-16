@@ -10,7 +10,8 @@ You study **on your own**, at your own pace. Your mentor checks in with you ever
 
 1. **Set up your computer:** follow [docs/00-setup.md](docs/00-setup.md) (about 1–2 hours).
 2. **Learn how to study in this course:** read [docs/01-how-to-study.md](docs/01-how-to-study.md) (10 minutes).
-3. **Start Week 1, Day 1:** [lessons/week1/day1-terminal-and-first-program.md](lessons/week1/day1-terminal-and-first-program.md)
+3. **Learn how exercises and tests work:** read [docs/02-how-exercises-work.md](docs/02-how-exercises-work.md) (20 minutes).
+4. **Start Week 1, Day 1:** [lessons/week1/day1-terminal-and-first-program.md](lessons/week1/day1-terminal-and-first-program.md)
 
 ---
 

@@ -2,7 +2,8 @@
 #
 # 각 함수의 `pass`를 코드로 바꾸세요.
 #
-# 테스트(VS Code 터미널): `pytest exercises/week1/tests/test_w1d4.py`
+# 테스트(VS Code 터미널): 함수 하나는 수업에 나온 `-k` 명령으로,
+#   모든 함수를 마친 뒤에는 `pytest exercises/week1/tests/test_w1d4.py`
 
 
 def countdown(n):
@@ -41,17 +42,6 @@ def steps_until_low(battery, drain_per_step, low_level):
         steps_until_low(100, 10, 50)은 5를 반환합니다   (100 -> 90 -> 80 -> 70 -> 60 -> 50)
         steps_until_low(100, 7, 20)은 12를 반환합니다
         steps_until_low(10, 5, 20)은 0을 반환합니다     (이미 기준 이하입니다)
-    """
-    # TODO: 이 줄 아래에 코드를 작성하세요
-    pass
-
-
-def count_multiples(limit, k):
-    """1부터 limit까지(limit 포함) 중 k로 나누어떨어지는 숫자의 개수를 세세요.
-
-    예: count_multiples(10, 3)은 3을 반환합니다   (3, 6, 9입니다)
-
-    힌트: x % k == 0은 x가 k로 나누어떨어진다는 뜻입니다.
     """
     # TODO: 이 줄 아래에 코드를 작성하세요
     pass

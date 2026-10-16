@@ -14,6 +14,6 @@
 #       1시간은 3600초이고 1분은 60초입니다.
 #
 # 실행(VS Code 터미널): `python3 exercises/week1/w1d2_time_format.py`
-# 테스트(VS Code 터미널): `pytest exercises/week1/tests/test_w1d2.py`
+# 테스트(VS Code 터미널): `pytest exercises/week1/tests/test_w1d2.py -k time_format`
 
 # TODO: 이 줄 아래에 코드를 작성하세요

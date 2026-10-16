@@ -10,6 +10,8 @@
 
 **Ctrl + Alt + T**를 누르세요. 커서가 깜박이는 창이 열립니다. 이 창이 **Ubuntu 터미널**입니다. 별도의 터미널 창은 VS Code를 설치하기 전인 준비 과정의 첫 부분에서만 사용합니다. 여기에 명령을 입력하고 **Enter**를 눌러 실행합니다.
 
+커서 앞에는 `사용자이름@컴퓨터이름:~$`처럼 보이는 표시가 있습니다. 이 표시를 **프롬프트**라고 합니다. 프롬프트가 다시 나타나면 앞의 명령이 끝난 것이고, 다음 명령을 입력해도 됩니다. 프롬프트 자체는 입력하지 마세요.
+
 이 안내에서 아래와 같은 상자는 "Ubuntu 터미널에 입력하고 Enter를 누르세요"라는 뜻입니다.
 
 ```bash
@@ -127,7 +129,7 @@ cd python-for-ros-crash-course
 
 ## 8. 가상 환경 만들기
 
-**가상 환경(venv)**은 이 프로젝트의 파이썬 패키지만 따로 담아 두는 상자와 같습니다. VS Code 터미널에 다음 명령을 순서대로 입력하세요. 가상 환경을 만들고 활성화합니다.
+**패키지**는 다른 사람이 만든 파이썬 도구입니다(예: 테스트 도구 `pytest`). **가상 환경(venv)**은 이 과정에서 사용할 패키지를 따로 담아 두는 폴더(`.venv`)입니다. **활성화**는 지금 열린 터미널이 이 폴더의 도구를 사용하도록 켜는 것입니다. VS Code 터미널에 다음 명령을 순서대로 입력하세요. 가상 환경을 만들고 활성화합니다.
 그런 다음 [`requirements.txt`](../requirements.txt)에 나열된 패키지를 설치합니다.
 
 ```bash
@@ -148,9 +150,9 @@ VS Code 터미널에 `code .`을 입력해서 과정 폴더를 VS Code에서 여
 code .
 ```
 
-`.`은 "현재 폴더"라는 뜻입니다. 또는 VS Code에서 **File → Open Folder**를 선택하고 `~/code/python-for-ros-crash-course`를 고르세요. VS Code에서 **"Do you trust the authors?"**라고 물어보면 **Yes**를 클릭하세요. VS Code에서 **Microsoft**의 권장 **Python** 확장 프로그램을 설치하라는 안내가 나오면 설치하세요.
+`.`은 "현재 폴더"라는 뜻입니다. 새 VS Code 창이 열릴 수 있습니다. 왼쪽 파일 목록에 `docs`, `lessons`, `exercises`가 보이는 창을 사용하세요. 이전 창은 닫아도 됩니다. 새 창의 터미널은 아래 안내에 따라 다시 확인합니다. 또는 VS Code에서 **File → Open Folder**를 선택하고 `~/code/python-for-ros-crash-course`를 고르세요. VS Code에서 **"Do you trust the authors?"**라고 물어보면 **Yes**를 클릭하세요. VS Code에서 **Microsoft**의 권장 **Python** 확장 프로그램을 설치하라는 안내가 나오면 설치하세요.
 
-VS Code 오른쪽 아래에서 이름에 `.venv`가 들어간 파이썬 인터프리터를 선택하세요.
+**인터프리터**는 파이썬 코드를 실행하는 프로그램입니다. VS Code 편집기도 터미널과 같은 가상 환경을 사용하도록 설정합니다. VS Code 오른쪽 아래에서 이름에 `.venv`가 들어간 파이썬 인터프리터를 선택하세요.
 인터프리터가 보이지 않으면 **Ctrl + Shift + P**를 누르세요.
 **Python: Select Interpreter**를 입력하고 `.venv`를 선택하세요.
 
@@ -184,7 +186,7 @@ pytest exercises/week1/tests/test_w1d1.py
 VS Code 터미널에 명령을 순서대로 입력하세요. 일지를 커밋하고 GitHub 포크로 보내는 명령도 포함돼 있습니다.
 
 ```bash
-cp logs/TEMPLATE.md logs/$(date +%F).md
+cp -n logs/TEMPLATE.md logs/$(date +%F).md
 git add logs
 git commit -m "Add first daily log"
 git push
@@ -192,6 +194,11 @@ git push
 
 브라우저에서 GitHub의 포크를 여세요. [`logs`](../logs/) 폴더에 새 파일이 보여야 합니다.
 
-**설치 및 준비를 마쳤습니다.** VS Code 편집기에서 [progress/week1.md](../progress/week1.md)를 여세요.
+**설치 및 준비를 마쳤습니다.** 이제 VS Code에서 체크리스트 파일을 여세요.
+
+1. VS Code 창에서 **Ctrl + P**를 누르세요. VS Code 위쪽에 입력 칸이 나타납니다.
+2. 입력 칸에 `progress/week1.md`를 입력하고 Enter를 누르세요. 편집기에 [progress/week1.md](../progress/week1.md)가 열립니다.
+   또는 왼쪽 파일 목록(**Explorer**)에서 `progress` → `week1.md`를 클릭해도 됩니다. 앞으로 파일을 열 때도 같은 방법을 사용합니다.
+
 설치 및 준비 항목 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
 그런 다음 아직 체크하지 않은 다음 단계를 읽으세요.

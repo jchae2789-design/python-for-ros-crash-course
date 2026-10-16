@@ -15,6 +15,6 @@
 #       f"{value:.2f}"는 숫자를 소수점 아래 두 자리까지 표시합니다.
 #
 # 실행(VS Code 터미널): `python3 exercises/week1/w1d2_battery_runtime.py`
-# 테스트(VS Code 터미널): `pytest exercises/week1/tests/test_w1d2.py`
+# 테스트(VS Code 터미널): `pytest exercises/week1/tests/test_w1d2.py -k battery`
 
 # TODO: 이 줄 아래에 코드를 작성하세요

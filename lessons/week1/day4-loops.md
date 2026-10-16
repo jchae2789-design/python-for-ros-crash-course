@@ -68,7 +68,7 @@ print(total)                 # 3. 반복문 뒤에서 사용합니다 → 6
 ```python
 count = 0
 for i in range(1, 11):
-    if i % 2 == 0:           # 짝수만 세요
+    if i % 2 == 0:           # 짝수만 셉니다
         count = count + 1
 print(count)                 # 5
 ```
@@ -190,9 +190,9 @@ print(count_even(10))        # 5
 
 **연습 문제 진행 방법:** 한 번에 하나씩 **순서대로** 푸세요. 아래의 각 연습 문제에는 번호가 붙은 진행 순서가 있습니다. 1번부터 끝까지 따라 한 뒤 다음 연습 문제로 넘어가세요. 잘되지 않는 단계가 있으면 [연습 문제 진행 방법 5부](../../docs/02-how-exercises-work.md#5부-테스트-결과-읽기)를 참고하세요.
 
-네 함수는 모두 [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)에 있습니다. 아래에서 각 함수의 번호가 붙은 진행 순서를 따르세요.
+세 함수는 모두 [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)에 있습니다. 아래에서 각 함수의 번호가 붙은 진행 순서를 따르세요.
 
-### 연습 문제 1/4: `countdown(n)`
+### 연습 문제 1/3: `countdown(n)`
 
 > 📖 **시작하기 전에:** [연습 문제 진행 방법](../../docs/02-how-exercises-work.md)을 이 수업 옆에 여세요.
 > [4부: 함수 연습 문제](../../docs/02-how-exercises-work.md#4부-함수-연습-문제-따라-하기-35일차)와 [5부: 테스트 결과 읽기](../../docs/02-how-exercises-work.md#5부-테스트-결과-읽기)를 따라 하세요.
@@ -252,13 +252,13 @@ $ python3 -i playground.py
    ```bash
    pytest exercises/week1/tests/test_w1d4.py -k countdown
    ```
-   ✔ `4 passed, 12 deselected`가 나와야 합니다.
+   ✔ `4 passed, 8 deselected`가 나와야 합니다.
 5. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
    `countdown` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
 
 > `deselected`는 이 파일에 있는 **다른** 연습 문제의 테스트는 실행하지 않았다는 뜻입니다. `-k`를 사용하면 이렇게 되니 괜찮습니다.
 
-### 연습 문제 2/4: `sum_to(n)`
+### 연습 문제 2/3: `sum_to(n)`
 
 > 📖 **시작하기 전에:** [연습 문제 진행 방법](../../docs/02-how-exercises-work.md)을 이 수업 옆에 여세요.
 > [4부: 함수 연습 문제](../../docs/02-how-exercises-work.md#4부-함수-연습-문제-따라-하기-35일차)와 [5부: 테스트 결과 읽기](../../docs/02-how-exercises-work.md#5부-테스트-결과-읽기)를 따라 하세요.
@@ -316,11 +316,11 @@ $ python3 -i playground.py
    ```bash
    pytest exercises/week1/tests/test_w1d4.py -k sum_to
    ```
-   ✔ `4 passed, 12 deselected`가 나와야 합니다.
+   ✔ `4 passed, 8 deselected`가 나와야 합니다.
 5. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
    `sum_to` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
 
-### 연습 문제 3/4: `steps_until_low(battery, drain_per_step, low_level)`
+### 연습 문제 3/3: `steps_until_low(battery, drain_per_step, low_level)`
 
 > 📖 **시작하기 전에:** [연습 문제 진행 방법](../../docs/02-how-exercises-work.md)을 이 수업 옆에 여세요.
 > [4부: 함수 연습 문제](../../docs/02-how-exercises-work.md#4부-함수-연습-문제-따라-하기-35일차)와 [5부: 테스트 결과 읽기](../../docs/02-how-exercises-work.md#5부-테스트-결과-읽기)를 따라 하세요.
@@ -368,7 +368,7 @@ $ python3 -i playground.py
 
 1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
    VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열립니다. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 클릭하세요.
-2. VS Code 편집기에서 `w1d4_loops.py`의 `steps_until_low`를 읽으세요. **먼저 종이에** 2절처럼 `steps_until_low(100, 10, 50)`의 표를 그리세요. 열 이름은 *단계*와 *배터리*로 하세요. 배터리가 50 이하가 될 때까지 세면 5가 나와야 합니다.
+2. VS Code 편집기에서 `w1d4_loops.py`의 `steps_until_low`를 읽으세요. **먼저 종이에** 2절처럼 `steps_until_low(100, 10, 50)`의 표를 그리세요. 열 이름은 *단계*와 *배터리*로 하세요. 첫 행은 '0단계, 배터리 100'입니다. 한 번 반복할 때마다 '1단계, 90', '2단계, 80'처럼 한 행씩 적고, '5단계, 50'에서 멈춥니다. 처음부터 배터리가 `low_level` 이하이면 한 번도 반복하지 않으므로 답은 0입니다.
 3. VS Code 편집기에서 `w1d4_loops.py`의 `steps_until_low` 안에 있는 `pass`를 코드로 바꾸세요. `while` 문을 사용하세요(3절). 배터리가 `low_level`보다 큰 **동안** 계속 반복합니다. 반복문 안에서 배터리 소모량을 빼고 단계 수를 세는 변수에 1을 더하세요.
 4. VS Code 편집기에서 **Ctrl + S**로 `w1d4_loops.py`를 저장하세요. 파일 탭의 **●**가 사라집니다.
 
@@ -380,72 +380,17 @@ $ python3 -i playground.py
    ```bash
    pytest exercises/week1/tests/test_w1d4.py -k steps_until_low
    ```
-   ✔ `4 passed, 12 deselected`가 나와야 합니다.
+   ✔ `4 passed, 8 deselected`가 나와야 합니다.
 6. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
    `steps_until_low` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
 
-### 연습 문제 4/4: `count_multiples(limit, k)`
+### 추가 도전(선택): `count_multiples(limit, k)`
 
-> 📖 **시작하기 전에:** [연습 문제 진행 방법](../../docs/02-how-exercises-work.md)을 이 수업 옆에 여세요.
-> [4부: 함수 연습 문제](../../docs/02-how-exercises-work.md#4부-함수-연습-문제-따라-하기-35일차)와 [5부: 테스트 결과 읽기](../../docs/02-how-exercises-work.md#5부-테스트-결과-읽기)를 따라 하세요.
+시간이 남을 때만 하세요. 테스트하지 않으며 체크리스트에도 없습니다.
 
-**할 일:** 1부터 `limit`까지(`limit` 포함) 중에서 `k`로 나누어떨어지는 숫자의 개수를 세세요.
+`playground.py`의 내용을 지우고, 1부터 `limit`까지(`limit` 포함) 중에서 `k`로 나누어떨어지는 숫자의 개수를 반환하는 `count_multiples(limit, k)` 함수를 작성하세요. `x % k == 0`이면 `x`가 `k`로 나누어떨어집니다. 2절의 개수 세기 예제와 같은 방법입니다.
 
-```python
->>> count_multiples(10, 3)
-3
-```
-
-(3, 6, 9입니다.)
-
-**따라 해 볼 예제:** 비슷한 문제입니다(이 연습 문제의 정답은 아닙니다).
-
-이 함수는 1부터 `limit`까지 **홀수**의 개수를 세요. 홀수는 2로 나눈 나머지가 1입니다.
-
-```python
-def count_odd(limit):
-    count = 0
-    for x in range(1, limit + 1):
-        if x % 2 == 1:
-            count = count + 1
-    return count
-```
-
-예제를 실행해 보세요. VS Code 터미널에 `code playground.py`를 입력해서 같은 VS Code 창에 `playground.py`를 여세요.
-VS Code 편집기에서 `playground.py`에 예제를 입력하세요. **Ctrl + S**로 `playground.py`를 저장하세요.
-VS Code 터미널에서 `python3 -i playground.py`를 실행하세요.
-
-**파이썬 `>>>` 프롬프트**에 아래 호출을 입력하세요. `>>>`가 없는 줄은 나와야 할 결과입니다.
-
-```python
-$ python3 -i playground.py
->>> count_odd(10)
-5
->>> count_odd(1)
-1
->>> exit()
-```
-
-예제가 어떻게 동작하는지 이해했다면 아래 순서대로 진행하세요. 연습 문제 코드는 직접 작성하세요. 할 일이 다르니 예제를 그대로 복사하지 마세요.
-
-**진행 순서:**
-
-1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
-   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열립니다. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 클릭하세요.
-2. VS Code 편집기에서 `w1d4_loops.py`의 `count_multiples` 안에 있는 `pass`를 코드로 바꾸세요. 1부터 `limit`까지 반복하며 `x % k == 0`인 숫자의 개수를 세세요. 2절의 개수 세기 예제와 같은 방법입니다.
-3. VS Code 편집기에서 **Ctrl + S**로 `w1d4_loops.py`를 저장하세요. 파일 탭의 **●**가 사라집니다.
-
-   VS Code 터미널에서 `python3 -i exercises/week1/w1d4_loops.py`를 실행하세요.
-   **파이썬 `>>>` 프롬프트**에 위의 **할 일** 아래에 나온 `count_multiples(...)` 호출을 입력하고 결과를 비교하세요.
-
-   `>>>`에 `exit()`을 입력해서 VS Code 터미널로 돌아오세요.
-4. VS Code 터미널에서 [`test_w1d4.py`](../../exercises/week1/tests/test_w1d4.py)로 `count_multiples`를 테스트하세요.
-   ```bash
-   pytest exercises/week1/tests/test_w1d4.py -k count_multiples
-   ```
-   ✔ `4 passed, 12 deselected`가 나와야 합니다.
-5. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
-   `count_multiples` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
+VS Code 터미널에서 `python3 -i playground.py`를 실행하고 `>>>`에 `count_multiples(10, 3)`을 입력하세요. `3`이 나와야 합니다(3, 6, 9). 마치면 `exit()`을 입력하세요.
 
 ### 마지막으로: 오늘의 테스트 전체
 
@@ -455,7 +400,7 @@ VS Code 터미널에서 [`test_w1d4.py`](../../exercises/week1/tests/test_w1d4.p
 pytest exercises/week1/tests/test_w1d4.py
 ```
 
-✔ **`16 passed`**가 나와야 합니다. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)의 4일차 "테스트 통과" 항목을 체크하세요. **Ctrl + S**로 저장하세요.
+✔ **`12 passed`**가 나와야 합니다. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)의 4일차 "테스트 통과" 항목을 체크하세요. **Ctrl + S**로 저장하세요.
 
 ---
 
@@ -464,7 +409,7 @@ pytest exercises/week1/tests/test_w1d4.py
 VS Code 편집기에서 [progress/week1.md](../../progress/week1.md)를 여세요. 완료한 4일차 항목마다 `[x]`로 체크하세요.
 **Ctrl + S**로 저장하세요. 4일차 항목을 모두 체크한 뒤에만 5일차를 시작하세요.
 
-- [ ] `pytest exercises/week1/tests/test_w1d4.py` 실행 결과: **16 passed**
+- [ ] `pytest exercises/week1/tests/test_w1d4.py` 실행 결과: **12 passed**
 - [ ] `range(2, 8, 2)`를 실행하지 않고 어떤 숫자가 나오는지 말할 수 있습니다
 - [ ] 끝나지 않는 프로그램을 멈추는 방법을 압니다
 - [ ] 실습 일지 작성, 커밋, 푸시 완료

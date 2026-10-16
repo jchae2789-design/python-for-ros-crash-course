@@ -49,7 +49,7 @@ print(battery)            # 77
 | `str` | 문자열(글자) | `"RR-01"`, `'hello'` | 이름, 메시지, 명령 |
 | `bool` | 불리언(참/거짓) | `True`, `False` | "GPS가 정상입니까?" |
 
-파이썬 `>>>` 프롬프트에 아래 `type(...)` 호출을 입력해서 각 값의 자료형을 확인하세요.
+VS Code 터미널에 `python3`를 입력하고 Enter를 누르세요. `>>>`가 나타나면 아래 `type(...)` 호출을 입력해서 각 값의 자료형을 확인하세요. 마치면 `exit()`을 입력해서 터미널 명령으로 돌아오세요.
 
 ```python
 >>> type(7)
@@ -94,7 +94,7 @@ minutes = total % 60     # 15 (남은 분)
 
 ### `math` 모듈
 
-파이썬의 `math` 모듈에는 추가 수학 도구가 있습니다. VS Code에서 `playground.py`에 `math.pi`, `math.sqrt`를 사용하는 코드보다 앞에 `import math`를 넣으세요.
+**모듈**은 관련 도구를 모아 둔 묶음입니다. `math` 모듈은 파이썬에 기본으로 들어 있으므로 따로 설치하지 않습니다. 파일 맨 위에 `import math`를 쓰면 사용할 수 있습니다. `math.pi`처럼 점(`.`)을 찍으면 `math` 안의 도구를 고를 수 있습니다. `math.pi`는 원주율이고 `math.sqrt(16)`은 16의 제곱근입니다. VS Code에서 `playground.py`의 맨 위에 `import math`를 넣으세요.
 
 ```python
 import math
@@ -339,7 +339,7 @@ Length (cm): 275
    VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d2_time_format.py`](../../exercises/week1/w1d2_time_format.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열립니다. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d2_time_format.py`](../../exercises/week1/w1d2_time_format.py)를 클릭하세요.
 2. VS Code 편집기에서 `w1d2_time_format.py` 맨 위의 안내를 읽으세요.
 3. VS Code 편집기에서 `w1d2_time_format.py`의 `TODO` 아래에 코드를 작성하세요. `//`와 `%`를 사용하세요(이 수업 3절의 "`//`와 `%` 함께 사용하기"). 1시간은 3600초이고 1분은 60초입니다.
-   도움말: 먼저 종이에 3725로 계산해 보세요. 몇 시간입니까? 남은 초는 얼마입니까? 남은 초에서 몇 분을 만들 수 있습니까?
+   도움말: 먼저 종이에 3725로 계산해 보세요. 3725초에서 1시간(3600초)을 빼면 125초가 남습니다. 분은 처음의 3725초가 아니라 **남은 125초**에서 구하세요. 125초는 2분 5초입니다.
 4. VS Code 편집기에서 **Ctrl + S**로 `w1d2_time_format.py`를 저장하세요. 저장하면 파일 탭의 **●**가 사라집니다.
 5. VS Code 터미널에서 `w1d2_time_format.py`를 실행하세요. `Seconds:`에 `3725`를 입력하고 Enter를 누르세요.
    ```bash

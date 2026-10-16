@@ -3,7 +3,8 @@
 # 각 연습 문제는 함수입니다. 함수 안에 코드를 작성하고
 # `return`으로 답을 반환하세요. `pass`를 코드로 바꾸세요.
 #
-# 테스트(VS Code 터미널): `pytest exercises/week1/tests/test_w1d3.py`
+# 테스트(VS Code 터미널): 함수 하나는 수업에 나온 `-k` 명령으로,
+#   모든 함수를 마친 뒤에는 `pytest exercises/week1/tests/test_w1d3.py`
 
 
 def battery_status(percent):

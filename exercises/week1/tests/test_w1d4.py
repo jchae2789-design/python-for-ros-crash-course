@@ -1,6 +1,6 @@
 import pytest
 
-from w1d4_loops import count_multiples, countdown, steps_until_low, sum_to
+from w1d4_loops import countdown, steps_until_low, sum_to
 
 
 @pytest.mark.parametrize(
@@ -22,10 +22,3 @@ def test_sum_to(n, expected):
 )
 def test_steps_until_low(battery, drain, low, expected):
     assert steps_until_low(battery, drain, low) == expected
-
-
-@pytest.mark.parametrize(
-    "limit, k, expected", [(10, 3, 3), (10, 1, 10), (5, 7, 0), (100, 10, 10)]
-)
-def test_count_multiples(limit, k, expected):
-    assert count_multiples(limit, k) == expected

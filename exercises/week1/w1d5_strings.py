@@ -2,7 +2,8 @@
 #
 # 각 함수의 `pass`를 코드로 바꾸세요.
 #
-# 테스트(VS Code 터미널): `pytest exercises/week1/tests/test_w1d5.py`
+# 테스트(VS Code 터미널): 함수 하나는 수업에 나온 `-k` 명령으로,
+#   모든 함수를 마친 뒤에는 `pytest exercises/week1/tests/test_w1d5.py`
 
 
 def clean_command(text):
@@ -27,7 +28,8 @@ def make_topic_name(robot_name, sensor):
 
 
 def is_valid_robot_id(robot_id):
-    """robot_id가 "RR-0042" 형태이면 True, 아니면 False를 반환하세요.
+    """robot_id가 대문자 두 개, "-", 숫자 네 개 순서이면 True, 아니면 False를 반환하세요.
+    앞의 두 글자가 꼭 "RR"일 필요는 없습니다. "WR-1234"도 올바른 식별 번호입니다.
 
     올바른 식별 번호는 다음과 같습니다.
     - 길이가 정확히 7글자입니다
@@ -37,22 +39,12 @@ def is_valid_robot_id(robot_id):
 
     예:
         is_valid_robot_id("RR-0042")는 True를 반환합니다
+        is_valid_robot_id("WR-1234")는 True를 반환합니다
         is_valid_robot_id("rr-0042")는 False를 반환합니다
         is_valid_robot_id("RR0042")는 False를 반환합니다
 
     힌트: len(), robot_id[0:2] 같은 슬라이싱,
           .isalpha(), .isupper(), .isdigit() 메서드를 사용하세요
-    """
-    # TODO: 이 줄 아래에 코드를 작성하세요
-    pass
-
-
-def count_char(text, ch):
-    """text 안에 글자 ch가 몇 번 나오는지 세세요.
-
-    문자열을 순회하는 for 문을 사용하세요(.count()는 사용하지 마세요).
-
-    예: count_char("rail robot", "o")는 2를 반환합니다
     """
     # TODO: 이 줄 아래에 코드를 작성하세요
     pass

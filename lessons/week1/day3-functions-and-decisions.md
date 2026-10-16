@@ -189,10 +189,10 @@ def is_hot_long(temp):
 ### 직접 해 보기
 
 `playground.py`에 `needs_charging(battery, distance_to_dock)` 함수를 작성하세요. 배터리가 25 미만이면 `True`를 반환하세요.
-배터리가 40 미만**이면서** 충전 지점까지 거리가 100 m를 초과할 때도 `True`를 반환하세요.
+배터리가 40 미만**이면서** 충전 지점까지 거리가 100 m를 초과할 때도 `True`를 반환하세요. 두 조건 중 어느 것도 맞지 않으면 `False`를 반환하세요.
 
 `playground.py`의 `needs_charging` 아래에 `print(needs_charging(20, 50))`을 추가하세요(예상 결과: `True`).
-그런 다음 `print(needs_charging(50, 200))`을 추가하세요(예상 결과: `False`). **Ctrl + S**로 저장하고 VS Code 터미널에서 `python3 playground.py`를 실행하세요.
+그런 다음 `print(needs_charging(35, 150))`(예상 결과: `True`)과 `print(needs_charging(50, 200))`(예상 결과: `False`)을 추가하세요. **Ctrl + S**로 저장하고 VS Code 터미널에서 `python3 playground.py`를 실행하세요.
 
 ---
 
@@ -296,6 +296,7 @@ $ python3 -i playground.py
    VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열립니다. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py)를 클릭하세요.
 2. VS Code 편집기에서 `w1d3_conditions.py`의 `def battery_status(percent):`를 찾으세요.
 3. VS Code 편집기에서 `w1d3_conditions.py`의 `battery_status` 안에 있는 `pass`를 알맞은 단어를 반환하는 `if` / `elif` / `else`로 바꾸세요. 조건을 확인하는 **순서**를 생각하세요(3절의 "`elif`: 조건을 더 추가하기").
+   들여쓰기: 함수 안의 `if`, `elif`, `else` 줄은 공백 4칸, 그 조건 안의 `return` 줄은 공백 8칸입니다. `def` 줄 아래의 `"""` 안내 글은 그대로 두고, 그 아래의 `pass` 줄만 바꾸세요.
 4. VS Code 편집기에서 **Ctrl + S**로 `w1d3_conditions.py`를 저장하세요. 파일 탭의 **●**가 사라집니다.
 5. VS Code 터미널에 `w1d3_conditions.py`를 불러오는 아래 명령을 입력하세요. **파이썬 `>>>` 프롬프트**에 아래 함수 호출을 입력하세요. `>>>`가 없는 줄은 예상 결과입니다.
    ```bash

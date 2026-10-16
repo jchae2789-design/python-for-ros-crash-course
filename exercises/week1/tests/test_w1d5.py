@@ -1,6 +1,6 @@
 import pytest
 
-from w1d5_strings import clean_command, count_char, is_valid_robot_id, make_topic_name
+from w1d5_strings import clean_command, is_valid_robot_id, make_topic_name
 
 
 @pytest.mark.parametrize(
@@ -33,10 +33,3 @@ def test_make_topic_name(robot, sensor, expected):
 )
 def test_is_valid_robot_id(robot_id, expected):
     assert is_valid_robot_id(robot_id) is expected
-
-
-@pytest.mark.parametrize(
-    "text, ch, expected", [("rail robot", "o", 2), ("", "a", 0), ("aaa", "a", 3), ("ROS", "s", 0)]
-)
-def test_count_char(text, ch, expected):
-    assert count_char(text, ch) == expected

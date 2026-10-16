@@ -2,7 +2,7 @@
 # 먼저 checkpoints/week1/README.md를 읽으세요.
 #
 # 실행(VS Code 터미널): `python3 checkpoints/week1/guess.py`
-# 테스트(VS Code 터미널): `pytest checkpoints/week1`
+# 테스트(VS Code 터미널): 단계별 명령은 README에 있습니다. 전체는 `pytest checkpoints/week1`
 
 import random
 
@@ -18,7 +18,8 @@ def main():
     pass
 
 
-# 아래 두 줄은 그대로 두세요. 이 파일을 실행하면 main()을 호출합니다.
+# 아래 두 줄은 그대로 두세요. 이 파일을 실행하면 main()을 호출하는 시작 장치입니다.
+# 코드는 main() 안에 작성하세요. 맨 아래에는 코드를 추가하지 마세요.
 # 정확히 어떻게 동작하는지는 3주차에 배웁니다.
 if __name__ == "__main__":
     main()

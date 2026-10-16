@@ -20,11 +20,11 @@
 robot_id = "RR-0042"
 print(robot_id[0])     # R
 print(robot_id[2])     # -
-print(robot_id[-1])    # 2   (음수는 끝에서부터 세요)
+print(robot_id[-1])    # 2   (음수 인덱스는 끝에서부터 셉니다)
 print(len(robot_id))   # 7   (글자 수)
 ```
 
-`robot_id[7]`은 `IndexError: string index out of range`를 일으킵니다. 마지막 인덱스는 길이에서 1을 뺀 `len - 1`입니다.
+`robot_id[7]`은 `IndexError: string index out of range`를 일으킵니다. 마지막 인덱스는 길이에서 1을 뺀 `len(robot_id) - 1`입니다. `len(robot_id)`가 7이므로 마지막 인덱스는 6입니다.
 
 ---
 
@@ -61,6 +61,10 @@ VS Code 터미널에 `python3`를 입력하세요. 파이썬 `>>>` 프롬프트�
 | `.isdigit()` | 0–9의 숫자로만 되어 있습니까? | `"0042".isdigit()` | `True` |
 | `.isalpha()` | 문자로만 되어 있습니까? | `"RR".isalpha()` | `True` |
 | `.isupper()` | 모든 문자가 대문자입니까? | `"RR".isupper()` | `True` |
+
+표의 `\n`은 줄바꿈 한 개를 나타냅니다. 예제를 입력할 때는 Enter로 줄을 바꾸지 말고 백슬래시 `\`와 영문 소문자 `n`을 이어서 입력하세요.
+
+`.isupper()`는 숫자를 검사하지 않습니다. `"R1".isupper()`도 `True`입니다. 문자로만 되어 있는지도 확인하려면 `.isalpha()`를 함께 사용하세요.
 
 중요합니다. 문자열 자체는 **바꿀 수 없습니다**. 메서드는 **새** 문자열을 돌려줍니다. VS Code에서 `playground.py`에 아래처럼 새 문자열을 `command`에 다시 저장하세요.
 
@@ -140,9 +144,9 @@ print(digits)       # 4
 
 **연습 문제 진행 방법:** 한 번에 하나씩 **순서대로** 푸세요. 아래의 각 연습 문제에는 번호가 붙은 진행 순서가 있습니다. 1번부터 끝까지 따라 한 뒤 다음 연습 문제로 넘어가세요. 잘되지 않는 단계가 있으면 [연습 문제 진행 방법 5부](../../docs/02-how-exercises-work.md#5부-테스트-결과-읽기)를 참고하세요.
 
-네 함수는 모두 [`exercises/week1/w1d5_strings.py`](../../exercises/week1/w1d5_strings.py)에 있습니다. 아래에서 각 함수의 번호가 붙은 진행 순서를 따르세요.
+세 함수는 모두 [`exercises/week1/w1d5_strings.py`](../../exercises/week1/w1d5_strings.py)에 있습니다. 아래에서 각 함수의 번호가 붙은 진행 순서를 따르세요.
 
-### 연습 문제 1/4: `clean_command(text)`
+### 연습 문제 1/3: `clean_command(text)`
 
 > 📖 **시작하기 전에:** [연습 문제 진행 방법](../../docs/02-how-exercises-work.md)을 이 수업 옆에 여세요.
 > [4부: 함수 연습 문제](../../docs/02-how-exercises-work.md#4부-함수-연습-문제-따라-하기-35일차)와 [5부: 테스트 결과 읽기](../../docs/02-how-exercises-work.md#5부-테스트-결과-읽기)를 따라 하세요.
@@ -193,13 +197,13 @@ $ python3 -i playground.py
    ```bash
    pytest exercises/week1/tests/test_w1d5.py -k clean_command
    ```
-   ✔ `3 passed, 16 deselected`가 나와야 합니다.
+   ✔ `3 passed, 12 deselected`가 나와야 합니다.
 5. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
    `clean_command` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
 
 > `deselected`는 이 파일에 있는 **다른** 연습 문제의 테스트는 실행하지 않았다는 뜻입니다. `-k`를 사용하면 이렇게 되니 괜찮습니다.
 
-### 연습 문제 2/4: `make_topic_name(robot_name, sensor)`
+### 연습 문제 2/3: `make_topic_name(robot_name, sensor)`
 
 > 📖 **시작하기 전에:** [연습 문제 진행 방법](../../docs/02-how-exercises-work.md)을 이 수업 옆에 여세요.
 > [4부: 함수 연습 문제](../../docs/02-how-exercises-work.md#4부-함수-연습-문제-따라-하기-35일차)와 [5부: 테스트 결과 읽기](../../docs/02-how-exercises-work.md#5부-테스트-결과-읽기)를 따라 하세요.
@@ -251,19 +255,21 @@ $ python3 -i playground.py
    ```bash
    pytest exercises/week1/tests/test_w1d5.py -k make_topic_name
    ```
-   ✔ `3 passed, 16 deselected`가 나와야 합니다.
+   ✔ `3 passed, 12 deselected`가 나와야 합니다.
 5. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
    `make_topic_name` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
 
-### 연습 문제 3/4: `is_valid_robot_id(robot_id)`
+### 연습 문제 3/3: `is_valid_robot_id(robot_id)`
 
 > 📖 **시작하기 전에:** [연습 문제 진행 방법](../../docs/02-how-exercises-work.md)을 이 수업 옆에 여세요.
 > [4부: 함수 연습 문제](../../docs/02-how-exercises-work.md#4부-함수-연습-문제-따라-하기-35일차)와 [5부: 테스트 결과 읽기](../../docs/02-how-exercises-work.md#5부-테스트-결과-읽기)를 따라 하세요.
 
-**할 일:** 문자열이 `RR-0042` 형태이면 `True`를 반환하세요. 정확히 7글자이고 대문자 두 개, `-`, 숫자 네 개 순서여야 합니다. 그 밖의 경우에는 `False`를 반환하세요.
+**할 일:** 문자열이 정확히 7글자이고 대문자 두 개, `-`, 숫자 네 개 순서이면 `True`를 반환하세요. 그 밖의 경우에는 `False`를 반환하세요. 앞의 두 글자가 꼭 `RR`일 필요는 없습니다. `WR-1234`도 올바른 식별 번호입니다.
 
 ```python
 >>> is_valid_robot_id("RR-0042")
+True
+>>> is_valid_robot_id("WR-1234")
 True
 >>> is_valid_robot_id("rr-0042")
 False
@@ -326,70 +332,19 @@ False
    ```bash
    pytest exercises/week1/tests/test_w1d5.py -k is_valid_robot_id
    ```
-   ✔ `9 passed, 10 deselected`가 나와야 합니다.
+   ✔ `9 passed, 6 deselected`가 나와야 합니다.
 5. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
    `is_valid_robot_id` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
 
-### 연습 문제 4/4: `count_char(text, ch)`
+### 추가 도전(선택): `count_char(text, ch)`
 
-> 📖 **시작하기 전에:** [연습 문제 진행 방법](../../docs/02-how-exercises-work.md)을 이 수업 옆에 여세요.
-> [4부: 함수 연습 문제](../../docs/02-how-exercises-work.md#4부-함수-연습-문제-따라-하기-35일차)와 [5부: 테스트 결과 읽기](../../docs/02-how-exercises-work.md#5부-테스트-결과-읽기)를 따라 하세요.
+시간이 남을 때만 하세요. 테스트하지 않으며 체크리스트에도 없습니다.
 
-**할 일:** `text` 안에 글자 `ch`가 몇 번 나오는지 세세요. `.count()` 대신 `for` 문을 사용하세요.
+`playground.py`의 내용을 지우고, `text` 안에 글자 `ch`가 몇 번 나오는지 세는 `count_char(text, ch)` 함수를 작성하세요. `.count()` 대신 `for` 문(5절)과 누적 방법을 사용하세요.
 
-```python
->>> count_char("rail robot", "o")
-2
-```
+주의: 매개변수 `ch`에는 찾을 글자가 들어 있습니다. 반복문에서 꺼내는 글자에는 `letter`처럼 **다른 이름**을 붙이세요(`for letter in text:`). 반복문 변수도 `ch`라고 하면 찾을 글자가 덮어써져서 모든 글자를 세게 됩니다.
 
-**따라 해 볼 예제:** 비슷한 문제입니다(이 연습 문제의 정답은 아닙니다).
-
-이 함수는 `for` 문으로 문자열을 한 글자씩 살펴보며 공백의 개수를 세요.
-
-```python
-def count_spaces(text):
-    count = 0
-    for ch in text:
-        if ch == " ":
-            count = count + 1
-    return count
-```
-
-예제를 실행해 보세요. VS Code 터미널에 `code playground.py`를 입력해서 같은 VS Code 창에 `playground.py`를 여세요.
-VS Code 편집기에서 `playground.py`에 예제를 입력하세요. **Ctrl + S**로 `playground.py`를 저장하세요.
-VS Code 터미널에서 `python3 -i playground.py`를 실행하세요.
-
-**파이썬 `>>>` 프롬프트**에 아래 호출을 입력하세요. `>>>`가 없는 줄은 나와야 할 결과입니다.
-
-```python
-$ python3 -i playground.py
->>> count_spaces('rail robot one')
-2
->>> count_spaces('ROS')
-0
->>> exit()
-```
-
-예제가 어떻게 동작하는지 이해했다면 아래 순서대로 진행하세요. 연습 문제 코드는 직접 작성하세요. 할 일이 다르니 예제를 그대로 복사하지 마세요.
-
-**진행 순서:**
-
-1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
-   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d5_strings.py`](../../exercises/week1/w1d5_strings.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열립니다. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d5_strings.py`](../../exercises/week1/w1d5_strings.py)를 클릭하세요.
-2. VS Code 편집기에서 `w1d5_strings.py`의 `count_char` 안에 있는 `pass`를 코드로 바꾸세요. 문자열을 반복문으로 살펴보고(5절) 누적 방법으로 개수를 세세요.
-3. VS Code 편집기에서 **Ctrl + S**로 `w1d5_strings.py`를 저장하세요. 파일 탭의 **●**가 사라집니다.
-
-   VS Code 터미널에서 `python3 -i exercises/week1/w1d5_strings.py`를 실행하세요.
-   **파이썬 `>>>` 프롬프트**에 위의 **할 일** 아래에 나온 `count_char(...)` 호출을 입력하고 결과를 비교하세요.
-
-   `>>>`에 `exit()`을 입력해서 VS Code 터미널로 돌아오세요.
-4. VS Code 터미널에서 [`test_w1d5.py`](../../exercises/week1/tests/test_w1d5.py)로 `count_char`를 테스트하세요.
-   ```bash
-   pytest exercises/week1/tests/test_w1d5.py -k count_char
-   ```
-   ✔ `4 passed, 15 deselected`가 나와야 합니다.
-5. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
-   `count_char` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
+VS Code 터미널에서 `python3 -i playground.py`를 실행하고 `>>>`에 `count_char("rail robot", "o")`를 입력하세요. `2`가 나와야 합니다. 마치면 `exit()`을 입력하세요.
 
 ### 마지막으로: 오늘의 테스트 전체와 이번 주 테스트 전체
 
@@ -399,7 +354,7 @@ VS Code 터미널에서 [`test_w1d5.py`](../../exercises/week1/tests/test_w1d5.p
 pytest exercises/week1/tests/test_w1d5.py
 ```
 
-✔ **`19 passed`**가 나와야 합니다. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)의 5일차 "테스트 통과" 항목을 체크하세요. **Ctrl + S**로 저장하세요.
+✔ **`15 passed`**가 나와야 합니다. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)의 5일차 "테스트 통과" 항목을 체크하세요. **Ctrl + S**로 저장하세요.
 
 그런 다음 VS Code 터미널에서 [`exercises/week1/`](../../exercises/week1/)의 모든 테스트를 실행하세요.
 
@@ -407,7 +362,7 @@ pytest exercises/week1/tests/test_w1d5.py
 pytest exercises/week1
 ```
 
-✔ **`64 passed`**가 나와야 합니다. 1–5일차의 모든 연습 문제입니다.
+✔ **`56 passed`**가 나와야 합니다. 1–5일차의 모든 연습 문제입니다.
 VS Code 편집기에서 `progress/week1.md`의 "이번 주 전체 테스트 통과"를 체크하고 **Ctrl + S**로 저장하세요.
 
 이전 연습 문제가 실패하면 VS Code 터미널 오류 메시지에 나온 파일을 고치고 **Ctrl + S**로 저장하세요.
@@ -428,13 +383,15 @@ VS Code 편집기에서 [checkpoints/week1/README.md](../../checkpoints/week1/RE
 | `while True` + `break` | `q`를 입력하거나 정답을 맞힐 때까지 반복 |
 | `.isdigit()` | 추측한 값이 숫자인지 확인 |
 
-주간 과제 파일 두 개를 모두 저장하세요. [`checkpoints/week1/`](../../checkpoints/week1/)의 테스트를 실행하세요(예상 결과: `11 passed`).
+주간 과제 안내의 단계마다 작은 확인 방법이 나와 있습니다. 한 단계씩 확인하며 진행하세요. 두 프로그램을 모두 마치면 [`checkpoints/week1/`](../../checkpoints/week1/)의 전체 테스트를 실행하세요(예상 결과: `11 passed`).
 
 ```bash
 pytest checkpoints/week1
 ```
 
 모든 테스트가 통과하면 VS Code 터미널에서 두 프로그램이 실행되는 모습을 **멘토에게 보여 주고** 코드를 설명하세요.
+
+> ⏰ 금요일에 주간 과제를 다 마치지 못해도 괜찮습니다. 마친 부분까지 커밋하고 푸시한 뒤 멘토에게 알리세요. 다음 주 월요일 오전에 이어서 마치고 2주차를 시작합니다.
 
 ---
 

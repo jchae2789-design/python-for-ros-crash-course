@@ -9,6 +9,6 @@
 # 힌트: 한 줄마다 print() 하나를 사용하세요.
 #
 # 실행(VS Code 터미널): `python3 exercises/week1/w1d1_robot_card.py`
-# 테스트(VS Code 터미널): `pytest exercises/week1/tests/test_w1d1.py`
+# 테스트(VS Code 터미널): `pytest exercises/week1/tests/test_w1d1.py -k robot_card`
 
 # TODO: 이 줄 아래에 코드를 작성하세요

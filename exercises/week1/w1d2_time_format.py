@@ -1,20 +1,19 @@
-# Week 1, Day 2, Exercise 2: Mission timer
+# 1주차 2일차 연습 문제 2: 임무 타이머
 #
-# A mission log stores time in seconds. People prefer hours, minutes
-# and seconds.
+# 임무 기록에는 시간을 초 단위로 저장해요. 사람은 시간, 분, 초로
+# 나누어 보는 게 더 편해요.
 #
-# 1. Ask for a number of seconds:   Seconds:
-# 2. Print it as hours, minutes and seconds, like this:
+# 1. 초 단위 시간을 입력받으세요:   Seconds:
+# 2. 아래처럼 시간, 분, 초로 나누어 출력하세요.
 #
 #     1 h 2 m 5 s
 #
-# Example: 3725 seconds gives "1 h 2 m 5 s".
+# 예: 3725초이면 "1 h 2 m 5 s"가 나와요.
 #
-# Hints: // is whole-number division. % is the remainder.
-#        There are 3600 seconds in an hour and 60 in a minute.
+# 힌트: //는 나눗셈의 몫이고 %는 나머지예요.
+#       1시간은 3600초이고 1분은 60초예요.
 #
-# Run (in the VS Code terminal): `python3 exercises/week1/w1d2_time_format.py`
-# Test (in the VS Code terminal): `pytest exercises/week1/tests/test_w1d2.py`
+# 실행(VS Code 터미널): `python3 exercises/week1/w1d2_time_format.py`
+# 테스트(VS Code 터미널): `pytest exercises/week1/tests/test_w1d2.py`
 
-# TODO: write your code below this line
-
+# TODO: 이 줄 아래에 코드를 작성하세요

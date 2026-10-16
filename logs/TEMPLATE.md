@@ -1,29 +1,29 @@
-# Daily log: YYYY-MM-DD
+# 실습 일지: YYYY-MM-DD
 
-Open [`logs/TEMPLATE.md`](TEMPLATE.md) in the VS Code editor. Select **File > Save As**.
-Save a copy as `logs/YYYY-MM-DD.md`, using today's date (for example `logs/2026-10-19.md`).
-Keep `logs/TEMPLATE.md` as the blank template.
+VS Code 편집기에서 [`logs/TEMPLATE.md`](TEMPLATE.md)를 여세요. **File > Save As**를 선택하세요.
+오늘 날짜를 사용해서 `logs/YYYY-MM-DD.md`(예: `logs/2026-10-19.md`)로 복사본을 저장하세요.
+`logs/TEMPLATE.md`는 빈 양식으로 남겨 두세요.
 
-At the end of the day, in the VS Code editor, replace the placeholders in `logs/YYYY-MM-DD.md` with your answers. Save `logs/YYYY-MM-DD.md` with **Ctrl + S**.
+하루를 마칠 때 VS Code 편집기에서 `logs/YYYY-MM-DD.md`의 빈칸을 답으로 채우세요. **Ctrl + S**로 `logs/YYYY-MM-DD.md`를 저장하세요.
 
-## Today's lesson
-Week _, Day _: (lesson title)
+## 오늘 수업
+_주차 _일차: (수업 제목)
 
-## What I learned
+## 배운 내용
 - 
 - 
 - 
 
-## Exercises
-| Exercise | Tests passing? | Notes |
+## 연습 문제
+| 연습 문제 | 테스트 통과 여부 | 메모 |
 |---|---|---|
-|  | yes / no |  |
+|  | 통과 / 실패 |  |
 
-## Problems I had and how I solved them
+## 겪은 문제와 해결 방법
 - 
 
-## Questions for my mentor
+## 멘토에게 물어볼 질문
 - 
 
-## Time spent
-About _ hours.
+## 공부한 시간
+약 _시간이에요.

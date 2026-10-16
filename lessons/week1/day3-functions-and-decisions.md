@@ -1,14 +1,14 @@
-# Week 1 · Day 3: Making decisions: functions and `if`
+# 1주차 · 3일차: 조건에 따라 판단하기, 함수와 `if` 문
 
-**You will learn:** how to write a simple function, how to compare values, and how to make your program choose what to do with `if`, `elif` and `else`.
+**배울 내용:** 간단한 함수를 작성하는 방법, 값을 비교하는 방법, `if`, `elif`, `else`로 프로그램이 할 일을 고르게 하는 방법을 배워요.
 
-**Why this matters for robots:** robots decide all the time. *Is the obstacle too close? Stop. Is the battery low? Go back to the charger. Is the wind too strong? Do not take off.* This is all `if`.
+**로봇을 다룰 때 필요한 이유:** 로봇은 계속 판단해요. *장애물이 너무 가까우면 멈춰요. 배터리가 부족하면 충전기로 돌아가요. 바람이 너무 강하면 이륙하지 않아요.* 모두 `if` 문으로 표현할 수 있어요.
 
 ---
 
-## 1. A first look at functions
+## 1. 함수 처음 살펴보기
 
-Until now, your programs ran from top to bottom once. A **function** is a named piece of code that you can run whenever you want, with different values.
+지금까지 프로그램은 위에서 아래로 한 번 실행됐어요. **함수**는 이름을 붙인 코드 묶음이에요. 원할 때마다 다른 값을 넣어 실행할 수 있어요.
 
 ```python
 def double(number):
@@ -20,19 +20,19 @@ print(double(4))     # 8
 print(double(10))    # 20
 ```
 
-The parts:
+각 부분을 살펴보세요.
 
 ```python
-def double(number):      # def = "define a function". Its name is double.
-                         # number is the input (a "parameter").
-    result = number * 2  # the body: indented by 4 spaces
-    return result        # return = give this value back to whoever called the function
+def double(number):      # def는 함수를 정의한다는 뜻이에요. 함수 이름은 double이에요.
+                         # number는 입력값을 받는 "매개변수"예요.
+    result = number * 2  # 본문은 공백 4칸으로 들여써요
+    return result        # return은 함수를 호출한 곳에 이 값을 돌려줘요
 ```
 
-- `double(4)` **calls** the function. Inside, `number` is `4`.
-- `return` sends the answer back. `print(double(4))` then prints it.
+- `double(4)`는 함수를 **호출**해요. 함수 안에서 `number`는 `4`예요.
+- `return`은 답을 돌려줘요. 그다음 `print(double(4))`가 그 답을 출력해요.
 
-A function can have several parameters:
+함수에는 여러 매개변수가 있을 수 있어요.
 
 ```python
 def runtime_hours(capacity_mah, current_ma):
@@ -42,50 +42,50 @@ def runtime_hours(capacity_mah, current_ma):
 print(runtime_hours(5000, 2000))   # 2.5
 ```
 
-### `return` is not `print`
+### `return`과 `print`는 달라요
 
-This is very important:
+아주 중요한 차이예요.
 
-- `print` **shows** a value on the screen. The program cannot use it afterwards.
-- `return` **gives back** a value. The program can store it, calculate with it, or print it.
+- `print`는 화면에 값을 **보여 줘요**. 프로그램은 출력한 값을 이후 계산에 사용할 수 없어요.
+- `return`은 값을 **돌려줘요**. 프로그램은 그 값을 저장하거나 계산에 사용하거나 출력할 수 있어요.
 
 ```python
 def add_print(a, b):
-    print(a + b)       # shows it, gives back nothing
+    print(a + b)       # 화면에 보여 주고 값은 반환하지 않아요
 
 
 def add_return(a, b):
-    return a + b       # gives it back
+    return a + b       # 값을 반환해요
 
 
-x = add_return(2, 3)   # x is 5
-y = add_print(2, 3)    # shows 5, but y is None (nothing)
+x = add_return(2, 3)   # x는 5예요
+y = add_print(2, 3)    # 5를 보여 주지만 y는 None(값이 없음)이에요
 ```
 
-From today on, most exercises are functions. The tests call your function and check what it **returns**. So always use `return`, not `print`, inside exercise functions.
+오늘부터 대부분의 연습 문제는 함수예요. 테스트가 함수를 호출해서 **반환하는 값**을 확인해요. 따라서 연습 문제 함수 안에서는 답을 `print`로 출력하지 말고 항상 `return`으로 반환하세요.
 
-> You will learn much more about functions in Week 2. For now, this is enough: `def`, parameters, `return`.
+> 2주차에 함수를 더 자세히 배워요. 지금은 `def`, 매개변수, `return`만 알아도 충분해요.
 
 ---
 
-## 2. Comparing values
+## 2. 값 비교하기
 
-A comparison gives back `True` or `False`:
+비교 결과는 `True` 또는 `False`예요.
 
-| Operator | Meaning | Example | Result |
+| 연산자 | 의미 | 예 | 결과 |
 |---|---|---|---|
-| `==` | equal | `5 == 5` | `True` |
-| `!=` | not equal | `5 != 3` | `True` |
-| `<` | less than | `2 < 1` | `False` |
-| `>` | greater than | `2 > 1` | `True` |
-| `<=` | less than or equal | `3 <= 3` | `True` |
-| `>=` | greater than or equal | `4 >= 5` | `False` |
+| `==` | 같아요 | `5 == 5` | `True` |
+| `!=` | 달라요 | `5 != 3` | `True` |
+| `<` | 작아요(미만) | `2 < 1` | `False` |
+| `>` | 커요(초과) | `2 > 1` | `True` |
+| `<=` | 작거나 같아요(이하) | `3 <= 3` | `True` |
+| `>=` | 크거나 같아요(이상) | `4 >= 5` | `False` |
 
-⚠️ `=` stores a value. `==` compares two values. Mixing them up is the most common beginner mistake.
+⚠️ `=`는 값을 저장해요. `==`는 두 값을 비교해요. 둘을 혼동하는 건 초보자가 가장 자주 하는 실수예요.
 
 ```python
-battery = 20          # store
-print(battery == 20)  # compare → True
+battery = 20          # 저장해요
+print(battery == 20)  # 비교해요 → True
 ```
 
 ---
@@ -99,13 +99,13 @@ if distance < 0.5:
     print("STOP!")
 ```
 
-- After `if` comes a condition and a colon `:`.
-- The lines that belong to the `if` are **indented by 4 spaces**. VS Code does this for you when you press Enter after `:`.
-- They run **only if** the condition is `True`.
+- `if` 뒤에는 조건과 콜론 `:`을 써요.
+- `if`에 속하는 줄은 **공백 4칸으로 들여써요**. VS Code에서는 `:` 뒤에서 Enter를 누르면 자동으로 들여써 줘요.
+- 조건이 `True`일 **때만** 이 줄들이 실행돼요.
 
-### `else`: otherwise
+### `else`: 그 밖의 경우
 
-Keep `distance = 0.3` before this example in `playground.py`; expect `STOP!`.
+`playground.py`에서 이 예제 앞에 `distance = 0.3`을 두세요. `STOP!`이 나와야 해요.
 
 ```python
 if distance < 0.5:
@@ -114,9 +114,9 @@ else:
     print("Path is clear")
 ```
 
-### `elif`: more choices
+### `elif`: 조건을 더 추가하기
 
-`elif` means "else if". Python checks the conditions **from top to bottom** and runs **only the first one that is True**:
+`elif`는 앞의 조건이 아니면 다음 조건을 확인한다는 뜻이에요. 파이썬은 **위에서 아래로** 조건을 확인하고 **처음으로 True가 되는 부분만** 실행해요.
 
 ```python
 temperature = 65
@@ -131,11 +131,11 @@ else:
     print("WARNING: too cold")
 ```
 
-Output: `WARNING: too hot`. Even though `65 >= 10` is also true, Python stops after the first match.
+출력은 `WARNING: too hot`이에요. `65 >= 10`도 참이지만, 파이썬은 처음 맞는 조건을 찾으면 더 확인하지 않아요.
 
-**The order matters!** If you put `>= 10` first, every warm temperature would print `OK`. Always put the strictest check first.
+**순서가 중요해요!** `>= 10`을 먼저 쓰면 온도가 높은 경우에도 모두 `OK`가 출력돼요. 항상 가장 엄격한 조건부터 확인하세요.
 
-### `if` inside a function
+### 함수 안의 `if` 문
 
 ```python
 def temperature_status(temp):
@@ -150,17 +150,17 @@ def temperature_status(temp):
 print(temperature_status(85))   # DANGER
 ```
 
-When `return` runs, the function stops immediately.
+`return`이 실행되면 함수가 바로 끝나요.
 
 ---
 
-## 4. Combining conditions: `and`, `or`, `not`
+## 4. 조건 조합하기: `and`, `or`, `not`
 
-| Operator | True when | Example |
+| 연산자 | 참이 되는 경우 | 예 |
 |---|---|---|
-| `and` | **both** sides are True | `battery > 20 and gps_ok` |
-| `or` | **at least one** side is True | `emergency or battery < 5` |
-| `not` | the opposite | `not gps_ok` |
+| `and` | 양쪽 **모두** True일 때 | `battery > 20 and gps_ok` |
+| `or` | **하나 이상**이 True일 때 | `emergency or battery < 5` |
+| `not` | 반대 값 | `not gps_ok` |
 
 ```python
 battery = 50
@@ -171,14 +171,14 @@ if battery > 20 and gps_ok and not door_open:
     print("Ready to move")
 ```
 
-A condition is already `True` or `False`, so you can return it directly:
+조건의 결과는 이미 `True` 또는 `False`이므로 바로 반환할 수 있어요.
 
 ```python
 def is_hot(temp):
-    return temp > 60     # gives back True or False
+    return temp > 60     # True 또는 False를 반환해요
 
 
-# This is the same, but longer:
+# 아래 코드도 같은 동작을 하지만 더 길어요.
 def is_hot_long(temp):
     if temp > 60:
         return True
@@ -186,76 +186,76 @@ def is_hot_long(temp):
         return False
 ```
 
-### Try it
+### 직접 해 보기
 
-In `playground.py`, write a function `needs_charging(battery, distance_to_dock)`. Return `True` if the battery is below 25.
-Also return `True` if the battery is below 40 **and** the dock is more than 100 m away.
+`playground.py`에 `needs_charging(battery, distance_to_dock)` 함수를 작성하세요. 배터리가 25 미만이면 `True`를 반환하세요.
+배터리가 40 미만**이면서** 충전 지점까지 거리가 100 m를 초과할 때도 `True`를 반환하세요.
 
-Below `needs_charging` in `playground.py`, add `print(needs_charging(20, 50))` (expected: `True`).
-Then add `print(needs_charging(50, 200))` (expected: `False`). Save with **Ctrl + S**. Run `python3 playground.py` in the VS Code terminal.
+`playground.py`의 `needs_charging` 아래에 `print(needs_charging(20, 50))`을 추가하세요(예상 결과: `True`).
+그런 다음 `print(needs_charging(50, 200))`을 추가하세요(예상 결과: `False`). **Ctrl + S**로 저장하고 VS Code 터미널에서 `python3 playground.py`를 실행하세요.
 
 ---
 
-## 5. Indentation
+## 5. 들여쓰기
 
-Python uses indentation (spaces at the start of a line) to know which lines belong together. Use **4 spaces**.
-VS Code inserts four spaces when you press **Tab**.
-For the example below, put `battery = 10` first in `playground.py`; the three print lines should appear.
+파이썬은 들여쓰기(줄 앞의 공백)로 어떤 줄들이 한 묶음인지 구분해요. **공백 4칸**을 사용하세요.
+VS Code에서는 **Tab**을 누르면 공백 4칸이 들어가요.
+아래 예제는 `playground.py` 맨 앞에 `battery = 10`을 넣으세요. 세 줄이 모두 출력돼야 해요.
 
 ```python
 if battery < 15:
-    print("Battery critical")     # inside the if
-    print("Returning to dock")    # inside the if
-print("Check finished")           # outside: always runs
+    print("Battery critical")     # if 문 안에 있어요
+    print("Returning to dock")    # if 문 안에 있어요
+print("Check finished")           # 밖에 있으므로 항상 실행돼요
 ```
 
-Wrong indentation gives `IndentationError`, or worse: no error, but the wrong behavior.
+들여쓰기가 틀리면 `IndentationError`가 나요. 더 곤란한 경우에는 오류 없이 의도와 다르게 동작할 수도 있어요.
 
 ---
 
-## 6. Common mistakes
+## 6. 자주 하는 실수
 
-| Mistake | Fix |
+| 실수 | 해결 방법 |
 |---|---|
-| `if battery = 20:` gives `SyntaxError` | Use `==` to compare |
-| Missing `:` after `if`, `elif`, `else` or `def` | Add the colon |
-| The function returns `None` | You used `print` instead of `return`, or forgot `return` in one branch |
-| Wrong result for the edge values (e.g. exactly 90) | Check `>` vs `>=` |
-| Every value goes into the first branch | Check the order of your `elif`s |
+| `if battery = 20:`에서 `SyntaxError`가 나와요 | 비교할 때는 `==`를 사용하세요 |
+| `if`, `elif`, `else`, `def` 뒤에 `:`이 빠졌어요 | 콜론을 추가하세요 |
+| 함수가 `None`을 반환해요 | `return` 대신 `print`를 사용했거나, 조건에 따라 실행되는 부분 중 한 곳에 `return`을 빠뜨렸어요 |
+| 경계값(예: 정확히 90)에서 결과가 틀려요 | `>`와 `>=`를 확인하세요 |
+| 모든 값이 첫 번째 조건에 걸려요 | `elif`의 순서를 확인하세요 |
 
 ---
 
-## 7. Exercises
+## 7. 연습 문제
 
-> From today, exercises are **functions**. Read [How exercises work, Part 4](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) first.
+> 오늘부터 연습 문제는 **함수**예요. 먼저 [연습 문제 진행 방법 4부](../../docs/02-how-exercises-work.md#4부-함수-연습-문제-따라-하기-35일차)를 읽으세요.
 
-All of today's functions are in **one file**. You write them one at a time. For each function, you:
-- replace `pass` with your code (keep the `def ...` line exactly as it is),
-- use `return` to give back the answer (not `print`),
-- follow the load command, function calls, and `pytest` command in that exercise's numbered steps.
+오늘의 함수는 모두 **한 파일**에 있어요. 한 번에 하나씩 작성하세요. 각 함수는 다음과 같이 진행해요.
+- `pass`를 코드로 바꾸세요(`def ...` 줄은 그대로 두세요).
+- `print` 대신 `return`으로 답을 반환하세요.
+- 해당 연습 문제의 번호가 붙은 진행 순서에 나온 불러오기 명령, 함수 호출, `pytest` 명령을 따르세요.
 
-**How to do the exercises:** do them **in order**, one at a time. Each exercise below has numbered steps. Follow them from 1 to the end, then go to the next exercise. If a step does not work, look at [How exercises work, Part 5](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
+**연습 문제 진행 방법:** 한 번에 하나씩 **순서대로** 푸세요. 아래의 각 연습 문제에는 번호가 붙은 진행 순서가 있어요. 1번부터 끝까지 따라 한 뒤 다음 연습 문제로 넘어가세요. 잘되지 않는 단계가 있으면 [연습 문제 진행 방법 5부](../../docs/02-how-exercises-work.md#5부-테스트-결과-읽기)를 참고하세요.
 
-All three functions are in [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py). Follow the numbered steps for each function below.
+세 함수는 모두 [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py)에 있어요. 아래에서 각 함수의 번호가 붙은 진행 순서를 따르세요.
 
-### Exercise 1 of 3: `battery_status(percent)`
+### 연습 문제 1/3: `battery_status(percent)`
 
-> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson.
-> Follow [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
+> 📖 **시작하기 전에:** [연습 문제 진행 방법](../../docs/02-how-exercises-work.md)을 이 수업 옆에 여세요.
+> [4부: 함수 연습 문제](../../docs/02-how-exercises-work.md#4부-함수-연습-문제-따라-하기-35일차)와 [5부: 테스트 결과 읽기](../../docs/02-how-exercises-work.md#5부-테스트-결과-읽기)를 따라 하세요.
 
-**Your task:** return a status word for a battery level:
+**할 일:** 배터리 잔량에 맞는 상태 단어를 반환하세요.
 
-| `percent` | return |
+| `percent` | 반환값 |
 |---|---|
-| below 0 or above 100 | `"INVALID"` |
-| 90 or more | `"FULL"` |
-| 40 or more | `"OK"` |
-| 15 or more | `"LOW"` |
-| anything lower | `"CRITICAL"` |
+| 0 미만 또는 100 초과 | `"INVALID"` |
+| 90 이상 | `"FULL"` |
+| 40 이상 | `"OK"` |
+| 15 이상 | `"LOW"` |
+| 그보다 작은 값 | `"CRITICAL"` |
 
-**Example to follow:** a similar problem (not the answer to this exercise).
+**따라 해 볼 예제:** 비슷한 문제예요(이 연습 문제의 정답은 아니에요).
 
-This function turns a Wi-Fi signal strength (in dBm, always 0 or below) into a word. Notice: the invalid check comes **first**, then the strictest level, then weaker ones.
+이 함수는 Wi-Fi 신호 세기(dBm 단위이며 항상 0 이하)를 단어로 바꿔요. 잘못된 값인지 **먼저** 확인하고, 가장 엄격한 단계부터 약한 단계 순서로 확인한다는 점을 살펴보세요.
 
 ```python
 def signal_quality(rssi):
@@ -269,11 +269,11 @@ def signal_quality(rssi):
         return "WEAK"
 ```
 
-Try the example: in the VS Code terminal, type `code playground.py` to open `playground.py` in the same VS Code window.
-In the VS Code editor, type the example into `playground.py`. Save `playground.py` with **Ctrl + S**.
-Run `python3 -i playground.py` in the VS Code terminal.
+예제를 실행해 보세요. VS Code 터미널에 `code playground.py`를 입력해서 같은 VS Code 창에 `playground.py`를 여세요.
+VS Code 편집기에서 `playground.py`에 예제를 입력하세요. **Ctrl + S**로 `playground.py`를 저장하세요.
+VS Code 터미널에서 `python3 -i playground.py`를 실행하세요.
 
-At Python's **`>>>` prompt**, type the calls below. The lines without `>>>` are the results you should see:
+**파이썬 `>>>` 프롬프트**에 아래 호출을 입력하세요. `>>>`가 없는 줄은 나와야 할 결과예요.
 
 ```python
 $ python3 -i playground.py
@@ -288,16 +288,16 @@ $ python3 -i playground.py
 >>> exit()
 ```
 
-When you understand how the example works, do the steps below. Write your own code for the exercise. Do not copy the example: the task is different.
+예제가 어떻게 동작하는지 이해했다면 아래 순서대로 진행하세요. 연습 문제 코드는 직접 작성하세요. 할 일이 다르니 예제를 그대로 복사하지 마세요.
 
-**Steps:**
+**진행 순서:**
 
-1. **Open the file.** In the VS Code editor, press **Ctrl + P**.
-   Type [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py) and press Enter. The file opens in the editor. Or click [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py) in the file list on the left (Explorer) in the VS Code editor.
-2. In the VS Code editor, in `w1d3_conditions.py`, find `def battery_status(percent):`.
-3. In the VS Code editor, in `w1d3_conditions.py`, replace `pass` inside `battery_status` with an `if` / `elif` / `else` that returns the right word. Think about the **order** of your checks (section 3, "`elif`: more choices").
-4. In the VS Code editor, save `w1d3_conditions.py` with **Ctrl + S**. The **●** on the file tab disappears.
-5. In the VS Code terminal, for `w1d3_conditions.py`, type the command below. At Python's **`>>>` prompt**, type the function calls below. The lines without `>>>` show the expected results:
+1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
+   VS Code 편집기에서 [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py)를 클릭하세요.
+2. VS Code 편집기에서 `w1d3_conditions.py`의 `def battery_status(percent):`를 찾으세요.
+3. VS Code 편집기에서 `w1d3_conditions.py`의 `battery_status` 안에 있는 `pass`를 알맞은 단어를 반환하는 `if` / `elif` / `else`로 바꾸세요. 조건을 확인하는 **순서**를 생각하세요(3절의 "`elif`: 조건을 더 추가하기").
+4. VS Code 편집기에서 **Ctrl + S**로 `w1d3_conditions.py`를 저장하세요. 파일 탭의 **●**가 사라져요.
+5. VS Code 터미널에 `w1d3_conditions.py`를 불러오는 아래 명령을 입력하세요. **파이썬 `>>>` 프롬프트**에 아래 함수 호출을 입력하세요. `>>>`가 없는 줄은 예상 결과예요.
    ```bash
    python3 -i exercises/week1/w1d3_conditions.py
    ```
@@ -310,40 +310,40 @@ When you understand how the example works, do the steps below. Write your own co
    'INVALID'
    >>> exit()
    ```
-   ✔ You should get the answers shown. After changing the file, save with **Ctrl + S**.
-   If Python is still open, type `exit()` at `>>>`.
-   Repeat the load command above to use the saved code.
-6. In the VS Code terminal, test `battery_status` with [`test_w1d3.py`](../../exercises/week1/tests/test_w1d3.py):
+   ✔ 표시된 답이 나와야 해요. 파일을 바꾸면 **Ctrl + S**로 저장하세요.
+   파이썬이 아직 열려 있으면 `>>>`에 `exit()`을 입력하세요.
+   저장한 코드를 사용하려면 위의 불러오기 명령을 다시 실행하세요.
+6. VS Code 터미널에서 [`test_w1d3.py`](../../exercises/week1/tests/test_w1d3.py)로 `battery_status`를 테스트하세요.
    ```bash
    pytest exercises/week1/tests/test_w1d3.py -k battery_status
    ```
-   ✔ You should see `10 passed, 11 deselected`.
-7. In the VS Code editor, open [progress/week1.md](../../progress/week1.md).
-   Change `[ ]` to `[x]` beside `battery_status`. Save with **Ctrl + S**.
+   ✔ `10 passed, 11 deselected`가 나와야 해요.
+7. VS Code 편집기에서 [progress/week1.md](../../progress/week1.md)를 여세요.
+   `battery_status` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
 
-> `deselected` means: the tests of the **other** exercises in this file were not run. That is what `-k` does, and it is fine.
+> `deselected`는 이 파일에 있는 **다른** 연습 문제의 테스트는 실행하지 않았다는 뜻이에요. `-k`를 사용하면 이렇게 되니 괜찮아요.
 
-### Exercise 2 of 3: `can_launch(battery_percent, wind_speed, gps_ok)`
+### 연습 문제 2/3: `can_launch(battery_percent, wind_speed, gps_ok)`
 
-> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson.
-> Follow [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
+> 📖 **시작하기 전에:** [연습 문제 진행 방법](../../docs/02-how-exercises-work.md)을 이 수업 옆에 여세요.
+> [4부: 함수 연습 문제](../../docs/02-how-exercises-work.md#4부-함수-연습-문제-따라-하기-35일차)와 [5부: 테스트 결과 읽기](../../docs/02-how-exercises-work.md#5부-테스트-결과-읽기)를 따라 하세요.
 
-**Your task:** return `True` if a drone may take off, otherwise `False`. **All three** must be true: battery is 30 or more, wind is 8.0 or less, and `gps_ok` is `True`.
+**할 일:** 드론이 이륙해도 되면 `True`, 아니면 `False`를 반환하세요. 배터리가 30 이상이고, 풍속이 8.0 이하이고, `gps_ok`가 `True`여야 해요. **세 조건 모두** 참이어야 해요.
 
-**Example to follow:** a similar problem (not the answer to this exercise).
+**따라 해 볼 예제:** 비슷한 문제예요(이 연습 문제의 정답은 아니에요).
 
-This function decides if a robot may drive. Both conditions must be true, so they are joined with `and`, and the result (`True` or `False`) is returned directly:
+이 함수는 로봇이 주행해도 되는지 판단해요. 두 조건이 모두 참이어야 하므로 `and`로 연결하고, 결과(`True` 또는 `False`)를 바로 반환해요.
 
 ```python
 def can_drive(speed, max_speed, emergency_stop):
     return speed <= max_speed and not emergency_stop
 ```
 
-Try the example: in the VS Code terminal, type `code playground.py` to open `playground.py` in the same VS Code window.
-In the VS Code editor, type the example into `playground.py`. Save `playground.py` with **Ctrl + S**.
-Run `python3 -i playground.py` in the VS Code terminal.
+예제를 실행해 보세요. VS Code 터미널에 `code playground.py`를 입력해서 같은 VS Code 창에 `playground.py`를 여세요.
+VS Code 편집기에서 `playground.py`에 예제를 입력하세요. **Ctrl + S**로 `playground.py`를 저장하세요.
+VS Code 터미널에서 `python3 -i playground.py`를 실행하세요.
 
-At Python's **`>>>` prompt**, type the calls below. The lines without `>>>` are the results you should see:
+**파이썬 `>>>` 프롬프트**에 아래 호출을 입력하세요. `>>>`가 없는 줄은 나와야 할 결과예요.
 
 ```python
 $ python3 -i playground.py
@@ -358,40 +358,40 @@ False
 >>> exit()
 ```
 
-When you understand how the example works, do the steps below. Write your own code for the exercise. Do not copy the example: the task is different.
+예제가 어떻게 동작하는지 이해했다면 아래 순서대로 진행하세요. 연습 문제 코드는 직접 작성하세요. 할 일이 다르니 예제를 그대로 복사하지 마세요.
 
-**Steps:**
+**진행 순서:**
 
-1. **Open the file.** In the VS Code editor, press **Ctrl + P**.
-   Type [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py) and press Enter. The file opens in the editor. Or click [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py) in the file list on the left (Explorer) in the VS Code editor.
-2. In the VS Code editor, in `w1d3_conditions.py`, find `def can_launch(...)` in the file.
-3. In the VS Code editor, in `w1d3_conditions.py`, replace `pass` inside `can_launch` with your code. You can do it in one line with `and` (section 4: "you can return it directly").
-4. In the VS Code editor, save `w1d3_conditions.py` with **Ctrl + S**. The **●** on the file tab disappears.
-5. In the VS Code terminal, type `python3 -i exercises/week1/w1d3_conditions.py`. At Python's **`>>>` prompt**, type the calls below. The other lines show the expected results. Then type `exit()` at `>>>` to return to the VS Code terminal:
+1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
+   VS Code 편집기에서 [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py)를 클릭하세요.
+2. VS Code 편집기에서 `w1d3_conditions.py`의 `def can_launch(...)`를 찾으세요.
+3. VS Code 편집기에서 `w1d3_conditions.py`의 `can_launch` 안에 있는 `pass`를 코드로 바꾸세요. `and`를 사용하면 한 줄로 작성할 수 있어요(4절의 "바로 반환할 수 있어요" 참고).
+4. VS Code 편집기에서 **Ctrl + S**로 `w1d3_conditions.py`를 저장하세요. 파일 탭의 **●**가 사라져요.
+5. VS Code 터미널에 `python3 -i exercises/week1/w1d3_conditions.py`를 입력하세요. **파이썬 `>>>` 프롬프트**에 아래 호출을 입력하세요. 나머지 줄은 예상 결과예요. 그런 다음 `>>>`에 `exit()`을 입력해서 VS Code 터미널로 돌아오세요.
    ```python
    >>> can_launch(80, 3.5, True)
    True
    >>> can_launch(80, 3.5, False)
    False
    ```
-6. In the VS Code terminal, test `can_launch` with [`test_w1d3.py`](../../exercises/week1/tests/test_w1d3.py):
+6. VS Code 터미널에서 [`test_w1d3.py`](../../exercises/week1/tests/test_w1d3.py)로 `can_launch`를 테스트하세요.
    ```bash
    pytest exercises/week1/tests/test_w1d3.py -k can_launch
    ```
-   ✔ You should see `5 passed, 16 deselected`.
-7. In the VS Code editor, open [`progress/week1.md`](../../progress/week1.md).
-   Change `[ ]` to `[x]` beside `can_launch`. Save with **Ctrl + S**.
+   ✔ `5 passed, 16 deselected`가 나와야 해요.
+7. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
+   `can_launch` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
 
-### Exercise 3 of 3: `classify_distance(distance_m)`
+### 연습 문제 3/3: `classify_distance(distance_m)`
 
-> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson.
-> Follow [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
+> 📖 **시작하기 전에:** [연습 문제 진행 방법](../../docs/02-how-exercises-work.md)을 이 수업 옆에 여세요.
+> [4부: 함수 연습 문제](../../docs/02-how-exercises-work.md#4부-함수-연습-문제-따라-하기-35일차)와 [5부: 테스트 결과 읽기](../../docs/02-how-exercises-work.md#5부-테스트-결과-읽기)를 따라 하세요.
 
-**Your task:** a robot's LiDAR sees an obstacle. Return `"STOP"` if it is closer than 0.5 m, `"SLOW"` if it is closer than 2.0 m, otherwise `"GO"`.
+**할 일:** 로봇의 라이다가 장애물을 감지했어요. 거리가 0.5 m 미만이면 `"STOP"`, 2.0 m 미만이면 `"SLOW"`, 그 밖의 경우에는 `"GO"`를 반환하세요.
 
-**Example to follow:** a similar problem (not the answer to this exercise).
+**따라 해 볼 예제:** 비슷한 문제예요(이 연습 문제의 정답은 아니에요).
 
-This function sorts a temperature into three groups, using `<` like your exercise:
+이 함수는 연습 문제처럼 `<`를 사용해서 온도를 세 범위로 나눠요.
 
 ```python
 def classify_temperature(temp_c):
@@ -403,11 +403,11 @@ def classify_temperature(temp_c):
         return "HOT"
 ```
 
-Try the example: in the VS Code terminal, type `code playground.py` to open `playground.py` in the same VS Code window.
-In the VS Code editor, type the example into `playground.py`. Save `playground.py` with **Ctrl + S**.
-Run `python3 -i playground.py` in the VS Code terminal.
+예제를 실행해 보세요. VS Code 터미널에 `code playground.py`를 입력해서 같은 VS Code 창에 `playground.py`를 여세요.
+VS Code 편집기에서 `playground.py`에 예제를 입력하세요. **Ctrl + S**로 `playground.py`를 저장하세요.
+VS Code 터미널에서 `python3 -i playground.py`를 실행하세요.
 
-At Python's **`>>>` prompt**, type the calls below. The lines without `>>>` are the results you should see:
+**파이썬 `>>>` 프롬프트**에 아래 호출을 입력하세요. `>>>`가 없는 줄은 나와야 할 결과예요.
 
 ```python
 $ python3 -i playground.py
@@ -420,53 +420,53 @@ $ python3 -i playground.py
 >>> exit()
 ```
 
-When you understand how the example works, do the steps below. Write your own code for the exercise. Do not copy the example: the task is different.
+예제가 어떻게 동작하는지 이해했다면 아래 순서대로 진행하세요. 연습 문제 코드는 직접 작성하세요. 할 일이 다르니 예제를 그대로 복사하지 마세요.
 
-**Steps:**
+**진행 순서:**
 
-1. **Open the file.** In the VS Code editor, press **Ctrl + P**.
-   Type [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py) and press Enter. The file opens in the editor. Or click [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py) in the file list on the left (Explorer) in the VS Code editor.
-2. In the VS Code editor, in `w1d3_conditions.py`, find `def classify_distance(distance_m):` in the file.
-3. In the VS Code editor, in `w1d3_conditions.py`, replace `pass` inside `classify_distance` with an `if` / `elif` / `else`.
-4. In the VS Code editor, save `w1d3_conditions.py` with **Ctrl + S**. The **●** on the file tab disappears.
-5. In the VS Code terminal, type `python3 -i exercises/week1/w1d3_conditions.py`. At Python's **`>>>` prompt**, type the calls below. The other lines show the expected results. Then type `exit()` at `>>>` to return to the VS Code terminal:
+1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
+   VS Code 편집기에서 [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py)를 클릭하세요.
+2. VS Code 편집기에서 `w1d3_conditions.py`의 `def classify_distance(distance_m):`를 찾으세요.
+3. VS Code 편집기에서 `w1d3_conditions.py`의 `classify_distance` 안에 있는 `pass`를 `if` / `elif` / `else`로 바꾸세요.
+4. VS Code 편집기에서 **Ctrl + S**로 `w1d3_conditions.py`를 저장하세요. 파일 탭의 **●**가 사라져요.
+5. VS Code 터미널에 `python3 -i exercises/week1/w1d3_conditions.py`를 입력하세요. **파이썬 `>>>` 프롬프트**에 아래 호출을 입력하세요. 나머지 줄은 예상 결과예요. 그런 다음 `>>>`에 `exit()`을 입력해서 VS Code 터미널로 돌아오세요.
    ```python
    >>> classify_distance(1.2)
    'SLOW'
    >>> classify_distance(0.5)
    'SLOW'
    ```
-   Exactly 0.5 is **not** closer than 0.5, so it is `'SLOW'`, not `'STOP'`.
-6. In the VS Code terminal, test `classify_distance` with [`test_w1d3.py`](../../exercises/week1/tests/test_w1d3.py):
+   정확히 0.5이면 0.5 미만이 **아니므로** `'STOP'`이 아니라 `'SLOW'`예요.
+6. VS Code 터미널에서 [`test_w1d3.py`](../../exercises/week1/tests/test_w1d3.py)로 `classify_distance`를 테스트하세요.
    ```bash
    pytest exercises/week1/tests/test_w1d3.py -k classify_distance
    ```
-   ✔ You should see `6 passed, 15 deselected`.
-7. In the VS Code editor, open [`progress/week1.md`](../../progress/week1.md).
-   Change `[ ]` to `[x]` beside `classify_distance`. Save with **Ctrl + S**.
+   ✔ `6 passed, 15 deselected`가 나와야 해요.
+7. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
+   `classify_distance` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
 
-### Finally: all of today's tests
+### 마지막으로: 오늘의 테스트 전체
 
-In the VS Code terminal, run today's tests in [`test_w1d3.py`](../../exercises/week1/tests/test_w1d3.py):
+VS Code 터미널에서 [`test_w1d3.py`](../../exercises/week1/tests/test_w1d3.py)의 오늘 테스트를 실행하세요.
 
 ```bash
 pytest exercises/week1/tests/test_w1d3.py
 ```
 
-✔ You should see **`21 passed`**. In the VS Code editor, check the Day 3 "Tests pass" box in [`progress/week1.md`](../../progress/week1.md). Save with **Ctrl + S**.
+✔ **`21 passed`**가 나와야 해요. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)의 3일차 "테스트 통과" 항목을 체크하세요. **Ctrl + S**로 저장하세요.
 
-The tests use edge values like exactly `90`, `40`, `15`, `0.5`, `2.0` and `8.0`. If only one or two tests fail, check `<` vs `<=` and `>` vs `>=`.
+테스트는 정확히 `90`, `40`, `15`, `0.5`, `2.0`, `8.0` 같은 경계값을 사용해요. 한두 개만 실패한다면 `<`와 `<=`, `>`와 `>=`를 확인하세요.
 
 ---
 
-## 8. Before you finish today
+## 8. 오늘 마치기 전에
 
-In the VS Code editor, open [progress/week1.md](../../progress/week1.md). Mark each completed Day 3 box `[x]`.
-Save with **Ctrl + S**. Only start Day 4 when every Day 3 box is checked.
+VS Code 편집기에서 [progress/week1.md](../../progress/week1.md)를 여세요. 완료한 3일차 항목마다 `[x]`로 체크하세요.
+**Ctrl + S**로 저장하세요. 3일차 항목을 모두 체크한 뒤에만 4일차를 시작하세요.
 
-- [ ] `pytest exercises/week1/tests/test_w1d3.py` shows **21 passed**
-- [ ] I can explain the difference between `return` and `print`
-- [ ] I can explain the difference between `=` and `==`
-- [ ] Daily log written, committed and pushed
+- [ ] `pytest exercises/week1/tests/test_w1d3.py` 실행 결과: **21 passed**
+- [ ] `return`과 `print`의 차이를 설명할 수 있어요
+- [ ] `=`와 `==`의 차이를 설명할 수 있어요
+- [ ] 실습 일지 작성, 커밋, 푸시 완료
 
-**Next:** [Day 4: Repeating: for and while loops](day4-loops.md)
+**다음:** [4일차: 반복하기, for 문과 while 문](day4-loops.md)

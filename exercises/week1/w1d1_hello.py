@@ -1,11 +1,10 @@
-# Week 1, Day 1, Exercise 1: Hello, ROS!
+# 1주차 1일차 연습 문제 1: Hello, ROS!
 #
-# Make this program print exactly this line:
+# 이 프로그램이 다음 줄을 정확히 출력하게 하세요.
 #
 #     Hello, ROS!
 #
-# Run (in the VS Code terminal): `python3 exercises/week1/w1d1_hello.py`
-# Test (in the VS Code terminal): `pytest exercises/week1/tests/test_w1d1.py`
+# 실행(VS Code 터미널): `python3 exercises/week1/w1d1_hello.py`
+# 테스트(VS Code 터미널): `pytest exercises/week1/tests/test_w1d1.py`
 
-# TODO: write your code below this line
-
+# TODO: 이 줄 아래에 코드를 작성하세요

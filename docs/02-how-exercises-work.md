@@ -1,87 +1,87 @@
-# How exercises work
+# 연습 문제 진행 방법
 
-Read this guide **before your first exercise** (Week 1, Day 1). Read Part 4 again before Day 3, when the exercises change to functions.
+**첫 연습 문제를 풀기 전**(1주차 1일차)에 이 안내를 읽으세요. 연습 문제가 함수로 바뀌는 3일차 전에는 4부를 다시 읽으세요.
 
-This guide shows the whole process step by step, with real examples of what you will see on your screen.
-See [Where to type things](01-how-to-study.md#where-to-type-things) before typing commands.
+화면에 실제로 보이는 예제를 통해 전체 과정을 단계별로 안내해요.
+명령을 입력하기 전에 [어디에 입력하나요?](01-how-to-study.md#어디에-입력하나요)를 확인하세요.
 
 ---
 
-## Part 1: What is an exercise?
+## 1부: 연습 문제란 무엇인가요?
 
-Every exercise has **two files**:
+모든 연습 문제에는 **파일 두 개**가 있어요.
 
-| File | Example | What it is | Do you edit it? |
+| 파일 | 예 | 역할 | 수정하나요? |
 |---|---|---|---|
-| **Exercise file** | [`exercises/week1/w1d3_conditions.py`](../exercises/week1/w1d3_conditions.py) | Instructions at the top, and a `TODO` where your code goes | ✅ **Yes**, this is your work |
-| **Test file** | [`exercises/week1/tests/test_w1d3.py`](../exercises/week1/tests/test_w1d3.py) | A program that checks your exercise file automatically | ❌ **Never** |
+| **연습 문제 파일** | [`exercises/week1/w1d3_conditions.py`](../exercises/week1/w1d3_conditions.py) | 맨 위에 안내가 있고, 코드를 작성할 곳에 `TODO`가 있어요 | ✅ **네**, 직접 작성하는 파일이에요 |
+| **테스트 파일** | [`exercises/week1/tests/test_w1d3.py`](../exercises/week1/tests/test_w1d3.py) | 연습 문제 파일을 자동으로 확인하는 프로그램이에요 | ❌ **절대 수정하지 마세요** |
 
-The file names tell you where the exercise belongs:
+파일 이름을 보면 어느 수업의 연습 문제인지 알 수 있어요.
 
 ```
 w1d3_conditions.py
-│ │  └── topic
-│ └──── day 3
-└────── week 1
+│ │  └── 주제
+│ └───── 3일차
+└─────── 1주차
 ```
 
-The test file for `w1d3_...` is always `tests/test_w1d3.py`.
+`w1d3_...`에 해당하는 테스트 파일은 항상 `tests/test_w1d3.py`예요.
 
-### What the tests do
+### 테스트가 하는 일
 
-A test is a robot that checks your work. It:
+테스트는 결과물을 확인하는 로봇과 같아요. 다음 일을 해요.
 
-1. runs your code with **many different inputs**,
-2. compares the result with the **correct answer**,
-3. tells you **passed** ✅ or **failed** ❌, and when it fails, it says **what was wrong**.
+1. **다양한 입력값**으로 코드를 실행해요.
+2. 결과를 **정답**과 비교해요.
+3. **통과** ✅ 또는 **실패** ❌를 알려 주고, 실패했다면 **무엇이 잘못됐는지** 알려 줘요.
 
-You are finished with an exercise when **all of its tests pass**.
+**해당 연습 문제의 테스트가 모두 통과하면** 연습 문제를 마친 거예요.
 
 ---
 
-## Part 2: The 8 steps, every time
+## 2부: 매번 따라 하는 8단계
 
-Do these steps for **every** exercise, in this order.
+**모든** 연습 문제를 다음 순서대로 진행하세요.
 
-**Step 1: Open the exercise file in the VS Code editor.**
-In the file list on the left, click [`exercises`](../exercises/) → [`week1`](../exercises/week1/) → the file (for example [`w1d1_hello.py`](../exercises/week1/w1d1_hello.py)). Or press **Ctrl + P**, type the file name and press Enter. You cannot write your code until the file is open in the editor.
+**1단계: VS Code 편집기에서 연습 문제 파일을 여세요.**
+VS Code 왼쪽 파일 목록에서 [`exercises`](../exercises/) → [`week1`](../exercises/week1/) → 파일(예: [`w1d1_hello.py`](../exercises/week1/w1d1_hello.py))을 클릭하세요. 또는 **Ctrl + P**를 누르고 파일 이름을 입력한 뒤 Enter를 누르세요. 편집기에서 파일을 열어야 코드를 작성할 수 있어요.
 
-**Step 2: In the VS Code editor, read all the instructions at the top of your exercise file (for example `w1d1_hello.py`).**
-The lines starting with `#` (or the text inside `"""` in a function) tell you:
-- what the program must do,
-- the **exact** text to print or return,
-- at least one **example**,
-- **hints** about what to use.
+**2단계: VS Code 편집기에서 연습 문제 파일(예: `w1d1_hello.py`) 맨 위의 안내를 모두 읽으세요.**
+`#`으로 시작하는 줄(또는 함수 안의 `"""` 사이에 있는 글)에서 다음 내용을 알려 줘요.
+- 프로그램이 해야 할 일
+- 출력하거나 반환해야 할 **정확한** 문구
+- 하나 이상의 **예제**
+- 무엇을 사용하면 좋을지 알려 주는 **힌트**
 
-Read the file's instructions twice. Most mistakes come from reading too fast.
+파일의 안내를 두 번 읽으세요. 대부분의 실수는 너무 빨리 읽어서 생겨요.
 
-**Step 3: In the VS Code editor, write your code at `TODO` in your exercise file (for example `w1d1_hello.py`).**
-- In **script** exercises (Days 1–2): write below `# TODO: write your code below this line`.
-- In **function** exercises (Days 3–5): replace `pass` with your code. Keep the `def ...` line **exactly** as it is.
+**3단계: VS Code 편집기에서 연습 문제 파일(예: `w1d1_hello.py`)의 `TODO` 위치에 코드를 작성하세요.**
+- **스크립트** 연습 문제(1–2일차): `# TODO: 이 줄 아래에 코드를 작성하세요` 아래에 작성하세요.
+- **함수** 연습 문제(3–5일차): `pass`를 코드로 바꾸세요. `def ...` 줄은 **그대로** 두세요.
 
-**Step 4: In the VS Code editor, save your exercise file (for example `w1d1_hello.py`) with Ctrl + S.** A white dot ● on the file's tab means it is **not saved**. Tests always check the **saved** file.
+**4단계: VS Code 편집기에서 Ctrl + S로 연습 문제 파일(예: `w1d1_hello.py`)을 저장하세요.** 파일 탭의 흰 점 ●는 **저장하지 않았다**는 뜻이에요. 테스트는 항상 **저장된** 파일을 확인해요.
 
-**Step 5: In the VS Code terminal, run the saved exercise file (for example `w1d1_hello.py`).** Use the command in the lesson's numbered steps.
-For scripts, run the `python3` command. Enter the example input at the program's prompts.
-For functions, run the `python3 -i` command. Type the function calls for the loaded exercise file at Python's **`>>>` prompt** in the same VS Code terminal.
+**5단계: VS Code 터미널에서 저장한 연습 문제 파일(예: `w1d1_hello.py`)을 실행하세요.** 수업의 번호가 붙은 진행 순서에 나온 명령을 사용하세요.
+스크립트는 `python3` 명령으로 실행하세요. 프로그램이 입력을 요청하면 예제 입력값을 입력하세요.
+함수는 `python3 -i` 명령으로 실행하세요. 같은 VS Code 터미널 안의 **파이썬 `>>>` 프롬프트**에 불러온 연습 문제 파일의 함수 호출을 입력하세요.
 
-Compare the results with the lesson. Type `exit()` at `>>>` before typing terminal commands.
-Parts 3 and 4 show examples.
+결과를 수업 내용과 비교하세요. 터미널 명령을 입력하기 전에 `>>>`에 `exit()`을 입력하세요.
+3부와 4부에 예제가 있어요.
 
-**Step 6: In the VS Code terminal, run the tests for your exercise file (for example `w1d1_hello.py`).** Type the lesson's `pytest` command.
-For example, this command tests both Day 1 exercises in [`exercises/week1/tests/test_w1d1.py`](../exercises/week1/tests/test_w1d1.py).
-After solving both exercises, expect `2 passed`:
+**6단계: VS Code 터미널에서 연습 문제 파일(예: `w1d1_hello.py`)의 테스트를 실행하세요.** 수업에 나온 `pytest` 명령을 입력하세요.
+예를 들어 다음 명령은 [`exercises/week1/tests/test_w1d1.py`](../exercises/week1/tests/test_w1d1.py)로 1일차 연습 문제 두 개를 모두 테스트해요.
+두 문제를 모두 풀었다면 `2 passed`가 나와야 해요.
 
 ```bash
 pytest exercises/week1/tests/test_w1d1.py
 ```
 
-**Step 7: If a test fails, read the error message for your exercise file (for example `w1d1_hello.py`) in the VS Code terminal.**
-Correct the named exercise file in the VS Code editor. Return to Step 4.
-Part 5 explains the messages. Repeat until all tests pass.
+**7단계: 테스트가 실패하면 VS Code 터미널에 나온 오류 메시지를 읽으세요.**
+VS Code 편집기에서 메시지에 나온 연습 문제 파일을 고치고 4단계로 돌아가세요.
+5부에서 메시지를 설명해요. 모든 테스트가 통과할 때까지 반복하세요.
 
-**Step 8: In the VS Code terminal, save your exercise file (for example `w1d1_hello.py`) to GitHub.** Type these commands in order.
-After `git push`, open your fork's **Code** tab in your browser. Your saved changes should appear:
+**8단계: VS Code 터미널에서 연습 문제 파일(예: `w1d1_hello.py`)을 GitHub에 저장하세요.** 다음 명령을 순서대로 입력하세요.
+`git push` 후에 브라우저에서 포크의 **Code** 탭을 여세요. 저장한 변경 사항이 보여야 해요.
 
 ```bash
 git add .
@@ -91,37 +91,37 @@ git push
 
 ---
 
-## Part 3: Worked example: a script exercise (Days 1–2)
+## 3부: 스크립트 연습 문제 따라 하기 (1–2일차)
 
-This is a **practice example**. Read the code and output below in VS Code or your browser. The `w1d0` files are illustrations. Do not create those files or type their commands.
+이 부분은 **연습용 예제**예요. VS Code나 브라우저에서 아래 코드와 출력을 읽으세요. `w1d0` 파일은 설명용이에요. 이 파일을 만들거나 명령을 입력하지 마세요.
 
-### The exercise file: `w1d0_ready.py`
+### 연습 문제 파일: `w1d0_ready.py`
 
 ```python
-# Ask for the robot name:   Robot name:
-# Then print:               <name> is ready
+# 로봇 이름을 입력받으세요:   Robot name:
+# 그런 다음 출력하세요:      <name> is ready
 #
-# Example: if the user types RR-01, print "RR-01 is ready".
+# 예: 사용자가 RR-01을 입력하면 "RR-01 is ready"를 출력하세요.
 
-# TODO: write your code below this line
+# TODO: 이 줄 아래에 코드를 작성하세요
 ```
 
-### Running the tests before writing any code
+### 코드를 작성하기 전에 테스트 실행하기: 스크립트
 
 ```bash
 pytest exercises/week1/tests/test_w1d0.py
 ```
 
 ```
-E       AssertionError: Your program printed: ''
+E       AssertionError: 프로그램이 출력한 내용: ''
 E       assert 'RR-01 is ready' in ''
 ```
 
-How to read this:
-- `Your program printed: ''`: `''` is **empty text**. Your program printed nothing, which is correct, because there is no code yet.
-- `assert 'RR-01 is ready' in ''`: the test looked for `RR-01 is ready` in your output and did not find it.
+다음처럼 읽으면 돼요.
+- `프로그램이 출력한 내용: ''`: `''`는 **빈 문자열**이에요. 아무것도 출력하지 않았다는 뜻이에요. 아직 코드가 없으니 이 상태가 맞아요.
+- `assert 'RR-01 is ready' in ''`: 테스트가 출력에서 `RR-01 is ready`를 찾았지만 없었어요.
 
-### Attempt 1: a crash
+### 첫 번째 시도: 오류로 중단돼요
 
 ```python
 name = input("Robot name: ")
@@ -129,7 +129,7 @@ print(name + " is ready" + 1)
 ```
 
 ```
-Your script crashed. Error message:
+스크립트를 실행하다가 오류가 났어요. 오류 메시지:
 Traceback (most recent call last):
   File ".../exercises/week1/w1d0_ready.py", line 2, in <module>
     print(name + " is ready" + 1)
@@ -137,12 +137,12 @@ Traceback (most recent call last):
 TypeError: can only concatenate str (not "int") to str
 ```
 
-How to read this:
-- `Your script crashed`: the program stopped with an error before it finished.
-- `line 2`: the problem is on line 2.
-- The **last line** says what is wrong: you cannot add a number (`1`) to a text.
+다음처럼 읽으면 돼요.
+- `스크립트를 실행하다가 오류가 났어요. 오류 메시지:`: 프로그램이 끝나기 전에 오류로 멈췄어요.
+- `line 2`: 2번째 줄에 문제가 있어요.
+- **마지막 줄**은 무엇이 잘못됐는지 알려 줘요. 문자열에 숫자(`1`)를 더할 수 없어요.
 
-### Attempt 2: correct
+### 두 번째 시도: 올바르게 동작해요
 
 ```python
 name = input("Robot name: ")
@@ -153,12 +153,12 @@ print(name + " is ready")
 1 passed in 0.12s
 ```
 
-Done. ✅
+완료했어요. ✅
 
-### Trying a script yourself (Step 5)
+### 직접 스크립트 실행하기 (5단계)
 
-This illustrates running `w1d0_ready.py` in the VS Code terminal. Do not type the command; this file does not exist.
-The user types `RR-01` at `Robot name:`. The program prints `RR-01 is ready`:
+VS Code 터미널에서 `w1d0_ready.py`를 실행하는 예예요. 실제로 없는 파일이니 명령을 입력하지 마세요.
+사용자가 `Robot name:`에 `RR-01`을 입력하면 프로그램이 `RR-01 is ready`를 출력해요.
 
 ```bash
 python3 exercises/week1/w1d0_ready.py
@@ -169,37 +169,37 @@ Robot name: RR-01
 RR-01 is ready
 ```
 
-### How the test "types" for you
+### 테스트는 어떻게 대신 입력하나요?
 
-For script exercises, the test runs your program and types the input automatically. For example, it types `RR-01` and presses Enter. Then it reads what your program printed.
+스크립트 연습 문제에서는 테스트가 프로그램을 실행하고 입력값을 자동으로 입력해요. 예를 들어 `RR-01`을 입력하고 Enter를 눌러요. 그런 다음 프로그램이 출력한 내용을 읽어요.
 
-So **do not cheat by printing a fixed answer** like `print("RR-01 is ready")`. The real tests try **several different inputs**, for example `5000`/`2000`, then `3300`/`1100`, then `1000`/`3000`. A fixed answer fails them.
+따라서 `print("RR-01 is ready")`처럼 **고정된 답만 출력해서 통과하려고 하면 안 돼요**. 실제 테스트는 **여러 입력값**을 사용해요. 예를 들어 `5000`/`2000`, `3300`/`1100`, `1000`/`3000`으로 바꿔서 확인해요. 고정된 답은 이 테스트를 통과하지 못해요.
 
 ---
 
-## Part 4: Worked example: a function exercise (Days 3–5)
+## 4부: 함수 연습 문제 따라 하기 (3–5일차)
 
-From Day 3 on, exercises are **functions**. The test does not run your file as a program. Instead it **calls your function** with different values and checks what it **returns**.
+3일차부터 연습 문제는 **함수**예요. 테스트는 파일을 프로그램으로 실행하지 않아요. 대신 다양한 값으로 **함수를 호출**하고 **반환하는 값**을 확인해요.
 
-### The exercise file: `w1d0_speed.py`
+### 연습 문제 파일: `w1d0_speed.py`
 
-This is a read-only illustration. Do not create `w1d0_speed.py` or type its test commands.
+읽기만 하는 설명용 예제예요. `w1d0_speed.py`를 만들거나 테스트 명령을 입력하지 마세요.
 
 ```python
 def speed_status(speed):
-    """Return a status word for a robot speed (m/s).
+    """로봇 속도(m/s)에 맞는 상태 단어를 반환하세요.
 
-    - exactly 0          -> "STOPPED"
-    - more than 2.0      -> "TOO FAST"
-    - anything else      -> "MOVING"
+    - 정확히 0          -> "STOPPED"
+    - 2.0 초과          -> "TOO FAST"
+    - 그 밖의 값        -> "MOVING"
 
-    Example: speed_status(1.0) returns "MOVING"
+    예: speed_status(1.0)은 "MOVING"을 반환해요
     """
-    # TODO
+    # TODO: 이 줄 아래에 코드를 작성하세요
     pass
 ```
 
-### Running the tests before writing any code
+### 코드를 작성하기 전에 테스트 실행하기: 함수
 
 ```
 E       AssertionError: assert None == 'STOPPED'
@@ -208,14 +208,14 @@ E        +  where None = speed_status(0)
 4 failed in 0.15s
 ```
 
-How to read this:
-- `speed_status(0)`: the test called your function with `speed = 0`.
-- `assert None == 'STOPPED'`: it expected `'STOPPED'` but got `None`.
-- `None` means "nothing". Your function did not **return** anything. With only `pass`, that is expected.
+다음처럼 읽으면 돼요.
+- `speed_status(0)`: 테스트가 `speed = 0`으로 함수를 호출했어요.
+- `assert None == 'STOPPED'`: `'STOPPED'`를 기대했는데 `None`이 나왔어요.
+- `None`은 "값이 없음"을 뜻해요. 함수가 아무것도 **반환(return)**하지 않았어요. `pass`만 있으니 이 상태가 맞아요.
 
-> **If the VS Code terminal shows `None`, inspect the named function in the VS Code editor. Check for missing `return` or incorrect `print`.**
+> **VS Code 터미널에 `None`이 나오면 VS Code 편집기에서 메시지에 나온 함수를 확인하세요. `return`이 빠졌거나 `print`를 잘못 사용했는지 확인하세요.**
 
-### Attempt 1: almost correct
+### 첫 번째 시도: 거의 맞았어요
 
 ```python
 def speed_status(speed):
@@ -234,16 +234,16 @@ E       AssertionError: assert 'TOO FAST' == 'MOVING'
 1 failed, 4 passed in 0.14s
 ```
 
-How to read this:
-- `...F.`: one character per test. [`.`](./) = passed, `F` = failed. 4 of the 5 tests pass.
-- `test_speed_status[2.0-MOVING]`: the failing test used `speed = 2.0` and expected `"MOVING"`.
-- `assert 'TOO FAST' == 'MOVING'`: **your** function returned `'TOO FAST'` (left), the correct answer is `'MOVING'` (right).
+다음처럼 읽으면 돼요.
+- `...F.`: 테스트 하나를 문자 하나로 표시해요. `.`은 통과, `F`는 실패예요. 5개 중 4개가 통과했어요.
+- `test_speed_status[2.0-MOVING]`: 실패한 테스트는 `speed = 2.0`을 사용했고 `"MOVING"`을 기대했어요.
+- `assert 'TOO FAST' == 'MOVING'`: **작성한** 함수는 `'TOO FAST'`(왼쪽)를 반환했고 정답은 `'MOVING'`(오른쪽)이에요.
 
-In the read-only `speed_status` example above, read the rule again: *"**more than** 2.0 → TOO FAST"*. Exactly 2.0 is **not** more than 2.0. The bug is `>=`, which should be `>`.
+위의 읽기 전용 `speed_status` 예제에서 규칙을 다시 읽으세요. *"2.0 **초과** → TOO FAST"*예요. 정확히 2.0이면 2.0을 **초과하지 않아요**. `>=`가 잘못됐으므로 `>`로 바꿔야 해요.
 
-> 💡 **Tests love edge values** like exactly `2.0`, `0`, `90`, `15`. When only one test fails, it is usually `>` vs `>=` or `<` vs `<=`.
+> 💡 **테스트는 경계값을 자주 확인해요.** 정확히 `2.0`, `0`, `90`, `15` 같은 값이에요. 테스트 하나만 실패할 때는 보통 `>`와 `>=` 또는 `<`와 `<=`가 원인이에요.
 
-### Attempt 2: correct
+### 두 번째 시도: 이제 맞았어요
 
 ```python
     elif speed > 2.0:
@@ -253,13 +253,13 @@ In the read-only `speed_status` example above, read the rule again: *"**more tha
 5 passed in 0.12s
 ```
 
-Done. ✅
+완료했어요. ✅
 
-### Trying a function yourself (Step 5)
+### 직접 함수 실행하기 (5단계)
 
-Load [`exercises/week1/w1d3_conditions.py`](../exercises/week1/w1d3_conditions.py) with the command below.
-At `>>>`, type the calls below, then `exit()`.
-After solving `battery_status`, expect the results shown without `>>>`:
+아래 명령으로 [`exercises/week1/w1d3_conditions.py`](../exercises/week1/w1d3_conditions.py)를 불러오세요.
+파이썬 `>>>` 프롬프트에 아래 호출을 입력한 뒤 `exit()`을 입력하세요.
+`battery_status`를 풀었다면 `>>>`가 없는 줄에 나온 결과가 나와야 해요.
 
 ```bash
 python3 -i exercises/week1/w1d3_conditions.py
@@ -273,107 +273,107 @@ python3 -i exercises/week1/w1d3_conditions.py
 >>> exit()
 ```
 
-After changing the file, save with **Ctrl + S**. If Python is still open, type `exit()` at `>>>`. Then type `python3 -i exercises/week1/w1d3_conditions.py` in the VS Code terminal to load the saved changes.
+파일을 바꾼 뒤에는 **Ctrl + S**로 저장하세요. 파이썬이 아직 열려 있으면 `>>>`에 `exit()`을 입력하세요. 그런 다음 VS Code 터미널에 `python3 -i exercises/week1/w1d3_conditions.py`를 입력해서 저장한 변경 사항을 불러오세요.
 
-### Rules for function exercises
+### 함수 연습 문제 규칙
 
-- **Do not rename** the function or its parameters. The test calls it by that exact name. If you rename it, you get `ImportError: cannot import name 'battery_status'`.
-- **Use `return`, not `print`**, for the answer.
-- **Do not leave `input()` or test lines at the bottom** of a function file. The test loads your file, and an `input()` there gives this error:
+- 함수나 매개변수 **이름을 바꾸지 마세요**. 테스트는 그 이름 그대로 호출해요. 바꾸면 `ImportError: cannot import name 'battery_status'`가 나와요.
+- 답은 **`print`가 아니라 `return`으로 반환하세요**.
+- 함수 파일 맨 아래에 **`input()`이나 시험 삼아 실행한 코드를 남기지 마세요**. 테스트가 파일을 불러올 때 `input()`이 있으면 다음 오류가 나요.
   ```
   OSError: pytest: reading from stdin while output is captured!
   ```
-  Use the load command and function calls in [Trying a function yourself](#trying-a-function-yourself-step-5) above.
+  위의 [직접 함수 실행하기](#직접-함수-실행하기-5단계)에 나온 불러오기 명령과 함수 호출을 사용하세요.
 
 ---
 
-## Part 5: Reading test results
+## 5부: 테스트 결과 읽기
 
-### The summary line (always at the bottom)
+### 요약 줄(항상 맨 아래에 있어요)
 
-| You see | Meaning |
+| 화면에 나온 내용 | 의미 |
 |---|---|
-| `5 passed` | All done ✅ |
-| `1 failed, 4 passed` | Almost there. Fix the one that failed |
-| `5 failed` | Nothing works yet. Normal before you start. Otherwise, look for a crash or a missing `return` |
-| `1 error` | The test could not even **load** your file. Look for `SyntaxError`, `IndentationError`, `ImportError` or `OSError ... reading from stdin` |
+| `5 passed` | 모두 통과했어요 🎉 |
+| `1 failed, 4 passed` | 거의 다 됐어요. 실패한 하나를 고치세요 |
+| `5 failed` | 아직 모두 실패해요. 시작 전에는 정상이에요. 이미 풀었다면 실행 중 오류나 빠진 `return`을 찾아보세요 |
+| `1 error` | 테스트가 파일을 **불러오지도** 못했어요. `SyntaxError`, `IndentationError`, `ImportError`, `OSError ... reading from stdin`을 찾아보세요 |
 
-### The name of a failing test
+### 실패한 테스트 이름
 
 ```
 FAILED exercises/week1/tests/test_w1d3.py::test_battery_status[89-OK]
-                     └── test file           └── what is tested  └── the input and expected answer
+                     └── 테스트 파일      └── 확인할 대상    └── 입력값과 기대한 답
 ```
 
-`[89-OK]` means: the test used `89` and expected `OK`.
+`[89-OK]`는 테스트가 `89`를 사용했고 `OK`를 기대했다는 뜻이에요.
 
-### The `E` lines
+### `E`로 시작하는 줄
 
-The lines starting with `E` are the **error**. The most important is usually:
+`E`로 시작하는 줄은 **오류**예요. 보통 가장 중요한 줄은 다음과 같아요.
 
 ```
 E       assert 'FULL' == 'OK'
-               └ yours   └ correct
+               ↑ 작성한 코드의 값   ↑ 기대한 값
 ```
 
-**Left = what your code gave. Right = what was expected.**
+**왼쪽은 작성한 코드가 내놓은 값이고, 오른쪽은 기대한 값이에요.**
 
-### Common messages and what to do
+### 자주 나오는 메시지와 해결 방법
 
-| Message | Cause | Fix |
+| 메시지 | 원인 | 해결 방법 |
 |---|---|---|
-| `assert None == ...` | No `return`, or `print` instead of `return` | In the VS Code editor, add `return` inside the function named in the VS Code terminal error message |
-| `Your program printed: ''` | Script prints nothing | Did you save? Is your code below `TODO`? |
-| You run your script and **nothing appears at all** | The file has no code yet (only comments), or your code is not saved | Open the named exercise file in the VS Code editor. Write code below `TODO`. Press **Ctrl + S**; the **●** on the tab disappears |
-| `Your script crashed` | Your script has an error | Read the **last line** of the error message in the VS Code terminal |
-| `Your script did not finish within 10 seconds` | A loop that never ends, or an extra `input()` | In the VS Code editor, open the named exercise file. Check its `while` condition and count its `input()` calls |
-| `ImportError: cannot import name ...` | You renamed or deleted the function | In the VS Code editor, restore the original function name in the exercise file named in the VS Code terminal error message |
-| `SyntaxError` / `IndentationError` | Missing `:` `)` `"` or wrong spaces | In the VS Code editor, open the exercise file named in the VS Code terminal error message and go to the line number shown |
-| `OSError: pytest: reading from stdin...` | `input()` left in a function file | Remove the extra `input()` from the named exercise file. Save with **Ctrl + S**. Follow the lesson's `python3 -i` steps |
-| `asked for more input than expected` | (checkpoint) your loop does not stop | In the VS Code editor, inspect `break` in `main()` in the checkpoint file named in the VS Code terminal error message |
+| `assert None == ...` | `return`이 없거나 `return` 대신 `print`를 사용했어요 | VS Code 편집기에서 오류 메시지에 나온 함수 안에 `return`을 추가하세요 |
+| `프로그램이 출력한 내용: ''` | 스크립트가 아무것도 출력하지 않아요 | 저장했나요? `TODO` 아래에 코드를 작성했나요? |
+| 스크립트를 실행해도 **아무것도 나타나지 않아요** | 파일에 코드가 없고 주석만 있거나 저장하지 않았어요 | VS Code 편집기에서 해당 연습 문제 파일을 열고 `TODO` 아래에 코드를 작성하세요. **Ctrl + S**를 누르면 탭의 **●**가 사라져요 |
+| `스크립트를 실행하다가 오류가 났어요. 오류 메시지:` | 스크립트에 오류가 있어요 | VS Code 터미널에서 오류 메시지의 **마지막 줄**을 읽으세요 |
+| `스크립트가 10초 안에 끝나지 않았어요.` / `끝나지 않는 반복문이나 필요 없는 input()이 있는지 확인하세요.` | 끝나지 않는 반복문이나 필요 없는 `input()`이 있어요 | VS Code 편집기에서 해당 연습 문제 파일을 열고 `while` 조건과 `input()` 호출 개수를 확인하세요 |
+| `ImportError: cannot import name ...` | 함수 이름을 바꾸거나 함수를 지웠어요 | VS Code 편집기에서 오류 메시지에 나온 연습 문제 파일의 함수 이름을 원래대로 되돌리세요 |
+| `SyntaxError` / `IndentationError` | `:` `)` `"`가 빠졌거나 공백이 잘못됐어요 | VS Code 편집기에서 오류 메시지에 나온 연습 문제 파일을 열고 표시된 줄 번호로 이동하세요 |
+| `OSError: pytest: reading from stdin...` | 함수 파일에 `input()`을 남겨 뒀어요 | 해당 연습 문제 파일에서 필요 없는 `input()`을 지우고 **Ctrl + S**로 저장하세요. 수업의 `python3 -i` 진행 순서를 따르세요 |
+| `프로그램이 예상보다 더 많이 입력을 요청했어요. (반복문이 제대로 멈추나요?)` | 주간 과제의 반복문이 멈추지 않아요 | VS Code 편집기에서 오류 메시지에 나온 주간 과제 파일의 `main()` 안에 있는 `break`를 확인하세요 |
 
-### Useful options
+### 유용한 옵션
 
-In the VS Code terminal, these commands run [`Day 3 tests`](../exercises/week1/tests/test_w1d3.py) or all [`Week 1 exercises`](../exercises/week1/).
-The comments describe which results each command shows:
+VS Code 터미널에서 다음 명령으로 [3일차 테스트](../exercises/week1/tests/test_w1d3.py) 또는 [1주차 연습 문제 전체](../exercises/week1/)를 실행해요.
+각 명령이 어떤 결과를 보여 주는지는 주석에 나와 있어요.
 
 ```bash
-pytest exercises/week1/tests/test_w1d3.py -x          # stop at the first failure (less to read)
-pytest exercises/week1/tests/test_w1d3.py -k status   # only tests with "status" in the name
-pytest exercises/week1/tests/test_w1d3.py --tb=line   # one line per failure
-pytest exercises/week1                                # all exercises of the week
+pytest exercises/week1/tests/test_w1d3.py -x          # 처음 실패하면 중단해요(읽을 내용이 줄어요)
+pytest exercises/week1/tests/test_w1d3.py -k status   # 이름에 "status"가 들어간 테스트만 실행해요
+pytest exercises/week1/tests/test_w1d3.py --tb=line   # 실패 하나를 한 줄로 보여 줘요
+pytest exercises/week1                                # 이번 주 모든 연습 문제
 ```
 
-Start with `pytest exercises/week1/tests/test_w1d3.py -x` to see the first failing Day 3 test.
-Correct the named exercise function in the VS Code editor. Save with **Ctrl + S**.
-Repeat the test command until the tests pass.
+`pytest exercises/week1/tests/test_w1d3.py -x`부터 실행해서 처음 실패한 3일차 테스트를 확인하세요.
+VS Code 편집기에서 해당 연습 문제 함수를 고치고 **Ctrl + S**로 저장하세요.
+테스트가 통과할 때까지 테스트 명령을 반복하세요.
 
 ---
 
-## Part 6: Checkpoints (end of each week)
+## 6부: 주간 과제(매주 마지막에 진행해요)
 
-Checkpoints are bigger programs with menus and loops. The test **plays the user**: it types a fixed list of answers, one for each `input()` your program asks, and checks what your program prints.
+주간 과제(체크포인트)는 메뉴와 반복문이 있는 조금 더 큰 프로그램이에요. 테스트가 **사용자 역할**을 해요. 프로그램의 각 `input()`에 정해진 답을 하나씩 입력하고 프로그램이 출력한 내용을 확인해요.
 
-For example, the Week 1 game test types `50`, `abc`, `25`, `42` and expects to see `Too high`, `Please enter a number.`, `Too low`, `Correct!` and `You got it in 3 tries!`.
+예를 들어 1주차 게임 테스트는 `50`, `abc`, `25`, `42`를 입력하고 `Too high`, `Please enter a number.`, `Too low`, `Correct!`, `You got it in 3 tries!`가 나오는지 확인해요.
 
-This means:
-- Print messages **exactly** as written in the [checkpoint README](../checkpoints/week1/README.md).
-- Ask for input **in the same order** as described.
-- If your loop asks for more input than the test has, you get: `Your program asked for more input than expected (is your loop stopping?)`.
+따라서 다음을 지켜야 해요.
+- [주간 과제 안내](../checkpoints/week1/README.md)에 나온 메시지를 **정확히** 출력하세요.
+- 안내한 것과 **같은 순서로** 입력을 요청하세요.
+- 반복문이 테스트에서 준비한 입력보다 더 많이 요청하면 `프로그램이 예상보다 더 많이 입력을 요청했어요. (반복문이 제대로 멈추나요?)`가 나와요.
 
-Save the checkpoint files in the VS Code editor. Run [`checkpoints/week1/converter.py`](../checkpoints/week1/converter.py) with `python3 checkpoints/week1/converter.py`.
-Enter the example inputs from [`checkpoints/week1/README.md`](../checkpoints/week1/README.md). End with `q` at `Choose:` to return to the VS Code terminal.
+VS Code 편집기에서 주간 과제 파일을 저장하세요. `python3 checkpoints/week1/converter.py`로 [`checkpoints/week1/converter.py`](../checkpoints/week1/converter.py)를 실행하세요.
+[`checkpoints/week1/README.md`](../checkpoints/week1/README.md)의 예제 입력값을 입력하세요. `Choose:`에 `q`를 입력해서 끝내고 VS Code 터미널로 돌아오세요.
 
-Then run [`checkpoints/week1/guess.py`](../checkpoints/week1/guess.py) with `python3 checkpoints/week1/guess.py`.
-Play the game and compare its output with the checkpoint README.
-The secret is random, so your guesses can differ. Show both programs to your mentor.
+그런 다음 `python3 checkpoints/week1/guess.py`로 [`checkpoints/week1/guess.py`](../checkpoints/week1/guess.py)를 실행하세요.
+게임을 해 보고 출력을 주간 과제 안내와 비교하세요.
+정답은 무작위이므로 추측한 숫자는 예제와 달라도 돼요. 두 프로그램을 멘토에게 보여 주세요.
 
 ---
 
-## Part 7: The rules
+## 7부: 규칙
 
-1. **Never edit files in [`tests/`](../exercises/week1/tests/) folders.** Your mentor sees every change on GitHub.
-2. **Do not rename** exercise files or functions.
-3. **Fix one failure at a time**, starting from the top.
-4. **Stuck for 20 minutes?** Write down the exact error message and what you tried, and ask your mentor.
-5. **Push at the end of every day**, even if not all tests pass. On GitHub, your commit shows ❌ until everything passes. That is fine during the week. By Friday it should be ✅.
+1. **[`tests/`](../exercises/week1/tests/) 폴더 안의 파일은 절대 수정하지 마세요.** 멘토는 GitHub에서 모든 변경 사항을 볼 수 있어요.
+2. 연습 문제 파일이나 함수 **이름을 바꾸지 마세요**.
+3. 맨 위에서부터 **실패한 테스트를 하나씩 고치세요**.
+4. **20분 동안 막혀 있나요?** 정확한 오류 메시지와 시도한 방법을 적고 멘토에게 물어보세요.
+5. 모든 테스트가 통과하지 않았어도 **매일 마칠 때 푸시하세요**. GitHub에서는 모두 통과하기 전까지 커밋에 ❌가 표시돼요. 주중에는 괜찮아요. 금요일까지는 ✅가 되어야 해요.

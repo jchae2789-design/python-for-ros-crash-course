@@ -1,55 +1,55 @@
-# Week 1 checkpoint: Robot console tools
+# 1주차 주간 과제: 로봇 콘솔 도구
 
-This is your end-of-week project. It uses **everything** from Week 1: printing, input, numbers, `if`, loops and strings.
+이번 주를 마무리하는 주간 과제(체크포인트)예요. 출력, 입력, 숫자, `if` 문, 반복문, 문자열 등 1주차에 배운 내용을 **모두** 사용해요.
 
-You build two small programs:
+작은 프로그램 두 개를 만들어요.
 
-1. [`converter.py`](converter.py): a unit converter with a menu
-2. [`guess.py`](guess.py): a number-guessing game
+1. [`converter.py`](converter.py): 메뉴가 있는 단위 변환기
+2. [`guess.py`](guess.py): 숫자 맞히기 게임
 
-After completing both programs, in the VS Code terminal, type this test command: You are done when the result is `11 passed`:
+두 프로그램을 모두 완성한 뒤 VS Code 터미널에 다음 테스트 명령을 입력하세요. 결과가 `11 passed`이면 완료예요.
 
 ```bash
 pytest checkpoints/week1
 ```
 
-Then, in the VS Code terminal, run `python3 checkpoints/week1/converter.py`. Enter the converter's example inputs below.
-Type `q` at `Choose:` to return to the VS Code terminal.
+그런 다음 VS Code 터미널에서 `python3 checkpoints/week1/converter.py`를 실행하세요. 아래 변환기 예제의 입력값을 입력하세요.
+`Choose:`에 `q`를 입력해서 VS Code 터미널로 돌아오세요.
 
-Next, in the VS Code terminal, run `python3 checkpoints/week1/guess.py`. Play the game and show both programs to your mentor.
-The secret is random, so your guesses can differ from the example.
+이어서 VS Code 터미널에서 `python3 checkpoints/week1/guess.py`를 실행하세요. 게임을 해 보고 두 프로그램을 멘토에게 보여 주세요.
+정답은 무작위이므로 추측한 숫자는 예제와 달라도 돼요.
 
 ---
 
-## Part 1: `converter.py`
+## 1부: `converter.py`
 
-Robots use many units. Sensor data often comes in one unit and ROS needs another. For example, ROS always uses **meters** and **radians**.
+로봇은 여러 단위를 사용해요. 센서 데이터의 단위와 ROS에 필요한 단위가 다를 때가 많아요. 예를 들어 ROS는 항상 **미터**와 **라디안**을 사용해요.
 
-### Step 1: the four conversion functions
+### 1단계: 변환 함수 네 개
 
-First, open [`converter.py`](converter.py) in the VS Code editor. Press **Ctrl + P**.
-Type `checkpoints/week1/converter.py` and press Enter. The starter file opens in the editor. Or click [`checkpoints`](../) → [`week1`](./) → [`converter.py`](converter.py) in the file list on the left (Explorer) in the VS Code editor.
+먼저 VS Code 편집기에서 [`converter.py`](converter.py)를 여세요. **Ctrl + P**를 누르세요.
+`checkpoints/week1/converter.py`를 입력하고 Enter를 누르면 시작 파일이 편집기에 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`checkpoints`](../) → [`week1`](./) → [`converter.py`](converter.py)를 클릭하세요.
 
-In the VS Code editor, read the comments in `converter.py`. Replace `pass` in each conversion function with code that returns the value described below.
-Keep the function names and parameters. Save `converter.py` in the VS Code editor with **Ctrl + S**.
-The **●** on the file tab disappears.
+VS Code 편집기에서 `converter.py`의 주석을 읽으세요. 각 변환 함수의 `pass`를 아래 값을 반환하는 코드로 바꾸세요.
+함수 이름과 매개변수는 그대로 두세요. VS Code 편집기에서 **Ctrl + S**로 `converter.py`를 저장하세요.
+파일 탭의 **●**가 사라져요.
 
-| Function | Formula | Example |
+| 함수 | 공식 | 예 |
 |---|---|---|
-| `c_to_f(c)` | `c * 9 / 5 + 32` | `c_to_f(100)` returns `212.0` |
-| `f_to_c(f)` | `(f - 32) * 5 / 9` | `f_to_c(32)` returns `0.0` |
-| `mm_to_m(mm)` | `mm / 1000` | `mm_to_m(1500)` returns `1.5` |
-| `deg_to_rad(deg)` | `deg * math.pi / 180` | `deg_to_rad(180)` returns `3.14159...` |
+| `c_to_f(c)` | `c * 9 / 5 + 32` | `c_to_f(100)`은 `212.0`을 반환해요 |
+| `f_to_c(f)` | `(f - 32) * 5 / 9` | `f_to_c(32)`는 `0.0`을 반환해요 |
+| `mm_to_m(mm)` | `mm / 1000` | `mm_to_m(1500)`은 `1.5`를 반환해요 |
+| `deg_to_rad(deg)` | `deg * math.pi / 180` | `deg_to_rad(180)`은 `3.14159...`를 반환해요 |
 
-`math.pi` comes from the `math` module. The starter file already has `import math` at the top.
+`math.pi`는 `math` 모듈에서 가져와요. 시작 파일 맨 위에 이미 `import math`가 있어요.
 
-### Step 2: the menu in `main()`
+### 2단계: `main()`의 메뉴
 
-In the VS Code editor, replace `pass` inside `main()` in `converter.py`. Write a loop that performs the actions below in order until `q`.
-Save `converter.py` in the VS Code editor with **Ctrl + S** before running the program.
-These are your program's actions, not terminal commands:
+VS Code 편집기에서 `converter.py`의 `main()` 안에 있는 `pass`를 바꾸세요. `q`를 입력할 때까지 아래 동작을 순서대로 수행하는 반복문을 작성하세요.
+프로그램을 실행하기 전에 VS Code 편집기에서 **Ctrl + S**로 `converter.py`를 저장하세요.
+아래 내용은 터미널 명령이 아니라 프로그램이 해야 할 동작이에요.
 
-1. Print the menu:
+1. 메뉴를 출력하세요.
    ```
    === Unit Converter ===
    1) Celsius -> Fahrenheit
@@ -58,12 +58,12 @@ These are your program's actions, not terminal commands:
    4) Degrees -> Radians
    q) Quit
    ```
-2. Ask `Choose: `
-3. If the choice is `q`, print `Bye!` and stop the loop.
-4. If the choice is `1`, `2`, `3` or `4`, ask `Value: `, convert with the right function and print the result with 2 decimals: `Result: 212.00`
-5. For any other choice, print `Unknown choice.`
+2. `Choose: `로 입력을 요청하세요.
+3. 선택이 `q`이면 `Bye!`를 출력하고 반복문을 끝내세요.
+4. 선택이 `1`, `2`, `3`, `4`이면 `Value: `로 값을 입력받고, 알맞은 함수로 변환한 뒤 소수점 아래 두 자리까지 결과를 출력하세요: `Result: 212.00`
+5. 그 밖의 선택이면 `Unknown choice.`를 출력하세요.
 
-Example session (what you type comes after `Choose:` and `Value:`):
+실행 예제(`Choose:`와 `Value:` 뒤의 값은 직접 입력해요):
 
 ```
 === Unit Converter ===
@@ -81,42 +81,42 @@ Choose: q
 Bye!
 ```
 
-Hints:
-- `while True:` with `break` is a good fit for "repeat until q".
-- In `main()`, use `float(input("Value: "))` so decimal values like `36.6` also work.
+힌트:
+- "q를 입력할 때까지 반복"하려면 `while True:`와 `break`가 잘 맞아요.
+- `36.6` 같은 소수도 입력할 수 있도록 `main()`에서 `float(input("Value: "))`를 사용하세요.
 
 ---
 
-## Part 2: `guess.py`
+## 2부: `guess.py`
 
-### Step 1: `check_guess(secret, guess)`
+### 1단계: `check_guess(secret, guess)`
 
-First, open [`guess.py`](guess.py) in the VS Code editor. Press **Ctrl + P**.
-Type `checkpoints/week1/guess.py` and press Enter. The starter file opens in the editor. Or click [`checkpoints`](../) → [`week1`](./) → [`guess.py`](guess.py) in the file list on the left (Explorer) in the VS Code editor.
+먼저 VS Code 편집기에서 [`guess.py`](guess.py)를 여세요. **Ctrl + P**를 누르세요.
+`checkpoints/week1/guess.py`를 입력하고 Enter를 누르면 시작 파일이 편집기에 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`checkpoints`](../) → [`week1`](./) → [`guess.py`](guess.py)를 클릭하세요.
 
-In the VS Code editor, read the comments in `guess.py`. Replace `pass` inside `check_guess(secret, guess)` with code that returns the values below.
-Keep the function name and parameters. Save `guess.py` in the VS Code editor with **Ctrl + S**.
-The **●** on the file tab disappears.
+VS Code 편집기에서 `guess.py`의 주석을 읽으세요. `check_guess(secret, guess)` 안의 `pass`를 아래 값을 반환하는 코드로 바꾸세요.
+함수 이름과 매개변수는 그대로 두세요. VS Code 편집기에서 **Ctrl + S**로 `guess.py`를 저장하세요.
+파일 탭의 **●**가 사라져요.
 
-Return:
-- `"Too low"` if guess is smaller than secret
-- `"Too high"` if guess is bigger than secret
-- `"Correct!"` if they are equal
+다음 값을 반환하세요.
+- `guess`가 `secret`보다 작으면 `"Too low"`
+- `guess`가 `secret`보다 크면 `"Too high"`
+- 같으면 `"Correct!"`
 
-### Step 2: the game in `main()`
+### 2단계: `main()`의 게임
 
-In the VS Code editor, replace `pass` inside `main()` in `guess.py`. Write code that performs the actions below in order.
-Save `guess.py` in the VS Code editor with **Ctrl + S** before running the program.
-These are your program's actions, not terminal commands.
+VS Code 편집기에서 `guess.py`의 `main()` 안에 있는 `pass`를 바꾸세요. 아래 동작을 순서대로 수행하는 코드를 작성하세요.
+프로그램을 실행하기 전에 VS Code 편집기에서 **Ctrl + S**로 `guess.py`를 저장하세요.
+아래 내용은 터미널 명령이 아니라 프로그램이 해야 할 동작이에요.
 
-1. Pick a secret number: `secret = random.randint(1, 100)`
-2. Repeat:
-   - Ask `Your guess: `
-   - If the text is not a number (hint: `.isdigit()`), print `Please enter a number.` and ask again. **Do not count this as a try.**
-   - Otherwise turn the guess text into an `int`, count one try, and print the result of `check_guess(secret, guess)`.
-   - If `check_guess(secret, guess)` returned `"Correct!"`, print `You got it in N tries!` (N is the number of tries) and stop.
+1. 정답을 고르세요: `secret = random.randint(1, 100)`
+2. 다음 동작을 반복하세요.
+   - `Your guess: `로 입력을 요청하세요.
+   - 입력한 문자열이 숫자가 아니면(힌트: `.isdigit()`) `Please enter a number.`를 출력하고 다시 입력받으세요. **시도 횟수에는 포함하지 마세요.**
+   - 숫자이면 입력한 문자열을 `int`로 바꾸고, 시도 횟수를 1 늘리고, `check_guess(secret, guess)`의 결과를 출력하세요.
+   - `check_guess(secret, guess)`가 `"Correct!"`를 반환하면 `You got it in N tries!`를 출력하고 끝내세요(N은 시도 횟수예요).
 
-Example session (secret is 42):
+실행 예제(정답이 42인 경우):
 
 ```
 Your guess: 50
@@ -132,8 +132,8 @@ You got it in 3 tries!
 
 ---
 
-## Bonus (not tested)
+## 추가 도전(테스트하지 않아요)
 
-- In [`converter.py`](converter.py), add these options to the menu in `main()`: `5) Meters -> Millimeters` and `6) Radians -> Degrees`.
-- In [`guess.py`](guess.py), let the player choose the range first, for example 1 to 1000.
-- In `guess.py`, after the game, ask `Play again? (y/n)`.
+- [`converter.py`](converter.py)의 `main()` 메뉴에 `5) Meters -> Millimeters`와 `6) Radians -> Degrees`를 추가하세요.
+- [`guess.py`](guess.py)에서 사용자가 먼저 범위(예: 1부터 1000까지)를 고를 수 있게 하세요.
+- `guess.py`에서 게임이 끝난 뒤 `Play again? (y/n)`으로 다시 할지 물어보세요.

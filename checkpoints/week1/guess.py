@@ -1,23 +1,24 @@
-# Week 1 checkpoint, Part 2: Number-guessing game
-# Read checkpoints/week1/README.md first.
+# 1주차 주간 과제 2부: 숫자 맞히기 게임
+# 먼저 checkpoints/week1/README.md를 읽으세요.
 #
-# Run (in the VS Code terminal): `python3 checkpoints/week1/guess.py`
-# Test (in the VS Code terminal): `pytest checkpoints/week1`
+# 실행(VS Code 터미널): `python3 checkpoints/week1/guess.py`
+# 테스트(VS Code 터미널): `pytest checkpoints/week1`
 
 import random
 
 
 def check_guess(secret, guess):
-    # TODO
+    # TODO: 이 줄 아래에 코드를 작성하세요
     pass
 
 
 def main():
-    # TODO: the game loop (see README, Part 2, Step 2)
+    # 게임 반복문(README의 2부 2단계 참고)
+    # TODO: 이 줄 아래에 코드를 작성하세요
     pass
 
 
-# Keep these two lines. They run main() when you start this file.
-# You will learn exactly how they work in Week 3.
+# 아래 두 줄은 그대로 두세요. 이 파일을 실행하면 main()을 호출해요.
+# 정확히 어떻게 동작하는지는 3주차에 배워요.
 if __name__ == "__main__":
     main()

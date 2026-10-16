@@ -1,14 +1,14 @@
-# Week 1 · Day 2: Variables, numbers and input
+# 1주차 · 2일차: 변수, 숫자, 입력
 
-**You will learn:** how to store values in variables, the main data types, math in Python, how to ask the user for input, and how to format numbers nicely.
+**배울 내용:** 변수에 값을 저장하는 방법, 주요 자료형, 파이썬 계산, 사용자 입력 받기, 숫자를 보기 좋게 표시하는 방법을 배워요.
 
-**Why this matters for robots:** a robot is full of numbers: distance from a LiDAR, battery voltage, wheel speed, angle. Your code stores them in variables, calculates with them and shows them to people.
+**로봇을 다룰 때 필요한 이유:** 로봇은 라이다 거리, 배터리 전압, 바퀴 속도, 각도처럼 수많은 숫자를 다뤄요. 코드는 이 숫자를 변수에 저장하고 계산한 뒤 사람이 볼 수 있게 보여 줘요.
 
 ---
 
-## 1. Variables
+## 1. 변수
 
-A **variable** is a name for a value. Think of it as a labeled box.
+**변수**는 값에 붙인 이름이에요. 이름표를 붙인 상자라고 생각해 보세요.
 
 ```python
 speed = 0.5
@@ -19,37 +19,37 @@ print(robot_name)
 print(speed)
 ```
 
-`=` means **"store the value on the right in the name on the left"**. It does not mean "is equal" like in math.
+`=`는 **"오른쪽 값을 왼쪽 이름에 저장하세요"**라는 뜻이에요. 수학에서처럼 "같다"라는 뜻이 아니에요.
 
-You can change a variable later:
+변수의 값은 나중에 바꿀 수 있어요.
 
 ```python
 battery = 87
-battery = battery - 10    # take the old value, subtract 10, store it again
+battery = battery - 10    # 기존 값에서 10을 빼고 다시 저장해요
 print(battery)            # 77
 ```
 
-### Naming rules
+### 이름 짓는 규칙
 
-- Use lowercase letters, digits and `_`. Write words with `_` between them: `wheel_speed`, `max_distance`. This style is called **snake_case**, and ROS uses it everywhere.
-- A name cannot start with a digit: `1st_robot` ❌, `robot_1` ✅
-- Names are case-sensitive: `Speed` and `speed` are two different variables.
-- Choose names that explain the value: `distance_m` is better than `d` or `x`.
+- 소문자, 숫자, `_`를 사용하세요. `wheel_speed`, `max_distance`처럼 단어 사이에 `_`를 넣어요. 이 방식을 **스네이크 표기법**(`snake_case`)이라고 하고, ROS에서도 널리 사용해요.
+- 이름은 숫자로 시작할 수 없어요: `1st_robot` ❌, `robot_1` ✅
+- 대소문자를 구분해요. `Speed`와 `speed`는 서로 다른 변수예요.
+- 값을 잘 설명하는 이름을 고르세요. `d`나 `x`보다 `distance_m`이 좋아요.
 
 ---
 
-## 2. Data types
+## 2. 자료형
 
-Every value has a **type**:
+모든 값에는 **자료형**이 있어요.
 
-| Type | Name | Examples | Used for |
+| 자료형 | 이름 | 예 | 사용 예 |
 |---|---|---|---|
-| `int` | integer (whole number) | `7`, `-3`, `5000` | counts, IDs, battery % |
-| `float` | decimal number | `0.5`, `3.14`, `-2.0` | distances, speeds, angles |
-| `str` | string (text) | `"RR-01"`, `'hello'` | names, messages, commands |
-| `bool` | boolean (true/false) | `True`, `False` | "is the GPS OK?" |
+| `int` | 정수(소수 부분이 없는 수) | `7`, `-3`, `5000` | 개수, 식별 번호, 배터리 % |
+| `float` | 실수(소수점이 있는 수) | `0.5`, `3.14`, `-2.0` | 거리, 속도, 각도 |
+| `str` | 문자열(글자) | `"RR-01"`, `'hello'` | 이름, 메시지, 명령 |
+| `bool` | 불리언(참/거짓) | `True`, `False` | "GPS가 정상인가요?" |
 
-At Python's `>>>` prompt, type the `type(...)` calls below to see each value's type:
+파이썬 `>>>` 프롬프트에 아래 `type(...)` 호출을 입력해서 각 값의 자료형을 확인하세요.
 
 ```python
 >>> type(7)
@@ -60,41 +60,41 @@ At Python's `>>>` prompt, type the `type(...)` calls below to see each value's t
 <class 'str'>
 ```
 
-Careful: `7` and `"7"` are **different**. `7` is a number. `"7"` is text that looks like a number.
+주의하세요. `7`과 `"7"`은 **달라요**. `7`은 숫자이고, `"7"`은 숫자처럼 생긴 문자열이에요.
 
 ---
 
-## 3. Math
+## 3. 계산
 
-| Operator | Meaning | Example | Result |
+| 연산자 | 의미 | 예 | 결과 |
 |---|---|---|---|
-| `+` | add | `7 + 2` | `9` |
-| `-` | subtract | `7 - 2` | `5` |
-| `*` | multiply | `7 * 2` | `14` |
-| `/` | divide (always gives a float) | `7 / 2` | `3.5` |
-| `//` | whole-number division | `7 // 2` | `3` |
-| `%` | remainder (modulo) | `7 % 2` | `1` |
-| `**` | power | `2 ** 3` | `8` |
+| `+` | 더하기 | `7 + 2` | `9` |
+| `-` | 빼기 | `7 - 2` | `5` |
+| `*` | 곱하기 | `7 * 2` | `14` |
+| `/` | 나누기(항상 실수가 나와요) | `7 / 2` | `3.5` |
+| `//` | 나눗셈의 몫 | `7 // 2` | `3` |
+| `%` | 나눗셈의 나머지 | `7 % 2` | `1` |
+| `**` | 거듭제곱 | `2 ** 3` | `8` |
 
-Python follows math rules: `*` and `/` before `+` and `-`. Use brackets to be clear:
+파이썬도 수학의 계산 순서를 따라요. `+`, `-`보다 `*`, `/`를 먼저 계산해요. 괄호로 순서를 분명하게 나타내세요.
 
 ```python
 average = (10 + 20) / 2     # 15.0
 ```
 
-### `//` and `%` together
+### `//`와 `%` 함께 사용하기
 
-They are very useful for splitting things into units. 135 minutes = how many hours and minutes?
+단위를 나눌 때 아주 유용해요. 135분은 몇 시간 몇 분일까요?
 
 ```python
 total = 135
-hours = total // 60      # 2  (how many full hours)
-minutes = total % 60     # 15 (what is left over)
+hours = total // 60      # 2  (온전한 시간의 수)
+minutes = total % 60     # 15 (남은 분)
 ```
 
-### The `math` module
+### `math` 모듈
 
-Python has extra math tools in the `math` module. In `playground.py` in VS Code, put `import math` before the calls to `math.pi` and `math.sqrt`:
+파이썬의 `math` 모듈에는 추가 수학 도구가 있어요. VS Code에서 `playground.py`에 `math.pi`, `math.sqrt`를 사용하는 코드보다 앞에 `import math`를 넣으세요.
 
 ```python
 import math
@@ -103,34 +103,34 @@ print(math.pi)          # 3.141592653589793
 print(math.sqrt(16))    # 4.0
 ```
 
-ROS measures angles in **radians**, not degrees, so you will see `math.pi` a lot.
+ROS는 각도를 도 대신 **라디안**으로 나타내므로 `math.pi`를 자주 보게 돼요.
 
-### Try it
+### 직접 해 보기: 계산
 
-In the VS Code terminal, type `python3`. At Python's `>>>` prompt, calculate the following values; then type `exit()` to return to the VS Code terminal:
-1. How many full minutes are in 500 seconds, and how many seconds are left?
-2. A robot drives at 0.4 m/s for 90 seconds. How far does it go?
-3. The square root of 2 (first type `import math` at `>>>`).
+VS Code 터미널에 `python3`를 입력하세요. 파이썬 `>>>` 프롬프트에서 다음 값을 계산한 뒤 `exit()`을 입력해서 VS Code 터미널로 돌아오세요.
+1. 500초는 몇 분 몇 초인가요?
+2. 로봇이 0.4 m/s로 90초 동안 움직이면 얼마나 이동하나요?
+3. 2의 제곱근을 구하세요(먼저 `>>>`에 `import math`를 입력하세요).
 
 ---
 
-## 4. Converting types
+## 4. 자료형 바꾸기
 
-Sometimes you need to change a value from one type to another. Run `python3`.
-At Python's **`>>>` prompt**, type each call below. The comments show the results.
+값을 다른 자료형으로 바꿔야 할 때가 있어요. `python3`를 실행하세요.
+**파이썬 `>>>` 프롬프트**에 아래 호출을 하나씩 입력하세요. 주석은 결과를 보여 줘요.
 
-Type `exit()` at `>>>` when finished:
+마치면 `>>>`에 `exit()`을 입력하세요.
 
 ```python
-int("42")       # 42     text → whole number
-float("3.5")    # 3.5    text → decimal number
-str(42)         # "42"   number → text
-int(3.9)        # 3      cuts off the decimals (does not round!)
-round(3.9)      # 4      rounds
+int("42")       # 42     문자열 → 정수
+float("3.5")    # 3.5    문자열 → 실수
+str(42)         # "42"   숫자 → 문자열
+int(3.9)        # 3      소수 부분을 버려요(반올림하지 않아요!)
+round(3.9)      # 4      반올림해요
 round(3.14159, 2)  # 3.14
 ```
 
-If the text is not a number, you get an error:
+문자열이 숫자가 아니면 오류가 나요.
 
 ```python
 >>> int("hello")
@@ -139,9 +139,9 @@ ValueError: invalid literal for int() with base 10: 'hello'
 
 ---
 
-## 5. Asking the user: `input()`
+## 5. 사용자에게 입력받기: `input()`
 
-`input()` shows a message, waits for the user to type something and press Enter, and gives back what they typed.
+`input()`은 메시지를 보여 주고, 사용자가 내용을 입력한 뒤 Enter를 누를 때까지 기다려요. 그런 다음 입력한 내용을 돌려줘요.
 
 ```python
 name = input("Robot name: ")
@@ -153,14 +153,14 @@ Robot name: RR-01
 Starting RR-01
 ```
 
-⚠️ **`input()` always gives back a `str`**, even when the user types a number:
+⚠️ 사용자가 숫자를 입력해도 **`input()`은 항상 `str`을 돌려줘요**.
 
 ```python
-distance = input("Distance (m): ")    # user types 10
-print(distance * 2)                   # 1010  ← text repeated twice!
+distance = input("Distance (m): ")    # 사용자가 10을 입력해요
+print(distance * 2)                   # 1010  ← 문자열을 두 번 반복해요!
 ```
 
-In `playground.py`, replace the distance example with the version below. It converts the input to `float`. Save with **Ctrl + S**. Run `python3 playground.py` in the VS Code terminal. At `Distance (m):`, type `10` and press Enter:
+`playground.py`의 거리 예제를 아래 코드로 바꾸세요. 입력값을 `float`로 바꿔요. **Ctrl + S**로 저장하고 VS Code 터미널에서 `python3 playground.py`를 실행하세요. `Distance (m):`에 `10`을 입력하고 Enter를 누르세요.
 
 ```python
 distance = float(input("Distance (m): "))
@@ -169,9 +169,9 @@ print(distance * 2)                   # 20.0 ✅
 
 ---
 
-## 6. f-strings: putting values into text
+## 6. f-문자열: 문자열에 값 넣기
 
-An **f-string** starts with `f` before the quote. Inside, you put variables in `{ }`:
+**f-문자열**은 따옴표 앞에 `f`를 붙여요. 안에서는 `{ }`에 변수를 넣어요.
 
 ```python
 robot = "RR-01"
@@ -183,9 +183,9 @@ print(f"Robot {robot} has {battery}% battery")
 Robot RR-01 has 87% battery
 ```
 
-### Number formatting
+### 숫자 표시 형식
 
-Add `:.2f` after a value to show exactly 2 decimals:
+값 뒤에 `:.2f`를 붙이면 소수점 아래 두 자리까지 표시해요.
 
 ```python
 voltage = 12.34567
@@ -194,13 +194,13 @@ print(f"Voltage: {voltage:.1f} V")     # Voltage: 12.3 V
 print(f"Distance: {5:.2f} m")          # Distance: 5.00 m
 ```
 
-You will use f-strings in almost every program, including ROS log messages.
+ROS 로그 메시지를 비롯해 거의 모든 프로그램에서 f-문자열을 사용하게 돼요.
 
-### Try it
+### 직접 해 보기: 속도 변환
 
-In `playground.py`, write a program that asks for speed in m/s. Print the speed in km/h with 1 decimal. Save with **Ctrl + S**. Run `python3 playground.py` in the VS Code terminal.
+`playground.py`에 속도(m/s)를 입력받는 프로그램을 작성하세요. 속도를 km/h로 바꾸고 소수점 아래 한 자리까지 출력하세요. **Ctrl + S**로 저장하고 VS Code 터미널에서 `python3 playground.py`를 실행하세요.
 
-At `Speed (m/s):`, type `2.5` and press Enter. Expect the result below. (1 m/s = 3.6 km/h.)
+`Speed (m/s):`에 `2.5`를 입력하고 Enter를 누르세요. 아래 결과가 나와야 해요. (1 m/s = 3.6 km/h예요.)
 
 ```
 Speed (m/s): 2.5
@@ -209,29 +209,29 @@ Speed (m/s): 2.5
 
 ---
 
-## 7. Common mistakes
+## 7. 자주 하는 실수
 
-| Mistake | Fix |
+| 실수 | 해결 방법 |
 |---|---|
-| `"5" + 3` gives `TypeError: can only concatenate str (not "int") to str` | Convert first: `int("5") + 3` |
-| Calculating with `input()` gives strange results | Wrap it: `int(input(...))` or `float(input(...))` |
-| `print("Battery: {battery}")` prints `{battery}` literally | You forgot the `f`: `print(f"Battery: {battery}")` |
-| `Speed = 1` then `print(speed)` gives `NameError` | Names are case-sensitive |
+| `"5" + 3`에서 `TypeError: can only concatenate str (not "int") to str`가 나와요 | 먼저 자료형을 바꾸세요: `int("5") + 3` |
+| `input()` 값으로 계산하면 이상한 결과가 나와요 | `int(input(...))` 또는 `float(input(...))`로 감싸세요 |
+| `print("Battery: {battery}")`가 `{battery}`를 그대로 출력해요 | `f`가 빠졌어요: `print(f"Battery: {battery}")` |
+| `Speed = 1` 다음에 `print(speed)`를 실행하면 `NameError`가 나와요 | 이름은 대소문자를 구분해요 |
 
 ---
 
-## 8. Exercises
+## 8. 연습 문제
 
-**How to do the exercises:** do them **in order**, one at a time. Each exercise below has numbered steps. Follow them from 1 to the end, then go to the next exercise. If a step does not work, look at [How exercises work, Part 5](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
+**연습 문제 진행 방법:** 한 번에 하나씩 **순서대로** 푸세요. 아래의 각 연습 문제에는 번호가 붙은 진행 순서가 있어요. 1번부터 끝까지 따라 한 뒤 다음 연습 문제로 넘어가세요. 잘되지 않는 단계가 있으면 [연습 문제 진행 방법 5부](../../docs/02-how-exercises-work.md#5부-테스트-결과-읽기)를 참고하세요.
 
-### Exercise 1 of 2: Battery runtime
+### 연습 문제 1/2: 배터리 사용 시간
 
-> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson.
-> Follow [Part 3: a script exercise](../../docs/02-how-exercises-work.md#part-3-worked-example-a-script-exercise-days-12) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
+> 📖 **시작하기 전에:** [연습 문제 진행 방법](../../docs/02-how-exercises-work.md)을 이 수업 옆에 여세요.
+> [3부: 스크립트 연습 문제](../../docs/02-how-exercises-work.md#3부-스크립트-연습-문제-따라-하기-12일차)와 [5부: 테스트 결과 읽기](../../docs/02-how-exercises-work.md#5부-테스트-결과-읽기)를 따라 하세요.
 
-**Your task:** ask for a battery's capacity (mAh) and the current the robot uses (mA). Print how many hours the battery lasts: capacity ÷ current, with 2 decimals.
+**할 일:** 배터리 용량(mAh)과 로봇이 사용하는 전류(mA)를 입력받으세요. 용량 ÷ 전류로 배터리를 몇 시간 사용할 수 있는지 계산하고 소수점 아래 두 자리까지 출력하세요.
 
-**What it should look like** (you type `5000` and `2000`):
+**실행 결과 예시**(`5000`과 `2000`을 입력해요):
 
 ```
 $ python3 exercises/week1/w1d2_battery_runtime.py
@@ -240,9 +240,9 @@ Current (mA): 2000
 Runtime: 2.50 hours
 ```
 
-**Example to follow:** a similar problem (not the answer to this exercise).
+**따라 해 볼 예제:** 비슷한 문제예요(이 연습 문제의 정답은 아니에요).
 
-This program asks for a distance and a speed, and prints how long the trip takes. It uses the same three parts as your exercise: two `input()` calls with `int()`, one division, and one f-string with `:.2f`.
+이 프로그램은 거리와 속도를 입력받고 이동에 걸리는 시간을 출력해요. 연습 문제와 같은 세 부분으로 구성돼요. `int()`로 감싼 `input()` 두 번, 나눗셈 한 번, `:.2f`를 사용하는 f-문자열 한 개예요.
 
 ```python
 distance = int(input("Distance (m): "))
@@ -251,11 +251,11 @@ travel_time = distance / speed
 print(f"Travel time: {travel_time:.2f} minutes")
 ```
 
-Try the example: in the VS Code terminal, type `code playground.py` to open `playground.py` in the same VS Code window.
-In the VS Code editor, type the example into `playground.py`. Save `playground.py` with **Ctrl + S**.
-Run `python3 playground.py` in the VS Code terminal.
+예제를 실행해 보세요. VS Code 터미널에 `code playground.py`를 입력해서 같은 VS Code 창에 `playground.py`를 여세요.
+VS Code 편집기에서 `playground.py`에 예제를 입력하세요. **Ctrl + S**로 `playground.py`를 저장하세요.
+VS Code 터미널에서 `python3 playground.py`를 실행하세요.
 
-When it asks, type `100`, press Enter, type `40`, press Enter:
+입력을 요청하면 `100`을 입력하고 Enter를 누른 뒤 `40`을 입력하고 Enter를 누르세요.
 
 ```
 $ python3 playground.py
@@ -264,43 +264,43 @@ Speed (m/min): 40
 Travel time: 2.50 minutes
 ```
 
-When you understand how the example works, do the steps below. Write your own code for the exercise. Do not copy the example: the task is different.
+예제가 어떻게 동작하는지 이해했다면 아래 순서대로 진행하세요. 연습 문제 코드는 직접 작성하세요. 할 일이 다르니 예제를 그대로 복사하지 마세요.
 
-**Steps:**
+**진행 순서:**
 
-1. **Open the file.** In the VS Code editor, press **Ctrl + P**.
-   Type [`exercises/week1/w1d2_battery_runtime.py`](../../exercises/week1/w1d2_battery_runtime.py) and press Enter. The file opens in the editor. Or click [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d2_battery_runtime.py`](../../exercises/week1/w1d2_battery_runtime.py) in the file list on the left (Explorer) in the VS Code editor.
-2. In the VS Code editor, in `w1d2_battery_runtime.py`, read the instructions at the top of the file.
-3. In the VS Code editor, in `w1d2_battery_runtime.py`, write your code below `TODO`. You need:
-   - two `input()` calls, each wrapped in `int()` (section 5 of this lesson),
-   - one division,
-   - one `print()` with an f-string and `:.2f` (section 6).
-4. In the VS Code editor, save `w1d2_battery_runtime.py` with **Ctrl + S**. The **●** on the file's tab disappears when it is saved.
-5. In the VS Code terminal, run `w1d2_battery_runtime.py`. At `Capacity (mAh):`, type `5000` and press Enter. Then at `Current (mA):`, type `2000` and press Enter:
+1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
+   VS Code 편집기에서 [`exercises/week1/w1d2_battery_runtime.py`](../../exercises/week1/w1d2_battery_runtime.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d2_battery_runtime.py`](../../exercises/week1/w1d2_battery_runtime.py)를 클릭하세요.
+2. VS Code 편집기에서 `w1d2_battery_runtime.py` 맨 위의 안내를 읽으세요.
+3. VS Code 편집기에서 `w1d2_battery_runtime.py`의 `TODO` 아래에 코드를 작성하세요. 다음 내용이 필요해요.
+   - 각각 `int()`로 감싼 `input()` 두 번(이 수업의 5절)
+   - 나눗셈 한 번
+   - f-문자열과 `:.2f`를 사용하는 `print()` 한 번(6절)
+4. VS Code 편집기에서 **Ctrl + S**로 `w1d2_battery_runtime.py`를 저장하세요. 저장하면 파일 탭의 **●**가 사라져요.
+5. VS Code 터미널에서 `w1d2_battery_runtime.py`를 실행하세요. `Capacity (mAh):`에 `5000`을 입력하고 Enter를 누르세요. 그런 다음 `Current (mA):`에 `2000`을 입력하고 Enter를 누르세요.
    ```bash
    python3 exercises/week1/w1d2_battery_runtime.py
    ```
-   ✔ The last line should be `Runtime: 2.50 hours`. Run `python3 exercises/week1/w1d2_battery_runtime.py` again. Enter `1000` at `Capacity (mAh):`.
-   Enter `3000` at `Current (mA):`. Press Enter after each value. That should give `Runtime: 0.33 hours`.
-   ✘ If **nothing appears at all**, your file has no code yet or is not saved. Go back to step 3.
-6. In the VS Code terminal, test `w1d2_battery_runtime.py` with [`test_w1d2.py`](../../exercises/week1/tests/test_w1d2.py):
+   ✔ 마지막 줄은 `Runtime: 2.50 hours`여야 해요. `python3 exercises/week1/w1d2_battery_runtime.py`를 다시 실행하세요. `Capacity (mAh):`에 `1000`을 입력하세요.
+   `Current (mA):`에 `3000`을 입력하세요. 각 값을 입력한 뒤 Enter를 누르세요. `Runtime: 0.33 hours`가 나와야 해요.
+   ✘ **아무것도 나타나지 않으면** 파일에 아직 코드가 없거나 저장하지 않은 거예요. 3단계로 돌아가세요.
+6. VS Code 터미널에서 [`test_w1d2.py`](../../exercises/week1/tests/test_w1d2.py)로 `w1d2_battery_runtime.py`를 테스트하세요.
    ```bash
    pytest exercises/week1/tests/test_w1d2.py -k battery
    ```
-   ✔ You should see `3 passed, 3 deselected`. The test runs your program 3 times with different numbers.
-7. In the VS Code editor, open [progress/week1.md](../../progress/week1.md).
-   Change `[ ]` to `[x]` beside `exercises/week1/w1d2_battery_runtime.py`. Save with **Ctrl + S**.
+   ✔ `3 passed, 3 deselected`가 나와야 해요. 테스트는 서로 다른 숫자로 프로그램을 세 번 실행해요.
+7. VS Code 편집기에서 [progress/week1.md](../../progress/week1.md)를 여세요.
+   `exercises/week1/w1d2_battery_runtime.py` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
 
-> `deselected` means: the tests of the **other** exercises in this file were not run. That is what `-k` does, and it is fine.
+> `deselected`는 이 파일에 있는 **다른** 연습 문제의 테스트는 실행하지 않았다는 뜻이에요. `-k`를 사용하면 이렇게 되니 괜찮아요.
 
-### Exercise 2 of 2: Mission timer
+### 연습 문제 2/2: 임무 타이머
 
-> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson.
-> Follow [Part 3: a script exercise](../../docs/02-how-exercises-work.md#part-3-worked-example-a-script-exercise-days-12) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
+> 📖 **시작하기 전에:** [연습 문제 진행 방법](../../docs/02-how-exercises-work.md)을 이 수업 옆에 여세요.
+> [3부: 스크립트 연습 문제](../../docs/02-how-exercises-work.md#3부-스크립트-연습-문제-따라-하기-12일차)와 [5부: 테스트 결과 읽기](../../docs/02-how-exercises-work.md#5부-테스트-결과-읽기)를 따라 하세요.
 
-**Your task:** ask for a number of seconds. Print it as hours, minutes and seconds.
+**할 일:** 초 단위 시간을 입력받으세요. 시간, 분, 초로 나누어 출력하세요.
 
-**What it should look like** (you type `3725`):
+**실행 결과 예시**(`3725`를 입력해요):
 
 ```
 $ python3 exercises/week1/w1d2_time_format.py
@@ -308,9 +308,9 @@ Seconds: 3725
 1 h 2 m 5 s
 ```
 
-**Example to follow:** a similar problem (not the answer to this exercise).
+**따라 해 볼 예제:** 비슷한 문제예요(이 연습 문제의 정답은 아니에요).
 
-This program splits a length in centimeters into meters and centimeters, with `//` and `%`. Your exercise has **three** units (hours, minutes, seconds), so you need one more step.
+이 프로그램은 `//`와 `%`로 센티미터 단위 길이를 미터와 센티미터로 나눠요. 연습 문제에서는 시간, 분, 초 **세 가지** 단위를 사용하므로 한 단계가 더 필요해요.
 
 ```python
 total_cm = int(input("Length (cm): "))
@@ -319,11 +319,11 @@ cm = total_cm % 100
 print(f"{meters} m {cm} cm")
 ```
 
-Try the example: in the VS Code terminal, type `code playground.py` to open `playground.py` in the same VS Code window.
-In the VS Code editor, type the example into `playground.py`. Save `playground.py` with **Ctrl + S**.
-Run `python3 playground.py` in the VS Code terminal.
+예제를 실행해 보세요. VS Code 터미널에 `code playground.py`를 입력해서 같은 VS Code 창에 `playground.py`를 여세요.
+VS Code 편집기에서 `playground.py`에 예제를 입력하세요. **Ctrl + S**로 `playground.py`를 저장하세요.
+VS Code 터미널에서 `python3 playground.py`를 실행하세요.
 
-When it asks, type `275` and press Enter:
+입력을 요청하면 `275`를 입력하고 Enter를 누르세요.
 
 ```
 $ python3 playground.py
@@ -331,50 +331,50 @@ Length (cm): 275
 2 m 75 cm
 ```
 
-When you understand how the example works, do the steps below. Write your own code for the exercise. Do not copy the example: the task is different.
+예제가 어떻게 동작하는지 이해했다면 아래 순서대로 진행하세요. 연습 문제 코드는 직접 작성하세요. 할 일이 다르니 예제를 그대로 복사하지 마세요.
 
-**Steps:**
+**진행 순서:**
 
-1. **Open the file.** In the VS Code editor, press **Ctrl + P**.
-   Type [`exercises/week1/w1d2_time_format.py`](../../exercises/week1/w1d2_time_format.py) and press Enter. The file opens in the editor. Or click [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d2_time_format.py`](../../exercises/week1/w1d2_time_format.py) in the file list on the left (Explorer) in the VS Code editor.
-2. In the VS Code editor, in `w1d2_time_format.py`, read the instructions at the top of the file.
-3. In the VS Code editor, in `w1d2_time_format.py`, write your code below `TODO`. Use `//` and `%` (section 3 of this lesson, "`//` and `%` together"). There are 3600 seconds in an hour and 60 in a minute.
-   Tip: first work it out on paper for 3725: how many full hours? How many seconds are left? How many full minutes in those?
-4. In the VS Code editor, save `w1d2_time_format.py` with **Ctrl + S**. The **●** on the file's tab disappears when it is saved.
-5. In the VS Code terminal, run `w1d2_time_format.py`. At `Seconds:`, type `3725` and press Enter:
+1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
+   VS Code 편집기에서 [`exercises/week1/w1d2_time_format.py`](../../exercises/week1/w1d2_time_format.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d2_time_format.py`](../../exercises/week1/w1d2_time_format.py)를 클릭하세요.
+2. VS Code 편집기에서 `w1d2_time_format.py` 맨 위의 안내를 읽으세요.
+3. VS Code 편집기에서 `w1d2_time_format.py`의 `TODO` 아래에 코드를 작성하세요. `//`와 `%`를 사용하세요(이 수업 3절의 "`//`와 `%` 함께 사용하기"). 1시간은 3600초이고 1분은 60초예요.
+   도움말: 먼저 종이에 3725로 계산해 보세요. 몇 시간인가요? 남은 초는 얼마인가요? 남은 초에서 몇 분을 만들 수 있나요?
+4. VS Code 편집기에서 **Ctrl + S**로 `w1d2_time_format.py`를 저장하세요. 저장하면 파일 탭의 **●**가 사라져요.
+5. VS Code 터미널에서 `w1d2_time_format.py`를 실행하세요. `Seconds:`에 `3725`를 입력하고 Enter를 누르세요.
    ```bash
    python3 exercises/week1/w1d2_time_format.py
    ```
-   ✔ You should see `1 h 2 m 5 s`. Run `python3 exercises/week1/w1d2_time_format.py` again. Enter `59` at `Seconds:` (→ `0 h 0 m 59 s`). Then run the same command again. Enter `7200` at `Seconds:` (→ `2 h 0 m 0 s`), pressing Enter after each value.
-   ✘ If **nothing appears at all**, your file has no code yet or is not saved. Go back to step 3.
-6. In the VS Code terminal, test `w1d2_time_format.py` with [`test_w1d2.py`](../../exercises/week1/tests/test_w1d2.py):
+   ✔ `1 h 2 m 5 s`가 나와야 해요. `python3 exercises/week1/w1d2_time_format.py`를 다시 실행하고 `Seconds:`에 `59`를 입력하세요(→ `0 h 0 m 59 s`). 같은 명령을 다시 실행하고 `Seconds:`에 `7200`을 입력하세요(→ `2 h 0 m 0 s`). 각 값을 입력한 뒤 Enter를 누르세요.
+   ✘ **아무것도 나타나지 않으면** 파일에 아직 코드가 없거나 저장하지 않은 거예요. 3단계로 돌아가세요.
+6. VS Code 터미널에서 [`test_w1d2.py`](../../exercises/week1/tests/test_w1d2.py)로 `w1d2_time_format.py`를 테스트하세요.
    ```bash
    pytest exercises/week1/tests/test_w1d2.py -k time_format
    ```
-   ✔ You should see `3 passed, 3 deselected`.
-7. In the VS Code editor, open [`progress/week1.md`](../../progress/week1.md).
-   Change `[ ]` to `[x]` beside `w1d2_time_format.py`. Save with **Ctrl + S**.
+   ✔ `3 passed, 3 deselected`가 나와야 해요.
+7. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
+   `w1d2_time_format.py` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
 
-### Finally: all of today's tests
+### 마지막으로: 오늘의 테스트 전체
 
-In the VS Code terminal, run today's tests in [`test_w1d2.py`](../../exercises/week1/tests/test_w1d2.py):
+VS Code 터미널에서 [`test_w1d2.py`](../../exercises/week1/tests/test_w1d2.py)의 오늘 테스트를 실행하세요.
 
 ```bash
 pytest exercises/week1/tests/test_w1d2.py
 ```
 
-✔ You should see **`6 passed`**. In the VS Code editor, check the Day 2 "Tests pass" box in [`progress/week1.md`](../../progress/week1.md). Save with **Ctrl + S**.
+✔ **`6 passed`**가 나와야 해요. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)의 2일차 "테스트 통과" 항목을 체크하세요. **Ctrl + S**로 저장하세요.
 
 ---
 
-## 9. Before you finish today
+## 9. 오늘 마치기 전에
 
-In the VS Code editor, open [progress/week1.md](../../progress/week1.md). Mark each completed Day 2 box `[x]`.
-Save with **Ctrl + S**. Only start Day 3 when every Day 2 box is checked.
+VS Code 편집기에서 [progress/week1.md](../../progress/week1.md)를 여세요. 완료한 2일차 항목마다 `[x]`로 체크하세요.
+**Ctrl + S**로 저장하세요. 2일차 항목을 모두 체크한 뒤에만 3일차를 시작하세요.
 
-- [ ] `pytest exercises/week1/tests/test_w1d2.py` shows **6 passed**
-- [ ] I can explain the difference between `7`, `7.0` and `"7"`
-- [ ] I can explain what `//` and `%` do
-- [ ] Daily log written, committed and pushed
+- [ ] `pytest exercises/week1/tests/test_w1d2.py` 실행 결과: **6 passed**
+- [ ] `7`, `7.0`, `"7"`의 차이를 설명할 수 있어요
+- [ ] `//`와 `%`가 하는 일을 설명할 수 있어요
+- [ ] 실습 일지 작성, 커밋, 푸시 완료
 
-**Next:** [Day 3: Making decisions: functions and if](day3-functions-and-decisions.md)
+**다음:** [3일차: 조건에 따라 판단하기, 함수와 if 문](day3-functions-and-decisions.md)

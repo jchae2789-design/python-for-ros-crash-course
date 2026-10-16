@@ -1,15 +1,14 @@
-# Week 1, Day 1, Exercise 2: Robot info card
+# 1주차 1일차 연습 문제 2: 로봇 정보 카드
 #
-# Make this program print exactly these 3 lines:
+# 이 프로그램이 다음 세 줄을 정확히 출력하게 하세요.
 #
 #     Robot: RR-01
 #     Type: Rail robot
 #     Status: READY
 #
-# Hint: one print() for each line.
+# 힌트: 한 줄마다 print() 하나를 사용하세요.
 #
-# Run (in the VS Code terminal): `python3 exercises/week1/w1d1_robot_card.py`
-# Test (in the VS Code terminal): `pytest exercises/week1/tests/test_w1d1.py`
+# 실행(VS Code 터미널): `python3 exercises/week1/w1d1_robot_card.py`
+# 테스트(VS Code 터미널): `pytest exercises/week1/tests/test_w1d1.py`
 
-# TODO: write your code below this line
-
+# TODO: 이 줄 아래에 코드를 작성하세요

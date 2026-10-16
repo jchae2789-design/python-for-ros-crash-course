@@ -7,13 +7,13 @@ import guess
 
 
 def fake_input(answers):
-    """Pretend to be a user typing `answers` one by one."""
+    """사용자가 `answers`를 하나씩 입력하는 것처럼 흉내 냅니다."""
     remaining = list(answers)
 
     def _input(prompt=""):
         print(prompt, end="")
         if not remaining:
-            pytest.fail("Your program asked for more input than expected (is your loop stopping?)")
+            pytest.fail("프로그램이 예상보다 더 많이 입력을 요청했어요. (반복문이 제대로 멈추나요?)")
         return remaining.pop(0)
 
     return _input
@@ -76,7 +76,7 @@ def test_guess_game(monkeypatch, capsys):
     guess.main()
     out = capsys.readouterr().out
     for text in ["Too high", "Please enter a number.", "Too low", "Correct!", "You got it in 3 tries!"]:
-        assert text in out, f"Expected to see {text!r} in the output"
+        assert text in out, f"출력에서 {text!r}을(를) 찾지 못했어요"
 
 
 def test_guess_game_first_try(monkeypatch, capsys):

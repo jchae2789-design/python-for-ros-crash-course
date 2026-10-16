@@ -16,8 +16,8 @@ HERE = Path(__file__).parent.parent
 def test_battery_runtime(run_script, capacity, current, expected):
     output = run_script(HERE / "w1d2_battery_runtime.py", f"{capacity}\n{current}\n")
     assert expected in output, (
-        f"With {capacity} mAh and {current} mA we expected {expected!r}.\n"
-        f"Your program printed: {output!r}"
+        f"용량 {capacity} mAh, 전류 {current} mA일 때 기대한 출력은 {expected!r}입니다.\n"
+        f"프로그램이 출력한 내용: {output!r}"
     )
 
 
@@ -32,6 +32,6 @@ def test_battery_runtime(run_script, capacity, current, expected):
 def test_time_format(run_script, seconds, expected):
     output = run_script(HERE / "w1d2_time_format.py", f"{seconds}\n")
     assert expected in output, (
-        f"For {seconds} seconds we expected {expected!r}.\n"
-        f"Your program printed: {output!r}"
+        f"{seconds}초일 때 기대한 출력은 {expected!r}입니다.\n"
+        f"프로그램이 출력한 내용: {output!r}"
     )

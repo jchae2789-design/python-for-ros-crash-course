@@ -24,14 +24,14 @@ The terminal should answer `hello`.
 
 ## 2. Install the tools
 
-Run these commands one by one. When asked for a password, type your Ubuntu password. Nothing appears on screen while you type it. That is normal.
+In the terminal, type these commands one by one and press Enter after each command. When asked for a password, type your Ubuntu password. Nothing appears on screen while you type it. That is normal.
 
 ```bash
 sudo apt update
 sudo apt install -y python3 python3-pip python3-venv git gh
 ```
 
-Check that Python works:
+In the terminal, type `python3 --version` to check the installed Python version:
 
 ```bash
 python3 --version
@@ -43,11 +43,13 @@ You should see `Python 3.12.something`.
 
 ## 3. Install VS Code (your code editor)
 
+In the terminal, type the command below. When the installation finishes, the terminal prompt returns.
+
 ```bash
 sudo snap install code --classic
 ```
 
-Start it:
+In the terminal, type `code` to open the VS Code editor:
 
 ```bash
 code
@@ -61,15 +63,15 @@ In VS Code, open the **Extensions** panel (the icon with four squares on the lef
 
 GitHub is a website that stores code. You will save your work there every day, so your mentor can see it.
 
-1. Go to <https://github.com> and click **Sign up**.
-2. Choose a username. Use something professional, for example `kim-minjun-robot`.
+1. In your browser, go to <https://github.com> and click **Sign up**.
+2. On the GitHub sign-up page in your browser, choose a username and finish the account form. Use something professional, for example `kim-minjun-robot`.
 3. Send your username to your mentor.
 
 ---
 
 ## 5. Tell Git who you are
 
-Use your real name and the email of your GitHub account:
+In the terminal, type these commands in order. Replace `Your Name` with your real name and `you@example.com` with your GitHub email address. Each command returns to the terminal prompt without output:
 
 ```bash
 git config --global user.name "Your Name"
@@ -81,18 +83,23 @@ git config --global init.defaultBranch main
 
 ## 6. Log in to GitHub from the terminal
 
+In the terminal, type `gh auth login` to display the login questions:
+
 ```bash
 gh auth login
 ```
 
-Answer the questions with the arrow keys and Enter:
+In the terminal, select these answers with the arrow keys and press Enter after each answer:
 
 - *Where do you use GitHub?* → **GitHub.com**
 - *Preferred protocol?* → **HTTPS**
 - *Authenticate Git with your GitHub credentials?* → **Yes**
 - *How would you like to authenticate?* → **Login with a web browser**
 
-Copy the code it shows, press Enter, paste the code in the browser and confirm.
+Copy the one-time code shown by `gh auth login`. Press Enter to open the GitHub login page in your browser.
+Paste the code into the browser's code field. Click **Continue**.
+
+Approve GitHub CLI access in the browser. The terminal should confirm that you are logged in.
 
 ---
 
@@ -100,12 +107,12 @@ Copy the code it shows, press Enter, paste the code in the browser and confirm.
 
 A **fork** is your own copy of the course on GitHub. You work in your fork.
 
-1. Open the course page: `https://github.com/yosaotniell03/python-for-ros-crash-course`
+1. In your browser, open the course page: `https://github.com/yosaotniell03/python-for-ros-crash-course`
    (your mentor gives you the exact link).
-2. Click **Fork** (top right), then **Create fork**.
+2. On the course GitHub page in your browser, click **Fork** (top right), then **Create fork**. GitHub opens your copy of the course.
 3. In your fork, click the **Actions** tab and click **"I understand my workflows, go ahead and enable them"**. This turns on the automatic tests on GitHub.
 
-Now download your fork to your computer. Replace `YOUR-USERNAME`:
+In the terminal, type these commands in order to download your fork. Replace `YOUR-USERNAME` with your GitHub username. The final `cd` command puts the terminal in `~/code/python-for-ros-crash-course`:
 
 ```bash
 mkdir -p ~/code
@@ -118,7 +125,8 @@ cd python-for-ros-crash-course
 
 ## 8. Create a virtual environment
 
-A **virtual environment** (venv) is a private box for the Python packages of this project. Create it once:
+A **virtual environment** (venv) is a private box for the Python packages of this project. Type these commands in order. They create and activate the venv.
+Then they install the packages listed in [`requirements.txt`](../requirements.txt):
 
 ```bash
 python3 -m venv .venv
@@ -139,13 +147,17 @@ After `source .venv/bin/activate`, your prompt starts with `(.venv)`. This means
 
 ## 9. Open the course in VS Code
 
+In the terminal, type `code .` to open the course folder in VS Code:
+
 ```bash
 code .
 ```
 
 The `.` means "this folder". If VS Code asks *"Do you trust the authors?"*, click **Yes**.
 
-At the bottom right of VS Code, choose the Python interpreter that has `.venv` in its name. If you do not see it, press **Ctrl + Shift + P**, type `Python: Select Interpreter` and choose `.venv`.
+At the bottom right of VS Code, choose the Python interpreter with `.venv` in its name.
+If no interpreter appears, press **Ctrl + Shift + P**.
+Type `Python: Select Interpreter`. Choose `.venv`.
 
 You can open a terminal inside VS Code with **Ctrl + `** (the key left of 1).
 
@@ -153,7 +165,7 @@ You can open a terminal inside VS Code with **Ctrl + `** (the key left of 1).
 
 ## 10. Check that everything works
 
-Run the tests for Day 1:
+Run the Day 1 tests in [`test_w1d1.py`](../exercises/week1/tests/test_w1d1.py):
 
 ```bash
 pytest exercises/week1/tests/test_w1d1.py
@@ -167,7 +179,8 @@ If you see `command not found: pytest`, your venv is not active. Go back to step
 
 ## 11. Your first push
 
-Create your first daily log and send it to GitHub:
+Copy [`logs/TEMPLATE.md`](../logs/TEMPLATE.md) to today's dated log with the commands below.
+Type the commands in order. They also commit the log and send the log to your GitHub fork:
 
 ```bash
 cp logs/TEMPLATE.md logs/$(date +%F).md
@@ -176,6 +189,8 @@ git commit -m "Add first daily log"
 git push
 ```
 
-Open your fork on GitHub in the browser. You should see your new file in the `logs` folder.
+Open your fork on GitHub in the browser. You should see your new file in the [`logs`](../logs/) folder.
 
-**Setup is done.** Open your checklist [progress/week1.md](../progress/week1.md), check off the setup box, and continue with the next step.
+**Setup is done.** In VS Code, open [progress/week1.md](../progress/week1.md).
+Change `[ ]` to `[x]` beside setup. Save with **Ctrl + S**.
+Then read the next unchecked step.

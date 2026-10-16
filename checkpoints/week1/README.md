@@ -4,16 +4,20 @@ This is your end-of-week project. It uses **everything** from Week 1: printing, 
 
 You build two small programs:
 
-1. `converter.py`: a unit converter with a menu
-2. `guess.py`: a number-guessing game
+1. [`converter.py`](converter.py): a unit converter with a menu
+2. [`guess.py`](guess.py): a number-guessing game
 
-You are done when these tests pass:
+After completing both programs, type this test command: You are done when the result is `11 passed`:
 
 ```bash
 pytest checkpoints/week1
 ```
 
-Then show your mentor both programs running in the terminal.
+Then run `python3 checkpoints/week1/converter.py`. Enter the converter's example inputs below.
+Type `q` at `Choose:` to return to the terminal.
+
+Next, run `python3 checkpoints/week1/guess.py`. Play the game and show both programs to your mentor.
+The secret is random, so your guesses can differ from the example.
 
 ---
 
@@ -22,6 +26,13 @@ Then show your mentor both programs running in the terminal.
 Robots use many units. Sensor data often comes in one unit and ROS needs another. For example, ROS always uses **meters** and **radians**.
 
 ### Step 1: the four conversion functions
+
+First, open [`converter.py`](converter.py) in VS Code. Press **Ctrl + P**.
+Type `checkpoints/week1/converter.py` and press Enter. The starter file opens in the editor.
+
+Read the comments. Replace `pass` in each conversion function with code that returns the value described below.
+Keep the function names and parameters. Save with **Ctrl + S**.
+The **●** on the file tab disappears.
 
 | Function | Formula | Example |
 |---|---|---|
@@ -34,7 +45,9 @@ Robots use many units. Sensor data often comes in one unit and ROS needs another
 
 ### Step 2: the menu in `main()`
 
-`main()` repeats this until the user types `q`:
+Replace `pass` inside `main()` in the file. Write a loop that performs the actions below in order until `q`.
+Save with **Ctrl + S** before running the program.
+These are your program's actions, not terminal commands:
 
 1. Print the menu:
    ```
@@ -70,13 +83,20 @@ Bye!
 
 Hints:
 - `while True:` with `break` is a good fit for "repeat until q".
-- Use `float(input("Value: "))` so that decimal values like `36.6` also work.
+- In `main()`, use `float(input("Value: "))` so decimal values like `36.6` also work.
 
 ---
 
 ## Part 2: `guess.py`
 
 ### Step 1: `check_guess(secret, guess)`
+
+First, open [`guess.py`](guess.py) in VS Code. Press **Ctrl + P**.
+Type `checkpoints/week1/guess.py` and press Enter. The starter file opens in the editor.
+
+Read the comments. Replace `pass` inside `check_guess(secret, guess)` with code that returns the values below.
+Keep the function name and parameters. Save with **Ctrl + S**.
+The **●** on the file tab disappears.
 
 Return:
 - `"Too low"` if guess is smaller than secret
@@ -85,12 +105,16 @@ Return:
 
 ### Step 2: the game in `main()`
 
+Replace `pass` inside `main()` in the file. Write code that performs the actions below in order.
+Save with **Ctrl + S** before running the program.
+These are your program's actions, not terminal commands.
+
 1. Pick a secret number: `secret = random.randint(1, 100)`
 2. Repeat:
    - Ask `Your guess: `
    - If the text is not a number (hint: `.isdigit()`), print `Please enter a number.` and ask again. **Do not count this as a try.**
-   - Otherwise turn it into an `int`, count one try, and print the result of `check_guess`.
-   - If it was correct, print `You got it in N tries!` (N is the number of tries) and stop.
+   - Otherwise turn the guess text into an `int`, count one try, and print the result of `check_guess(secret, guess)`.
+   - If `check_guess(secret, guess)` returned `"Correct!"`, print `You got it in N tries!` (N is the number of tries) and stop.
 
 Example session (secret is 42):
 
@@ -110,6 +134,6 @@ You got it in 3 tries!
 
 ## Bonus (not tested)
 
-- Converter: add `5) Meters -> Millimeters` and `6) Radians -> Degrees`.
-- Guess: let the player choose the range first, for example 1 to 1000.
-- Guess: after the game, ask `Play again? (y/n)`.
+- In [`converter.py`](converter.py), add these options to the menu in `main()`: `5) Meters -> Millimeters` and `6) Radians -> Degrees`.
+- In [`guess.py`](guess.py), let the player choose the range first, for example 1 to 1000.
+- In `guess.py`, after the game, ask `Play again? (y/n)`.

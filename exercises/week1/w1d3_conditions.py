@@ -3,7 +3,7 @@
 # Each exercise is a function. Write your code inside the function and
 # use `return` to give back the answer. Replace `pass` with your code.
 #
-# Test it:  pytest exercises/week1/tests/test_w1d3.py
+# Test (in the terminal): `pytest exercises/week1/tests/test_w1d3.py`
 
 
 def battery_status(percent):

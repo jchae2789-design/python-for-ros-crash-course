@@ -42,7 +42,7 @@ print(robot_id[:2])    # RR     (no start = from the beginning)
 
 ### Try it
 
-For `topic = "/drone/camera"`, use slicing to get `drone` and `camera`.
+In the terminal, type `python3`. At Python's `>>>` prompt, type `topic = "/drone/camera"`, then use slicing on `topic` to get `drone` and `camera`. Python should display `'drone'` and `'camera'`. Finally, type `exit()` at `>>>`.
 
 ---
 
@@ -62,7 +62,7 @@ A **method** is a function that belongs to a value. You call it with a dot: `tex
 | `.isalpha()` | only letters? | `"RR".isalpha()` | `True` |
 | `.isupper()` | all letters uppercase? | `"RR".isupper()` | `True` |
 
-Important: strings **cannot be changed**. Methods give back a **new** string. Store it:
+Important: strings **cannot be changed**. Methods give back a **new** string. In `playground.py` in VS Code, store the new string back in `command`, as shown below:
 
 ```python
 command = "  FORWARD  "
@@ -70,7 +70,7 @@ command.strip()             # does nothing to command!
 command = command.strip()   # ✅ store the new string
 ```
 
-You can **chain** methods. They run from left to right:
+You can **chain** methods. They run from left to right. In the terminal, type `python3`, then type the expression below at `>>>` to see `'turn left'`. Finally, type `exit()` at `>>>`:
 
 ```python
 "  Turn LEFT  ".strip().lower()     # "turn left"
@@ -140,11 +140,12 @@ print(digits)       # 4
 
 **How to do the exercises:** do them **in order**, one at a time. Each exercise below has numbered steps. Follow them from 1 to the end, then go to the next exercise. If a step does not work, look at [How exercises work, Part 5](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
-All four functions are in `exercises/week1/w1d5_strings.py`. Open it in VS Code now. For each one: replace `pass`, save, try it with `python3 -i exercises/week1/w1d5_strings.py`, run its tests, then check its box in [progress/week1.md](../../progress/week1.md).
+All four functions are in [`exercises/week1/w1d5_strings.py`](../../exercises/week1/w1d5_strings.py). Follow the numbered steps for each function below.
 
 ### Exercise 1 of 4: `clean_command(text)`
 
-> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson and follow it while you do this exercise, especially [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
+> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson.
+> Follow [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
 **Your task:** remove spaces and newlines at both ends, and make the text lowercase.
 
@@ -162,7 +163,11 @@ def make_label(text):
     return text.strip().upper()
 ```
 
-Type this example into `playground.py` in the course folder (open it with `code playground.py`), save it, and try it:
+Try the example: open `playground.py` with `code playground.py`.
+Type the example in VS Code. Save with **Ctrl + S**.
+Run `python3 -i playground.py` in the terminal.
+
+At `>>>`, type the calls below. The lines without `>>>` are the results you should see:
 
 ```python
 $ python3 -i playground.py
@@ -175,21 +180,29 @@ When you understand how the example works, do the steps below. Write your own co
 
 **Steps:**
 
-1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d5_strings.py`. (Or press **Ctrl + P**, type `w1d5_strings.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
-2. Replace `pass`. You need two methods from section 3, chained together.
-3. Save and try it with `python3 -i`.
-4. Test it:
+1. **Open the file.** In VS Code, press **Ctrl + P**.
+   Type [`exercises/week1/w1d5_strings.py`](../../exercises/week1/w1d5_strings.py) and press Enter. The file opens in the editor.
+2. Replace `pass` inside `clean_command` with your code. You need two methods from section 3, chained together.
+3. Save with **Ctrl + S**. The **●** on the file tab disappears.
+
+   In the terminal, run `python3 -i exercises/week1/w1d5_strings.py`.
+   At `>>>`, type the `clean_command(...)` calls under **Your task** above. Compare the results.
+
+   Type `exit()` at `>>>` to return to the terminal.
+4. Test `clean_command` with [`test_w1d5.py`](../../exercises/week1/tests/test_w1d5.py):
    ```bash
    pytest exercises/week1/tests/test_w1d5.py -k clean_command
    ```
    ✔ You should see `3 passed, 16 deselected`.
-5. Check the box for `clean_command`.
+5. In VS Code, open [`progress/week1.md`](../../progress/week1.md).
+   Change `[ ]` to `[x]` beside `clean_command`. Save with **Ctrl + S**.
 
 > `deselected` means: the tests of the **other** exercises in this file were not run. That is what `-k` does, and it is fine.
 
 ### Exercise 2 of 4: `make_topic_name(robot_name, sensor)`
 
-> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson and follow it while you do this exercise, especially [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
+> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson.
+> Follow [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
 **Your task:** build a ROS topic name: lowercase everything, replace spaces with `_`, and join as `/<robot>/<sensor>`.
 
@@ -208,7 +221,11 @@ def make_file_name(robot_name, date):
     return robot + "_" + date + ".csv"
 ```
 
-Type this example into `playground.py` in the course folder (open it with `code playground.py`), save it, and try it:
+Try the example: open `playground.py` with `code playground.py`.
+Type the example in VS Code. Save with **Ctrl + S**.
+Run `python3 -i playground.py` in the terminal.
+
+At `>>>`, type the calls below. The lines without `>>>` are the results you should see:
 
 ```python
 $ python3 -i playground.py
@@ -221,19 +238,27 @@ When you understand how the example works, do the steps below. Write your own co
 
 **Steps:**
 
-1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d5_strings.py`. (Or press **Ctrl + P**, type `w1d5_strings.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
-2. Replace `pass`. Clean each part with `.lower()` and `.replace(" ", "_")`, then join them with `"/"` (section 3, "Joining strings").
-3. Save and try it with `python3 -i`.
-4. Test it:
+1. **Open the file.** In VS Code, press **Ctrl + P**.
+   Type [`exercises/week1/w1d5_strings.py`](../../exercises/week1/w1d5_strings.py) and press Enter. The file opens in the editor.
+2. Replace `pass` inside `make_topic_name` with your code. Clean each part with `.lower()` and `.replace(" ", "_")`, then join them with `"/"` (section 3, "Joining strings").
+3. Save with **Ctrl + S**. The **●** on the file tab disappears.
+
+   In the terminal, run `python3 -i exercises/week1/w1d5_strings.py`.
+   At `>>>`, type the `make_topic_name(...)` calls under **Your task** above. Compare the results.
+
+   Type `exit()` at `>>>` to return to the terminal.
+4. Test `make_topic_name` with [`test_w1d5.py`](../../exercises/week1/tests/test_w1d5.py):
    ```bash
    pytest exercises/week1/tests/test_w1d5.py -k make_topic_name
    ```
    ✔ You should see `3 passed, 16 deselected`.
-5. Check the box for `make_topic_name`.
+5. In VS Code, open [`progress/week1.md`](../../progress/week1.md).
+   Change `[ ]` to `[x]` beside `make_topic_name`. Save with **Ctrl + S**.
 
 ### Exercise 3 of 4: `is_valid_robot_id(robot_id)`
 
-> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson and follow it while you do this exercise, especially [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
+> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson.
+> Follow [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
 **Your task:** return `True` if the text looks like `RR-0042`: exactly 7 characters, 2 uppercase letters, then `-`, then 4 digits. Otherwise return `False`.
 
@@ -261,7 +286,11 @@ def is_valid_time(text):
     return text[3:].isdigit()
 ```
 
-Type this example into `playground.py` in the course folder (open it with `code playground.py`), save it, and try it:
+Try the example: open `playground.py` with `code playground.py`.
+Type the example in VS Code. Save with **Ctrl + S**.
+Run `python3 -i playground.py` in the terminal.
+
+At `>>>`, type the calls below. The lines without `>>>` are the results you should see:
 
 ```python
 $ python3 -i playground.py
@@ -280,23 +309,31 @@ When you understand how the example works, do the steps below. Write your own co
 
 **Steps:**
 
-1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d5_strings.py`. (Or press **Ctrl + P**, type `w1d5_strings.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
-2. Replace `pass`. Check the parts **in this order**:
+1. **Open the file.** In VS Code, press **Ctrl + P**.
+   Type [`exercises/week1/w1d5_strings.py`](../../exercises/week1/w1d5_strings.py) and press Enter. The file opens in the editor.
+2. Replace `pass` inside `is_valid_robot_id` with your code. Check the parts **in this order**:
    1. Is `len(robot_id)` exactly 7? If not, `return False` immediately. Otherwise `robot_id[2]` could crash on a short text.
    2. Are the first 2 characters (`robot_id[0:2]`) letters **and** uppercase?
    3. Is character 2 (`robot_id[2]`) a `"-"`?
    4. Are the last 4 characters (`robot_id[3:]`) digits?
-3. Save and try it with `python3 -i`. Also try `""` (empty text). It must return `False`, not crash.
-4. Test it:
+3. Save with **Ctrl + S**. The **●** on the file tab disappears.
+
+   In the terminal, run `python3 -i exercises/week1/w1d5_strings.py`.
+   At `>>>`, type the `is_valid_robot_id(...)` calls under **Your task** above. Compare the results. Also type `is_valid_robot_id("")` at `>>>`. Expect `False`, not a crash.
+
+   Type `exit()` at `>>>` to return to the terminal.
+4. Test `is_valid_robot_id` with [`test_w1d5.py`](../../exercises/week1/tests/test_w1d5.py):
    ```bash
    pytest exercises/week1/tests/test_w1d5.py -k is_valid_robot_id
    ```
    ✔ You should see `9 passed, 10 deselected`.
-5. Check the box for `is_valid_robot_id`.
+5. In VS Code, open [`progress/week1.md`](../../progress/week1.md).
+   Change `[ ]` to `[x]` beside `is_valid_robot_id`. Save with **Ctrl + S**.
 
 ### Exercise 4 of 4: `count_char(text, ch)`
 
-> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson and follow it while you do this exercise, especially [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
+> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson.
+> Follow [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
 **Your task:** count how many times the character `ch` appears in `text`. Use a `for` loop, not `.count()`.
 
@@ -318,7 +355,11 @@ def count_spaces(text):
     return count
 ```
 
-Type this example into `playground.py` in the course folder (open it with `code playground.py`), save it, and try it:
+Try the example: open `playground.py` with `code playground.py`.
+Type the example in VS Code. Save with **Ctrl + S**.
+Run `python3 -i playground.py` in the terminal.
+
+At `>>>`, type the calls below. The lines without `>>>` are the results you should see:
 
 ```python
 $ python3 -i playground.py
@@ -333,35 +374,50 @@ When you understand how the example works, do the steps below. Write your own co
 
 **Steps:**
 
-1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d5_strings.py`. (Or press **Ctrl + P**, type `w1d5_strings.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
-2. Replace `pass`. Loop over the text (section 5) and count with the accumulator pattern.
-3. Save and try it with `python3 -i`.
-4. Test it:
+1. **Open the file.** In VS Code, press **Ctrl + P**.
+   Type [`exercises/week1/w1d5_strings.py`](../../exercises/week1/w1d5_strings.py) and press Enter. The file opens in the editor.
+2. Replace `pass` inside `count_char` with your code. Loop over the text (section 5) and count with the accumulator pattern.
+3. Save with **Ctrl + S**. The **●** on the file tab disappears.
+
+   In the terminal, run `python3 -i exercises/week1/w1d5_strings.py`.
+   At `>>>`, type the `count_char(...)` calls under **Your task** above. Compare the results.
+
+   Type `exit()` at `>>>` to return to the terminal.
+4. Test `count_char` with [`test_w1d5.py`](../../exercises/week1/tests/test_w1d5.py):
    ```bash
    pytest exercises/week1/tests/test_w1d5.py -k count_char
    ```
    ✔ You should see `4 passed, 15 deselected`.
-5. Check the box for `count_char`.
+5. In VS Code, open [`progress/week1.md`](../../progress/week1.md).
+   Change `[ ]` to `[x]` beside `count_char`. Save with **Ctrl + S**.
 
 ### Finally: all of today's tests, and the whole week
+
+Run today's tests in [`test_w1d5.py`](../../exercises/week1/tests/test_w1d5.py):
 
 ```bash
 pytest exercises/week1/tests/test_w1d5.py
 ```
 
-✔ You should see **`19 passed`**. Check the "Tests pass" box.
+✔ You should see **`19 passed`**. In VS Code, check the Day 5 "Tests pass" box in [`progress/week1.md`](../../progress/week1.md). Save with **Ctrl + S**.
+
+Then run all tests in [`exercises/week1/`](../../exercises/week1/):
 
 ```bash
 pytest exercises/week1
 ```
 
-✔ You should see **`64 passed`**: all exercises of Days 1–5. Check "The whole week passes" box. If something from an earlier day fails now, fix it before the checkpoint.
+✔ You should see **`64 passed`**: all exercises of Days 1–5.
+In VS Code, check "The whole week passes" in `progress/week1.md`. Save with **Ctrl + S**.
+
+If an earlier exercise fails, correct the file named in the terminal error message. Save with **Ctrl + S**.
+Rerun `pytest exercises/week1` in the terminal before starting the checkpoint.
 
 ---
 
 ## 8. Checkpoint (afternoon)
 
-Read [checkpoints/week1/README.md](../../checkpoints/week1/README.md) and build the two programs. They use everything from this week:
+Open [checkpoints/week1/README.md](../../checkpoints/week1/README.md) in VS Code. Read the instructions. Then write [`checkpoints/week1/converter.py`](../../checkpoints/week1/converter.py) and [`checkpoints/week1/guess.py`](../../checkpoints/week1/guess.py) in VS Code as described there. They use everything from this week:
 
 | Skill | Where you need it |
 |---|---|
@@ -371,6 +427,8 @@ Read [checkpoints/week1/README.md](../../checkpoints/week1/README.md) and build 
 | `if` / `elif` / `else` | choosing what to do |
 | `while True` + `break` | repeating until `q` or the correct guess |
 | `.isdigit()` | checking if a guess is a number |
+
+Save both checkpoint files. Run the tests in [`checkpoints/week1/`](../../checkpoints/week1/) (expected: `11 passed`):
 
 ```bash
 pytest checkpoints/week1
@@ -382,7 +440,8 @@ When all tests pass, **show your mentor** both programs running in the terminal 
 
 ## 9. Week 1 finished
 
-Check off **Day 5** and **Week 1 done** in your checklist: [progress/week1.md](../../progress/week1.md).
+In VS Code, open [progress/week1.md](../../progress/week1.md). Mark the completed **Day 5** and **Week 1 done** boxes `[x]`.
+Save with **Ctrl + S**.
 
 - [ ] `pytest exercises/week1` passes completely
 - [ ] `pytest checkpoints/week1` passes completely

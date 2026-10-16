@@ -105,6 +105,8 @@ if distance < 0.5:
 
 ### `else`: otherwise
 
+Keep `distance = 0.3` before this example in `playground.py`; expect `STOP!`.
+
 ```python
 if distance < 0.5:
     print("STOP!")
@@ -186,13 +188,19 @@ def is_hot_long(temp):
 
 ### Try it
 
-Write a function `needs_charging(battery, distance_to_dock)` that returns `True` if the battery is below 25, **or** if the battery is below 40 **and** the dock is more than 100 m away. Test it with a few calls and `print()`.
+In `playground.py`, write a function `needs_charging(battery, distance_to_dock)`. Return `True` if the battery is below 25.
+Also return `True` if the battery is below 40 **and** the dock is more than 100 m away.
+
+Below `needs_charging` in `playground.py`, add `print(needs_charging(20, 50))` (expected: `True`).
+Then add `print(needs_charging(50, 200))` (expected: `False`). Save with **Ctrl + S**. Run `python3 playground.py` in the terminal.
 
 ---
 
 ## 5. Indentation
 
-Python uses indentation (spaces at the start of a line) to know which lines belong together. Use **4 spaces**. VS Code inserts them when you press **Tab**.
+Python uses indentation (spaces at the start of a line) to know which lines belong together. Use **4 spaces**.
+VS Code inserts four spaces when you press **Tab**.
+For the example below, put `battery = 10` first in `playground.py`; the three print lines should appear.
 
 ```python
 if battery < 15:
@@ -224,15 +232,16 @@ Wrong indentation gives `IndentationError`, or worse: no error, but the wrong be
 All of today's functions are in **one file**. You write them one at a time. For each function, you:
 - replace `pass` with your code (keep the `def ...` line exactly as it is),
 - use `return` to give back the answer (not `print`),
-- try it yourself with `python3 -i`, then run only **its** tests with `-k`.
+- follow the load command, function calls, and `pytest` command in that exercise's numbered steps.
 
 **How to do the exercises:** do them **in order**, one at a time. Each exercise below has numbered steps. Follow them from 1 to the end, then go to the next exercise. If a step does not work, look at [How exercises work, Part 5](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
-All three functions are in `exercises/week1/w1d3_conditions.py`. Open it in VS Code now.
+All three functions are in [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py). Follow the numbered steps for each function below.
 
 ### Exercise 1 of 3: `battery_status(percent)`
 
-> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson and follow it while you do this exercise, especially [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
+> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson.
+> Follow [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
 **Your task:** return a status word for a battery level:
 
@@ -260,7 +269,11 @@ def signal_quality(rssi):
         return "WEAK"
 ```
 
-Type this example into `playground.py` in the course folder (open it with `code playground.py`), save it, and try it:
+Try the example: open `playground.py` with `code playground.py`.
+Type the example in VS Code. Save with **Ctrl + S**.
+Run `python3 -i playground.py` in the terminal.
+
+At `>>>`, type the calls below. The lines without `>>>` are the results you should see:
 
 ```python
 $ python3 -i playground.py
@@ -279,11 +292,12 @@ When you understand how the example works, do the steps below. Write your own co
 
 **Steps:**
 
-1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d3_conditions.py`. (Or press **Ctrl + P**, type `w1d3_conditions.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
-2. In `w1d3_conditions.py`, find `def battery_status(percent):`.
-3. Replace `pass` with an `if` / `elif` / `else` that returns the right word. Think about the **order** of your checks (section 3, "`elif`: more choices").
-4. Save: **Ctrl + S**.
-5. Try it yourself:
+1. **Open the file.** In VS Code, press **Ctrl + P**.
+   Type [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py) and press Enter. The file opens in the editor.
+2. Find `def battery_status(percent):`.
+3. Replace `pass` inside `battery_status` with an `if` / `elif` / `else` that returns the right word. Think about the **order** of your checks (section 3, "`elif`: more choices").
+4. Save with **Ctrl + S**. The **●** on the file tab disappears.
+5. In the terminal, type the command below. At `>>>`, type the function calls below. The lines without `>>>` show the expected results:
    ```bash
    python3 -i exercises/week1/w1d3_conditions.py
    ```
@@ -296,19 +310,23 @@ When you understand how the example works, do the steps below. Write your own co
    'INVALID'
    >>> exit()
    ```
-   ✔ You should get the answers shown. If you changed your code, `exit()` and start `python3 -i` again.
-6. Test it:
+   ✔ You should get the answers shown. After changing the file, save with **Ctrl + S**.
+   If Python is still open, type `exit()` at `>>>`.
+   Repeat the load command above to use the saved code.
+6. Test `battery_status` with [`test_w1d3.py`](../../exercises/week1/tests/test_w1d3.py):
    ```bash
    pytest exercises/week1/tests/test_w1d3.py -k battery_status
    ```
    ✔ You should see `10 passed, 11 deselected`.
-7. Check the box for `battery_status` in [progress/week1.md](../../progress/week1.md).
+7. In VS Code, open [progress/week1.md](../../progress/week1.md).
+   Change `[ ]` to `[x]` beside `battery_status`. Save with **Ctrl + S**.
 
 > `deselected` means: the tests of the **other** exercises in this file were not run. That is what `-k` does, and it is fine.
 
 ### Exercise 2 of 3: `can_launch(battery_percent, wind_speed, gps_ok)`
 
-> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson and follow it while you do this exercise, especially [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
+> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson.
+> Follow [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
 **Your task:** return `True` if a drone may take off, otherwise `False`. **All three** must be true: battery is 30 or more, wind is 8.0 or less, and `gps_ok` is `True`.
 
@@ -321,7 +339,11 @@ def can_drive(speed, max_speed, emergency_stop):
     return speed <= max_speed and not emergency_stop
 ```
 
-Type this example into `playground.py` in the course folder (open it with `code playground.py`), save it, and try it:
+Try the example: open `playground.py` with `code playground.py`.
+Type the example in VS Code. Save with **Ctrl + S**.
+Run `python3 -i playground.py` in the terminal.
+
+At `>>>`, type the calls below. The lines without `>>>` are the results you should see:
 
 ```python
 $ python3 -i playground.py
@@ -340,27 +362,30 @@ When you understand how the example works, do the steps below. Write your own co
 
 **Steps:**
 
-1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d3_conditions.py`. (Or press **Ctrl + P**, type `w1d3_conditions.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
-2. Find `def can_launch(...)` in the same file.
-3. Replace `pass`. You can do it in one line with `and` (section 4: "you can return it directly").
-4. Save: **Ctrl + S**.
-5. Try it with `python3 -i exercises/week1/w1d3_conditions.py`:
+1. **Open the file.** In VS Code, press **Ctrl + P**.
+   Type [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py) and press Enter. The file opens in the editor.
+2. Find `def can_launch(...)` in the file.
+3. Replace `pass` inside `can_launch` with your code. You can do it in one line with `and` (section 4: "you can return it directly").
+4. Save with **Ctrl + S**. The **●** on the file tab disappears.
+5. In the terminal, type `python3 -i exercises/week1/w1d3_conditions.py`. At `>>>`, type the calls below. The other lines show the expected results. Then type `exit()` at `>>>` to return to the terminal:
    ```python
    >>> can_launch(80, 3.5, True)
    True
    >>> can_launch(80, 3.5, False)
    False
    ```
-6. Test it:
+6. Test `can_launch` with [`test_w1d3.py`](../../exercises/week1/tests/test_w1d3.py):
    ```bash
    pytest exercises/week1/tests/test_w1d3.py -k can_launch
    ```
    ✔ You should see `5 passed, 16 deselected`.
-7. Check the box for `can_launch` in your checklist.
+7. In VS Code, open [`progress/week1.md`](../../progress/week1.md).
+   Change `[ ]` to `[x]` beside `can_launch`. Save with **Ctrl + S**.
 
 ### Exercise 3 of 3: `classify_distance(distance_m)`
 
-> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson and follow it while you do this exercise, especially [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
+> 📖 **Before you start:** open [How exercises work](../../docs/02-how-exercises-work.md) next to this lesson.
+> Follow [Part 4: a function exercise](../../docs/02-how-exercises-work.md#part-4-worked-example-a-function-exercise-days-35) and [Part 5: reading test results](../../docs/02-how-exercises-work.md#part-5-reading-test-results).
 
 **Your task:** a robot's LiDAR sees an obstacle. Return `"STOP"` if it is closer than 0.5 m, `"SLOW"` if it is closer than 2.0 m, otherwise `"GO"`.
 
@@ -378,7 +403,11 @@ def classify_temperature(temp_c):
         return "HOT"
 ```
 
-Type this example into `playground.py` in the course folder (open it with `code playground.py`), save it, and try it:
+Try the example: open `playground.py` with `code playground.py`.
+Type the example in VS Code. Save with **Ctrl + S**.
+Run `python3 -i playground.py` in the terminal.
+
+At `>>>`, type the calls below. The lines without `>>>` are the results you should see:
 
 ```python
 $ python3 -i playground.py
@@ -395,11 +424,12 @@ When you understand how the example works, do the steps below. Write your own co
 
 **Steps:**
 
-1. **Open the file.** In VS Code, in the file list on the left, click `exercises` → `week1` → `w1d3_conditions.py`. (Or press **Ctrl + P**, type `w1d3_conditions.py` and press Enter.) The file opens in the editor. Scroll down to the function for this exercise. If the file is already open, click its tab.
-2. Find `def classify_distance(distance_m):`.
-3. Replace `pass` with an `if` / `elif` / `else`.
-4. Save: **Ctrl + S**.
-5. Try it with `python3 -i`:
+1. **Open the file.** In VS Code, press **Ctrl + P**.
+   Type [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py) and press Enter. The file opens in the editor.
+2. Find `def classify_distance(distance_m):` in the file.
+3. Replace `pass` inside `classify_distance` with an `if` / `elif` / `else`.
+4. Save with **Ctrl + S**. The **●** on the file tab disappears.
+5. In the terminal, type `python3 -i exercises/week1/w1d3_conditions.py`. At `>>>`, type the calls below. The other lines show the expected results. Then type `exit()` at `>>>` to return to the terminal:
    ```python
    >>> classify_distance(1.2)
    'SLOW'
@@ -407,20 +437,23 @@ When you understand how the example works, do the steps below. Write your own co
    'SLOW'
    ```
    Exactly 0.5 is **not** closer than 0.5, so it is `'SLOW'`, not `'STOP'`.
-6. Test it:
+6. Test `classify_distance` with [`test_w1d3.py`](../../exercises/week1/tests/test_w1d3.py):
    ```bash
    pytest exercises/week1/tests/test_w1d3.py -k classify_distance
    ```
    ✔ You should see `6 passed, 15 deselected`.
-7. Check the box for `classify_distance` in your checklist.
+7. In VS Code, open [`progress/week1.md`](../../progress/week1.md).
+   Change `[ ]` to `[x]` beside `classify_distance`. Save with **Ctrl + S**.
 
 ### Finally: all of today's tests
+
+Run today's tests in [`test_w1d3.py`](../../exercises/week1/tests/test_w1d3.py):
 
 ```bash
 pytest exercises/week1/tests/test_w1d3.py
 ```
 
-✔ You should see **`21 passed`**. Check the "Tests pass" box in your checklist.
+✔ You should see **`21 passed`**. In VS Code, check the Day 3 "Tests pass" box in [`progress/week1.md`](../../progress/week1.md). Save with **Ctrl + S**.
 
 The tests use edge values like exactly `90`, `40`, `15`, `0.5`, `2.0` and `8.0`. If only one or two tests fail, check `<` vs `<=` and `>` vs `>=`.
 
@@ -428,7 +461,8 @@ The tests use edge values like exactly `90`, `40`, `15`, `0.5`, `2.0` and `8.0`.
 
 ## 8. Before you finish today
 
-Check off **Day 3** in your checklist: [progress/week1.md](../../progress/week1.md). Only start Day 4 when every Day 3 box is checked.
+In VS Code, open [progress/week1.md](../../progress/week1.md). Mark each completed Day 3 box `[x]`.
+Save with **Ctrl + S**. Only start Day 4 when every Day 3 box is checked.
 
 - [ ] `pytest exercises/week1/tests/test_w1d3.py` shows **21 passed**
 - [ ] I can explain the difference between `return` and `print`

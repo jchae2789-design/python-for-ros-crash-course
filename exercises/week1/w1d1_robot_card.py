@@ -8,8 +8,8 @@
 #
 # Hint: one print() for each line.
 #
-# Run it:   python3 exercises/week1/w1d1_robot_card.py
-# Test it:  pytest exercises/week1/tests/test_w1d1.py
+# Run (in the terminal): `python3 exercises/week1/w1d1_robot_card.py`
+# Test (in the terminal): `pytest exercises/week1/tests/test_w1d1.py`
 
 # TODO: write your code below this line
 

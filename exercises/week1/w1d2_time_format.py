@@ -13,8 +13,8 @@
 # Hints: // is whole-number division. % is the remainder.
 #        There are 3600 seconds in an hour and 60 in a minute.
 #
-# Run it:   python3 exercises/week1/w1d2_time_format.py
-# Test it:  pytest exercises/week1/tests/test_w1d2.py
+# Run (in the terminal): `python3 exercises/week1/w1d2_time_format.py`
+# Test (in the terminal): `pytest exercises/week1/tests/test_w1d2.py`
 
 # TODO: write your code below this line
 

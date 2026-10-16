@@ -10,6 +10,9 @@ You study **on your own**, at your own pace. Your mentor checks in with you ever
 
 👉 **Open [progress/week1.md](progress/week1.md) and follow it from top to bottom.**
 
+After setup, you tick the boxes in VS Code.
+See [Where to type things](docs/01-how-to-study.md#where-to-type-things).
+
 It is your checklist for the whole week: setup, reading, every lesson and exercise, in the right order. Check off each step yourself when it is done, and only move on when everything above is checked.
 
 The first steps on the checklist are:
@@ -36,11 +39,11 @@ Weeks 2–4 will appear in this repository when you are ready for them. See [Get
 
 | Day | Lesson | Exercises |
 |---|---|---|
-| 1 | [Terminal and your first program](lessons/week1/day1-terminal-and-first-program.md) | `exercises/week1/w1d1_*.py` |
+| 1 | [Terminal and your first program](lessons/week1/day1-terminal-and-first-program.md) | [`exercises/week1/w1d1_*.py`](exercises/week1/) |
 | 2 | [Variables, numbers and input](lessons/week1/day2-variables-numbers-input.md) | `exercises/week1/w1d2_*.py` |
-| 3 | [Making decisions: functions and if](lessons/week1/day3-functions-and-decisions.md) | `exercises/week1/w1d3_conditions.py` |
-| 4 | [Repeating: for and while loops](lessons/week1/day4-loops.md) | `exercises/week1/w1d4_loops.py` |
-| 5 | [Working with text + checkpoint](lessons/week1/day5-strings-and-checkpoint.md) | `exercises/week1/w1d5_strings.py`, [checkpoint](checkpoints/week1/README.md) |
+| 3 | [Making decisions: functions and if](lessons/week1/day3-functions-and-decisions.md) | [`exercises/week1/w1d3_conditions.py`](exercises/week1/w1d3_conditions.py) |
+| 4 | [Repeating: for and while loops](lessons/week1/day4-loops.md) | [`exercises/week1/w1d4_loops.py`](exercises/week1/w1d4_loops.py) |
+| 5 | [Working with text + checkpoint](lessons/week1/day5-strings-and-checkpoint.md) | [`exercises/week1/w1d5_strings.py`](exercises/week1/w1d5_strings.py), [checkpoint](checkpoints/week1/README.md) |
 
 ---
 
@@ -52,11 +55,11 @@ The class is **one path**. You always do the next step, never skip ahead:
 Setup → Day 1 → Day 2 → Day 3 → Day 4 → Day 5 + checkpoint → Week 2 → ... → Week 4 → ROS 2
 ```
 
-Your checklist in `progress/` tells you exactly where you are on this path.
+Your checklist in [`progress/`](progress/) tells you exactly where you are on this path.
 
 ### Step 1: Find where you are
 
-Open your checklist for the current week, for example [progress/week1.md](progress/week1.md). **Your next step is the first box that is not checked.**
+In VS Code, open your checklist for the current week, for example [progress/week1.md](progress/week1.md). **Your next step is the first box that is not checked.**
 
 ```markdown
 - [x] Read the lesson and typed every example myself
@@ -67,18 +70,19 @@ Open your checklist for the current week, for example [progress/week1.md](progre
 
 ### Step 2: Do that step
 
-Follow the link or instructions in the box. For exercises, see [How exercises work](docs/02-how-exercises-work.md).
+In [`progress/week1.md`](progress/week1.md), read the instructions beside the first unchecked box. Open the linked guide or lesson in the browser or VS Code. For exercises, see [How exercises work](docs/02-how-exercises-work.md).
 
 ### Step 3: Check that it is really done
 
 - **Reading a lesson:** you typed and ran every example.
 - **An exercise:** you tried it yourself, and it does what the instructions say.
-- **A "Tests pass" box:** run the command in the box. The result must match **exactly**, for example `21 passed`.
-- **An "I can explain…" box:** say it out loud without looking. If you can't, read that part of the lesson again.
+- **A "Tests pass" box:** type the `pytest` command beside that box. The result must match **exactly**, for example `21 passed`.
+- **An "I can explain…" box:** say the concept named beside that box out loud to yourself without looking at the lesson. If you can't, read that part of the lesson again.
 
 ### Step 4: Check the box
 
-In VS Code, change `[ ]` to `[x]` (lowercase x, no spaces) and save with **Ctrl + S**:
+In VS Code, open [`progress/week1.md`](progress/week1.md). Change `[ ]` to `[x]` beside the completed step (lowercase x, no spaces).
+Save with **Ctrl + S**:
 
 ```markdown
 - [ ] Exercise `exercises/week1/w1d1_hello.py`      ← before
@@ -91,7 +95,7 @@ Then go back to **Step 1**.
 
 ### End of every day
 
-The last boxes of each day are: write your daily log, commit and push, and check in with your mentor. Commit your checklist together with your code:
+The last boxes of each day are: write your daily log, commit and push, and check in with your mentor. Save your code, daily log, and [`progress/week1.md`](progress/week1.md). Then type these commands in order:
 
 ```bash
 git add .
@@ -115,9 +119,9 @@ A week is finished when:
 
 Then get the next week:
 
-1. On GitHub, open your fork and click **Sync fork** → **Update branch**.
-2. In the terminal, run `git pull`.
-3. Open the new checklist (for example `progress/week2.md`) and start at the first box.
+1. In your browser, open your fork on GitHub and click **Sync fork** → **Update branch**.
+2. In the terminal type `git pull`. The new week's files should appear in VS Code.
+3. In VS Code, open the new checklist (for example `progress/week2.md`) and follow the first unchecked step.
 
 ### A normal day
 
@@ -136,7 +140,7 @@ End of day  Write your daily log, check your boxes, commit and push.
 - **Try for 20 minutes, then ask.** Being stuck for 20 minutes is normal. Being stuck for 2 hours is a waste. Write the question in your log and ask your mentor.
 - **AI tools** (ChatGPT, Claude, Copilot, …): you may ask them to **explain an error message or a concept**. You may **not** ask them to write your exercise or checkpoint code. Your mentor will ask you to explain your code line by line.
 - **Push every day.** Your mentor sees your progress on GitHub.
-- **Never edit the `tests/` folders.** Change your code until the tests pass, not the other way around.
+- **Never edit the [`tests/`](exercises/week1/tests/) folders.** Change your code until the tests pass, not the other way around.
 
 ---
 
@@ -154,6 +158,9 @@ progress/           your checklists: one per week, follow them in order
 ```
 
 ## Useful commands
+
+These commands run [`Day 3 tests`](exercises/week1/tests/test_w1d3.py), [`Week 1 exercises`](exercises/week1/), or [`checkpoint tests`](checkpoints/week1/).
+The comments name the tests each command runs. After completing Week 1, expect `21 passed`, `64 passed`, `11 passed`, or `75 passed`, respectively.
 
 ```bash
 pytest exercises/week1/tests/test_w1d3.py   # test one day

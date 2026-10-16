@@ -19,7 +19,7 @@ print(robot_name)
 print(speed)
 ```
 
-`=`는 **"오른쪽 값을 왼쪽 이름에 저장하세요"**라는 뜻이에요. 수학에서처럼 "같다"라는 뜻이 아니에요.
+`=`는 **"오른쪽 값을 왼쪽 이름에 저장한다"**는 뜻이에요. 수학에서처럼 "같다"라는 뜻이 아니에요.
 
 변수의 값은 나중에 바꿀 수 있어요.
 
@@ -269,7 +269,7 @@ Travel time: 2.50 minutes
 **진행 순서:**
 
 1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
-   VS Code 편집기에서 [`exercises/week1/w1d2_battery_runtime.py`](../../exercises/week1/w1d2_battery_runtime.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d2_battery_runtime.py`](../../exercises/week1/w1d2_battery_runtime.py)를 클릭하세요.
+   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d2_battery_runtime.py`](../../exercises/week1/w1d2_battery_runtime.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d2_battery_runtime.py`](../../exercises/week1/w1d2_battery_runtime.py)를 클릭하세요.
 2. VS Code 편집기에서 `w1d2_battery_runtime.py` 맨 위의 안내를 읽으세요.
 3. VS Code 편집기에서 `w1d2_battery_runtime.py`의 `TODO` 아래에 코드를 작성하세요. 다음 내용이 필요해요.
    - 각각 `int()`로 감싼 `input()` 두 번(이 수업의 5절)
@@ -336,7 +336,7 @@ Length (cm): 275
 **진행 순서:**
 
 1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
-   VS Code 편집기에서 [`exercises/week1/w1d2_time_format.py`](../../exercises/week1/w1d2_time_format.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d2_time_format.py`](../../exercises/week1/w1d2_time_format.py)를 클릭하세요.
+   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d2_time_format.py`](../../exercises/week1/w1d2_time_format.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d2_time_format.py`](../../exercises/week1/w1d2_time_format.py)를 클릭하세요.
 2. VS Code 편집기에서 `w1d2_time_format.py` 맨 위의 안내를 읽으세요.
 3. VS Code 편집기에서 `w1d2_time_format.py`의 `TODO` 아래에 코드를 작성하세요. `//`와 `%`를 사용하세요(이 수업 3절의 "`//`와 `%` 함께 사용하기"). 1시간은 3600초이고 1분은 60초예요.
    도움말: 먼저 종이에 3725로 계산해 보세요. 몇 시간인가요? 남은 초는 얼마인가요? 남은 초에서 몇 분을 만들 수 있나요?

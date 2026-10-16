@@ -62,7 +62,7 @@ VS Code 터미널에 `python3`를 입력하세요. 파이썬 `>>>` 프롬프트�
 | `.isalpha()` | 문자로만 되어 있나요? | `"RR".isalpha()` | `True` |
 | `.isupper()` | 모든 문자가 대문자인가요? | `"RR".isupper()` | `True` |
 
-문자열 자체는 **바꿀 수 없어요**. 중요한 점이에요. 메서드는 **새** 문자열을 돌려줘요. VS Code에서 `playground.py`에 아래처럼 새 문자열을 `command`에 다시 저장하세요.
+중요해요. 문자열 자체는 **바꿀 수 없어요**. 메서드는 **새** 문자열을 돌려줘요. VS Code에서 `playground.py`에 아래처럼 새 문자열을 `command`에 다시 저장하세요.
 
 ```python
 command = "  FORWARD  "
@@ -181,7 +181,7 @@ $ python3 -i playground.py
 **진행 순서:**
 
 1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
-   VS Code 편집기에서 [`exercises/week1/w1d5_strings.py`](../../exercises/week1/w1d5_strings.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d5_strings.py`](../../exercises/week1/w1d5_strings.py)를 클릭하세요.
+   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d5_strings.py`](../../exercises/week1/w1d5_strings.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d5_strings.py`](../../exercises/week1/w1d5_strings.py)를 클릭하세요.
 2. VS Code 편집기에서 `w1d5_strings.py`의 `clean_command` 안에 있는 `pass`를 코드로 바꾸세요. 3절의 메서드 두 개를 이어 붙이면 돼요.
 3. VS Code 편집기에서 **Ctrl + S**로 `w1d5_strings.py`를 저장하세요. 파일 탭의 **●**가 사라져요.
 
@@ -239,7 +239,7 @@ $ python3 -i playground.py
 **진행 순서:**
 
 1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
-   VS Code 편집기에서 [`exercises/week1/w1d5_strings.py`](../../exercises/week1/w1d5_strings.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d5_strings.py`](../../exercises/week1/w1d5_strings.py)를 클릭하세요.
+   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d5_strings.py`](../../exercises/week1/w1d5_strings.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d5_strings.py`](../../exercises/week1/w1d5_strings.py)를 클릭하세요.
 2. VS Code 편집기에서 `w1d5_strings.py`의 `make_topic_name` 안에 있는 `pass`를 코드로 바꾸세요. 각 부분을 `.lower()`와 `.replace(" ", "_")`로 정리한 뒤 `"/"`로 이어 붙이세요(3절의 "문자열 이어 붙이기").
 3. VS Code 편집기에서 **Ctrl + S**로 `w1d5_strings.py`를 저장하세요. 파일 탭의 **●**가 사라져요.
 
@@ -247,7 +247,7 @@ $ python3 -i playground.py
    **파이썬 `>>>` 프롬프트**에 위의 **할 일** 아래에 나온 `make_topic_name(...)` 호출을 입력하고 결과를 비교하세요.
 
    `>>>`에 `exit()`을 입력해서 VS Code 터미널로 돌아오세요.
-4. VS Code 터미널에서 [`test_w1d5.py`](../../exercises/week1/tests/test_w1d5.py)로 `make_topic_name`를 테스트하세요.
+4. VS Code 터미널에서 [`test_w1d5.py`](../../exercises/week1/tests/test_w1d5.py)로 `make_topic_name`을 테스트하세요.
    ```bash
    pytest exercises/week1/tests/test_w1d5.py -k make_topic_name
    ```
@@ -310,7 +310,7 @@ False
 **진행 순서:**
 
 1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
-   VS Code 편집기에서 [`exercises/week1/w1d5_strings.py`](../../exercises/week1/w1d5_strings.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d5_strings.py`](../../exercises/week1/w1d5_strings.py)를 클릭하세요.
+   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d5_strings.py`](../../exercises/week1/w1d5_strings.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d5_strings.py`](../../exercises/week1/w1d5_strings.py)를 클릭하세요.
 2. VS Code 편집기에서 `w1d5_strings.py`의 `is_valid_robot_id` 안에 있는 `pass`를 코드로 바꾸세요. **다음 순서대로** 확인하세요.
    1. VS Code 편집기에서 `w1d5_strings.py`에 `len(robot_id)`가 정확히 7인지 확인하는 코드를 작성하세요. 7이 아니면 바로 `return False`로 반환하세요. 길이를 먼저 확인하지 않으면 짧은 문자열에서 `robot_id[2]` 때문에 오류가 날 수 있어요.
    2. VS Code 편집기에서 `w1d5_strings.py`에 앞의 두 글자(`robot_id[0:2]`)가 문자**이면서** 대문자인지 확인하는 코드를 작성하세요.
@@ -375,7 +375,7 @@ $ python3 -i playground.py
 **진행 순서:**
 
 1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
-   VS Code 편집기에서 [`exercises/week1/w1d5_strings.py`](../../exercises/week1/w1d5_strings.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d5_strings.py`](../../exercises/week1/w1d5_strings.py)를 클릭하세요.
+   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d5_strings.py`](../../exercises/week1/w1d5_strings.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d5_strings.py`](../../exercises/week1/w1d5_strings.py)를 클릭하세요.
 2. VS Code 편집기에서 `w1d5_strings.py`의 `count_char` 안에 있는 `pass`를 코드로 바꾸세요. 문자열을 반복문으로 살펴보고(5절) 누적 방법으로 개수를 세세요.
 3. VS Code 편집기에서 **Ctrl + S**로 `w1d5_strings.py`를 저장하세요. 파일 탭의 **●**가 사라져요.
 

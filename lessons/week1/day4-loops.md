@@ -238,7 +238,7 @@ $ python3 -i playground.py
 **진행 순서:**
 
 1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
-   VS Code 편집기에서 [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 클릭하세요.
+   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 클릭하세요.
 2. VS Code 편집기에서 `w1d4_loops.py`의 `countdown` 안에 있는 `pass`를 코드로 바꾸세요. 2절의 "문자열 만들기" 방법을 사용하세요. `text = ""`로 시작하세요.
    거꾸로 세는 `range`를 사용하는 `for` 문 안에서 숫자를 붙이세요(1절).
    끝에 `"GO!"`를 붙이세요. 숫자를 문자열로 바꿀 때는 `str(i)`를 사용하세요.
@@ -248,7 +248,7 @@ $ python3 -i playground.py
    **파이썬 `>>>` 프롬프트**에 위의 **할 일** 아래에 나온 `countdown(...)` 호출을 입력하고 결과를 비교하세요.
 
    `>>>`에 `exit()`을 입력해서 VS Code 터미널로 돌아오세요.
-4. VS Code 터미널에서 [`test_w1d4.py`](../../exercises/week1/tests/test_w1d4.py)로 `countdown`를 테스트하세요.
+4. VS Code 터미널에서 [`test_w1d4.py`](../../exercises/week1/tests/test_w1d4.py)로 `countdown`을 테스트하세요.
    ```bash
    pytest exercises/week1/tests/test_w1d4.py -k countdown
    ```
@@ -304,7 +304,7 @@ $ python3 -i playground.py
 **진행 순서:**
 
 1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
-   VS Code 편집기에서 [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 클릭하세요.
+   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 클릭하세요.
 2. VS Code 편집기에서 `w1d4_loops.py`의 `sum_to` 안에 있는 `pass`를 코드로 바꾸세요. 2절에서 배운 누적 방법 그대로예요. `n`을 포함하려면 `range(1, n + 1)`을 사용한다는 점을 기억하세요.
 3. VS Code 편집기에서 **Ctrl + S**로 `w1d4_loops.py`를 저장하세요. 파일 탭의 **●**가 사라져요.
 
@@ -367,7 +367,7 @@ $ python3 -i playground.py
 **진행 순서:**
 
 1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
-   VS Code 편집기에서 [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 클릭하세요.
+   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 클릭하세요.
 2. VS Code 편집기에서 `w1d4_loops.py`의 `steps_until_low`를 읽으세요. **먼저 종이에** 2절처럼 `steps_until_low(100, 10, 50)`의 표를 그리세요. 열 이름은 *단계*와 *배터리*로 하세요. 배터리가 50 이하가 될 때까지 세면 5가 나와야 해요.
 3. VS Code 편집기에서 `w1d4_loops.py`의 `steps_until_low` 안에 있는 `pass`를 코드로 바꾸세요. `while` 문을 사용하세요(3절). 배터리가 `low_level`보다 큰 **동안** 계속 반복해요. 반복문 안에서 배터리 소모량을 빼고 단계 수를 세는 변수에 1을 더하세요.
 4. VS Code 편집기에서 **Ctrl + S**로 `w1d4_loops.py`를 저장하세요. 파일 탭의 **●**가 사라져요.
@@ -431,7 +431,7 @@ $ python3 -i playground.py
 **진행 순서:**
 
 1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
-   VS Code 편집기에서 [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 클릭하세요.
+   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 클릭하세요.
 2. VS Code 편집기에서 `w1d4_loops.py`의 `count_multiples` 안에 있는 `pass`를 코드로 바꾸세요. 1부터 `limit`까지 반복하며 `x % k == 0`인 숫자의 개수를 세세요. 2절의 개수 세기 예제와 같은 방법이에요.
 3. VS Code 편집기에서 **Ctrl + S**로 `w1d4_loops.py`를 저장하세요. 파일 탭의 **●**가 사라져요.
 

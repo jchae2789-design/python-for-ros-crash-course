@@ -200,7 +200,7 @@ def is_hot_long(temp):
 
 파이썬은 들여쓰기(줄 앞의 공백)로 어떤 줄들이 한 묶음인지 구분해요. **공백 4칸**을 사용하세요.
 VS Code에서는 **Tab**을 누르면 공백 4칸이 들어가요.
-아래 예제는 `playground.py` 맨 앞에 `battery = 10`을 넣으세요. 세 줄이 모두 출력돼야 해요.
+아래 예제를 실행할 때는 `playground.py` 맨 앞에 `battery = 10`을 넣으세요. 세 줄이 모두 출력돼야 해요.
 
 ```python
 if battery < 15:
@@ -293,7 +293,7 @@ $ python3 -i playground.py
 **진행 순서:**
 
 1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
-   VS Code 편집기에서 [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py)를 클릭하세요.
+   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py)를 클릭하세요.
 2. VS Code 편집기에서 `w1d3_conditions.py`의 `def battery_status(percent):`를 찾으세요.
 3. VS Code 편집기에서 `w1d3_conditions.py`의 `battery_status` 안에 있는 `pass`를 알맞은 단어를 반환하는 `if` / `elif` / `else`로 바꾸세요. 조건을 확인하는 **순서**를 생각하세요(3절의 "`elif`: 조건을 더 추가하기").
 4. VS Code 편집기에서 **Ctrl + S**로 `w1d3_conditions.py`를 저장하세요. 파일 탭의 **●**가 사라져요.
@@ -363,7 +363,7 @@ False
 **진행 순서:**
 
 1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
-   VS Code 편집기에서 [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py)를 클릭하세요.
+   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py)를 클릭하세요.
 2. VS Code 편집기에서 `w1d3_conditions.py`의 `def can_launch(...)`를 찾으세요.
 3. VS Code 편집기에서 `w1d3_conditions.py`의 `can_launch` 안에 있는 `pass`를 코드로 바꾸세요. `and`를 사용하면 한 줄로 작성할 수 있어요(4절의 "바로 반환할 수 있어요" 참고).
 4. VS Code 편집기에서 **Ctrl + S**로 `w1d3_conditions.py`를 저장하세요. 파일 탭의 **●**가 사라져요.
@@ -425,7 +425,7 @@ $ python3 -i playground.py
 **진행 순서:**
 
 1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
-   VS Code 편집기에서 [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py)를 클릭하세요.
+   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d3_conditions.py`](../../exercises/week1/w1d3_conditions.py)를 클릭하세요.
 2. VS Code 편집기에서 `w1d3_conditions.py`의 `def classify_distance(distance_m):`를 찾으세요.
 3. VS Code 편집기에서 `w1d3_conditions.py`의 `classify_distance` 안에 있는 `pass`를 `if` / `elif` / `else`로 바꾸세요.
 4. VS Code 편집기에서 **Ctrl + S**로 `w1d3_conditions.py`를 저장하세요. 파일 탭의 **●**가 사라져요.

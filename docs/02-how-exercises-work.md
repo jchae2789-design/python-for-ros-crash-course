@@ -293,7 +293,7 @@ python3 -i exercises/week1/w1d3_conditions.py
 
 | 화면에 나온 내용 | 의미 |
 |---|---|
-| `5 passed` | 모두 통과했어요 🎉 |
+| `5 passed` | 모두 통과했어요 ✅ |
 | `1 failed, 4 passed` | 거의 다 됐어요. 실패한 하나를 고치세요 |
 | `5 failed` | 아직 모두 실패해요. 시작 전에는 정상이에요. 이미 풀었다면 실행 중 오류나 빠진 `return`을 찾아보세요 |
 | `1 error` | 테스트가 파일을 **불러오지도** 못했어요. `SyntaxError`, `IndentationError`, `ImportError`, `OSError ... reading from stdin`을 찾아보세요 |
@@ -302,7 +302,9 @@ python3 -i exercises/week1/w1d3_conditions.py
 
 ```
 FAILED exercises/week1/tests/test_w1d3.py::test_battery_status[89-OK]
-                     └── 테스트 파일      └── 확인할 대상    └── 입력값과 기대한 답
+       │                                   │                   └ 입력값과 기대한 답
+       │                                   └ 확인할 대상
+       └ 테스트 파일
 ```
 
 `[89-OK]`는 테스트가 `89`를 사용했고 `OK`를 기대했다는 뜻이에요.
@@ -313,7 +315,8 @@ FAILED exercises/week1/tests/test_w1d3.py::test_battery_status[89-OK]
 
 ```
 E       assert 'FULL' == 'OK'
-               ↑ 작성한 코드의 값   ↑ 기대한 값
+               │         └ 기대한 값
+               └ 작성한 코드의 값
 ```
 
 **왼쪽은 작성한 코드가 내놓은 값이고, 오른쪽은 기대한 값이에요.**

@@ -1,0 +1,17 @@
+# Mentor-only reference solutions (never publish)
+/solutions/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Task worktrees
+/.worktrees/

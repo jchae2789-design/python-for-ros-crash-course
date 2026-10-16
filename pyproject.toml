@@ -1,0 +1,9 @@
+[tool.pytest.ini_options]
+# Lets each test import the exercise files in its week folder.
+pythonpath = [
+    "exercises/week1",
+    "checkpoints/week1",
+]
+testpaths = ["exercises", "checkpoints"]
+addopts = "--import-mode=importlib -q"
+norecursedirs = [".git", ".venv", "solutions", ".worktrees"]

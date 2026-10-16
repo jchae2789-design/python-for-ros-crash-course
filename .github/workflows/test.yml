@@ -1,0 +1,24 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        # Add a week here when it is published.
+        week: [1]
+    name: week ${{ matrix.week }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Run week ${{ matrix.week }} tests
+        run: pytest -rA exercises/week${{ matrix.week }} checkpoints/week${{ matrix.week }}

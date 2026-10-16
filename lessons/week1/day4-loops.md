@@ -1,8 +1,8 @@
 # 1주차 · 4일차: 반복하기, `for` 문과 `while` 문
 
-**배울 내용:** 정해진 횟수만큼 반복하는 `for` 문, 조건이 바뀔 때까지 반복하는 `while` 문, 반복문을 멈추거나 일부를 건너뛰는 방법을 배워요.
+**배울 내용:** 정해진 횟수만큼 반복하는 `for` 문, 조건이 바뀔 때까지 반복하는 `while` 문, 반복문을 멈추거나 일부를 건너뛰는 방법을 배웁니다.
 
-**로봇을 다룰 때 필요한 이유:** 로봇 프로그램은 큰 반복문 하나와 같아요. *센서 읽기 → 판단하기 → 움직이기 → 반복하기*를 1초에도 여러 번 해요. ROS에서는 이 반복문이 `rclpy.spin()` 안에 숨어 있지만, 여전히 반복문이에요.
+**로봇을 다룰 때 필요한 이유:** 로봇 프로그램은 큰 반복문 하나와 같습니다. *센서 읽기 → 판단하기 → 움직이기 → 반복하기*를 1초에도 여러 번 합니다. ROS에서는 이 반복문이 `rclpy.spin()` 안에 숨어 있지만, 여전히 반복문입니다.
 
 ---
 
@@ -21,9 +21,9 @@ Reading sensor 3
 Reading sensor 4
 ```
 
-- `range(5)`는 `0, 1, 2, 3, 4`를 차례로 내놓아요. **0에서 시작하고 5 직전에 끝나요.**
-- 반복할 때마다 `i`에 다음 숫자가 들어가요.
-- 각 숫자마다 들여쓴 줄들이 한 번씩 실행돼요.
+- `range(5)`는 `0, 1, 2, 3, 4`를 차례로 내놓습니다. **0에서 시작하고 5 직전에 끝납니다.**
+- 반복할 때마다 `i`에 다음 숫자가 들어갑니다.
+- 각 숫자마다 들여쓴 줄들이 한 번씩 실행됩니다.
 
 ### `range`의 여러 사용 방법
 
@@ -34,24 +34,24 @@ Reading sensor 4
 | `range(0, 10, 2)` | 0, 2, 4, 6, 8 (2씩 증가) |
 | `range(5, 0, -1)` | 5, 4, 3, 2, 1 (거꾸로 세기) |
 
-끝 값은 **절대** 포함되지 않아요. `n`까지 포함하려면 `range(1, n + 1)`을 쓰세요.
+끝 값은 **절대** 포함되지 않습니다. `n`까지 포함하려면 `range(1, n + 1)`을 쓰세요.
 
 ### 직접 해 보기
 
 `playground.py`에 10부터 0까지 2씩 줄여 가며 출력하는 반복문을 작성하세요.
-**Ctrl + S**로 저장하고 VS Code 터미널에서 `python3 playground.py`를 실행하세요. 예상 숫자는 `10 8 6 4 2 0`이에요(한 줄에 하나씩 출력해도 돼요).
+**Ctrl + S**로 저장하고 VS Code 터미널에서 `python3 playground.py`를 실행하세요. 예상 숫자는 `10 8 6 4 2 0`입니다(한 줄에 하나씩 출력해도 됩니다).
 
 ---
 
 ## 2. 값을 누적하는 방법
 
-여러 값을 차례로 살펴보며 결과 **하나**를 만드는 일은 아주 흔해요. 반복문 **앞에서** 빈 결과로 시작하고, 반복문 **안에서** 결과를 갱신해요.
+여러 값을 차례로 살펴보며 결과 **하나**를 만드는 일은 아주 흔합니다. 반복문 **앞에서** 빈 결과로 시작하고, 반복문 **안에서** 결과를 갱신합니다.
 
 ```python
-total = 0                    # 1. 반복문 앞에서 시작값을 정해요
+total = 0                    # 1. 반복문 앞에서 시작값을 정합니다
 for i in range(1, 4):
-    total = total + i        # 2. 반복문 안에서 갱신해요
-print(total)                 # 3. 반복문 뒤에서 사용해요 → 6
+    total = total + i        # 2. 반복문 안에서 갱신합니다
+print(total)                 # 3. 반복문 뒤에서 사용합니다 → 6
 ```
 
 단계별로 살펴보세요.
@@ -63,7 +63,7 @@ print(total)                 # 3. 반복문 뒤에서 사용해요 → 6
 | 2 | 2 | 3 |
 | 3 | 3 | 6 |
 
-같은 방법으로 **개수를 셀 수도** 있어요.
+같은 방법으로 **개수를 셀 수도** 있습니다.
 
 ```python
 count = 0
@@ -73,7 +73,7 @@ for i in range(1, 11):
 print(count)                 # 5
 ```
 
-**문자열을 만들 때도** 사용할 수 있어요.
+**문자열을 만들 때도** 사용할 수 있습니다.
 
 ```python
 text = ""
@@ -84,13 +84,13 @@ print(text)                  # "beep beep beep "
 
 숫자를 문자열에 붙일 때는 `str(i)`를 사용하세요: `text = text + str(i)`.
 
-> **짧게 쓰기:** `total += i`는 `total = total + i`와 같은 뜻이에요. 둘 다 써도 돼요.
+> **짧게 쓰기:** `total += i`는 `total = total + i`와 같은 뜻입니다. 둘 다 써도 됩니다.
 
 ---
 
 ## 3. `while`: 조건이 True인 동안 반복하기
 
-반복 횟수를 미리 **알 수 없을 때** `while`을 사용해요.
+반복 횟수를 미리 **알 수 없을 때** `while`을 사용합니다.
 
 ```python
 battery = 100
@@ -107,14 +107,14 @@ Working... battery 40%
 Going to charger
 ```
 
-파이썬은 매번 반복하기 전에 조건을 확인해요. 조건이 `False`이면 반복문이 끝나요.
+파이썬은 매번 반복하기 전에 조건을 확인합니다. 조건이 `False`이면 반복문이 끝납니다.
 
-⚠️ **반복문 안에서 조건에 영향을 주는 값이 바뀌어야 해요.** 그렇지 않으면 영원히 반복해요.
+⚠️ **반복문 안에서 조건에 영향을 주는 값이 바뀌어야 합니다.** 그렇지 않으면 영원히 반복합니다.
 
 ```python
 battery = 100
 while battery > 20:
-    print("Working...")      # battery가 바뀌지 않으므로 끝나지 않아요!
+    print("Working...")      # battery가 바뀌지 않으므로 끝나지 않습니다!
 ```
 
 `while battery > 20` 반복문이 `Working...`을 계속 출력하면 VS Code 터미널에서 **Ctrl + C**를 눌러 프로그램을 멈추세요.
@@ -123,10 +123,10 @@ while battery > 20:
 
 ## 4. `break`와 `continue`
 
-- `break`는 반복문을 **즉시** 빠져나와요.
-- `continue`는 이번 반복의 나머지 부분을 건너뛰고 **다음** 반복을 시작해요.
+- `break`는 반복문을 **즉시** 빠져나옵니다.
+- `continue`는 이번 반복의 나머지 부분을 건너뛰고 **다음** 반복을 시작합니다.
 
-계속 반복하다가 할 일을 마치면 `break`로 나오는 방식을 자주 사용해요. 메뉴 프로그램도 이렇게 동작해요(주간 과제에서 필요해요!).
+계속 반복하다가 할 일을 마치면 `break`로 나오는 방식을 자주 사용합니다. 메뉴 프로그램도 이렇게 동작합니다(주간 과제에서 필요합니다!).
 
 ```python
 while True:
@@ -137,12 +137,12 @@ while True:
 print("Bye")
 ```
 
-`continue`로 잘못된 센서 값을 건너뛰는 예제예요.
+`continue`로 잘못된 센서 값을 건너뛰는 예제입니다.
 
 ```python
 for reading in range(-2, 4):
     if reading < 0:
-        continue             # 음수는 센서 오류이므로 건너뛰어요
+        continue             # 음수는 센서 오류이므로 건너뜁니다
     print("Valid reading:", reading)
 ```
 
@@ -156,17 +156,17 @@ def count_even(limit):
     for i in range(1, limit + 1):
         if i % 2 == 0:
             count = count + 1
-    return count             # 반복문 안이 아니라 반복문이 끝난 뒤에 반환해요!
+    return count             # 반복문 안이 아니라 반복문이 끝난 뒤에 반환합니다!
 
 
 print(count_even(10))        # 5
 ```
 
-⚠️ `return`의 들여쓰기를 확인하세요. 반복문 안으로 들여쓰면 첫 번째 반복 직후 함수가 끝나요.
+⚠️ `return`의 들여쓰기를 확인하세요. 반복문 안으로 들여쓰면 첫 번째 반복 직후 함수가 끝납니다.
 
 ---
 
-## 6. `for`와 `while` 중 무엇을 쓸까요?
+## 6. `for`와 `while` 중 무엇을 써야 합니까?
 
 | 사용할 문법 | 사용 시점 | 예 |
 |---|---|---|
@@ -179,18 +179,18 @@ print(count_even(10))        # 5
 
 | 실수 | 해결 방법 |
 |---|---|
-| 한 번 덜 반복해요 | `range`는 끝 값 **직전에** 멈춰요. `range(1, n + 1)`을 사용하세요 |
-| 프로그램이 끝나지 않아요 | `while` 조건이 False가 되지 않아요. VS Code 터미널에서 **Ctrl + C**를 누르고, VS Code의 `playground.py`에서 조건에 쓰는 변수가 바뀌도록 반복문을 고치세요 |
-| 결과가 항상 0이거나 틀려요 | 시작값(`total = 0`)이 반복문 안에 있어서 매번 초기화돼요. VS Code 편집기에서 `playground.py`의 `total = 0`을 반복문 **앞으로** 옮기세요 |
-| 첫 반복 후 함수가 반환해요 | `return`이 반복문 안으로 들여써져 있어요. VS Code 편집기에서 작성 중인 함수의 `return`을 반복문 밖으로 옮기세요 |
+| 한 번 덜 반복합니다 | `range`는 끝 값 **직전에** 멈춥니다. `range(1, n + 1)`을 사용하세요 |
+| 프로그램이 끝나지 않습니다 | `while` 조건이 False가 되지 않습니다. VS Code 터미널에서 **Ctrl + C**를 누르고, VS Code의 `playground.py`에서 조건에 쓰는 변수가 바뀌도록 반복문을 고치세요 |
+| 결과가 항상 0이거나 틀립니다 | 시작값(`total = 0`)이 반복문 안에 있어서 매번 초기화됩니다. VS Code 편집기에서 `playground.py`의 `total = 0`을 반복문 **앞으로** 옮기세요 |
+| 첫 반복 후 함수가 반환합니다 | `return`이 반복문 안으로 들여써져 있습니다. VS Code 편집기에서 작성 중인 함수의 `return`을 반복문 밖으로 옮기세요 |
 
 ---
 
 ## 8. 연습 문제
 
-**연습 문제 진행 방법:** 한 번에 하나씩 **순서대로** 푸세요. 아래의 각 연습 문제에는 번호가 붙은 진행 순서가 있어요. 1번부터 끝까지 따라 한 뒤 다음 연습 문제로 넘어가세요. 잘되지 않는 단계가 있으면 [연습 문제 진행 방법 5부](../../docs/02-how-exercises-work.md#5부-테스트-결과-읽기)를 참고하세요.
+**연습 문제 진행 방법:** 한 번에 하나씩 **순서대로** 푸세요. 아래의 각 연습 문제에는 번호가 붙은 진행 순서가 있습니다. 1번부터 끝까지 따라 한 뒤 다음 연습 문제로 넘어가세요. 잘되지 않는 단계가 있으면 [연습 문제 진행 방법 5부](../../docs/02-how-exercises-work.md#5부-테스트-결과-읽기)를 참고하세요.
 
-네 함수는 모두 [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)에 있어요. 아래에서 각 함수의 번호가 붙은 진행 순서를 따르세요.
+네 함수는 모두 [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)에 있습니다. 아래에서 각 함수의 번호가 붙은 진행 순서를 따르세요.
 
 ### 연습 문제 1/4: `countdown(n)`
 
@@ -206,9 +206,9 @@ print(count_even(10))        # 5
 'GO!'
 ```
 
-**따라 해 볼 예제:** 비슷한 문제예요(이 연습 문제의 정답은 아니에요).
+**따라 해 볼 예제:** 비슷한 문제입니다(이 연습 문제의 정답은 아닙니다).
 
-이 함수는 거꾸로 세는 대신 숫자를 **올려서** 세고 `DONE`으로 끝나요. 연습 문제에서는 어떤 `range(...)`를 써야 **거꾸로** 셀 수 있을지 생각하세요(1절).
+이 함수는 거꾸로 세는 대신 숫자를 **올려서** 세고 `DONE`으로 끝납니다. 연습 문제에서는 어떤 `range(...)`를 써야 **거꾸로** 셀 수 있을지 생각하세요(1절).
 
 ```python
 def count_up(n):
@@ -222,7 +222,7 @@ def count_up(n):
 VS Code 편집기에서 `playground.py`에 예제를 입력하세요. **Ctrl + S**로 `playground.py`를 저장하세요.
 VS Code 터미널에서 `python3 -i playground.py`를 실행하세요.
 
-**파이썬 `>>>` 프롬프트**에 아래 호출을 입력하세요. `>>>`가 없는 줄은 나와야 할 결과예요.
+**파이썬 `>>>` 프롬프트**에 아래 호출을 입력하세요. `>>>`가 없는 줄은 나와야 할 결과입니다.
 
 ```python
 $ python3 -i playground.py
@@ -238,11 +238,11 @@ $ python3 -i playground.py
 **진행 순서:**
 
 1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
-   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 클릭하세요.
+   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열립니다. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 클릭하세요.
 2. VS Code 편집기에서 `w1d4_loops.py`의 `countdown` 안에 있는 `pass`를 코드로 바꾸세요. 2절의 "문자열 만들기" 방법을 사용하세요. `text = ""`로 시작하세요.
    거꾸로 세는 `range`를 사용하는 `for` 문 안에서 숫자를 붙이세요(1절).
    끝에 `"GO!"`를 붙이세요. 숫자를 문자열로 바꿀 때는 `str(i)`를 사용하세요.
-3. VS Code 편집기에서 **Ctrl + S**로 `w1d4_loops.py`를 저장하세요. 파일 탭의 **●**가 사라져요.
+3. VS Code 편집기에서 **Ctrl + S**로 `w1d4_loops.py`를 저장하세요. 파일 탭의 **●**가 사라집니다.
 
    VS Code 터미널에서 `python3 -i exercises/week1/w1d4_loops.py`를 실행하세요.
    **파이썬 `>>>` 프롬프트**에 위의 **할 일** 아래에 나온 `countdown(...)` 호출을 입력하고 결과를 비교하세요.
@@ -252,11 +252,11 @@ $ python3 -i playground.py
    ```bash
    pytest exercises/week1/tests/test_w1d4.py -k countdown
    ```
-   ✔ `4 passed, 12 deselected`가 나와야 해요.
+   ✔ `4 passed, 12 deselected`가 나와야 합니다.
 5. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
    `countdown` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
 
-> `deselected`는 이 파일에 있는 **다른** 연습 문제의 테스트는 실행하지 않았다는 뜻이에요. `-k`를 사용하면 이렇게 되니 괜찮아요.
+> `deselected`는 이 파일에 있는 **다른** 연습 문제의 테스트는 실행하지 않았다는 뜻입니다. `-k`를 사용하면 이렇게 되니 괜찮습니다.
 
 ### 연습 문제 2/4: `sum_to(n)`
 
@@ -272,9 +272,9 @@ $ python3 -i playground.py
 0
 ```
 
-**따라 해 볼 예제:** 비슷한 문제예요(이 연습 문제의 정답은 아니에요).
+**따라 해 볼 예제:** 비슷한 문제입니다(이 연습 문제의 정답은 아닙니다).
 
-이 함수는 1 × 2 × … × n을 **곱해요**. `0`이 아니라 `1`로 시작한다는 점을 살펴보세요. 무엇이든 0을 곱하면 0이에요! 합을 구할 때는 어떤 시작값이 알맞을지 생각하세요.
+이 함수는 1 × 2 × … × n을 **곱합니다**. `0`이 아니라 `1`로 시작한다는 점을 살펴보세요. 무엇이든 0을 곱하면 0입니다! 합을 구할 때는 어떤 시작값이 알맞을지 생각하세요.
 
 ```python
 def product_to(n):
@@ -288,7 +288,7 @@ def product_to(n):
 VS Code 편집기에서 `playground.py`에 예제를 입력하세요. **Ctrl + S**로 `playground.py`를 저장하세요.
 VS Code 터미널에서 `python3 -i playground.py`를 실행하세요.
 
-**파이썬 `>>>` 프롬프트**에 아래 호출을 입력하세요. `>>>`가 없는 줄은 나와야 할 결과예요.
+**파이썬 `>>>` 프롬프트**에 아래 호출을 입력하세요. `>>>`가 없는 줄은 나와야 할 결과입니다.
 
 ```python
 $ python3 -i playground.py
@@ -304,9 +304,9 @@ $ python3 -i playground.py
 **진행 순서:**
 
 1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
-   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 클릭하세요.
-2. VS Code 편집기에서 `w1d4_loops.py`의 `sum_to` 안에 있는 `pass`를 코드로 바꾸세요. 2절에서 배운 누적 방법 그대로예요. `n`을 포함하려면 `range(1, n + 1)`을 사용한다는 점을 기억하세요.
-3. VS Code 편집기에서 **Ctrl + S**로 `w1d4_loops.py`를 저장하세요. 파일 탭의 **●**가 사라져요.
+   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열립니다. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 클릭하세요.
+2. VS Code 편집기에서 `w1d4_loops.py`의 `sum_to` 안에 있는 `pass`를 코드로 바꾸세요. 2절에서 배운 누적 방법 그대로입니다. `n`을 포함하려면 `range(1, n + 1)`을 사용한다는 점을 기억하세요.
+3. VS Code 편집기에서 **Ctrl + S**로 `w1d4_loops.py`를 저장하세요. 파일 탭의 **●**가 사라집니다.
 
    VS Code 터미널에서 `python3 -i exercises/week1/w1d4_loops.py`를 실행하세요.
    **파이썬 `>>>` 프롬프트**에 위의 **할 일** 아래에 나온 `sum_to(...)` 호출을 입력하고 결과를 비교하세요.
@@ -316,7 +316,7 @@ $ python3 -i playground.py
    ```bash
    pytest exercises/week1/tests/test_w1d4.py -k sum_to
    ```
-   ✔ `4 passed, 12 deselected`가 나와야 해요.
+   ✔ `4 passed, 12 deselected`가 나와야 합니다.
 5. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
    `sum_to` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
 
@@ -325,7 +325,7 @@ $ python3 -i playground.py
 > 📖 **시작하기 전에:** [연습 문제 진행 방법](../../docs/02-how-exercises-work.md)을 이 수업 옆에 여세요.
 > [4부: 함수 연습 문제](../../docs/02-how-exercises-work.md#4부-함수-연습-문제-따라-하기-35일차)와 [5부: 테스트 결과 읽기](../../docs/02-how-exercises-work.md#5부-테스트-결과-읽기)를 따라 하세요.
 
-**할 일:** 로봇은 한 단계마다 배터리를 `drain_per_step`만큼 사용해요. 배터리가 `low_level` 이하가 될 때까지 몇 단계가 걸리는지 반환하세요.
+**할 일:** 로봇은 한 단계마다 배터리를 `drain_per_step`만큼 사용합니다. 배터리가 `low_level` 이하가 될 때까지 몇 단계가 걸리는지 반환하세요.
 
 ```python
 >>> steps_until_low(100, 10, 50)
@@ -334,9 +334,9 @@ $ python3 -i playground.py
 0
 ```
 
-**따라 해 볼 예제:** 비슷한 문제예요(이 연습 문제의 정답은 아니에요).
+**따라 해 볼 예제:** 비슷한 문제입니다(이 연습 문제의 정답은 아닙니다).
 
-이 함수는 연습 문제와 반대로 배터리가 가득 찰 때까지 **충전**하고, `while` 문으로 단계 수를 세어요.
+이 함수는 연습 문제와 반대로 배터리가 가득 찰 때까지 **충전**하고, `while` 문으로 단계 수를 셉니다.
 
 ```python
 def steps_until_full(battery, charge_per_step, full_level):
@@ -351,7 +351,7 @@ def steps_until_full(battery, charge_per_step, full_level):
 VS Code 편집기에서 `playground.py`에 예제를 입력하세요. **Ctrl + S**로 `playground.py`를 저장하세요.
 VS Code 터미널에서 `python3 -i playground.py`를 실행하세요.
 
-**파이썬 `>>>` 프롬프트**에 아래 호출을 입력하세요. `>>>`가 없는 줄은 나와야 할 결과예요.
+**파이썬 `>>>` 프롬프트**에 아래 호출을 입력하세요. `>>>`가 없는 줄은 나와야 할 결과입니다.
 
 ```python
 $ python3 -i playground.py
@@ -367,20 +367,20 @@ $ python3 -i playground.py
 **진행 순서:**
 
 1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
-   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 클릭하세요.
-2. VS Code 편집기에서 `w1d4_loops.py`의 `steps_until_low`를 읽으세요. **먼저 종이에** 2절처럼 `steps_until_low(100, 10, 50)`의 표를 그리세요. 열 이름은 *단계*와 *배터리*로 하세요. 배터리가 50 이하가 될 때까지 세면 5가 나와야 해요.
-3. VS Code 편집기에서 `w1d4_loops.py`의 `steps_until_low` 안에 있는 `pass`를 코드로 바꾸세요. `while` 문을 사용하세요(3절). 배터리가 `low_level`보다 큰 **동안** 계속 반복해요. 반복문 안에서 배터리 소모량을 빼고 단계 수를 세는 변수에 1을 더하세요.
-4. VS Code 편집기에서 **Ctrl + S**로 `w1d4_loops.py`를 저장하세요. 파일 탭의 **●**가 사라져요.
+   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열립니다. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 클릭하세요.
+2. VS Code 편집기에서 `w1d4_loops.py`의 `steps_until_low`를 읽으세요. **먼저 종이에** 2절처럼 `steps_until_low(100, 10, 50)`의 표를 그리세요. 열 이름은 *단계*와 *배터리*로 하세요. 배터리가 50 이하가 될 때까지 세면 5가 나와야 합니다.
+3. VS Code 편집기에서 `w1d4_loops.py`의 `steps_until_low` 안에 있는 `pass`를 코드로 바꾸세요. `while` 문을 사용하세요(3절). 배터리가 `low_level`보다 큰 **동안** 계속 반복합니다. 반복문 안에서 배터리 소모량을 빼고 단계 수를 세는 변수에 1을 더하세요.
+4. VS Code 편집기에서 **Ctrl + S**로 `w1d4_loops.py`를 저장하세요. 파일 탭의 **●**가 사라집니다.
 
    VS Code 터미널에서 `python3 -i exercises/week1/w1d4_loops.py`를 실행하세요.
    **파이썬 `>>>` 프롬프트**에 위의 **할 일** 아래에 나온 `steps_until_low(...)` 호출을 입력하고 결과를 비교하세요.
 
-   `>>>`에 `exit()`을 입력해서 VS Code 터미널로 돌아오세요. `steps_until_low(...)` 호출이 끝나지 않으면 VS Code 터미널에서 **Ctrl + C**를 누르세요. 배터리가 줄어들지 않고 있는 거예요.
+   `>>>`에 `exit()`을 입력해서 VS Code 터미널로 돌아오세요. `steps_until_low(...)` 호출이 끝나지 않으면 VS Code 터미널에서 **Ctrl + C**를 누르세요. 배터리가 줄어들지 않고 있는 것입니다.
 5. VS Code 터미널에서 [`test_w1d4.py`](../../exercises/week1/tests/test_w1d4.py)로 `steps_until_low`를 테스트하세요.
    ```bash
    pytest exercises/week1/tests/test_w1d4.py -k steps_until_low
    ```
-   ✔ `4 passed, 12 deselected`가 나와야 해요.
+   ✔ `4 passed, 12 deselected`가 나와야 합니다.
 6. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
    `steps_until_low` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
 
@@ -396,11 +396,11 @@ $ python3 -i playground.py
 3
 ```
 
-(3, 6, 9예요.)
+(3, 6, 9입니다.)
 
-**따라 해 볼 예제:** 비슷한 문제예요(이 연습 문제의 정답은 아니에요).
+**따라 해 볼 예제:** 비슷한 문제입니다(이 연습 문제의 정답은 아닙니다).
 
-이 함수는 1부터 `limit`까지 **홀수**의 개수를 세요. 홀수는 2로 나눈 나머지가 1이에요.
+이 함수는 1부터 `limit`까지 **홀수**의 개수를 세요. 홀수는 2로 나눈 나머지가 1입니다.
 
 ```python
 def count_odd(limit):
@@ -415,7 +415,7 @@ def count_odd(limit):
 VS Code 편집기에서 `playground.py`에 예제를 입력하세요. **Ctrl + S**로 `playground.py`를 저장하세요.
 VS Code 터미널에서 `python3 -i playground.py`를 실행하세요.
 
-**파이썬 `>>>` 프롬프트**에 아래 호출을 입력하세요. `>>>`가 없는 줄은 나와야 할 결과예요.
+**파이썬 `>>>` 프롬프트**에 아래 호출을 입력하세요. `>>>`가 없는 줄은 나와야 할 결과입니다.
 
 ```python
 $ python3 -i playground.py
@@ -431,9 +431,9 @@ $ python3 -i playground.py
 **진행 순서:**
 
 1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
-   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 클릭하세요.
-2. VS Code 편집기에서 `w1d4_loops.py`의 `count_multiples` 안에 있는 `pass`를 코드로 바꾸세요. 1부터 `limit`까지 반복하며 `x % k == 0`인 숫자의 개수를 세세요. 2절의 개수 세기 예제와 같은 방법이에요.
-3. VS Code 편집기에서 **Ctrl + S**로 `w1d4_loops.py`를 저장하세요. 파일 탭의 **●**가 사라져요.
+   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열립니다. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d4_loops.py`](../../exercises/week1/w1d4_loops.py)를 클릭하세요.
+2. VS Code 편집기에서 `w1d4_loops.py`의 `count_multiples` 안에 있는 `pass`를 코드로 바꾸세요. 1부터 `limit`까지 반복하며 `x % k == 0`인 숫자의 개수를 세세요. 2절의 개수 세기 예제와 같은 방법입니다.
+3. VS Code 편집기에서 **Ctrl + S**로 `w1d4_loops.py`를 저장하세요. 파일 탭의 **●**가 사라집니다.
 
    VS Code 터미널에서 `python3 -i exercises/week1/w1d4_loops.py`를 실행하세요.
    **파이썬 `>>>` 프롬프트**에 위의 **할 일** 아래에 나온 `count_multiples(...)` 호출을 입력하고 결과를 비교하세요.
@@ -443,7 +443,7 @@ $ python3 -i playground.py
    ```bash
    pytest exercises/week1/tests/test_w1d4.py -k count_multiples
    ```
-   ✔ `4 passed, 12 deselected`가 나와야 해요.
+   ✔ `4 passed, 12 deselected`가 나와야 합니다.
 5. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
    `count_multiples` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
 
@@ -455,7 +455,7 @@ VS Code 터미널에서 [`test_w1d4.py`](../../exercises/week1/tests/test_w1d4.p
 pytest exercises/week1/tests/test_w1d4.py
 ```
 
-✔ **`16 passed`**가 나와야 해요. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)의 4일차 "테스트 통과" 항목을 체크하세요. **Ctrl + S**로 저장하세요.
+✔ **`16 passed`**가 나와야 합니다. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)의 4일차 "테스트 통과" 항목을 체크하세요. **Ctrl + S**로 저장하세요.
 
 ---
 
@@ -465,8 +465,8 @@ VS Code 편집기에서 [progress/week1.md](../../progress/week1.md)를 여세�
 **Ctrl + S**로 저장하세요. 4일차 항목을 모두 체크한 뒤에만 5일차를 시작하세요.
 
 - [ ] `pytest exercises/week1/tests/test_w1d4.py` 실행 결과: **16 passed**
-- [ ] `range(2, 8, 2)`를 실행하지 않고 어떤 숫자가 나오는지 말할 수 있어요
-- [ ] 끝나지 않는 프로그램을 멈추는 방법을 알아요
+- [ ] `range(2, 8, 2)`를 실행하지 않고 어떤 숫자가 나오는지 말할 수 있습니다
+- [ ] 끝나지 않는 프로그램을 멈추는 방법을 압니다
 - [ ] 실습 일지 작성, 커밋, 푸시 완료
 
 **다음:** [5일차: 문자열 다루기 + 주간 과제](day5-strings-and-checkpoint.md)

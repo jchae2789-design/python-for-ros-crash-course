@@ -1,33 +1,33 @@
 # 1주차 · 1일차: 터미널과 첫 프로그램
 
-**배울 내용:** VS Code 터미널에서 폴더를 이동하는 방법, 파이썬 실행 방법, 글자를 출력하는 방법, 오류 메시지 읽는 방법을 배워요.
+**배울 내용:** VS Code 터미널에서 폴더를 이동하는 방법, 파이썬 실행 방법, 글자를 출력하는 방법, 오류 메시지 읽는 방법을 배웁니다.
 
-**로봇을 다룰 때 필요한 이유:** ROS 2에서는 로봇을 시작하고, 센서 데이터를 살펴보고, 문제를 해결하는 일을 거의 모두 터미널에서 해요. 터미널에 익숙한 로봇 엔지니어는 훨씬 빠르게 일할 수 있어요.
+**로봇을 다룰 때 필요한 이유:** ROS 2에서는 로봇을 시작하고, 센서 데이터를 살펴보고, 문제를 해결하는 일을 거의 모두 터미널에서 합니다. 터미널에 익숙한 로봇 엔지니어는 훨씬 빠르게 일할 수 있습니다.
 
 ---
 
 ## 1. 터미널
 
-**Ctrl + `**(또는 **Terminal → New Terminal**)로 **VS Code 터미널**을 여세요. 과정 폴더에서 시작하고 가상 환경이 활성화되어 있어요. [어디에 입력하나요?](../../docs/01-how-to-study.md#어디에-입력하나요)를 참고하세요. VS Code 터미널에 `pwd`를 입력하면 `/home/<name>/code/python-for-ros-crash-course`가 나와요. `<name>`은 Ubuntu 사용자 이름이에요. 커서 앞의 글자를 **프롬프트**라고 해요. 사용자 이름과 현재 폴더를 보여 줘요. 예를 들어 홈 폴더로 이동하면 다음과 같이 보일 수 있어요.
+**Ctrl + `**(또는 **Terminal → New Terminal**)로 **VS Code 터미널**을 여세요. 과정 폴더에서 시작하고 가상 환경이 활성화되어 있습니다. [어디에 입력합니까?](../../docs/01-how-to-study.md#어디에-입력합니까)를 참고하세요. VS Code 터미널에 `pwd`를 입력하면 `/home/<name>/code/python-for-ros-crash-course`가 나옵니다. `<name>`은 Ubuntu 사용자 이름입니다. 커서 앞의 글자를 **프롬프트**라고 합니다. 사용자 이름과 현재 폴더를 보여 줍니다. 예를 들어 홈 폴더로 이동하면 다음과 같이 보일 수 있습니다.
 
 ```
 minjun@robot-pc:~$
 ```
 
-`~`는 **홈 폴더**(`/home/minjun`)를 뜻해요.
+`~`는 **홈 폴더**(`/home/minjun`)를 뜻합니다.
 
 ### 폴더 이동하기
 
 | 명령 | 하는 일 | 예 |
 |---|---|---|
-| `pwd` | 현재 작업 폴더를 표시해요. 지금 어디에 있나요? | `pwd` |
-| `ls` | 현재 폴더의 파일 목록을 보여 줘요 | `ls` |
-| `cd folder` | 폴더 안으로 이동해요 | `cd code` |
-| `cd ..` | 한 단계 위 폴더로 이동해요 | `cd ..` |
-| `cd ~` | 홈 폴더로 돌아가요 | `cd ~` |
-| `mkdir name` | 새 폴더를 만들어요 | `mkdir test` |
-| `cat file` | 파일 내용을 보여 줘요 | `cat README.md` |
-| `clear` | 화면을 깨끗이 지워요 | `clear` |
+| `pwd` | 현재 작업 폴더를 표시합니다. 지금 어디에 있습니까? | `pwd` |
+| `ls` | 현재 폴더의 파일 목록을 보여 줍니다 | `ls` |
+| `cd folder` | 폴더 안으로 이동합니다 | `cd code` |
+| `cd ..` | 한 단계 위 폴더로 이동합니다 | `cd ..` |
+| `cd ~` | 홈 폴더로 돌아갑니다 | `cd ~` |
+| `mkdir name` | 새 폴더를 만듭니다 | `mkdir test` |
+| `cat file` | 파일 내용을 보여 줍니다 | `cat README.md` |
+| `clear` | 화면을 깨끗이 지웁니다 | `clear` |
 
 ### 직접 해 보기: 폴더 이동
 
@@ -44,7 +44,7 @@ cd ..
 ls
 ```
 
-마지막 `ls`에서 새로 만든 `playground` 폴더가 보여야 해요.
+마지막 `ls`에서 새로 만든 `playground` 폴더가 보여야 합니다.
 
 이제 과정 폴더로 돌아가세요. VS Code 터미널에 다음 명령을 입력하세요.
 
@@ -53,30 +53,30 @@ cd ~/code/python-for-ros-crash-course
 pwd
 ```
 
-✔ `pwd`에 `/home/<name>/code/python-for-ros-crash-course`가 다시 나와요. 이후 과정은 이 폴더에서 계속 진행하세요.
+✔ `pwd`에 `/home/<name>/code/python-for-ros-crash-course`가 다시 나옵니다. 이후 과정은 이 폴더에서 계속 진행하세요.
 
-VS Code 터미널에서 복사는 **Ctrl + Shift + C**, 붙여 넣기는 **Ctrl + Shift + V**로 해요.
+VS Code 터미널에서 복사는 **Ctrl + Shift + C**, 붙여 넣기는 **Ctrl + Shift + V**로 합니다.
 
 ### 시간을 아껴 주는 단축키 세 가지
 
-- **Tab**: 이름을 자동으로 완성해 줘요. VS Code 터미널에 `cd pla`를 입력하고 Tab을 누르면 `cd playground/`로 완성돼요.
-- **↑(위쪽 방향키)**: 이전 명령을 다시 보여 줘요. 여러 번 누르면 더 이전 명령도 볼 수 있어요.
-- **Ctrl + C**: 실행 중인 프로그램을 멈춰요(예: 끝나지 않는 프로그램).
+- **Tab**: 이름을 자동으로 완성해 줍니다. VS Code 터미널에 `cd pla`를 입력하고 Tab을 누르면 `cd playground/`로 완성됩니다.
+- **↑(위쪽 방향키)**: 이전 명령을 다시 보여 줍니다. 여러 번 누르면 더 이전 명령도 볼 수 있습니다.
+- **Ctrl + C**: 실행 중인 프로그램을 멈춥니다(예: 끝나지 않는 프로그램).
 
-ROS에서는 `/rail_robot/lidar/scan`처럼 긴 이름을 입력해요. VS Code 터미널에서 Tab을 눌러 긴 명령 이름을 자동으로 완성하세요.
+ROS에서는 `/rail_robot/lidar/scan`처럼 긴 이름을 입력합니다. VS Code 터미널에서 Tab을 눌러 긴 명령 이름을 자동으로 완성하세요.
 
 
 ---
 
 ## 2. 파이썬과 대화하기
 
-파이썬에는 **대화형 모드**가 있어요. 한 줄을 입력하면 파이썬이 바로 답해요. VS Code 터미널에 `python3`를 입력하고 Enter를 누르세요.
+파이썬에는 **대화형 모드**가 있습니다. 한 줄을 입력하면 파이썬이 바로 답합니다. VS Code 터미널에 `python3`를 입력하고 Enter를 누르세요.
 
 ```bash
 python3
 ```
 
-`>>>`가 보여요. 이 파이썬 프롬프트에 아래 `>>>` 뒤의 식을 하나씩 입력하고 Enter를 누르세요. `>>>`는 입력하지 마세요. 나머지 줄은 예상 결과예요.
+`>>>`가 보입니다. 이 파이썬 프롬프트에 아래 `>>>` 뒤의 식을 하나씩 입력하고 Enter를 누르세요. `>>>`는 입력하지 마세요. 나머지 줄은 예상 결과입니다.
 
 ```python
 >>> 2 + 3
@@ -93,13 +93,13 @@ python3
 >>> exit()
 ```
 
-작은 아이디어를 빠르게 확인할 때 대화형 모드를 사용해요. 실제 프로그램은 **파일**에 작성해요.
+작은 아이디어를 빠르게 확인할 때 대화형 모드를 사용합니다. 실제 프로그램은 **파일**에 작성합니다.
 
 ---
 
 ## 3. 첫 프로그램 파일
 
-파이썬 프로그램은 이름이 `.py`로 끝나는 텍스트 파일이에요. 파이썬은 파일을 **위에서 아래로** 읽으며 각 줄을 실행해요.
+파이썬 프로그램은 이름이 `.py`로 끝나는 텍스트 파일입니다. 파이썬은 파일을 **위에서 아래로** 읽으며 각 줄을 실행합니다.
 
 VS Code 터미널에 다음 명령을 입력해서 같은 VS Code 창에 `playground.py`를 여세요.
 
@@ -129,23 +129,23 @@ I am a robot.
 
 ### `print()`
 
-`print()`는 화면에 내용을 보여 줘요. 문자열은 따옴표 안에 써야 해요. 큰따옴표 `"double"`과 작은따옴표 `'single'` 모두 사용할 수 있어요.
+`print()`는 화면에 내용을 보여 줍니다. 문자열은 따옴표 안에 써야 합니다. 큰따옴표 `"double"`과 작은따옴표 `'single'` 모두 사용할 수 있습니다.
 
 ```python
 print("Battery OK")
-print('Battery OK')       # 같은 결과예요
-print()                   # 빈 줄을 출력해요
-print("Speed:", 2.5)      # 쉼표를 쓰면 각 부분 사이에 공백이 들어가요
-print(3 + 4)              # 파이썬이 먼저 계산한 뒤 7을 출력해요
+print('Battery OK')       # 같은 결과입니다
+print()                   # 빈 줄을 출력합니다
+print("Speed:", 2.5)      # 쉼표를 쓰면 각 부분 사이에 공백이 들어갑니다
+print(3 + 4)              # 파이썬이 먼저 계산한 뒤 7을 출력합니다
 ```
 
 ### 주석
 
-`#` 뒤의 내용은 모두 **주석**이에요. 파이썬은 주석을 실행하지 않아요. 사람이 읽는 메모예요.
+`#` 뒤의 내용은 모두 **주석**입니다. 파이썬은 주석을 실행하지 않습니다. 사람이 읽는 메모입니다.
 
 ```python
-# 이 프로그램은 로봇 배터리를 확인해요
-print("Battery OK")  # 주석은 줄 끝에도 쓸 수 있어요
+# 이 프로그램은 로봇 배터리를 확인합니다
+print("Battery OK")  # 주석은 줄 끝에도 쓸 수 있습니다
 ```
 
 ### 직접 해 보기: 출력
@@ -159,21 +159,21 @@ Speed: 0.5 m/s
 Ready to start.
 ```
 
-(`Ready to start.` 앞에는 빈 줄이 있어요.)
+(`Ready to start.` 앞에는 빈 줄이 있습니다.)
 
 ---
 
-## 4. 오류 메시지는 도움이 돼요
+## 4. 오류 메시지는 도움이 됩니다
 
-누구나 실수해요. 전문 엔지니어도 매일 오류를 만나요. 중요한 것은 오류 메시지를 **읽는** 능력이에요.
+누구나 실수합니다. 전문 엔지니어도 매일 오류를 만납니다. 중요한 것은 오류 메시지를 **읽는** 능력입니다.
 
-VS Code 편집기에서 `playground.py`의 내용을 다음 코드로 바꾸고 **Ctrl + S**로 저장하세요(닫는 따옴표가 빠져 있어요).
+VS Code 편집기에서 `playground.py`의 내용을 다음 코드로 바꾸고 **Ctrl + S**로 저장하세요(닫는 따옴표가 빠져 있습니다).
 
 ```python
 print("Hello!)
 ```
 
-VS Code 터미널에 `python3 playground.py`를 입력하세요. 다음 오류가 나와야 해요.
+VS Code 터미널에 `python3 playground.py`를 입력하세요. 다음 오류가 나와야 합니다.
 
 ```
   File "/home/minjun/code/python-for-ros-crash-course/playground.py", line 1
@@ -184,11 +184,11 @@ SyntaxError: unterminated string literal (detected at line 1)
 
 다음처럼 읽으세요.
 
-1. **마지막 줄부터 읽으세요:** `SyntaxError: unterminated string literal`은 문자열을 닫지 않았다는 뜻이에요.
-2. **줄 번호:** `line 1`은 1번째 줄에 오류가 있다는 뜻이에요.
-3. **`^`**는 문제가 시작되는 위치를 가리켜요.
+1. **마지막 줄부터 읽으세요:** `SyntaxError: unterminated string literal`은 문자열을 닫지 않았다는 뜻입니다.
+2. **줄 번호:** `line 1`은 1번째 줄에 오류가 있다는 뜻입니다.
+3. **`^`**는 문제가 시작되는 위치를 가리킵니다.
 
-자주 나오는 다른 오류도 확인해 보세요. VS Code에서 `playground.py`의 내용을 아래 코드로 바꾸고 **Ctrl + S**로 저장하세요. VS Code 터미널에 `python3 playground.py`를 입력하면 아래 `NameError`가 나와요.
+자주 나오는 다른 오류도 확인해 보세요. VS Code에서 `playground.py`의 내용을 아래 코드로 바꾸고 **Ctrl + S**로 저장하세요. VS Code 터미널에 `python3 playground.py`를 입력하면 아래 `NameError`가 나옵니다.
 
 ```python
 prnt("Hello!")
@@ -198,28 +198,28 @@ prnt("Hello!")
 NameError: name 'prnt' is not defined. Did you mean: 'print'?
 ```
 
-파이썬은 `prnt`를 알지 못해요. 어떤 이름을 쓰려고 했는지 짐작해서 알려 주기도 해요!
+파이썬은 `prnt`를 알지 못합니다. 어떤 이름을 쓰려고 했는지 짐작해서 알려 주기도 합니다!
 
 ### 1일차에 자주 나오는 오류
 
 | 오류 | 흔한 원인 |
 |---|---|
-| `SyntaxError` | 따옴표 `"` 또는 괄호 `)`가 빠졌어요 |
-| `NameError` | 이름을 잘못 입력했거나 문자열에 따옴표가 없어요: `print(Hello)` |
-| `IndentationError` | 줄 시작 부분에 불필요한 공백이 있어요 |
-| `python3: can't open file` | 다른 폴더에 있거나 파일 이름을 잘못 입력했어요. VS Code 터미널에서 `pwd`로 현재 폴더를, `ls`로 파일 목록을 확인하세요. |
+| `SyntaxError` | 따옴표 `"` 또는 괄호 `)`가 빠졌습니다 |
+| `NameError` | 이름을 잘못 입력했거나 문자열에 따옴표가 없습니다: `print(Hello)` |
+| `IndentationError` | 줄 시작 부분에 불필요한 공백이 있습니다 |
+| `python3: can't open file` | 다른 폴더에 있거나 파일 이름을 잘못 입력했습니다. VS Code 터미널에서 `pwd`로 현재 폴더를, `ls`로 파일 목록을 확인하세요. |
 
 ---
 
 ## 5. 연습 문제
 
-> 처음인가요? 시작하기 전에 [연습 문제 진행 방법](../../docs/02-how-exercises-work.md) 1–3부를 읽으세요.
+> 처음입니까? 시작하기 전에 [연습 문제 진행 방법](../../docs/02-how-exercises-work.md) 1–3부를 읽으세요.
 
-`playground.py`는 그대로 두어도 돼요. 아래 예제를 실행할 때 사용할 거예요. Git이 이 파일을 무시하므로 커밋에는 포함되지 않아요.
+`playground.py`는 그대로 두어도 됩니다. 아래 예제를 실행할 때 사용할 것입니다. Git이 이 파일을 무시하므로 커밋에는 포함되지 않습니다.
 
-**연습 문제 진행 방법:** 한 번에 하나씩 **순서대로** 푸세요. 아래의 각 연습 문제에는 번호가 붙은 진행 순서가 있어요. 1번부터 끝까지 따라 한 뒤 다음 연습 문제로 넘어가세요. 잘되지 않는 단계가 있으면 [연습 문제 진행 방법 5부](../../docs/02-how-exercises-work.md#5부-테스트-결과-읽기)를 참고하세요.
+**연습 문제 진행 방법:** 한 번에 하나씩 **순서대로** 푸세요. 아래의 각 연습 문제에는 번호가 붙은 진행 순서가 있습니다. 1번부터 끝까지 따라 한 뒤 다음 연습 문제로 넘어가세요. 잘되지 않는 단계가 있으면 [연습 문제 진행 방법 5부](../../docs/02-how-exercises-work.md#5부-테스트-결과-읽기)를 참고하세요.
 
-오늘 연습 문제는 출력을 **정확히** 확인해요. 대문자, 공백, 문장 부호 하나하나가 중요해요. `Hello, ROS!`는 `Hello ROS!`나 `hello, ros!`와 달라요.
+오늘 연습 문제는 출력을 **정확히** 확인합니다. 대문자, 공백, 문장 부호 하나하나가 중요합니다. `Hello, ROS!`는 `Hello ROS!`나 `hello, ros!`와 다릅니다.
 
 ### 연습 문제 1/2: Hello, ROS!
 
@@ -235,9 +235,9 @@ $ python3 exercises/week1/w1d1_hello.py
 Hello, ROS!
 ```
 
-**따라 해 볼 예제:** 비슷한 문제예요(이 연습 문제의 정답은 아니에요).
+**따라 해 볼 예제:** 비슷한 문제입니다(이 연습 문제의 정답은 아닙니다).
 
-이 프로그램은 로봇 팀에 인사해요.
+이 프로그램은 로봇 팀에 인사합니다.
 
 ```python
 print("Good morning, robot team!")
@@ -257,25 +257,25 @@ Good morning, robot team!
 **진행 순서:**
 
 1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
-   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d1_hello.py`](../../exercises/week1/w1d1_hello.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d1_hello.py`](../../exercises/week1/w1d1_hello.py)를 클릭하세요.
+   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d1_hello.py`](../../exercises/week1/w1d1_hello.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열립니다. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d1_hello.py`](../../exercises/week1/w1d1_hello.py)를 클릭하세요.
 2. VS Code 편집기에서 `w1d1_hello.py` 맨 위의 안내를 읽으세요.
-3. VS Code 편집기에서 `w1d1_hello.py`의 `# TODO: 이 줄 아래에 코드를 작성하세요` 아래 빈 줄에 코드를 작성하세요. `print()` 하나가 필요해요.
-4. VS Code 편집기에서 **Ctrl + S**로 `w1d1_hello.py`를 저장하세요. 저장하면 파일 탭의 **●**가 사라져요.
+3. VS Code 편집기에서 `w1d1_hello.py`의 `# TODO: 이 줄 아래에 코드를 작성하세요` 아래 빈 줄에 코드를 작성하세요. `print()` 하나가 필요합니다.
+4. VS Code 편집기에서 **Ctrl + S**로 `w1d1_hello.py`를 저장하세요. 저장하면 파일 탭의 **●**가 사라집니다.
 5. VS Code 터미널에서 `w1d1_hello.py`를 실행하세요.
    ```bash
    python3 exercises/week1/w1d1_hello.py
    ```
-   ✔ `Hello, ROS!`가 나와야 해요.
-   ✘ **아무것도 나타나지 않으면** 파일에 아직 코드가 없거나 저장하지 않은 거예요. 3단계로 돌아가세요.
+   ✔ `Hello, ROS!`가 나와야 합니다.
+   ✘ **아무것도 나타나지 않으면** 파일에 아직 코드가 없거나 저장하지 않은 것입니다. 3단계로 돌아가세요.
 6. VS Code 터미널에서 [`test_w1d1.py`](../../exercises/week1/tests/test_w1d1.py)로 `w1d1_hello.py`를 테스트하세요.
    ```bash
    pytest exercises/week1/tests/test_w1d1.py -k hello
    ```
-   ✔ `1 passed, 1 deselected`가 나와야 해요. 테스트가 실패하면 VS Code 터미널의 오류 메시지를 읽고 VS Code에서 `exercises/week1/w1d1_hello.py`를 고친 뒤 4단계로 돌아가세요.
+   ✔ `1 passed, 1 deselected`가 나와야 합니다. 테스트가 실패하면 VS Code 터미널의 오류 메시지를 읽고 VS Code에서 `exercises/week1/w1d1_hello.py`를 고친 뒤 4단계로 돌아가세요.
 7. VS Code 편집기에서 [progress/week1.md](../../progress/week1.md)를 여세요.
    `exercises/week1/w1d1_hello.py` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
 
-> `deselected`는 이 파일에 있는 **다른** 연습 문제의 테스트는 실행하지 않았다는 뜻이에요. `-k`를 사용하면 이렇게 되니 괜찮아요.
+> `deselected`는 이 파일에 있는 **다른** 연습 문제의 테스트는 실행하지 않았다는 뜻입니다. `-k`를 사용하면 이렇게 되니 괜찮습니다.
 
 ### 연습 문제 2/2: 로봇 정보 카드
 
@@ -290,9 +290,9 @@ Type: Rail robot
 Status: READY
 ```
 
-**따라 해 볼 예제:** 비슷한 문제예요(이 연습 문제의 정답은 아니에요).
+**따라 해 볼 예제:** 비슷한 문제입니다(이 연습 문제의 정답은 아닙니다).
 
-이 프로그램은 한 줄마다 `print()` 하나를 사용해서 드론 정보 카드를 출력해요.
+이 프로그램은 한 줄마다 `print()` 하나를 사용해서 드론 정보 카드를 출력합니다.
 
 ```python
 print("Drone: DR-07")
@@ -316,21 +316,21 @@ Status: CHARGING
 **진행 순서:**
 
 1. **파일을 여세요.** VS Code 편집기에서 **Ctrl + P**를 누르세요.
-   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d1_robot_card.py`](../../exercises/week1/w1d1_robot_card.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열려요. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d1_robot_card.py`](../../exercises/week1/w1d1_robot_card.py)를 클릭하세요.
+   VS Code 위쪽에 나타난 입력 칸에 [`exercises/week1/w1d1_robot_card.py`](../../exercises/week1/w1d1_robot_card.py)를 입력하고 Enter를 누르세요. 편집기에 파일이 열립니다. 또는 VS Code 편집기 왼쪽 파일 목록(**Explorer**)에서 [`exercises`](../../exercises/) → [`week1`](../../exercises/week1/) → [`w1d1_robot_card.py`](../../exercises/week1/w1d1_robot_card.py)를 클릭하세요.
 2. VS Code 편집기에서 `w1d1_robot_card.py` 맨 위의 안내를 읽으세요.
 3. VS Code 편집기에서 `w1d1_robot_card.py`의 `TODO` 아래에 코드를 작성하세요. 각 줄마다 `print()` 하나를 사용하세요.
-4. VS Code 편집기에서 **Ctrl + S**로 `w1d1_robot_card.py`를 저장하세요. 저장하면 파일 탭의 **●**가 사라져요.
+4. VS Code 편집기에서 **Ctrl + S**로 `w1d1_robot_card.py`를 저장하세요. 저장하면 파일 탭의 **●**가 사라집니다.
 5. VS Code 터미널에서 `w1d1_robot_card.py`를 실행하세요.
    ```bash
    python3 exercises/week1/w1d1_robot_card.py
    ```
-   ✔ 위의 세 줄이 나와야 해요. VS Code 터미널의 출력을 **할 일** 아래의 세 줄과 한 글자씩 비교하세요.
-   ✘ **아무것도 나타나지 않으면** 파일에 아직 코드가 없거나 저장하지 않은 거예요. 3단계로 돌아가세요.
+   ✔ 위의 세 줄이 나와야 합니다. VS Code 터미널의 출력을 **할 일** 아래의 세 줄과 한 글자씩 비교하세요.
+   ✘ **아무것도 나타나지 않으면** 파일에 아직 코드가 없거나 저장하지 않은 것입니다. 3단계로 돌아가세요.
 6. VS Code 터미널에서 [`test_w1d1.py`](../../exercises/week1/tests/test_w1d1.py)로 `w1d1_robot_card.py`를 테스트하세요.
    ```bash
    pytest exercises/week1/tests/test_w1d1.py -k robot_card
    ```
-   ✔ `1 passed, 1 deselected`가 나와야 해요.
+   ✔ `1 passed, 1 deselected`가 나와야 합니다.
 7. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)를 여세요.
    `w1d1_robot_card.py` 옆의 `[ ]`를 `[x]`로 바꾸고 **Ctrl + S**로 저장하세요.
 
@@ -342,7 +342,7 @@ VS Code 터미널에서 [`test_w1d1.py`](../../exercises/week1/tests/test_w1d1.p
 pytest exercises/week1/tests/test_w1d1.py
 ```
 
-✔ **`2 passed`**가 나와야 해요. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)의 1일차 "테스트 통과" 항목을 체크하세요. **Ctrl + S**로 저장하세요.
+✔ **`2 passed`**가 나와야 합니다. VS Code 편집기에서 [`progress/week1.md`](../../progress/week1.md)의 1일차 "테스트 통과" 항목을 체크하세요. **Ctrl + S**로 저장하세요.
 
 ---
 
@@ -352,9 +352,9 @@ VS Code 편집기에서 [progress/week1.md](../../progress/week1.md)를 여세�
 **Ctrl + S**로 저장하세요. 1일차 항목을 모두 체크한 뒤에만 2일차를 시작하세요.
 
 - [ ] `pytest exercises/week1/tests/test_w1d1.py` 실행 결과: **2 passed**
-- [ ] `pwd`, `ls`, `cd`, `mkdir`을 찾아보지 않고 사용할 수 있어요
-- [ ] [`logs/`](../../logs/)에 실습 일지를 작성했어요
-- [ ] 커밋하고 푸시했어요(VS Code 터미널에 다음 명령을 순서대로 입력하세요).
+- [ ] `pwd`, `ls`, `cd`, `mkdir`을 찾아보지 않고 사용할 수 있습니다
+- [ ] [`logs/`](../../logs/)에 실습 일지를 작성했습니다
+- [ ] 커밋하고 푸시했습니다(VS Code 터미널에 다음 명령을 순서대로 입력하세요).
   ```bash
   git add .
   git commit -m "Week 1 Day 1: first programs"

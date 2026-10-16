@@ -27,13 +27,13 @@ def run_script():
             result = None
         if result is None:
             pytest.fail(
-                "스크립트가 10초 안에 끝나지 않았어요.\n"
+                "스크립트가 10초 안에 끝나지 않았습니다.\n"
                 "끝나지 않는 반복문이나 필요 없는 input()이 있는지 확인하세요.",
                 pytrace=False,
             )
         if result.returncode != 0:
             pytest.fail(
-                f"스크립트를 실행하다가 오류가 났어요. 오류 메시지:\n\n{result.stderr}",
+                f"스크립트를 실행하다가 오류가 났습니다. 오류 메시지:\n\n{result.stderr}",
                 pytrace=False,
             )
         return result.stdout

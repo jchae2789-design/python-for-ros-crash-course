@@ -23,7 +23,7 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements.txt
       - name: Run week ${{ matrix.week }} tests
-        run: pytest -rA exercises/week${{ matrix.week }} checkpoints/week${{ matrix.week }}
+        run: pytest -rA --continue-on-collection-errors exercises/week${{ matrix.week }} checkpoints/week${{ matrix.week }}
 
   # Student forks: write the progress table (python next.py --report)
   # on the run's summary page, so the mentor sees every step.

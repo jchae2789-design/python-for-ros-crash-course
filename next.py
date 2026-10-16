@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parent
 PROGRESS_DIR = ROOT / "progress"
 STATE_FILE = PROGRESS_DIR / "state.json"
 REPORT_FILE = ROOT / "PROGRESS.md"
-TEST_TIMEOUT = 60  # 초
+TEST_TIMEOUT = 120  # 초
 
 
 def load_json(path, default):
@@ -42,7 +42,9 @@ def load_weeks():
 def run_tests(paths):
     """pytest를 한 번 실행하고 {테스트 id: 통과 여부}를 돌려줍니다."""
     cmd = [sys.executable, "-m", "pytest", *paths, "-q", "-p", "no:cacheprovider",
-           "--tb=no", "--color=no", "-rpfE"]
+           "--tb=no", "--color=no", "-rpfE",
+           # 한 파일에 문법 오류가 있어도 나머지 테스트는 실행합니다.
+           "--continue-on-collection-errors"]
     try:
         run = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True,
                              encoding="utf-8", errors="replace", timeout=TEST_TIMEOUT)
@@ -111,7 +113,8 @@ def current_step(weeks, state, results):
 def ask(question):
     try:
         answer = input(f"{question} {MSG['yes_no']} ").strip().lower()
-    except EOFError:
+    except (EOFError, KeyboardInterrupt):
+        print()
         return False
     return answer in ("y", "yes", "ㅛ")
 
@@ -189,7 +192,9 @@ def main():
         return
 
     if error:
+        # 테스트 결과를 모르면 진도를 저장하지 않습니다(이미 저장된 진도가 지워지지 않도록).
         print(MSG[error])
+        return
 
     shown = False
     while True:

@@ -1,10 +1,7 @@
 # 실습 일지: YYYY-MM-DD
 
-VS Code 편집기에서 [`logs/TEMPLATE.md`](TEMPLATE.md)를 여세요. **File > Save As**를 선택하세요.
-오늘 날짜를 사용해서 `logs/YYYY-MM-DD.md`(예: `logs/2026-10-19.md`)로 복사본을 저장하세요.
-`logs/TEMPLATE.md`는 빈 양식으로 남겨 두세요.
-
-하루를 마칠 때 VS Code 편집기에서 `logs/YYYY-MM-DD.md`의 빈칸을 답으로 채우세요. **Ctrl + S**로 `logs/YYYY-MM-DD.md`를 저장하세요.
+> 제목의 `YYYY-MM-DD`를 오늘 날짜로 바꾸고, 아래 빈칸을 채운 뒤 **Ctrl + S**로 저장하세요.
+> 이 양식은 VS Code 터미널에서 `cp -n logs/TEMPLATE.md logs/$(date +%F).md`로 복사합니다. `logs/TEMPLATE.md`는 고치지 마세요.
 
 ## 오늘 수업
 _주차 _일차: (수업 제목)

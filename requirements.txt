@@ -1,5 +1,2 @@
 pytest>=8.0
-pyyaml>=6.0
-matplotlib>=3.8
-# Optional: only needed if you connect a real Arduino/ESP32
-# pyserial>=3.5
+# Later weeks add more packages here. "새 수업 받기" runs pip install -r requirements.txt again.

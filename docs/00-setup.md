@@ -178,4 +178,4 @@ git push
 
 Open your fork on GitHub in the browser. You should see your new file in the `logs` folder.
 
-**Setup is done.** Start with [Week 1, Day 1](../lessons/week1/day1-terminal-and-first-program.md).
+**Setup is done.** Open your checklist [progress/week1.md](../progress/week1.md), check off the setup box, and continue with the next step.

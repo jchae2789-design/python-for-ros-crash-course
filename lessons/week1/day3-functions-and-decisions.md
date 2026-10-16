@@ -247,6 +247,8 @@ Look closely at the edge values in the tests: `90`, `40`, `15`, `0.5`, `2.0`, `8
 
 ## 8. Before you finish today
 
+Check off **Day 3** in your checklist: [progress/week1.md](../../progress/week1.md). Only start Day 4 when every Day 3 box is checked.
+
 - [ ] `pytest exercises/week1/tests/test_w1d3.py` shows **21 passed**
 - [ ] I can explain the difference between `return` and `print`
 - [ ] I can explain the difference between `=` and `==`

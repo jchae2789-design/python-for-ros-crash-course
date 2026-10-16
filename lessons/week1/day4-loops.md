@@ -199,6 +199,8 @@ pytest exercises/week1/tests/test_w1d4.py
 
 ## 9. Before you finish today
 
+Check off **Day 4** in your checklist: [progress/week1.md](../../progress/week1.md). Only start Day 5 when every Day 4 box is checked.
+
 - [ ] `pytest exercises/week1/tests/test_w1d4.py` shows **16 passed**
 - [ ] I can say which numbers `range(2, 8, 2)` gives without running it
 - [ ] I know how to stop a program that never ends

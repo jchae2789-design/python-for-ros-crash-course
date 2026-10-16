@@ -177,6 +177,8 @@ When all tests pass, **show your mentor** both programs running in the terminal 
 
 ## 9. Week 1 finished
 
+Check off **Day 5** and **Week 1 done** in your checklist: [progress/week1.md](../../progress/week1.md).
+
 - [ ] `pytest exercises/week1` passes completely
 - [ ] `pytest checkpoints/week1` passes completely
 - [ ] On GitHub, my latest commit shows ✅

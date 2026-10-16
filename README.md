@@ -8,10 +8,16 @@ You study **on your own**, at your own pace. Your mentor checks in with you ever
 
 ## Start here
 
-1. **Set up your computer:** follow [docs/00-setup.md](docs/00-setup.md) (about 1–2 hours).
-2. **Learn how to study in this course:** read [docs/01-how-to-study.md](docs/01-how-to-study.md) (10 minutes).
-3. **Learn how exercises and tests work:** read [docs/02-how-exercises-work.md](docs/02-how-exercises-work.md) (20 minutes).
-4. **Start Week 1, Day 1:** [lessons/week1/day1-terminal-and-first-program.md](lessons/week1/day1-terminal-and-first-program.md)
+👉 **Open [progress/week1.md](progress/week1.md) and follow it from top to bottom.**
+
+It is your checklist for the whole week: setup, reading, every lesson and exercise, in the right order. Check off each step yourself when it is done, and only move on when everything above is checked.
+
+The first steps on the checklist are:
+
+1. **Set up your computer:** [docs/00-setup.md](docs/00-setup.md) (about 1–2 hours)
+2. **Learn how to study in this course:** [docs/01-how-to-study.md](docs/01-how-to-study.md) (10 minutes)
+3. **Learn how exercises and tests work:** [docs/02-how-exercises-work.md](docs/02-how-exercises-work.md) (20 minutes)
+4. **Week 1, Day 1:** [lessons/week1/day1-terminal-and-first-program.md](lessons/week1/day1-terminal-and-first-program.md)
 
 ---
 
@@ -71,6 +77,7 @@ exercises/weekN/    your exercise files: write your code here
 exercises/weekN/tests/   automatic tests (do not edit)
 checkpoints/weekN/  end-of-week projects
 logs/               your daily logs (copy TEMPLATE.md)
+progress/           your checklists: one per week, follow them in order
 ```
 
 ## Useful commands

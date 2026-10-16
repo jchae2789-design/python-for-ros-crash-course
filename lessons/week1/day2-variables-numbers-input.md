@@ -236,6 +236,8 @@ pytest exercises/week1/tests/test_w1d2.py
 
 ## 9. Before you finish today
 
+Check off **Day 2** in your checklist: [progress/week1.md](../../progress/week1.md). Only start Day 3 when every Day 2 box is checked.
+
 - [ ] `pytest exercises/week1/tests/test_w1d2.py` shows **6 passed**
 - [ ] I can explain the difference between `7`, `7.0` and `"7"`
 - [ ] I can explain what `//` and `%` do

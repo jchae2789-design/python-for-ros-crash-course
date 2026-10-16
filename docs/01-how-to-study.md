@@ -2,6 +2,8 @@
 
 ## The daily loop
 
+Your checklist in `progress/` (for example [progress/week1.md](../progress/week1.md)) lists every step in order. Do them top to bottom and check each box when it is done. The steps of a normal day are:
+
 1. **Start the day:** open the terminal, go to the course and activate the venv.
    ```bash
    cd ~/code/python-for-ros-crash-course
@@ -13,7 +15,7 @@
 4. **Solve the exercises.** Open the exercise file, read the instructions at the top, and write your code where it says `TODO`.
 5. **Run the tests** until they pass.
 6. **Check in** with your mentor.
-7. **Write your log, commit and push.**
+7. **Write your log, check off your progress list, commit and push.**
 
 ---
 

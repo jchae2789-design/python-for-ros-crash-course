@@ -229,6 +229,8 @@ The tests check the output **exactly**: every capital letter, space and punctuat
 
 ## 6. Before you finish today
 
+Check off **Day 1** in your checklist: [progress/week1.md](../../progress/week1.md). Only start Day 2 when every Day 1 box is checked.
+
 - [ ] `pytest exercises/week1/tests/test_w1d1.py` shows **2 passed**
 - [ ] I can use `pwd`, `ls`, `cd`, `mkdir` without looking
 - [ ] I wrote my daily log in `logs/`

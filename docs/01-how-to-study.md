@@ -132,11 +132,11 @@ GitHub의 포크에서는 커밋 옆에 ✅ 또는 ❌가 보입니다. ❌는 G
 
 ## 실습 일지
 
-매일 아래 명령으로 [`logs/TEMPLATE.md`](../logs/TEMPLATE.md)를 복사하세요. `-n`은 같은 이름의 파일이 이미 있으면 덮어쓰지 않는다는 뜻입니다. 오늘 일지를 이미 만들었다면 명령을 다시 실행해도 내용이 지워지지 않습니다.
+매일 아래 명령으로 [`logs/TEMPLATE.md`](../logs/TEMPLATE.md)를 복사하세요. `--update=none`은 같은 이름의 파일이 이미 있으면 덮어쓰지 않는다는 뜻입니다. 오늘 일지를 이미 만들었다면 명령을 다시 실행해도 내용이 지워지지 않습니다.
 VS Code 터미널에 복사 명령을 입력하세요. 새 실습 일지에는 오늘 날짜를 사용합니다. 경로는 `logs/YYYY-MM-DD.md`입니다.
 
 ```bash
-cp -n logs/TEMPLATE.md logs/$(date +%F).md
+cp --update=none logs/TEMPLATE.md logs/$(date +%F).md
 ```
 
 그런 다음 VS Code 편집기에서 해당 날짜의 파일을 여세요. 빈칸을 답으로 채우세요.

@@ -155,6 +155,7 @@ def print_overview(weeks, state, results, cur):
 def print_step(week, step):
     print(f"\n▶ {MSG['now']} ({section_title(week, step['section'])}): {step['label']}")
     for path in step.get("open", []):
+        path = path.replace("{today}", f"{datetime.date.today():%Y-%m-%d}")
         print(f"   {MSG['open']}: {path}")
     if step.get("cmd"):
         print(f"   {MSG['test']}: {step['cmd']}")

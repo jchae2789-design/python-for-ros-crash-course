@@ -95,7 +95,7 @@ gh auth login
 
 VS Code 터미널에서 방향키로 다음 답을 선택하고, 답을 고를 때마다 Enter를 누르세요.
 
-- **Where do you use GitHub?** → **GitHub.com**
+- 첫 질문(**Where do you use GitHub?** 또는 **What account do you want to log into?**) → **GitHub.com**
 - **Preferred protocol?** → **HTTPS**
 - **Authenticate Git with your GitHub credentials?** → **Yes**
 - **How would you like to authenticate?** → **Login with a web browser**
@@ -138,7 +138,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-`source .venv/bin/activate`를 실행하면 프롬프트 앞에 `(.venv)`가 붙습니다. 상자가 활성화되었다는 뜻입니다.
+`source .venv/bin/activate`를 실행하면 프롬프트 앞에 `(.venv)`가 붙습니다. 가상 환경이 활성화되었다는 뜻입니다.
 
 ---
 
@@ -176,7 +176,7 @@ pytest exercises/week1/tests/test_w1d1.py
 
 **2 failed**가 나와야 합니다. 이 상태가 맞습니다! 아직 코드를 작성하지 않았기 때문입니다. 연습 문제를 풀기 전까지는 테스트가 실패합니다.
 
-`command not found: pytest`가 나오면 가상 환경이 활성화되지 않은 것입니다. 9단계에서 안내한 터미널 활성화 방법을 따라 하세요.
+`pytest: command not found` 또는 `Command 'pytest' not found`가 나오면 가상 환경이 활성화되지 않은 것입니다. 9단계에서 안내한 터미널 활성화 방법을 따라 하세요.
 
 ---
 

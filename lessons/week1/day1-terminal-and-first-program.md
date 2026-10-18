@@ -44,7 +44,7 @@ cd ..
 ls
 ```
 
-마지막 `ls`에서 새로 만든 `playground` 폴더가 보여야 합니다.
+마지막 `ls`에서 새로 만든 `playground` 폴더가 보여야 합니다. `mkdir: cannot create directory 'playground': File exists`가 나오면 폴더가 이미 있다는 뜻이니 괜찮습니다. 계속 진행하세요.
 
 이제 과정 폴더로 돌아가세요. VS Code 터미널에 다음 명령을 입력하세요.
 

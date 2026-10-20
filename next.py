@@ -150,7 +150,9 @@ def pushed():
 def sync_progress():
     """진도 파일만 커밋하고 푸시합니다. 멘토 점검 답이 GitHub에도 바로 보이게 합니다."""
     files = ["progress/state.json", "PROGRESS.md"]
-    git("add", *files)
+    if git("add", *files).returncode != 0:
+        print(MSG["sync_commit_failed"])
+        return
     if git("diff", "--cached", "--quiet", "--", *files).returncode != 0:
         if git("commit", "-m", MSG["sync_commit"], "--", *files).returncode != 0:
             print(MSG["sync_commit_failed"])

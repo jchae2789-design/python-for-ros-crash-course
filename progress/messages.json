@@ -16,6 +16,7 @@
   "checking": "테스트를 확인하는 중입니다… (최대 120초, 멈추려면 Ctrl + C)",
   "cancelled": "테스트 확인을 멈췄습니다. 진도는 바뀌지 않았습니다. 준비되면 python3 next.py를 다시 실행하세요.",
   "bad_state": "⚠ 진도 파일 progress/state.json을 읽을 수 없습니다. 진도가 지워지지 않도록 여기서 멈춥니다. 이 메시지를 멘토에게 보여 주세요.",
+  "sync_commit_failed": "⚠ 진도를 커밋하지 못했습니다. VS Code 터미널에서 git add .  →  git commit -m \"Update progress\"  →  git push를 입력하세요. 해결되지 않으면 이 메시지를 멘토에게 보여 주세요.",
   "sync_commit": "진도 업데이트",
   "synced": "✔ 진도를 GitHub에 보냈습니다.",
   "sync_failed": "⚠ 진도를 GitHub에 보내지 못했습니다. 다음에 푸시할 때 함께 보내집니다.",

@@ -122,7 +122,7 @@ def sync_progress():
     git("add", *files)
     if git("diff", "--cached", "--quiet", "--", *files).returncode != 0:
         if git("commit", "-m", MSG["sync_commit"], "--", *files).returncode != 0:
-            print(MSG["sync_failed"])
+            print(MSG["sync_commit_failed"])
             return
     if git("rev-list", "--count", "@{u}..HEAD").stdout.strip() == "0":
         return

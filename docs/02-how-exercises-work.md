@@ -299,6 +299,7 @@ python3 -i exercises/week1/w1d3_conditions.py
 | `1 failed, 4 passed` | 거의 다 되었습니다. 실패한 하나를 고치세요 |
 | `5 failed` | 아직 모두 실패합니다. 시작 전에는 정상입니다. 이미 풀었다면 실행 중 오류나 빠진 `return`을 찾아보세요 |
 | `1 error` | 테스트가 파일을 **불러오지도** 못했습니다. `SyntaxError`, `IndentationError`, `ImportError`, `OSError ... reading from stdin`을 찾아보세요 |
+| `6 deselected`만 나오고 `passed`나 `failed`가 없습니다 | 실행한 테스트가 없습니다. `-k` 뒤의 이름에 오타가 있습니다. 수업에 나온 명령을 그대로 다시 입력하세요 |
 
 ### 실패한 테스트 이름
 

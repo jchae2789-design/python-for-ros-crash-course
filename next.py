@@ -40,6 +40,10 @@ def load_state():
     done = state.get("done") if isinstance(state, dict) else None
     if not isinstance(done, list) or not all(isinstance(x, str) for x in done):
         return None
+    counts = state.get("log_lines", {})
+    if not isinstance(counts, dict) or not all(
+            type(n) is int and n >= 0 for n in counts.values()):
+        return None
     return state
 
 
@@ -94,8 +98,9 @@ def bullet_has_text(line):
 
     VS Code가 저장할 때 줄 끝 공백을 지우면 `- `가 `-`로 바뀌므로, `-` 뒤에 공백이 없어도 인정합니다.
     """
-    if not line.startswith("-"):
-        return False
+    line = line.strip()
+    if not line.startswith("-") or set(line) <= {"-", " ", "\t"}:
+        return False  # `-`로 시작하지 않거나, `- - -` 같은 구분선입니다.
     text = line.lstrip("-").strip()
     if text[:3].lower() in ("[ ]", "[x]"):
         text = text[3:].strip()
@@ -107,7 +112,8 @@ def log_lines_filled():
     today = ROOT / "logs" / f"{datetime.date.today():%Y-%m-%d}.md"
     if not today.exists():
         return 0
-    return sum(bullet_has_text(line) for line in today.read_text(encoding="utf-8-sig").splitlines())
+    text = today.read_text(encoding="utf-8-sig", errors="replace")
+    return sum(bullet_has_text(line) for line in text.splitlines())
 
 
 def log_written(state):

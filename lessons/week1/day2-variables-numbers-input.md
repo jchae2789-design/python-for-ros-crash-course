@@ -291,6 +291,7 @@ Travel time: 2.50 minutes
    ✔ 마지막 줄은 `Runtime: 2.50 hours`여야 합니다. `python3 exercises/week1/w1d2_battery_runtime.py`를 다시 실행하세요. `Capacity (mAh):`에 `1000`을 입력하세요.
    `Current (mA):`에 `3000`을 입력하세요. 각 값을 입력한 뒤 Enter를 누르세요. `Runtime: 0.33 hours`가 나와야 합니다.
    ✘ **아무것도 나타나지 않으면** 파일에 아직 코드가 없거나 저장하지 않은 것입니다. 3단계로 돌아가세요.
+   ✘ 전류에 `0`을 입력하면 `ZeroDivisionError`(0으로 나눌 수 없음)가, `2.5`처럼 소수를 입력하면 `ValueError`가 나옵니다. 이 연습 문제에서는 0보다 큰 정수만 입력합니다. 코드는 그대로 두고 위의 값으로 다시 실행하세요.
 6. VS Code 터미널에서 [`test_w1d2.py`](../../exercises/week1/tests/test_w1d2.py)로 `w1d2_battery_runtime.py`를 테스트하세요.
    ```bash
    pytest exercises/week1/tests/test_w1d2.py -k battery

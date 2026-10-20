@@ -109,6 +109,8 @@ VS Code 터미널에 다음 명령을 입력해서 같은 VS Code 창에 `playgr
 code playground.py
 ```
 
+`playground.py`는 아직 없는 파일입니다. 이 명령은 과정 폴더에 새 빈 파일을 열고, **Ctrl + S**로 저장할 때 파일이 만들어집니다. 1절에서 만든 `playground` 폴더와는 다른 것입니다.
+
 VS Code 편집기에서 `playground.py`에 다음 코드를 입력하고 **Ctrl + S**로 저장하세요.
 
 ```python

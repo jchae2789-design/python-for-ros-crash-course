@@ -89,17 +89,42 @@ def test_passed(step, results):
     return bool(matched) and all(matched)
 
 
-def log_written():
-    """오늘 날짜의 실습 일지가 있고, 빈칸(- 줄) 중 하나 이상에 내용을 적었으면 True입니다.
+def bullet_has_text(line):
+    """`- ` 줄에 내용이 있으면 True입니다. 빈 체크 상자(`- [ ]`)만 있는 줄은 빈칸으로 봅니다.
 
     VS Code가 저장할 때 줄 끝 공백을 지우면 `- `가 `-`로 바뀌므로, `-` 뒤에 공백이 없어도 인정합니다.
     """
+    if not line.startswith("-"):
+        return False
+    text = line.lstrip("-").strip()
+    if text[:3].lower() in ("[ ]", "[x]"):
+        text = text[3:].strip()
+    return bool(text)
+
+
+def log_lines_filled():
+    """오늘 날짜의 실습 일지에서 내용을 적은 `-` 줄의 수입니다. 파일이 없으면 0입니다."""
     today = ROOT / "logs" / f"{datetime.date.today():%Y-%m-%d}.md"
     if not today.exists():
-        return False
-    filled = [line for line in today.read_text(encoding="utf-8-sig").splitlines()
-              if line.startswith("-") and line.lstrip("-").strip()]
-    return len(filled) > 0
+        return 0
+    return sum(bullet_has_text(line) for line in today.read_text(encoding="utf-8-sig").splitlines())
+
+
+def log_written(state):
+    """오늘 일지에 내용을 적었으면 True입니다.
+
+    같은 날짜에 일지 단계를 이미 마쳤다면(하루에 두 일차를 공부한 경우) 그때보다 줄이 늘어야 합니다.
+    """
+    seen = state.get("log_lines")
+    seen = seen.get(f"{datetime.date.today():%Y-%m-%d}", 0) if isinstance(seen, dict) else 0
+    return log_lines_filled() > (seen if isinstance(seen, int) else 0)
+
+
+def record_log(state):
+    """일지 단계를 마칠 때 오늘 일지의 줄 수를 기록합니다."""
+    if not isinstance(state.get("log_lines"), dict):
+        state["log_lines"] = {}
+    state["log_lines"][f"{datetime.date.today():%Y-%m-%d}"] = log_lines_filled()
 
 
 def git(*args):
@@ -244,7 +269,8 @@ def main():
     while True:
         week, step = current_step(weeks, state, results)
         # 실습 일지와 커밋/푸시는 지금 할 단계일 때만 자동으로 확인합니다.
-        if step and step["kind"] == "log" and log_written():
+        if step and step["kind"] == "log" and log_written(state):
+            record_log(state)
             state["done"].append(step["id"])
             continue
         if step and step["kind"] == "git" and pushed():

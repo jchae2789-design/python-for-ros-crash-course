@@ -74,12 +74,15 @@ def test_passed(step, results):
 
 
 def log_written():
-    """오늘 날짜의 실습 일지가 있고, 빈칸(- 줄) 중 하나 이상에 내용을 적었으면 True입니다."""
+    """오늘 날짜의 실습 일지가 있고, 빈칸(- 줄) 중 하나 이상에 내용을 적었으면 True입니다.
+
+    VS Code가 저장할 때 줄 끝 공백을 지우면 `- `가 `-`로 바뀌므로, `-` 뒤에 공백이 없어도 인정합니다.
+    """
     today = ROOT / "logs" / f"{datetime.date.today():%Y-%m-%d}.md"
     if not today.exists():
         return False
     filled = [line for line in today.read_text(encoding="utf-8").splitlines()
-              if line.startswith("- ") and line[2:].strip()]
+              if line.startswith("-") and line.lstrip("-").strip()]
     return len(filled) > 0
 
 

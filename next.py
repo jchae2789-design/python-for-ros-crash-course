@@ -11,6 +11,7 @@ VS Code 터미널에서 `python3 next.py`를 실행하면 지금 할 일을 알�
 
 import datetime
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -116,6 +117,39 @@ def log_lines_filled():
     return sum(bullet_has_text(line) for line in text.splitlines())
 
 
+# 일지 양식의 빈칸입니다. 공백을 지운 줄에 남아 있으면 아직 채우지 않은 것입니다.
+LOG_PLACEHOLDERS = ("_주차", "_일차", "(수업제목)", "|통과/실패|", "약_시간",
+                    "Week_", "Day_", "(lessontitle)", "|yes/no|", "About_hours")
+
+
+def is_bullet(line):
+    """`-`로 시작하는 줄이면 True입니다. `---` 같은 구분선은 제외합니다."""
+    line = line.strip()
+    return line.startswith("-") and not (line.count("-") >= 3 and set(line) <= {"-", " ", "\t"})
+
+
+def log_missing():
+    """오늘 일지에서 아직 채우지 않은 곳(제목의 날짜, `## ` 절 제목)의 목록입니다."""
+    today = ROOT / "logs" / f"{datetime.date.today():%Y-%m-%d}.md"
+    if not today.exists():
+        return []
+    missing, sections = [], []
+    for line in today.read_text(encoding="utf-8-sig", errors="replace").splitlines():
+        if line.startswith("# ") and "YYYY-MM-DD" in line:
+            missing.append(MSG["log_title"])
+        elif line.startswith("## "):
+            sections.append((line[3:].strip(), []))
+        elif sections:
+            sections[-1][1].append(line)
+    for title, body in sections:
+        squeezed = ["".join(line.split()) for line in body]
+        bullets = [line for line in body if is_bullet(line)]
+        if (any(p in s for s in squeezed for p in LOG_PLACEHOLDERS)
+                or (bullets and not any(bullet_has_text(line) for line in bullets))):
+            missing.append(title)
+    return missing
+
+
 def log_written(state):
     """오늘 일지에 내용을 적었으면 True입니다.
 
@@ -166,8 +200,20 @@ def sync_progress():
 def is_done(step, state, results):
     kind = step["kind"]
     if kind == "test":
-        return results is not None and test_passed(step, results)
+        passed = results is not None and test_passed(step, results)
+        # 하루 전체 테스트(질문이 있는 단계)는 통과한 뒤 질문에 y로 답해야 끝납니다.
+        return passed and (not step.get("ask") or step["id"] in state["done"])
     return step["id"] in state["done"]
+
+
+def keep_old_progress(weeks, state):
+    """이전 next.py는 하루 전체 테스트를 묻지 않았습니다. 그 뒤 단계를 이미 마쳤다면 마친 것으로 봅니다."""
+    for week in weeks:
+        steps = week["steps"]
+        for i, step in enumerate(steps):
+            if step["kind"] == "test" and step.get("ask") and step["id"] not in state["done"]:
+                if any(s["id"] in state["done"] for s in steps[i + 1:]):
+                    state["done"].append(step["id"])
 
 
 def current_step(weeks, state, results):
@@ -261,10 +307,16 @@ def main():
         for step in week["steps"]:
             if step["kind"] == "setup" and results is not None and step["id"] not in state["done"]:
                 state["done"].append(step["id"])
+    keep_old_progress(weeks, state)
 
     if "--report" in sys.argv:
         if error:
             print(f"> {MSG[error]}\n")
+        # GitHub에서 실행하는 커밋은 이미 푸시된 것입니다. 지금 할 단계가 커밋과 푸시라면 마친 것으로 표시합니다.
+        if os.environ.get("GITHUB_ACTIONS"):
+            _, cur = current_step(weeks, state, results)
+            if cur and cur["kind"] == "git":
+                state["done"].append(cur["id"])
         print(report(weeks, state, results))
         return
 
@@ -277,7 +329,7 @@ def main():
     while True:
         week, step = current_step(weeks, state, results)
         # 실습 일지와 커밋/푸시는 지금 할 단계일 때만 자동으로 확인합니다.
-        if step and step["kind"] == "log" and log_written(state):
+        if step and step["kind"] == "log" and log_written(state) and not log_missing():
             record_log(state)
             state["done"].append(step["id"])
             continue
@@ -292,7 +344,8 @@ def main():
             print(f"\n{MSG['all_done']}")
             break
         print_step(week, step)
-        if step["kind"] == "manual":
+        # 하루 전체 테스트는 통과해도 학생이 직접 실행했는지 묻습니다.
+        if step.get("ask") and (step["kind"] == "manual" or test_passed(step, results)):
             if ask(step["ask"]):
                 state["done"].append(step["id"])
                 save(state, weeks, results)
@@ -303,6 +356,8 @@ def main():
             print(f"\n{MSG['come_back']}")
             break
         print(f"\n{MSG['after_' + step['kind']]}")
+        if step["kind"] == "log" and log_missing():
+            print(MSG["log_missing"].format(parts=", ".join(log_missing())))
         break
 
     save(state, weeks, results)

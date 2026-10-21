@@ -209,6 +209,7 @@ NameError: name 'prnt' is not defined. Did you mean: 'print'?
 | 오류 | 흔한 원인 |
 |---|---|
 | `SyntaxError` | 따옴표 `"` 또는 괄호 `)`가 빠졌습니다 |
+| `SyntaxError: invalid character` | 비슷하게 보이지만 다른 문자가 들어 있습니다. 전각 괄호 `（ ）`나 둥근 따옴표 `“ ”`는 문서나 메신저에서 코드를 복사하면 자주 생깁니다. 표시된 문자를 지우고 키보드로 `(` `)` `"`를 다시 입력하세요 |
 | `NameError` | 이름을 잘못 입력했거나 문자열에 따옴표가 없습니다: `print(Hello)` |
 | `IndentationError` | 줄 시작 부분에 불필요한 공백이 있습니다 |
 | `python3: can't open file` | 다른 폴더에 있거나 파일 이름을 잘못 입력했습니다. VS Code 터미널에서 `pwd`로 현재 폴더를, `ls`로 파일 목록을 확인하세요. |

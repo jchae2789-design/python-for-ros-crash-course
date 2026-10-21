@@ -7,6 +7,7 @@ VS Code 터미널에서 `python3 next.py`를 실행하면 지금 할 일을 알�
 
 결과는 progress/state.json과 PROGRESS.md에 저장됩니다.
 `python3 next.py --report`는 질문 없이 진도표만 출력합니다(GitHub 자동 테스트에서 사용).
+`python3 next.py --ci`는 시작한 일차의 테스트만 실행합니다(GitHub 자동 테스트에서 사용).
 """
 
 import datetime
@@ -181,20 +182,30 @@ def pushed():
     return ahead.returncode == 0 and ahead.stdout.strip() == "0"
 
 
-def sync_progress():
-    """진도 파일만 커밋하고 푸시합니다. 멘토 점검 답이 GitHub에도 바로 보이게 합니다."""
-    files = ["progress/state.json", "PROGRESS.md"]
-    if git("add", *files).returncode != 0:
-        print(MSG["sync_commit_failed"])
-        return
-    if git("diff", "--cached", "--quiet", "--", *files).returncode != 0:
-        if git("commit", "-m", MSG["sync_commit"], "--", *files).returncode != 0:
-            print(MSG["sync_commit_failed"])
-            return
-    if git("rev-list", "--count", "@{u}..HEAD").stdout.strip() == "0":
-        return
-    push = git("push")
-    print(MSG["synced"] if push.returncode == 0 else MSG["sync_failed"])
+def started_test_paths(weeks, state):
+    """학생이 시작한 일차(단계를 하나라도 마친 일차)의 테스트 경로입니다. GitHub 자동 테스트에서 사용합니다."""
+    paths = []
+    for week in weeks:
+        for sec in week["sections"]:
+            steps = [s for s in week["steps"] if s["section"] == sec["key"]]
+            if any(s["id"] in state["done"] for s in steps):
+                for s in steps:
+                    if s["kind"] == "test":
+                        paths += [p for p in s["paths"] if p not in paths]
+    return paths
+
+
+def run_ci(weeks, state):
+    """시작한 일차의 테스트만 실행하고 pytest의 종료 코드를 돌려줍니다.
+
+    아직 시작하지 않은 일차의 연습 문제 때문에 GitHub에 ❌가 나오지 않게 합니다.
+    """
+    paths = started_test_paths(weeks, state)
+    if not paths:
+        print(MSG["ci_none"])
+        return 0
+    cmd = [sys.executable, "-m", "pytest", "-rA", "--continue-on-collection-errors", *paths]
+    return subprocess.run(cmd, cwd=ROOT).returncode
 
 
 def is_done(step, state, results):
@@ -297,7 +308,10 @@ def main():
     if state is None:
         # 읽을 수 없는 진도 파일을 덮어쓰지 않습니다.
         print(MSG["bad_state"])
-        return
+        # GitHub 자동 테스트에서는 ❌로 알립니다.
+        sys.exit(1 if "--ci" in sys.argv else 0)
+    if "--ci" in sys.argv:
+        sys.exit(run_ci(weeks, state))
     paths = sorted({p for w in weeks for s in w["steps"] if s["kind"] == "test" for p in s["paths"]})
     if "--report" not in sys.argv:
         print(MSG["checking"], flush=True)
@@ -350,8 +364,6 @@ def main():
                 state["done"].append(step["id"])
                 save(state, weeks, results)
                 print(MSG["saved"])
-                if step.get("sync"):
-                    sync_progress()
                 continue
             print(f"\n{MSG['come_back']}")
             break

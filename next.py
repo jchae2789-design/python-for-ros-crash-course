@@ -6,8 +6,7 @@ VS Code 터미널에서 `python3 next.py`를 실행하면 지금 할 일을 알�
 - 테스트로 확인할 수 없는 단계(수업 읽기 등)는 질문으로 확인합니다.
 
 결과는 progress/state.json과 PROGRESS.md에 저장됩니다.
-`python3 next.py --report`는 질문 없이 진도표만 출력합니다(GitHub 자동 테스트에서 사용).
-`python3 next.py --ci`는 시작한 일차의 테스트만 실행합니다(GitHub 자동 테스트에서 사용).
+GitHub 자동 테스트에서 실행하면 질문하지 않습니다. 진도표를 실행 요약에 쓰고, 시작한 일차의 테스트만 실행합니다.
 """
 
 import datetime
@@ -22,6 +21,7 @@ PROGRESS_DIR = ROOT / "progress"
 STATE_FILE = PROGRESS_DIR / "state.json"
 REPORT_FILE = ROOT / "PROGRESS.md"
 TEST_TIMEOUT = 120  # 초
+ON_GITHUB = bool(os.environ.get("GITHUB_ACTIONS"))  # GitHub 자동 테스트에서 실행 중입니다.
 
 
 def load_json(path, default):
@@ -195,11 +195,26 @@ def started_test_paths(weeks, state):
     return paths
 
 
-def run_ci(weeks, state):
-    """시작한 일차의 테스트만 실행하고 pytest의 종료 코드를 돌려줍니다.
+def github_check(weeks, state, results, error):
+    """GitHub 자동 테스트에서 실행합니다. 종료 코드가 커밋의 ✅/❌를 정합니다.
 
-    아직 시작하지 않은 일차의 연습 문제 때문에 GitHub에 ❌가 나오지 않게 합니다.
+    진도표를 실행 요약 페이지에 쓰고, 시작한 일차의 테스트만 실행합니다.
+    아직 시작하지 않은 일차의 연습 문제 때문에 ❌가 나오지 않게 합니다.
     """
+    # 이 커밋은 이미 푸시된 것입니다. 지금 할 단계가 커밋과 푸시라면 마친 것으로 표시합니다.
+    _, cur = current_step(weeks, state, results)
+    if cur and cur["kind"] == "git":
+        state["done"].append(cur["id"])
+    table = report(weeks, state, results)
+    if error:
+        table = f"> {MSG[error]}\n\n{table}"
+    summary = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary:
+        with open(summary, "a", encoding="utf-8") as f:
+            f.write(table + "\n")
+    else:
+        print(table)
+
     paths = started_test_paths(weeks, state)
     if not paths:
         print(MSG["ci_none"])
@@ -309,11 +324,9 @@ def main():
         # 읽을 수 없는 진도 파일을 덮어쓰지 않습니다.
         print(MSG["bad_state"])
         # GitHub 자동 테스트에서는 ❌로 알립니다.
-        sys.exit(1 if "--ci" in sys.argv else 0)
-    if "--ci" in sys.argv:
-        sys.exit(run_ci(weeks, state))
+        sys.exit(1 if ON_GITHUB else 0)
     paths = sorted({p for w in weeks for s in w["steps"] if s["kind"] == "test" for p in s["paths"]})
-    if "--report" not in sys.argv:
+    if not ON_GITHUB:
         print(MSG["checking"], flush=True)
     results, error = run_tests(paths)
     # pytest가 실행되면 설치 및 준비가 끝난 것입니다.
@@ -323,16 +336,8 @@ def main():
                 state["done"].append(step["id"])
     keep_old_progress(weeks, state)
 
-    if "--report" in sys.argv:
-        if error:
-            print(f"> {MSG[error]}\n")
-        # GitHub에서 실행하는 커밋은 이미 푸시된 것입니다. 지금 할 단계가 커밋과 푸시라면 마친 것으로 표시합니다.
-        if os.environ.get("GITHUB_ACTIONS"):
-            _, cur = current_step(weeks, state, results)
-            if cur and cur["kind"] == "git":
-                state["done"].append(cur["id"])
-        print(report(weeks, state, results))
-        return
+    if ON_GITHUB:
+        sys.exit(github_check(weeks, state, results, error))
 
     if error:
         # 테스트 결과를 모르면 진도를 저장하지 않습니다(이미 저장된 진도가 지워지지 않도록).

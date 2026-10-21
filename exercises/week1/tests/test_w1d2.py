@@ -30,7 +30,7 @@ def test_battery_runtime(run_script, capacity, current, expected):
     "seconds, expected",
     [
         ("3725", "1 h 2 m 5 s"),
-        ("59", "0 h 0 m 59 s"),
+        ("216000", "60 h 0 m 0 s"),
         ("7199", "1 h 59 m 59 s"),
     ],
 )

@@ -15,7 +15,7 @@ def last_line(output):
     [
         ("5000", "2000", "Runtime: 2.50 hours"),
         ("1000", "6000", "Runtime: 0.17 hours"),
-        ("1000", "3000", "Runtime: 0.33 hours"),
+        ("1500", "3030", "Runtime: 0.50 hours"),
     ],
 )
 def test_battery_runtime(run_script, capacity, current, expected):
@@ -29,7 +29,7 @@ def test_battery_runtime(run_script, capacity, current, expected):
 @pytest.mark.parametrize(
     "seconds, expected",
     [
-        ("3725", "1 h 2 m 5 s"),
+        ("3721", "1 h 2 m 1 s"),
         ("216000", "60 h 0 m 0 s"),
         ("7199", "1 h 59 m 59 s"),
     ],

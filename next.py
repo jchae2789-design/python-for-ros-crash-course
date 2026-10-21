@@ -233,13 +233,23 @@ def is_done(step, state, results):
 
 
 def keep_old_progress(weeks, state):
-    """이전 next.py는 하루 전체 테스트를 묻지 않았습니다. 그 뒤 단계를 이미 마쳤다면 마친 것으로 봅니다."""
+    """이전 next.py의 진도를 지금 단계 순서에 맞춥니다.
+
+    - 이전에는 하루 전체 테스트를 묻지 않았습니다. 그 뒤 단계를 이미 마쳤다면 마친 것으로 봅니다.
+    - 이전에는 커밋과 푸시가 멘토 점검보다 먼저였습니다. 같은 일차에 마치지 않은 단계가 앞에 남아 있으면
+      커밋과 푸시를 다시 하게 합니다. 그래야 멘토 점검 답도 GitHub로 갑니다.
+    """
     for week in weeks:
         steps = week["steps"]
         for i, step in enumerate(steps):
             if step["kind"] == "test" and step.get("ask") and step["id"] not in state["done"]:
                 if any(s["id"] in state["done"] for s in steps[i + 1:]):
                     state["done"].append(step["id"])
+        for i, step in enumerate(steps):
+            if step["kind"] == "git" and step["id"] in state["done"]:
+                before = [s for s in steps[:i] if s["section"] == step["section"] and s["kind"] in ("manual", "log")]
+                if any(s["id"] not in state["done"] for s in before):
+                    state["done"].remove(step["id"])
 
 
 def current_step(weeks, state, results):

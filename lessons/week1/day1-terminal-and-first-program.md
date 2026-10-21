@@ -335,7 +335,7 @@ Status: CHARGING
    pytest exercises/week1/tests/test_w1d1.py -k robot_card
    ```
    ✔ `1 passed, 1 deselected`가 나와야 합니다.
-7. VS Code 터미널에서 `python3 next.py`를 실행하세요. 테스트가 통과했으면 다음 단계가 나타납니다.
+7. 아직 `python3 next.py`를 실행하지 마세요. 아래 **마지막으로: 오늘의 테스트 전체**로 가세요. `python3 next.py`는 그 절의 테스트를 실행한 다음에 실행합니다.
 
 ### 마지막으로: 오늘의 테스트 전체
 

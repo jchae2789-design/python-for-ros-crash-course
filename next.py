@@ -130,7 +130,10 @@ def is_bullet(line):
 
 
 def log_missing():
-    """오늘 일지에서 아직 채우지 않은 곳(제목의 날짜, `## ` 절 제목)의 목록입니다."""
+    """오늘 일지에서 아직 채우지 않은 곳(제목의 날짜, `## ` 절 제목)의 목록입니다.
+
+    빈칸(`_`, 표의 빈 줄, 빈 `-` 줄)이 하나라도 남은 절과 내용을 모두 지운 절을 셉니다.
+    """
     today = ROOT / "logs" / f"{datetime.date.today():%Y-%m-%d}.md"
     if not today.exists():
         return []
@@ -145,8 +148,9 @@ def log_missing():
     for title, body in sections:
         squeezed = ["".join(line.split()) for line in body]
         bullets = [line for line in body if is_bullet(line)]
-        if (any(p in s for s in squeezed for p in LOG_PLACEHOLDERS)
-                or (bullets and not any(bullet_has_text(line) for line in bullets))):
+        if (not any(squeezed)  # 절의 내용을 모두 지웠습니다.
+                or any(p in s for s in squeezed for p in LOG_PLACEHOLDERS)
+                or any(not bullet_has_text(line) for line in bullets)):
             missing.append(title)
     return missing
 

@@ -207,7 +207,7 @@ def speed_status(speed):
 E       AssertionError: assert None == 'STOPPED'
 E        +  where None = speed_status(0)
 ...
-4 failed in 0.15s
+5 failed in 0.15s
 ```
 
 다음처럼 읽으면 됩니다.

@@ -32,7 +32,7 @@ def double(number):      # def는 함수를 정의한다는 뜻입니다. 함수
 - `double(4)`는 함수를 **호출**합니다. 함수 안에서 `number`는 `4`입니다.
 - `return`은 답을 돌려줍니다. 그다음 `print(double(4))`가 그 답을 출력합니다.
 
-함수에는 여러 매개변수가 있을 수 있습니다.
+함수에는 여러 매개변수가 있을 수 있습니다. 아래 호출 `runtime_hours(5000, 2000)`에서는 왼쪽부터 순서대로 값을 전달합니다. 첫 번째 값 `5000`은 첫 번째 매개변수 `capacity_mah`에, 두 번째 값 `2000`은 두 번째 매개변수 `current_ma`에 들어갑니다. 따라서 함수 안에서는 `5000 / 2000`을 계산합니다.
 
 ```python
 def runtime_hours(capacity_mah, current_ma):

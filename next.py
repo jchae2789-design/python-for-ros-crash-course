@@ -106,7 +106,7 @@ def bullet_has_text(line):
     text = line.lstrip("-").strip()
     if text[:3].lower() in ("[ ]", "[x]"):
         text = text[3:].strip()
-    return bool(text)
+    return bool(text) and LOG_MARK not in text  # ✏️ 안내 글만 있는 줄은 빈칸입니다.
 
 
 def log_lines_filled():
@@ -118,8 +118,16 @@ def log_lines_filled():
     return sum(bullet_has_text(line) for line in text.splitlines())
 
 
+# 일지 양식에서 채울 곳에는 ✏️ 표시가 있습니다.
+LOG_MARK = "✏"
 # 일지 양식의 빈칸입니다. 공백을 지운 줄에 남아 있으면 아직 채우지 않은 것입니다.
-LOG_PLACEHOLDERS = ("_주차", "_일차", "(수업제목)", "|통과/실패|", "약_시간",
+# ✏️ 표시만 지우고 안내 글을 남긴 줄과 예전 양식의 빈칸도 셉니다.
+LOG_PLACEHOLDERS = (LOG_MARK, "YYYY-MM-DD",
+                    "오늘배운것한가지", "수업파일맨위의제목", "파일이름(파일마다한줄)", "통과또는실패",
+                    "해결방법(없으면", "물어볼질문(없으면", "약몇시간",
+                    "Somethingyoulearnedtoday", "titleatthetopofthelesson", "Filename(onerowperfile)",
+                    "yesorno", "solvedit(ifnone", "foryourmentor(ifnone", "Abouthowmanyhours",
+                    "_주차", "_일차", "(수업제목)", "|통과/실패|", "약_시간",
                     "Week_", "Day_", "(lessontitle)", "|yes/no|", "About_hours")
 
 
@@ -130,29 +138,30 @@ def is_bullet(line):
 
 
 def log_missing():
-    """오늘 일지에서 아직 채우지 않은 곳(제목의 날짜, `## ` 절 제목)의 목록입니다.
+    """오늘 일지에서 아직 채우지 않은 줄의 (줄 번호, 줄 내용) 목록입니다.
 
-    빈칸(`_`, 표의 빈 줄, 빈 `-` 줄)이 하나라도 남은 절과 내용을 모두 지운 절을 셉니다.
+    제목 줄과 `## ` 절 아래의 줄만 봅니다. 빈칸(✏️ 표시, `YYYY-MM-DD`, 표의 빈 칸, 빈 `-` 줄)이
+    남은 줄을 셉니다. 절의 내용을 모두 지웠으면 그 절의 제목 줄을 셉니다.
     """
     today = ROOT / "logs" / f"{datetime.date.today():%Y-%m-%d}.md"
     if not today.exists():
         return []
-    missing, sections = [], []
-    for line in today.read_text(encoding="utf-8-sig", errors="replace").splitlines():
-        if line.startswith("# ") and "YYYY-MM-DD" in line:
-            missing.append(MSG["log_title"])
-        elif line.startswith("## "):
-            sections.append((line[3:].strip(), []))
-        elif sections:
-            sections[-1][1].append(line)
-    for title, body in sections:
-        squeezed = ["".join(line.split()) for line in body]
-        bullets = [line for line in body if is_bullet(line)]
-        if (not any(squeezed)  # 절의 내용을 모두 지웠습니다.
-                or any(p in s for s in squeezed for p in LOG_PLACEHOLDERS)
-                or any(not bullet_has_text(line) for line in bullets)):
-            missing.append(title)
-    return missing
+    missing, heading, has_text = [], None, False
+    for number, line in enumerate(today.read_text(encoding="utf-8-sig", errors="replace").splitlines(), 1):
+        squeezed = "".join(line.split())
+        if line.startswith("## "):
+            if heading and not has_text:
+                missing.append(heading)
+            heading, has_text = (number, line + MSG["log_empty_section"]), False
+        elif line.startswith("# ") or heading:
+            has_text = has_text or bool(squeezed)
+            if (any(p in squeezed for p in LOG_PLACEHOLDERS)
+                    or (is_bullet(line) and not bullet_has_text(line))
+                    or (squeezed.startswith("|") and "||" in squeezed)):
+                missing.append((number, line.strip()))
+    if heading and not has_text:
+        missing.append(heading)
+    return sorted(missing)
 
 
 def log_written(state):
@@ -387,8 +396,12 @@ def main():
             print(f"\n{MSG['come_back']}")
             break
         print(f"\n{MSG['after_' + step['kind']]}")
-        if step["kind"] == "log" and log_missing():
-            print(MSG["log_missing"].format(parts=", ".join(log_missing())))
+        missing = log_missing() if step["kind"] == "log" else []
+        if missing:
+            print(MSG["log_missing"])
+            for number, line in missing:
+                print(f"   logs/{datetime.date.today():%Y-%m-%d}.md:{number}   {line}")
+            print(MSG["log_missing_hint"])
         break
 
     save(state, weeks, results)

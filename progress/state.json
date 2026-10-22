@@ -21,9 +21,12 @@
     "d3_try",
     "d3_part4",
     "d3_all",
-    "d3_explain"
+    "d3_explain",
+    "d3_log",
+    "d3_mentor"
   ],
   "log_lines": {
-    "2026-10-21": 3
+    "2026-10-21": 3,
+    "2026-10-22": 5
   }
 }

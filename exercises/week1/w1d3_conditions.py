@@ -20,6 +20,17 @@ def battery_status(percent):
     """
     # TODO: 이 줄 아래에 코드를 작성하세요
     pass
+def battery_status(percent):
+    if percent < 0 or percent > 100:
+        return "INVALID"
+    elif percent >= 90:
+        return "FULL"
+    elif percent >= 40:
+        return "OK"
+    elif percent >=15:
+        return "LOW"
+    else:
+        return "CRITICAL"
 
 
 def can_launch(battery_percent, wind_speed, gps_ok):
@@ -34,7 +45,8 @@ def can_launch(battery_percent, wind_speed, gps_ok):
     """
     # TODO: 이 줄 아래에 코드를 작성하세요
     pass
-
+def can_launch(battery_percent, wind_speed, gps_ok):
+    return battery_percent >=30 and wind_speed <=8.0 and gps_ok
 
 def classify_distance(distance_m):
     """라이다가 장애물을 감지했을 때 로봇이 할 일을 결정하세요.
@@ -47,3 +59,10 @@ def classify_distance(distance_m):
     """
     # TODO: 이 줄 아래에 코드를 작성하세요
     pass
+def classify_distance(distance_m):
+    if distance_m < 0.5:
+        return "STOP"
+    elif distance_m < 2.0:
+        return "SLOW"
+    else:
+        return "GO"

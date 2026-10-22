@@ -15,7 +15,13 @@
     "d2_log",
     "d1_all",
     "d2_all",
-    "d2_mentor"
+    "d2_mentor",
+    "d2_push",
+    "d3_read",
+    "d3_try",
+    "d3_part4",
+    "d3_all",
+    "d3_explain"
   ],
   "log_lines": {
     "2026-10-21": 3

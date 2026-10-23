@@ -334,6 +334,7 @@ E       assert 'FULL' == 'OK'
 | `스크립트를 실행하다가 오류가 났습니다. 오류 메시지:` | 스크립트에 오류가 있습니다 | VS Code 터미널에서 오류 메시지의 **마지막 줄**을 읽으세요 |
 | `스크립트가 10초 안에 끝나지 않았습니다.` / `끝나지 않는 반복문이나 필요 없는 input()이 있는지 확인하세요.` | 끝나지 않는 반복문이나 필요 없는 `input()`이 있습니다 | VS Code 편집기에서 해당 연습 문제 파일을 열고 `while` 조건과 `input()` 호출 개수를 확인하세요 |
 | `ImportError: cannot import name ...` | 함수 이름을 바꾸거나 함수를 지웠습니다 | VS Code 편집기에서 오류 메시지에 나온 연습 문제 파일의 함수 이름을 원래대로 되돌리세요 |
+| `ModuleNotFoundError: No module named 'playground'` | 코드를 입력할 때 VS Code가 `from playground import …` 줄을 연습 문제 파일 맨 위에 저절로 추가했습니다 | VS Code 편집기에서 해당 연습 문제 파일 맨 위의 `from playground import …` 줄을 지우고 **Ctrl + S**로 저장하세요. 연습 문제 파일에는 `import` 줄이 필요 없습니다 |
 | `SyntaxError` / `IndentationError` | `:` `)` `"`가 빠졌거나 공백이 잘못되었습니다 | VS Code 편집기에서 오류 메시지에 나온 연습 문제 파일을 열고 표시된 줄 번호로 이동하세요 |
 | `SyntaxError: invalid character '（' (U+FF08)` | 비슷하게 보이지만 파이썬이 사용할 수 없는 문자입니다. 전각 괄호 `（ ）`, 전각 콜론 `：`, 둥근 따옴표 `‘ ’ “ ”`는 문서나 메신저에서 코드를 복사하면 자주 생깁니다 | VS Code 편집기에서 표시된 줄로 이동하세요. 그 문자를 지우고 키보드로 `(` `)` `:` `'` `"`를 다시 입력하세요. **Ctrl + S**로 저장하고 다시 실행하세요 |
 | `OSError: pytest: reading from stdin...` | 함수 파일에 `input()`을 남겨 두었습니다 | 해당 연습 문제 파일에서 필요 없는 `input()`을 지우고 **Ctrl + S**로 저장하세요. 수업의 `python3 -i` 진행 순서를 따르세요 |

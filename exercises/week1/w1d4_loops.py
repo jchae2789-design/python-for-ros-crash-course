@@ -19,6 +19,13 @@ def countdown(n):
     """
     # TODO: 이 줄 아래에 코드를 작성하세요
     pass
+def countdown(n):
+    text = ""
+    for i in range(n, 0, -1):
+        text += str(i) + " "
+    return text +("GO!" if n > 0 else "GO!")
+
+
 
 
 def sum_to(n):
@@ -30,7 +37,11 @@ def sum_to(n):
     """
     # TODO: 이 줄 아래에 코드를 작성하세요
     pass
-
+def sum_to(n):
+    total = 0
+    for i in range(1, n + 1):
+        total += i
+    return total
 
 def steps_until_low(battery, drain_per_step, low_level):
     """로봇은 한 단계마다 배터리를 `drain_per_step`만큼 사용합니다.
@@ -45,3 +56,9 @@ def steps_until_low(battery, drain_per_step, low_level):
     """
     # TODO: 이 줄 아래에 코드를 작성하세요
     pass
+def steps_until_low(battery, drain_per_step, low_level):
+    steps = 0
+    while battery > low_level:
+        battery -= drain_per_step
+        steps += 1
+    return steps

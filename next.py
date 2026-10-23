@@ -235,7 +235,12 @@ def github_check(weeks, state, results, error):
         print(MSG["ci_none"])
         return 0
     cmd = [sys.executable, "-m", "pytest", "-rA", "--continue-on-collection-errors", *paths]
-    return subprocess.run(cmd, cwd=ROOT).returncode
+    try:
+        return subprocess.run(cmd, cwd=ROOT, timeout=TEST_TIMEOUT).returncode
+    except subprocess.TimeoutExpired:
+        # 끝나지 않는 반복문이 있어도 GitHub 검사가 멈춰 있지 않고 ❌로 끝나게 합니다.
+        print(MSG["timeout"])
+        return 1
 
 
 def is_done(step, state, results):

@@ -123,12 +123,12 @@ LOG_MARK = "✏"
 # 일지 양식의 빈칸입니다. 공백을 지운 줄에 남아 있으면 아직 채우지 않은 것입니다.
 # ✏️ 표시만 지우고 안내 글을 남긴 줄과 예전 양식의 빈칸도 셉니다.
 LOG_PLACEHOLDERS = (LOG_MARK, "YYYY-MM-DD",
-                    "오늘배운것한가지", "수업파일맨위의제목", "파일이름(파일마다한줄)", "통과또는실패",
+                    "오늘배운것한가지", "수업파일맨위의제목",
                     "해결방법(없으면", "물어볼질문(없으면", "약몇시간",
-                    "Somethingyoulearnedtoday", "titleatthetopofthelesson", "Filename(onerowperfile)",
-                    "yesorno", "solvedit(ifnone", "foryourmentor(ifnone", "Abouthowmanyhours",
-                    "_주차", "_일차", "(수업제목)", "|통과/실패|", "약_시간",
-                    "Week_", "Day_", "(lessontitle)", "|yes/no|", "About_hours")
+                    "Somethingyoulearnedtoday", "titleatthetopofthelesson",
+                    "solvedit(ifnone", "foryourmentor(ifnone", "Abouthowmanyhours",
+                    "_주차", "_일차", "(수업제목)", "약_시간",
+                    "Week_", "Day_", "(lessontitle)", "About_hours")
 
 
 def is_bullet(line):
@@ -140,8 +140,9 @@ def is_bullet(line):
 def log_missing():
     """오늘 일지에서 아직 채우지 않은 줄의 (줄 번호, 줄 내용) 목록입니다.
 
-    제목 줄과 `## ` 절 아래의 줄만 봅니다. 빈칸(✏️ 표시, `YYYY-MM-DD`, 표의 빈 칸, 빈 `-` 줄)이
+    제목 줄과 `## ` 절 아래의 줄만 봅니다. 빈칸(✏️ 표시, `YYYY-MM-DD`, 빈 `-` 줄)이
     남은 줄을 셉니다. 절의 내용을 모두 지웠으면 그 절의 제목 줄을 셉니다.
+    예전 양식의 연습 문제 표(`|`로 시작하는 줄)는 확인하지 않습니다.
     """
     today = ROOT / "logs" / f"{datetime.date.today():%Y-%m-%d}.md"
     if not today.exists():
@@ -155,9 +156,10 @@ def log_missing():
             heading, has_text = (number, line + MSG["log_empty_section"]), False
         elif line.startswith("# ") or heading:
             has_text = has_text or bool(squeezed)
+            if squeezed.startswith("|"):
+                continue
             if (any(p in squeezed for p in LOG_PLACEHOLDERS)
-                    or (is_bullet(line) and not bullet_has_text(line))
-                    or (squeezed.startswith("|") and "||" in squeezed)):
+                    or (is_bullet(line) and not bullet_has_text(line))):
                 missing.append((number, line.strip()))
     if heading and not has_text:
         missing.append(heading)
